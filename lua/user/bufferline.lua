@@ -1,4 +1,14 @@
-require("bufferline").setup({
+local status_ok, bufferline = pcall(require, "bufferline")
+if not status_ok then
+    return
+end
+
+bufferline.setup({
+    options = {
+        indicator_icon = " ",
+        offsets = { { filetype = "NvimTree", text = "", padding = 1 } },
+        separator_style = { "", "" },
+    },
     highlights = {
         buffer_selected = { gui = "NONE" },
         diagnostic_selected = { gui = "bold" },
@@ -15,18 +25,4 @@ require("bufferline").setup({
         pick_visible = { gui = "bold" },
         pick = { gui = "bold" },
     },
-    options = {
-        indicator_icon = " ",
-        offsets = {
-            {
-                filetype = "NvimTree",
-            },
-        },
-        show_tab_indicators = true,
-        separator_style = { "", "" },
-    },
 })
-
-vim.api.nvim_set_keymap("n", "m", ":bnext<CR>", { noremap = true, silent = true })
-
-vim.api.nvim_set_keymap("n", "z", ":bprevious<CR>", { noremap = true, silent = true })
