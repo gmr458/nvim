@@ -14,7 +14,9 @@ M.setup = function()
     end
 
     local config = {
-        virtual_text = true,
+        virtual_text = {
+            prefix = ""
+        },
         signs = false,
         underline = true,
         update_in_insert = false,
