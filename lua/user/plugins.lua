@@ -84,6 +84,7 @@ return packer.startup(function(use)
     use("tamago324/nlsp-settings.nvim") -- language server settings defined in json for
     use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
     use("onsails/lspkind-nvim")
+    use({ "tami5/lspsaga.nvim", branch = "nvim6.0" })
 
     -- Telescope
     use("nvim-telescope/telescope.nvim")
@@ -94,6 +95,9 @@ return packer.startup(function(use)
         run = ":TSUpdate",
     })
     use("JoosepAlviste/nvim-ts-context-commentstring")
+
+    -- format code
+    use("mhartington/formatter.nvim")
 
     -- Git
     use("lewis6991/gitsigns.nvim")
