@@ -6,7 +6,7 @@ local options = {
     cmdheight = 2,
     completeopt = { "menuone", "noselect" },
     conceallevel = 0,
-    cursorline = false,
+    cursorline = true,
     encoding = "UTF-8",
     errorbells = false,
     expandtab = true,
@@ -51,3 +51,9 @@ vim.opt.shortmess:append("c")
 vim.cmd("set whichwrap+=<,>,[,],h,l")
 vim.cmd([[set iskeyword+=-]])
 vim.cmd([[set formatoptions-=cro]])
+vim.cmd([[
+    augroup RestoreCursorShapeOnExit
+        autocmd!
+        autocmd VimLeave * set guicursor=a:hor20
+    augroup END
+]])
