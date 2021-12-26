@@ -23,13 +23,11 @@ vim.cmd([[
     augroup end
 ]])
 
--- Use a protected call so we don't error out on first use
 local status_ok, packer = pcall(require, "packer")
 if not status_ok then
     return
 end
 
--- Have packer use a popup window
 packer.init({
     display = {
         open_fn = function()
@@ -38,32 +36,22 @@ packer.init({
     },
 })
 
--- Install your plugins here
 return packer.startup(function(use)
-    -- My plugins here
-    use("wbthomason/packer.nvim") -- Have packer manage itself
-    use("nvim-lua/popup.nvim") -- An implementation of the Popup API from vim in Neovim
-    use("nvim-lua/plenary.nvim") -- Useful lua functions used ny lots of plugins
-    use("windwp/nvim-autopairs") -- Autopairs, integrates with both cmp and treesitter
+    use("wbthomason/packer.nvim")
+    use("nvim-lua/popup.nvim")
+    use("nvim-lua/plenary.nvim")
+    use("windwp/nvim-autopairs")
     use("b3nj5m1n/kommentary")
     use("kyazdani42/nvim-web-devicons")
     use("kyazdani42/nvim-tree.lua")
     use("akinsho/bufferline.nvim")
-    use("moll/vim-bbye")
     use("gmr458/lualine.nvim")
     use("akinsho/toggleterm.nvim")
-    use("ahmedkhalf/project.nvim")
-    use("lewis6991/impatient.nvim")
-    use("antoinemadec/FixCursorHold.nvim") -- This is needed to fix lsp doc highlight
 
     -- Colorschemes
     use({
         "gmr458/gruvbox.nvim",
         requires = { "rktjmp/lush.nvim" },
-    })
-    use({
-        "catppuccin/nvim",
-        as = "catppuccin",
     })
 
     -- cmp plugins
@@ -82,7 +70,6 @@ return packer.startup(function(use)
     use("neovim/nvim-lspconfig") -- enable LSP
     use("williamboman/nvim-lsp-installer") -- simple to use language server installer
     use("tamago324/nlsp-settings.nvim") -- language server settings defined in json for
-    use("onsails/lspkind-nvim")
     use({ "tami5/lspsaga.nvim", branch = "nvim6.0" })
 
     -- Telescope
@@ -93,7 +80,6 @@ return packer.startup(function(use)
         "nvim-treesitter/nvim-treesitter",
         run = ":TSUpdate",
     })
-    use("JoosepAlviste/nvim-ts-context-commentstring")
 
     -- format code
     use("mhartington/formatter.nvim")
@@ -101,8 +87,7 @@ return packer.startup(function(use)
     -- Git
     use("lewis6991/gitsigns.nvim")
 
-    -- Automatically set up your configuration after cloning packer.nvim
-    -- Put this at the end after all plugins
+    -- Automatically set up the configuration after cloning packer.nvim
     if PACKER_BOOTSTRAP then
         require("packer").sync()
     end
