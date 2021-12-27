@@ -27,6 +27,7 @@ local close_terminal = function(term)
     vim.api.nvim_buf_set_keymap(term.bufnr, "n", "q", "<cmd>close<CR>", opts)
 end
 
+-- Node.js
 local node = Terminal:new({
     cmd = "node",
     hidden = true,
@@ -39,6 +40,7 @@ function _NODE_TOGGLE()
     node:toggle()
 end
 
+-- Deno
 local deno = Terminal:new({
     cmd = "deno repl",
     hidden = true,
@@ -51,6 +53,7 @@ function _DENO_TOGGLE()
     deno:toggle()
 end
 
+-- btop
 local btop = Terminal:new({
     cmd = "btop",
     hidden = true,
@@ -63,8 +66,15 @@ function _BTOP_TOGGLE()
     btop:toggle()
 end
 
+-- Python
+local cmd_python = "python"
+
+if vim.fn.has("unix") == 1 then
+    cmd_python = "python3"
+end
+
 local python = Terminal:new({
-    cmd = "python3",
+    cmd = cmd_python,
     hidden = true,
     on_open = function(term)
         close_terminal(term)
