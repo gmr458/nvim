@@ -37,3 +37,7 @@ telescope.setup({
     },
     extensions = {},
 })
+
+if vim.fn.has("unix") == 1 then
+    telescope.load_extension("media_files")
+end
