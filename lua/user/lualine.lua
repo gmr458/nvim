@@ -15,7 +15,7 @@ lualine.setup({
         lualine_a = { "mode" },
         lualine_b = { "filename" },
         lualine_c = {
-            { "branch", icon = "" },
+            { "branch", icon = "" },
             {
                 "diff",
                 symbols = { added = "+", modified = "~", removed = "-" },
