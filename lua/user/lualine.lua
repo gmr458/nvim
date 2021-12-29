@@ -28,7 +28,7 @@ lualine.setup({
                 sections = { "error", "warn", "info", "hint" },
             },
         },
-        lualine_y = { "location" },
+        lualine_y = { "filetype", "location" },
         lualine_z = { "progress" },
     },
     inactive_sections = {
