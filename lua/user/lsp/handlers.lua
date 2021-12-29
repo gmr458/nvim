@@ -14,10 +14,8 @@ M.setup = function()
     end
 
     local config = {
-        virtual_text = {
-            prefix = ""
-        },
-        signs = false,
+        virtual_text = false,
+        signs = true,
         underline = true,
         update_in_insert = false,
         severity_sort = false,
@@ -98,5 +96,10 @@ if not status_ok then
 end
 
 M.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
+
+-- You will likely want to reduce updatetime which affects CursorHold
+-- note: this setting is global and should be set only once
+vim.o.updatetime = 25
+vim.cmd([[autocmd CursorHold,CursorHoldI * lua require("lspsaga.diagnostic").show_line_diagnostics()]])
 
 return M
