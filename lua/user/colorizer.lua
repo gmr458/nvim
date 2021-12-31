@@ -9,4 +9,5 @@ colorizer.setup({
     "javascript",
     "json",
     "jsonc",
+    "lua",
 })
