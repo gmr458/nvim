@@ -7,4 +7,6 @@ colorizer.setup({
     "html",
     "css",
     "javascript",
+    "json",
+    "jsonc",
 })
