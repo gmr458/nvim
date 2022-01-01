@@ -57,3 +57,5 @@ vim.cmd([[
         autocmd VimLeave * set guicursor=a:hor20
     augroup END
 ]])
+vim.cmd("au BufRead,BufNewFile tsconfig.json set filetype=jsonc")
+vim.g.vim_json_warnings = false
