@@ -50,10 +50,7 @@ return packer.startup(function(use)
     use("norcalli/nvim-colorizer.lua")
 
     -- Colorschemes
-    use({
-        "gmr458/gruvbox.nvim",
-        requires = { "rktjmp/lush.nvim" },
-    })
+    use("gmr458/gruvbox.nvim")
 
     -- cmp plugins
     use("hrsh7th/nvim-cmp") -- The completion plugin
