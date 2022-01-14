@@ -15,32 +15,32 @@ local check_backspace = function()
     return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
 end
 
-local cmp_kinds = {
-    Text = "  ",
-    Method = "  ",
-    Function = "  ",
-    Constructor = "  ",
-    Field = "  ",
-    Variable = "  ",
-    Class = "  ",
-    Interface = "  ",
-    Module = "  ",
-    Property = "  ",
-    Unit = "  ",
-    Value = "  ",
-    Enum = "  ",
-    Keyword = "  ",
-    Snippet = "  ",
-    Color = "  ",
-    File = "  ",
-    Reference = "  ",
-    Folder = "  ",
-    EnumMember = "  ",
-    Constant = "  ",
-    Struct = "  ",
-    Event = "  ",
-    Operator = "  ",
-    TypeParameter = "  ",
+local lspkindicons = {
+    Text = "",
+    Method = "",
+    Function = "",
+    Constructor = "",
+    Field = "",
+    Variable = "",
+    Class = "ﴯ",
+    Interface = "",
+    Module = "",
+    Property = "ﰠ",
+    Unit = "",
+    Value = "",
+    Enum = "",
+    Keyword = "",
+    Snippet = "",
+    Color = "",
+    File = "",
+    Reference = "",
+    Folder = "",
+    EnumMember = "",
+    Constant = "",
+    Struct = "",
+    Event = "",
+    Operator = "",
+    TypeParameter = "",
 }
 
 cmp.setup({
@@ -88,8 +88,8 @@ cmp.setup({
         }),
     },
     formatting = {
-        format = function(_, vim_item)
-            vim_item.kind = (cmp_kinds[vim_item.kind] or "") .. vim_item.kind
+        format = function(entry, vim_item)
+            vim_item.kind = string.format("%s %s", lspkindicons[vim_item.kind], vim_item.kind)
             return vim_item
         end,
     },
