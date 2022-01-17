@@ -166,6 +166,11 @@ local schemas = {
         fileMatch = { "resume.json" },
         url = "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
     },
+    {
+        description = "Configuration file for Deno",
+        fileMatch = { "deno.json", "deno.jsonc" },
+        url = "https://raw.githubusercontent.com/denoland/deno/main/cli/schemas/config-file.v1.json",
+    },
 }
 
 local function extend(tab1, tab2)
@@ -178,7 +183,7 @@ end
 local extended_schemas = extend(schemas, default_schemas)
 
 local opts = {
-    filetypes = {"json", "jsonc"},
+    filetypes = { "json", "jsonc" },
     settings = {
         json = {
             schemas = extended_schemas,
