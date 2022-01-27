@@ -14,6 +14,7 @@ telescope.setup({
             "--column",
             "--smart-case",
         },
+        prompt_prefix = "   ",
         layout_config = {
             preview_width = 0.7,
             width = 0.9,
