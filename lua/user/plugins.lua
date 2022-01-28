@@ -51,6 +51,10 @@ return packer.startup(function(use)
 
     -- Colorschemes
     use("gmr458/gruvbox.nvim")
+    use({
+        "catppuccin/nvim",
+        as = "catppuccin",
+    })
 
     -- cmp plugins
     use("hrsh7th/nvim-cmp") -- The completion plugin
