@@ -3,7 +3,7 @@ local options = {
     backspace = "indent,eol,start",
     backup = false,
     clipboard = "unnamedplus",
-    cmdheight = 2,
+    cmdheight = 1,
     completeopt = { "menuone", "noselect" },
     conceallevel = 0,
     cursorline = false,
@@ -18,7 +18,7 @@ local options = {
     incsearch = true,
     mouse = "a",
     number = true,
-    numberwidth = 2,
+    -- numberwidth = 2,
     omnifunc = "syntaxcomplete#Complete",
     pumheight = 10,
     relativenumber = true,
@@ -47,15 +47,4 @@ for k, v in pairs(options) do
 end
 
 vim.opt.shortmess:append("c")
-
-vim.cmd("set whichwrap+=<,>,[,],h,l")
-vim.cmd([[set iskeyword+=-]])
-vim.cmd([[set formatoptions-=cro]])
-vim.cmd([[
-    augroup RestoreCursorShapeOnExit
-        autocmd!
-        autocmd VimLeave * set guicursor=a:hor20
-    augroup END
-]])
-vim.cmd("au BufRead,BufNewFile tsconfig.json set filetype=jsonc")
 vim.g.vim_json_warnings = false
