@@ -50,11 +50,19 @@ return packer.startup(function(use)
     use("norcalli/nvim-colorizer.lua")
 
     -- Colorschemes
-    use("gmr458/gruvbox.nvim")
     use({
         "catppuccin/nvim",
         as = "catppuccin",
     })
+    use("rebelot/kanagawa.nvim")
+    use("marko-cerovac/material.nvim")
+    use("navarasu/onedark.nvim")
+    use("tiagovla/tokyodark.nvim")
+    use("Mofiqul/dracula.nvim")
+    use("yashguptaz/calvera-dark.nvim")
+    use("projekt0n/github-nvim-theme")
+    use("folke/tokyonight.nvim")
+    use("olimorris/onedarkpro.nvim")
 
     -- cmp plugins
     use("hrsh7th/nvim-cmp") -- The completion plugin

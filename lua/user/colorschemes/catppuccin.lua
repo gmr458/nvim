@@ -8,10 +8,10 @@ catppuccin.setup({
     term_colors = true,
     styles = {
         comments = "italic",
-        functions = "NONE",
+        functions = "none",
         keywords = "italic",
-        strings = "NONE",
-        variables = "NONE",
+        strings = "none",
+        variables = "none",
     },
     integrations = {
         treesitter = true,
