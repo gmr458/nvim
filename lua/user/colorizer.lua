@@ -4,10 +4,11 @@ if not status_ok then
 end
 
 colorizer.setup({
-    "html",
     "css",
+    "html",
     "javascript",
     "json",
     "jsonc",
     "lua",
+    "yaml",
 })
