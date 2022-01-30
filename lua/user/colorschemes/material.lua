@@ -7,6 +7,10 @@ material.setup({
     contrast = {
         sidebars = true,
     },
+    italics = {
+        comments = true,
+        keywords = true,
+    },
     custom_highlights = {
         NvimTreeVertSplit = { bg = "#090B10" },
         StatusLineNC = { bg = "#090B10" },
