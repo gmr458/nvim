@@ -22,7 +22,7 @@ telescope.setup({
         },
         prompt_title = false,
         file_ignore_patterns = {
-            ".git",
+            ".git/",
             "node_modules",
             "dist",
             "build",
