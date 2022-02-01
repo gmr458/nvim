@@ -1,7 +1,7 @@
 require("user.options")
 require("user.keymaps")
 require("user.plugins")
-require("user.colorschemes.material")
+require("user.colorschemes.kanagawa")
 require("user.cmp")
 require("user.lsp")
 require("user.telescope")

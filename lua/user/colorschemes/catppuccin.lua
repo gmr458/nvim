@@ -9,7 +9,7 @@ catppuccin.setup({
     styles = {
         comments = "italic",
         functions = "none",
-        keywords = "italic",
+        keywords = "none",
         strings = "none",
         variables = "none",
     },
