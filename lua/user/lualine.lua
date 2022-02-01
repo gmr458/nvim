@@ -6,7 +6,7 @@ end
 lualine.setup({
     options = {
         icons_enabled = true,
-        theme = "material-stealth",
+        theme = "kanagawa",
         section_separators = "",
         component_separators = "",
         disabled_filetypes = { "NvimTree", "packer", "toggleterm" },
