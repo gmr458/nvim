@@ -3,6 +3,19 @@ if not status_ok then
     return
 end
 
+local config_extensions = {}
+
+if vim.fn.has("win32") ~= 1 then
+    config_extensions = {
+        fzf = {
+            fuzzy = true,
+            override_generic_sorter = true,
+            override_file_sorter = true,
+            case_mode = "smart_case",
+        },
+    }
+end
+
 telescope.setup({
     defaults = {
         vimgrep_arguments = {
@@ -20,6 +33,7 @@ telescope.setup({
             width = 0.9,
             height = 0.9,
         },
+        borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
         prompt_title = false,
         file_ignore_patterns = {
             ".git/",
@@ -37,5 +51,11 @@ telescope.setup({
         set_env = { ["COLORTERM"] = "truecolor" },
         path_display = { "shorten" },
     },
-    extensions = {},
+    extensions = config_extensions,
 })
+
+if vim.fn.has("win32") ~= 1 then
+    telescope.load_extension("fzf")
+    telescope.load_extension("file_browser")
+    telescope.load_extension("media_files")
+end
