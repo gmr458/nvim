@@ -18,32 +18,6 @@ formatter.setup({
                 return { exe = "prettier", args = { "--stdin-filepath", vim.api.nvim_buf_get_name(0), "--tab-width 4" }, stdin = true }
             end,
         },
-        java = {
-            -- google-java-format
-            function()
-                return {
-                    exe = "java",
-                    args = {
-                        "--add-exports",
-                        "jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED",
-                        "--add-exports",
-                        "jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED",
-                        "--add-exports",
-                        "jdk.compiler/com.sun.tools.javac.parser=ALL-UNNAMED",
-                        "--add-exports",
-                        "jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED",
-                        "--add-exports",
-                        "jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED",
-                        "-jar",
-                        "~/.bin/google-java-format-1.13.0-all-deps.jar",
-                        "--replace",
-                        "--aosp",
-                        vim.api.nvim_buf_get_name(0),
-                    },
-                    stdin = false,
-                }
-            end,
-        },
         javascript = {
             -- prettier
             function()
