@@ -53,9 +53,9 @@ formatter.setup({
             end,
         },
         python = {
-            -- autopep8
+            -- black
             function()
-                return { exe = "autopep8", args = { vim.api.nvim_buf_get_name(0) }, stdin = true }
+                return { exe = "black", args = { vim.api.nvim_buf_get_name(0) }, stdin = false }
             end,
         },
         rust = {
