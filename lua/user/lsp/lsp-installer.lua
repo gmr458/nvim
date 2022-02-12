@@ -26,11 +26,6 @@ lsp_installer.on_server_ready(function(server)
         opts = vim.tbl_deep_extend("force", tsserver_opts, opts)
     end
 
-    if server.name == "denols" then
-        local denols_opts = require("user.lsp.settings.denols")
-        opts = vim.tbl_deep_extend("force", denols_opts, opts)
-    end
-
     if server.name == "eslint" then
         local eslint_opts = require("user.lsp.settings.eslint")
         opts = vim.tbl_deep_extend("force", eslint_opts, opts)
