@@ -15,7 +15,7 @@ formatter.setup({
         html = {
             -- prettier
             function()
-                return { exe = "prettier", args = { "--stdin-filepath", vim.api.nvim_buf_get_name(0), "--tab-width 4" }, stdin = true }
+                return { exe = "prettier", args = { "--stdin-filepath", vim.api.nvim_buf_get_name(0), "--tab-width 4", "--print-width 120" }, stdin = true }
             end,
         },
         javascript = {
