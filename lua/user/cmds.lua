@@ -11,7 +11,4 @@ vim.cmd("au BufRead,BufNewFile tsconfig.json set filetype=jsonc")
 vim.cmd("let &fcs='eob: '")
 vim.cmd("hi SignColumn guibg=none")
 vim.cmd([[set fillchars+=vert:\ ]])
-vim.cmd([[
-  autocmd BufEnter,BufWinEnter,WinEnter,CmdwinEnter *
-    \ let &laststatus = bufname('%') == "NvimTree" || bufname('%') == "" || &filetype == "toggleterm" ? 0 : 2
-]])
+vim.cmd([[set laststatus=0]])
