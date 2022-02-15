@@ -81,6 +81,7 @@ return packer.startup(function(use)
     use("williamboman/nvim-lsp-installer") -- simple to use language server installer
     use("tamago324/nlsp-settings.nvim") -- language server settings defined in json for
     use({ "tami5/lspsaga.nvim", branch = "nvim6.0" })
+    use("folke/trouble.nvim")
 
     -- Telescope
     use("nvim-telescope/telescope.nvim")
