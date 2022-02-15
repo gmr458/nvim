@@ -64,7 +64,7 @@ nvim_tree.setup({
         },
     },
     filters = {
-        custom = { ".git" },
+        custom = { ".git", "node_modules" },
     },
     view = {
         hide_root_folder = true,
