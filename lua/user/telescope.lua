@@ -3,19 +3,6 @@ if not status_ok then
     return
 end
 
-local config_extensions = {}
-
-if vim.fn.has("win32") ~= 1 then
-    config_extensions = {
-        fzf = {
-            fuzzy = true,
-            override_generic_sorter = true,
-            override_file_sorter = true,
-            case_mode = "smart_case",
-        },
-    }
-end
-
 telescope.setup({
     defaults = {
         vimgrep_arguments = {
@@ -51,7 +38,6 @@ telescope.setup({
         set_env = { ["COLORTERM"] = "truecolor" },
         path_display = { "shorten" },
     },
-    extensions = config_extensions,
 })
 
 if vim.fn.has("win32") ~= 1 then
