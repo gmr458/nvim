@@ -4,6 +4,7 @@ local options = {
     backup = false,
     clipboard = "unnamedplus",
     cmdheight = 1,
+    colorcolumn = "80",
     completeopt = { "menuone", "noselect" },
     conceallevel = 0,
     cursorline = false,
