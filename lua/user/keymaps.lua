@@ -66,6 +66,7 @@ keymap("n", "tff", "<cmd>lua require('telescope.builtin').find_files()<cr>", opt
 keymap("n", "tfg", "<cmd>lua require('telescope.builtin').live_grep()<cr>", opts)
 keymap("n", "<space>fb", ":Telescope file_browser<CR>", { noremap = true })
 keymap("n", "<space>mf", ":Telescope media_files<CR>", { noremap = true })
+keymap("n", "<space>tb", ":Telescope buffers<CR>", { noremap = true })
 
 -- Nvim Tree
 keymap("n", "<C-n>", ":NvimTreeToggle<CR>", opts)
