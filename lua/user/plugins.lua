@@ -48,6 +48,7 @@ return packer.startup(function(use)
     use("gmr458/lualine.nvim")
     use("akinsho/toggleterm.nvim")
     use("norcalli/nvim-colorizer.lua")
+    use("lukas-reineke/virt-column.nvim")
 
     -- Colorschemes
     use({
