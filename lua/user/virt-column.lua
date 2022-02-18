@@ -6,3 +6,5 @@ end
 virt_column.setup({
     char = "│",
 })
+
+vim.cmd([[highlight VirtColumn guifg=#101019]])
