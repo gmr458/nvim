@@ -6,6 +6,12 @@ end
 formatter.setup({
     logging = false,
     filetype = {
+        css = {
+            -- prettier
+            function()
+                return { exe = "prettier", args = { "--stdin-filepath", vim.api.nvim_buf_get_name(0), "--tab-width 4" }, stdin = true }
+            end,
+        },
         go = {
             -- gofmt
             function()
