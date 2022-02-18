@@ -20,7 +20,16 @@ telescope.setup({
             width = 0.9,
             height = 0.9,
         },
-        borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
+        borderchars = {
+            "─",
+            "│",
+            "─",
+            "│",
+            "┌",
+            "┐",
+            "┘",
+            "└",
+        },
         prompt_title = false,
         file_ignore_patterns = {
             ".git/",
