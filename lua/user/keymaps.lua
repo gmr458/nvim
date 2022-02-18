@@ -62,8 +62,18 @@ keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 -- Telescope
-keymap("n", "tff", "<cmd>lua require('telescope.builtin').find_files()<cr>", opts)
-keymap("n", "tfg", "<cmd>lua require('telescope.builtin').live_grep()<cr>", opts)
+keymap(
+    "n",
+    "tff",
+    "<cmd>lua require('telescope.builtin').find_files()<cr>",
+    opts
+)
+keymap(
+    "n",
+    "tfg",
+    "<cmd>lua require('telescope.builtin').live_grep()<cr>",
+    opts
+)
 keymap("n", "<space>fb", ":Telescope file_browser<CR>", { noremap = true })
 keymap("n", "<space>mf", ":Telescope media_files<CR>", { noremap = true })
 keymap("n", "<space>tb", ":Telescope buffers<CR>", { noremap = true })
@@ -82,12 +92,42 @@ vim.cmd([[nnoremap <silent> <A-d> :ToggleTerm<CR>]])
 vim.cmd([[tnoremap <silent> <A-d> <C-\><C-n>:ToggleTerm<CR>]])
 
 -- Trouble
-vim.api.nvim_set_keymap("n", "<leader>xx", "<cmd>Trouble<cr>", { silent = true, noremap = true })
-vim.api.nvim_set_keymap("n", "<leader>xw", "<cmd>Trouble workspace_diagnostics<cr>", { silent = true, noremap = true })
-vim.api.nvim_set_keymap("n", "<leader>xd", "<cmd>Trouble document_diagnostics<cr>", { silent = true, noremap = true })
-vim.api.nvim_set_keymap("n", "<leader>xl", "<cmd>Trouble loclist<cr>", { silent = true, noremap = true })
-vim.api.nvim_set_keymap("n", "<leader>xq", "<cmd>Trouble quickfix<cr>", { silent = true, noremap = true })
-vim.api.nvim_set_keymap("n", "gR", "<cmd>Trouble lsp_references<cr>", { silent = true, noremap = true })
+vim.api.nvim_set_keymap(
+    "n",
+    "<leader>xx",
+    "<cmd>Trouble<cr>",
+    { silent = true, noremap = true }
+)
+vim.api.nvim_set_keymap(
+    "n",
+    "<leader>xw",
+    "<cmd>Trouble workspace_diagnostics<cr>",
+    { silent = true, noremap = true }
+)
+vim.api.nvim_set_keymap(
+    "n",
+    "<leader>xd",
+    "<cmd>Trouble document_diagnostics<cr>",
+    { silent = true, noremap = true }
+)
+vim.api.nvim_set_keymap(
+    "n",
+    "<leader>xl",
+    "<cmd>Trouble loclist<cr>",
+    { silent = true, noremap = true }
+)
+vim.api.nvim_set_keymap(
+    "n",
+    "<leader>xq",
+    "<cmd>Trouble quickfix<cr>",
+    { silent = true, noremap = true }
+)
+vim.api.nvim_set_keymap(
+    "n",
+    "gR",
+    "<cmd>Trouble lsp_references<cr>",
+    { silent = true, noremap = true }
+)
 
 -- jvim
 keymap("n", "<left>", ":lua require('jvim').to_parent()<CR>", opts)

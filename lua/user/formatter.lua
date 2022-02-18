@@ -9,7 +9,15 @@ formatter.setup({
         css = {
             -- prettier
             function()
-                return { exe = "prettier", args = { "--stdin-filepath", vim.api.nvim_buf_get_name(0), "--tab-width 4" }, stdin = true }
+                return {
+                    exe = "prettier",
+                    args = {
+                        "--stdin-filepath",
+                        vim.api.nvim_buf_get_name(0),
+                        "--tab-width 4",
+                    },
+                    stdin = true,
+                }
             end,
         },
         go = {
@@ -21,31 +29,72 @@ formatter.setup({
         html = {
             -- prettier
             function()
-                return { exe = "prettier", args = { "--stdin-filepath", vim.api.nvim_buf_get_name(0), "--tab-width 4", "--print-width 120" }, stdin = true }
+                return {
+                    exe = "prettier",
+                    args = {
+                        "--stdin-filepath",
+                        vim.api.nvim_buf_get_name(0),
+                        "--tab-width 4",
+                        "--print-width 120",
+                    },
+                    stdin = true,
+                }
             end,
         },
         javascript = {
             -- prettier
             function()
-                return { exe = "prettier", args = { "--stdin-filepath", vim.api.nvim_buf_get_name(0), "--tab-width 4" }, stdin = true }
+                return {
+                    exe = "prettier",
+                    args = {
+                        "--stdin-filepath",
+                        vim.api.nvim_buf_get_name(0),
+                        "--tab-width 4",
+                    },
+                    stdin = true,
+                }
             end,
         },
         javascriptreact = {
             -- prettier
             function()
-                return { exe = "prettier", args = { "--stdin-filepath", vim.api.nvim_buf_get_name(0), "--tab-width 4" }, stdin = true }
+                return {
+                    exe = "prettier",
+                    args = {
+                        "--stdin-filepath",
+                        vim.api.nvim_buf_get_name(0),
+                        "--tab-width 4",
+                    },
+                    stdin = true,
+                }
             end,
         },
         json = {
             -- prettier
             function()
-                return { exe = "prettier", args = { "--stdin-filepath", vim.api.nvim_buf_get_name(0), "--tab-width 4" }, stdin = true }
+                return {
+                    exe = "prettier",
+                    args = {
+                        "--stdin-filepath",
+                        vim.api.nvim_buf_get_name(0),
+                        "--tab-width 4",
+                    },
+                    stdin = true,
+                }
             end,
         },
         jsonc = {
             -- prettier
             function()
-                return { exe = "prettier", args = { "--stdin-filepath", vim.api.nvim_buf_get_name(0), "--tab-width 4" }, stdin = true }
+                return {
+                    exe = "prettier",
+                    args = {
+                        "--stdin-filepath",
+                        vim.api.nvim_buf_get_name(0),
+                        "--tab-width 4",
+                    },
+                    stdin = true,
+                }
             end,
         },
         lua = {
@@ -53,7 +102,14 @@ formatter.setup({
             function()
                 return {
                     exe = "stylua",
-                    args = { "--indent-type Spaces --indent-width 4 --line-endings Unix --quote-style ForceDouble" },
+                    args = {
+                        "--call-parentheses Always",
+                        "--column-width 80",
+                        "--indent-type Spaces",
+                        "--indent-width 4",
+                        "--line-endings Unix",
+                        "--quote-style ForceDouble",
+                    },
                     stdin = false,
                 }
             end,
@@ -61,25 +117,49 @@ formatter.setup({
         python = {
             -- black
             function()
-                return { exe = "black", args = { vim.api.nvim_buf_get_name(0) }, stdin = false }
+                return {
+                    exe = "black",
+                    args = { vim.api.nvim_buf_get_name(0) },
+                    stdin = false,
+                }
             end,
         },
         rust = {
             -- rustfmt
             function()
-                return { exe = "rustfmt", args = { "--emit=stdout" }, stdin = true }
+                return {
+                    exe = "rustfmt",
+                    args = { "--emit=stdout" },
+                    stdin = true,
+                }
             end,
         },
         typescript = {
             -- prettier
             function()
-                return { exe = "prettier", args = { "--stdin-filepath", vim.api.nvim_buf_get_name(0), "--tab-width 4" }, stdin = true }
+                return {
+                    exe = "prettier",
+                    args = {
+                        "--stdin-filepath",
+                        vim.api.nvim_buf_get_name(0),
+                        "--tab-width 4",
+                    },
+                    stdin = true,
+                }
             end,
         },
         typescriptreact = {
             -- prettier
             function()
-                return { exe = "prettier", args = { "--stdin-filepath", vim.api.nvim_buf_get_name(0), "--tab-width 4" }, stdin = true }
+                return {
+                    exe = "prettier",
+                    args = {
+                        "--stdin-filepath",
+                        vim.api.nvim_buf_get_name(0),
+                        "--tab-width 4",
+                    },
+                    stdin = true,
+                }
             end,
         },
     },

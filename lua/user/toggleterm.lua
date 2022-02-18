@@ -85,7 +85,27 @@ function _PYTHON_TOGGLE()
     python:toggle()
 end
 
-vim.api.nvim_set_keymap("n", "<leader>node", "<cmd>lua _NODE_TOGGLE()<CR>", opts)
-vim.api.nvim_set_keymap("n", "<leader>deno", "<cmd>lua _DENO_TOGGLE()<CR>", opts)
-vim.api.nvim_set_keymap("n", "<leader>btop", "<cmd>lua _BTOP_TOGGLE()<CR>", opts)
-vim.api.nvim_set_keymap("n", "<leader>py", "<cmd>lua _PYTHON_TOGGLE()<CR>", opts)
+vim.api.nvim_set_keymap(
+    "n",
+    "<leader>node",
+    "<cmd>lua _NODE_TOGGLE()<CR>",
+    opts
+)
+vim.api.nvim_set_keymap(
+    "n",
+    "<leader>deno",
+    "<cmd>lua _DENO_TOGGLE()<CR>",
+    opts
+)
+vim.api.nvim_set_keymap(
+    "n",
+    "<leader>btop",
+    "<cmd>lua _BTOP_TOGGLE()<CR>",
+    opts
+)
+vim.api.nvim_set_keymap(
+    "n",
+    "<leader>py",
+    "<cmd>lua _PYTHON_TOGGLE()<CR>",
+    opts
+)

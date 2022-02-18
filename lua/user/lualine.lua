@@ -16,7 +16,15 @@ lualine.setup({
         lualine_b = {
             { "branch", icon = "" },
             { "diff" },
-            { "diagnostics", symbols = { error = " ", warn = " ", info = " ", hint = " " } },
+            {
+                "diagnostics",
+                symbols = {
+                    error = " ",
+                    warn = " ",
+                    info = " ",
+                    hint = " ",
+                },
+            },
         },
         lualine_c = { "filename" },
         lualine_x = { "encoding", "fileformat", "filetype" },
