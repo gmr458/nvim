@@ -50,6 +50,7 @@ return packer.startup(function(use)
     use("norcalli/nvim-colorizer.lua")
     use("lukas-reineke/virt-column.nvim")
     use("ThePrimeagen/jvim.nvim")
+    use("b0o/SchemaStore.nvim")
 
     -- Colorschemes
     use({
