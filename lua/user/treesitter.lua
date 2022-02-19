@@ -20,6 +20,7 @@ configs.setup({
     },
     indent = {
         enable = true,
+        disable = { "go" },
     },
     context_commentstring = {
         enable = true,
