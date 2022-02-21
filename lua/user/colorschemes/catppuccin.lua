@@ -32,9 +32,7 @@ catppuccin.setup({
     },
 })
 
-local colors = require("catppuccin.api.colors").get_colors()
 catppuccin.remap({
-    NvimTreeVertSplit = { fg = colors.black1, bg = colors.black1 },
     ErrorMsg = { style = "NONE" },
     TSProperty = { style = "NONE" },
     TSInclude = { style = "italic" },
