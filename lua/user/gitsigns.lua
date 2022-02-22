@@ -36,4 +36,5 @@ gitsigns.setup({
             linehl = "GitSignsChangeLn",
         },
     },
+    attach_to_untracked = false,
 })
