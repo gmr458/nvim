@@ -51,6 +51,7 @@ return packer.startup(function(use)
     use("lukas-reineke/virt-column.nvim")
     use("ThePrimeagen/jvim.nvim")
     use("b0o/SchemaStore.nvim")
+    use("lukas-reineke/indent-blankline.nvim")
 
     -- Colorschemes
     use({
