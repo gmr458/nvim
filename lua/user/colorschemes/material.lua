@@ -11,10 +11,6 @@ material.setup({
         comments = true,
         keywords = true,
     },
-    custom_highlights = {
-        NvimTreeVertSplit = { bg = "#090B10" },
-        StatusLineNC = { bg = "#090B10" },
-    },
 })
 
 vim.g.material_style = "deep ocean"

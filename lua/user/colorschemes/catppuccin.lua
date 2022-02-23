@@ -33,6 +33,7 @@ catppuccin.setup({
 })
 
 catppuccin.remap({
+    NvimTreeVertSplit = { fg = "NONE", bg = "NONE" },
     ErrorMsg = { style = "NONE" },
     TSProperty = { style = "NONE" },
     TSInclude = { style = "italic" },
