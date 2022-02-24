@@ -9,7 +9,12 @@ lualine.setup({
         theme = "catppuccin",
         section_separators = "",
         component_separators = "",
-        disabled_filetypes = { "NvimTree", "packer", "toggleterm" },
+        disabled_filetypes = {
+            "NvimTree",
+            "packer",
+            "toggleterm",
+            "lsp-installer",
+        },
     },
     sections = {
         lualine_a = { "mode" },

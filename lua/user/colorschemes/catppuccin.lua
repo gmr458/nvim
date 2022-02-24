@@ -32,8 +32,20 @@ catppuccin.setup({
     },
 })
 
+local config = require("catppuccin.config").options
+local nvimtree = config.integrations.nvimtree
+local colors = require("catppuccin.api.colors").get_colors()
+
 catppuccin.remap({
-    NvimTreeVertSplit = { fg = "NONE", bg = "NONE" },
+    NvimTreeVertSplit = { bg = nvimtree.enabled and colors.black1 or "NONE" },
+    NvimTreeStatusLine = {
+        bg = nvimtree.enabled and colors.black1 or "none",
+        fg = nvimtree.enabled and colors.black1 or "none",
+    },
+    NvimTreeStatuslineNc = {
+        bg = nvimtree.enabled and colors.black1 or "none",
+        fg = nvimtree.enabled and colors.black1 or "none",
+    },
     ErrorMsg = { style = "NONE" },
     TSProperty = { style = "NONE" },
     TSInclude = { style = "italic" },

@@ -62,12 +62,7 @@ keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 -- Telescope
-keymap(
-    "n",
-    "tff",
-    ":Telescope find_files hidden=true no_ignore=true<CR>",
-    opts
-)
+keymap("n", "tff", ":Telescope find_files hidden=true no_ignore=true<CR>", opts)
 keymap(
     "n",
     "tfg",
