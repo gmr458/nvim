@@ -8,7 +8,7 @@ local colors = require("kanagawa.colors").setup()
 kanagawa.setup({
     undercurl = true,
     commentStyle = "italic",
-    functionStyle = "NONE",
+    functionStyle = "italic",
     keywordStyle = "italic",
     statementStyle = "italic",
     typeStyle = "NONE",
