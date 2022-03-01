@@ -31,11 +31,4 @@ git clone https://github.com/gmr458/dotfiles-neovim.git ~/.config/nvim
 
 3. For LSP servers I am using [nvim-lsp-installer](https://github.com/williamboman/nvim-lsp-installer)
 
-## Preview
-![screenshot1](./screenshots/screenshot1.png)
-
-![screenshot2](./screenshots/screenshot2.png)
-
-![screenshot3](./screenshots/screenshot3.png)
-
-![screenshot4](./screenshots/screenshot4.png)
+## [Click here to see screenshots](./PREVIEW.md)
