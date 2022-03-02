@@ -1,15 +1,5 @@
 vim.g.nvim_tree_indent_markers = 1
 vim.g.nvim_tree_group_empty = 1
-vim.g.nvim_tree_window_picker_exclude = {
-    filetype = {
-        "notify",
-        "packer",
-        "qf",
-    },
-    buftype = {
-        "terminal",
-    },
-}
 vim.g.nvim_tree_special_files = {}
 vim.g.nvim_tree_show_icons = {
     git = 1,
@@ -54,6 +44,9 @@ end
 local tree_cb = nvim_tree_config.nvim_tree_callback
 
 nvim_tree.setup({
+    disable_netrw = true,
+    ignore_buffer_on_setup = true,
+    hijack_cursor = true,
     filters = {
         custom = { ".git", "node_modules" },
     },
@@ -64,6 +57,18 @@ nvim_tree.setup({
             custom_only = false,
             list = {
                 { key = "s", cb = tree_cb("vsplit") },
+                { key = "z", cb = tree_cb("") },
+                { key = "m", cb = tree_cb("") },
+            },
+        },
+    },
+    actions = {
+        open_file = {
+            window_picker = {
+                exclude = {
+                    filetype = { "notify", "packer", "qf", "TelescopePrompt" },
+                    buftype = { "terminal" },
+                },
             },
         },
     },
