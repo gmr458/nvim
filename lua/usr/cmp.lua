@@ -1,9 +1,11 @@
 local cmp_status_ok, cmp = pcall(require, "cmp")
+
 if not cmp_status_ok then
     return
 end
 
 local snip_status_ok, luasnip = pcall(require, "luasnip")
+
 if not snip_status_ok then
     return
 end
@@ -107,9 +109,9 @@ cmp.setup({
         behavior = cmp.ConfirmBehavior.Replace,
         select = false,
     },
-    documentation = {
-        border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-    },
+    --[[ documentation = {
+        border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" },
+    }, ]]
     experimental = {
         ghost_text = false,
         native_menu = false,

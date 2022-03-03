@@ -32,11 +32,13 @@ vim.g.nvim_tree_icons = {
 }
 
 local status_ok, nvim_tree = pcall(require, "nvim-tree")
+
 if not status_ok then
     return
 end
 
 local config_status_ok, nvim_tree_config = pcall(require, "nvim-tree.config")
+
 if not config_status_ok then
     return
 end
@@ -45,16 +47,15 @@ local tree_cb = nvim_tree_config.nvim_tree_callback
 
 nvim_tree.setup({
     disable_netrw = true,
-    ignore_buffer_on_setup = true,
+    auto_close = true,
     hijack_cursor = true,
     filters = {
-        custom = { ".git", "node_modules" },
+        exclude = { ".git", "node_modules" },
     },
     view = {
         hide_root_folder = true,
-        auto_resize = true,
+        side = "right",
         mappings = {
-            custom_only = false,
             list = {
                 { key = "s", cb = tree_cb("vsplit") },
                 { key = "z", cb = tree_cb("") },
