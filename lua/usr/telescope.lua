@@ -1,4 +1,5 @@
 local status_ok, telescope = pcall(require, "telescope")
+
 if not status_ok then
     return
 end
@@ -30,7 +31,7 @@ telescope.setup({
             "┘",
             "└",
         },
-        prompt_title = false,
+        prompt_title = true,
         file_ignore_patterns = {
             ".git/",
             "node_modules/",
