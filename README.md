@@ -31,4 +31,6 @@ git clone https://github.com/gmr458/dotfiles-neovim.git ~/.config/nvim
 
 3. For LSP servers I am using [nvim-lsp-installer](https://github.com/williamboman/nvim-lsp-installer)
 
+This config is highly influenced by [LunarVim/Neovim-from-scratch](https://github.com/LunarVim/Neovim-from-scratch)
+
 ## [Click here to see screenshots](./PREVIEW.md)
