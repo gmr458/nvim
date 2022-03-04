@@ -50,7 +50,7 @@ nvim_tree.setup({
     auto_close = true,
     hijack_cursor = true,
     filters = {
-        exclude = { ".git", "node_modules" },
+        custom = { ".git", "node_modules" },
     },
     view = {
         hide_root_folder = true,
