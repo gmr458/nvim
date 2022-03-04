@@ -10,7 +10,7 @@ if not snip_status_ok then
     return
 end
 
-require("luasnip/loaders/from_vscode").lazy_load()
+require("luasnip.loaders.from_vscode").load()
 
 local check_backspace = function()
     local col = vim.fn.col(".") - 1
@@ -52,6 +52,8 @@ cmp.setup({
         end,
     },
     mapping = {
+        ["<S-k>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
+        ["<S-j>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
         ["<C-k>"] = cmp.mapping.select_prev_item(),
         ["<C-j>"] = cmp.mapping.select_next_item(),
         ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
@@ -111,10 +113,6 @@ cmp.setup({
     },
     documentation = {
         border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" },
-    },
-    experimental = {
-        ghost_text = false,
-        native_menu = false,
     },
 })
 
