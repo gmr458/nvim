@@ -26,14 +26,25 @@ M.setup = function()
 
     vim.diagnostic.config(config)
 
+    local borderchars = {
+        "┌",
+        "─",
+        "┐",
+        "│",
+        "┘",
+        "─",
+        "└",
+        "│",
+    }
+
     vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
         vim.lsp.handlers.hover,
-        {}
+        { border = borderchars }
     )
 
     vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
         vim.lsp.handlers.signature_help,
-        {}
+        { border = borderchars }
     )
 end
 

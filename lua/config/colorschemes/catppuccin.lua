@@ -36,7 +36,11 @@ local nvimtree = config.integrations.nvimtree
 local colors = require("catppuccin.api.colors").get_colors()
 
 catppuccin.remap({
-    NvimTreeVertSplit = { bg = nvimtree.enabled and colors.black1 or "NONE" },
+    bashTSFuncBuiltin = { style = "NONE" },
+    bashTSParameter = { style = "NONE" },
+    cssTSProperty = { style = "NONE" },
+    ErrorMsg = { style = "NONE" },
+    NormalFloat = { bg = colors.black2 },
     NvimTreeStatusLine = {
         bg = nvimtree.enabled and colors.black1 or "none",
         fg = nvimtree.enabled and colors.black1 or "none",
@@ -45,7 +49,7 @@ catppuccin.remap({
         bg = nvimtree.enabled and colors.black1 or "none",
         fg = nvimtree.enabled and colors.black1 or "none",
     },
-    ErrorMsg = { style = "NONE" },
+    NvimTreeVertSplit = { bg = nvimtree.enabled and colors.black1 or "NONE" },
     TSProperty = { style = "NONE" },
     TSInclude = { style = "italic" },
     TSOperator = { style = "NONE" },
@@ -75,10 +79,7 @@ catppuccin.remap({
     TSLiteral = { style = "italic" },
     TSEmphasis = { style = "NONE" },
     TSStringEscape = { style = "NONE" },
-    bashTSFuncBuiltin = { style = "NONE" },
-    bashTSParameter = { style = "NONE" },
     typescriptTSProperty = { style = "NONE" },
-    cssTSProperty = { style = "NONE" },
 })
 
 vim.cmd([[colorscheme catppuccin]])
