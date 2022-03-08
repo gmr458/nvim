@@ -17,9 +17,9 @@ M.setup = function()
     end
 
     local config = {
-        virtual_text = false,
-        signs = true,
-        underline = true,
+        virtual_text = true,
+        signs = false,
+        underline = false,
         update_in_insert = false,
         severity_sort = false,
     }
@@ -55,6 +55,34 @@ end
 
 local function lsp_keymaps(bufnr)
     local opts = { noremap = true, silent = true }
+    vim.api.nvim_buf_set_keymap(
+        bufnr,
+        "n",
+        "<space>e",
+        "<cmd>lua vim.diagnostic.open_float()<CR>",
+        opts
+    )
+    vim.api.nvim_buf_set_keymap(
+        bufnr,
+        "n",
+        "[d",
+        "<cmd>lua vim.diagnostic.goto_prev()<CR>",
+        opts
+    )
+    vim.api.nvim_buf_set_keymap(
+        bufnr,
+        "n",
+        "]d",
+        "<cmd>lua vim.diagnostic.goto_next()<CR>",
+        opts
+    )
+    vim.api.nvim_buf_set_keymap(
+        bufnr,
+        "n",
+        "<space>q",
+        "<cmd>lua vim.diagnostic.setloclist()<CR>",
+        opts
+    )
     vim.api.nvim_buf_set_keymap(
         bufnr,
         "n",
@@ -125,7 +153,7 @@ local function lsp_keymaps(bufnr)
         "<cmd>lua vim.lsp.buf.rename()<CR>",
         opts
     )
-    --[[ vim.api.nvim_buf_set_keymap(
+    vim.api.nvim_buf_set_keymap(
         bufnr,
         "n",
         "<space>ca",
@@ -138,133 +166,12 @@ local function lsp_keymaps(bufnr)
         "gr",
         "<cmd>lua vim.lsp.buf.references()<CR>",
         opts
-    ) ]]
-    vim.api.nvim_buf_set_keymap(
-        bufnr,
-        "n",
-        "<space>e",
-        "<cmd>lua vim.diagnostic.open_float()<CR>",
-        opts
-    )
-    vim.api.nvim_buf_set_keymap(
-        bufnr,
-        "n",
-        "[d",
-        "<cmd>lua vim.diagnostic.goto_prev()<CR>",
-        opts
-    )
-    vim.api.nvim_buf_set_keymap(
-        bufnr,
-        "n",
-        "]d",
-        "<cmd>lua vim.diagnostic.goto_next()<CR>",
-        opts
-    )
-    vim.api.nvim_buf_set_keymap(
-        bufnr,
-        "n",
-        "<space>q",
-        "<cmd>lua vim.diagnostic.setloclist()<CR>",
-        opts
     )
     vim.api.nvim_buf_set_keymap(
         bufnr,
         "n",
         "<space>f",
         "<cmd>lua vim.lsp.buf.formatting()<CR>",
-        opts
-    )
-    vim.api.nvim_buf_set_keymap(
-        bufnr,
-        "n",
-        "gl",
-        "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>",
-        opts
-    )
-
-    -- lspsaga
-    vim.api.nvim_buf_set_keymap(
-        bufnr,
-        "n",
-        "gr",
-        "<cmd>Lspsaga rename<CR>",
-        opts
-    )
-    vim.api.nvim_buf_set_keymap(
-        bufnr,
-        "n",
-        "<space>ca",
-        "<cmd>Lspsaga code_action<CR>",
-        opts
-    )
-    vim.api.nvim_buf_set_keymap(
-        bufnr,
-        "x",
-        "gx",
-        ":<c-u>Lspsaga range_code_action<CR>",
-        opts
-    )
-    vim.api.nvim_buf_set_keymap(
-        bufnr,
-        "n",
-        "K",
-        "<cmd>Lspsaga hover_doc<CR>",
-        opts
-    )
-    vim.api.nvim_buf_set_keymap(
-        bufnr,
-        "n",
-        "<space>ld",
-        "<cmd>Lspsaga show_line_diagnostics<CR>",
-        opts
-    )
-    vim.api.nvim_buf_set_keymap(
-        bufnr,
-        "n",
-        "gj",
-        "<cmd>Lspsaga diagnostic_jump_next<CR>",
-        opts
-    )
-    vim.api.nvim_buf_set_keymap(
-        bufnr,
-        "n",
-        "gk",
-        "<cmd>Lspsaga diagnostic_jump_prev<CR>",
-        opts
-    )
-    vim.api.nvim_buf_set_keymap(
-        bufnr,
-        "n",
-        "<C-u>",
-        "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>",
-        opts
-    )
-    vim.api.nvim_buf_set_keymap(
-        bufnr,
-        "n",
-        "<C-d>",
-        "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>",
-        opts
-    )
-    vim.api.nvim_buf_set_keymap(
-        bufnr,
-        "n",
-        "gh",
-        "<cmd>Lspsaga lsp_finder<CR>",
-        opts
-    )
-    vim.api.nvim_buf_set_keymap(
-        bufnr,
-        "n",
-        "L",
-        "<cmd>Lspsaga signature_help<CR>",
-        opts
-    )
-    vim.api.nvim_buf_set_keymap(
-        bufnr,
-        "n",
-        "<space>pd",
-        "<cmd>Lspsaga preview_definition<CR>",
         opts
     )
 end
