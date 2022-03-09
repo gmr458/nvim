@@ -70,7 +70,7 @@ local function lsp_keymaps(bufnr)
         bufnr,
         "n",
         "<space>e",
-        "<cmd>lua vim.diagnostic.open_float()<CR>",
+        "<cmd>lua vim.diagnostic.open_float(nil, { border = { '┌' , '─' , '┐' , '│' , '┘' , '─' , '└' , '│' } })<CR>",
         opts
     )
     vim.api.nvim_buf_set_keymap(
