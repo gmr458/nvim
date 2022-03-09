@@ -1,3 +1,8 @@
+-- improve startup time
+require("impatient")
+require("filetype").setup({})
+
+-- options and configs
 require("config.options")
 require("config.keymaps")
 require("config.plugins")
