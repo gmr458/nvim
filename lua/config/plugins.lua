@@ -41,11 +41,9 @@ packer.init({
 return packer.startup(function(use)
     use("wbthomason/packer.nvim")
 
-    -- improve startup time
     use("lewis6991/impatient.nvim")
-    use("nathom/filetype.nvim")
+    -- use("nathom/filetype.nvim")
 
-    -- dependencies
     use("nvim-lua/popup.nvim")
     use("nvim-lua/plenary.nvim")
 
@@ -89,28 +87,16 @@ return packer.startup(function(use)
         config = "require('config.autopairs')",
     })
 
-    -- Treesitter
     use({
         "nvim-treesitter/nvim-treesitter",
         run = ":TSUpdate",
         event = "BufWinEnter",
         config = "require('config.treesitter')",
     })
-    use({
-        "p00f/nvim-ts-rainbow",
-        after = "nvim-treesitter",
-    })
+    use({ "p00f/nvim-ts-rainbow", after = "nvim-treesitter" })
     use({
         "norcalli/nvim-colorizer.lua",
-        ft = {
-            "css",
-            "html",
-            "javascript",
-            "json",
-            "jsonc",
-            "lua",
-            "yaml",
-        },
+        ft = { "css", "html", "javascript", "json", "jsonc", "lua", "yaml" },
         config = "require('config.colorizer')",
     })
     use({
@@ -119,7 +105,6 @@ return packer.startup(function(use)
         config = "require('config.indent-blankline')",
     })
 
-    -- Colorschemes
     use({
         "catppuccin/nvim",
         as = "catppuccin",
@@ -135,7 +120,6 @@ return packer.startup(function(use)
     use("folke/tokyonight.nvim")
     use("olimorris/onedarkpro.nvim")
 
-    -- Telescope
     use({
         "nvim-telescope/telescope.nvim",
         cmd = "Telescope",
@@ -145,23 +129,33 @@ return packer.startup(function(use)
     use("nvim-telescope/telescope-file-browser.nvim")
     use("nvim-telescope/telescope-media-files.nvim")
 
-    -- cmp plugins
-    use("hrsh7th/nvim-cmp") -- The completion plugin
-    use("hrsh7th/cmp-buffer") -- buffer completions
-    use("hrsh7th/cmp-path") -- path completions
-    use("hrsh7th/cmp-cmdline") -- cmdline completions
-    use("saadparwaiz1/cmp_luasnip") -- snippet completions
-    use("hrsh7th/cmp-nvim-lsp") -- lsp completions
+    use({ "neovim/nvim-lspconfig", config = "require('config.lsp')" })
+    use({ "williamboman/nvim-lsp-installer", requires = "nvim-lspconfig" })
+    use({ "tamago324/nlsp-settings.nvim", after = "nvim-lspconfig" })
+    use({
+        "folke/trouble.nvim",
+        cmd = "Trouble",
+        config = "require('config.trouble')",
+    })
 
-    -- LSP
-    use("neovim/nvim-lspconfig") -- enable LSP
-    use("williamboman/nvim-lsp-installer") -- simple to use language server installer
-    use("tamago324/nlsp-settings.nvim") -- language server settings defined in json for
-    use("folke/trouble.nvim")
+    use({
+        "hrsh7th/nvim-cmp",
+        event = "InsertEnter",
+        requires = {
+            { "hrsh7th/cmp-nvim-lsp", after = "nvim-lspconfig" },
+            { "hrsh7th/cmp-buffer", after = "nvim-cmp" },
+            { "hrsh7th/cmp-path", after = "nvim-cmp" },
+            { "hrsh7th/cmp-cmdline", after = "nvim-cmp" },
+            { "saadparwaiz1/cmp_luasnip", after = "nvim-cmp" },
+        },
+        config = "require('config.cmp')",
+    })
 
-    -- snippets
-    use("L3MON4D3/LuaSnip") --snippet engine
-    use("rafamadriz/friendly-snippets") -- a bunch of snippets to use
+    use({
+        "L3MON4D3/LuaSnip",
+        event = "InsertEnter",
+        requires = "rafamadriz/friendly-snippets",
+    })
 
     -- Automatically set up the configuration after cloning packer.nvim
     if PACKER_BOOTSTRAP then
