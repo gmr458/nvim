@@ -39,21 +39,35 @@ packer.init({
 })
 
 return packer.startup(function(use)
+    use("wbthomason/packer.nvim")
+
+    -- improve startup time
     use("lewis6991/impatient.nvim")
     use("nathom/filetype.nvim")
-    use("wbthomason/packer.nvim")
+
+    -- dependencies
     use("nvim-lua/popup.nvim")
     use("nvim-lua/plenary.nvim")
-    use("windwp/nvim-autopairs")
-    use("b3nj5m1n/kommentary")
-    use("kyazdani42/nvim-web-devicons")
-    use("kyazdani42/nvim-tree.lua")
-    use("akinsho/bufferline.nvim")
+
     -- use("nvim-lualine/lualine.nvim")
-    use("akinsho/toggleterm.nvim")
-    use("norcalli/nvim-colorizer.lua")
     use("ThePrimeagen/jvim.nvim")
     use("b0o/SchemaStore.nvim")
+    use("kyazdani42/nvim-web-devicons")
+    use("kyazdani42/nvim-tree.lua")
+    use("b3nj5m1n/kommentary")
+    use("lewis6991/gitsigns.nvim")
+    use("akinsho/bufferline.nvim")
+    use("akinsho/toggleterm.nvim")
+    use("mhartington/formatter.nvim")
+
+    -- Treesitter
+    use({
+        "nvim-treesitter/nvim-treesitter",
+        run = ":TSUpdate",
+    })
+    use("p00f/nvim-ts-rainbow")
+    use("windwp/nvim-autopairs")
+    use("norcalli/nvim-colorizer.lua")
     use("lukas-reineke/indent-blankline.nvim")
 
     -- Colorschemes
@@ -71,6 +85,18 @@ return packer.startup(function(use)
     use("folke/tokyonight.nvim")
     use("olimorris/onedarkpro.nvim")
 
+    -- Telescope
+    use("nvim-telescope/telescope.nvim")
+    use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
+    use("nvim-telescope/telescope-file-browser.nvim")
+    use("nvim-telescope/telescope-media-files.nvim")
+
+    -- LSP
+    use("neovim/nvim-lspconfig") -- enable LSP
+    use("williamboman/nvim-lsp-installer") -- simple to use language server installer
+    use("tamago324/nlsp-settings.nvim") -- language server settings defined in json for
+    use("folke/trouble.nvim")
+
     -- cmp plugins
     use("hrsh7th/nvim-cmp") -- The completion plugin
     use("hrsh7th/cmp-buffer") -- buffer completions
@@ -82,31 +108,6 @@ return packer.startup(function(use)
     -- snippets
     use("L3MON4D3/LuaSnip") --snippet engine
     use("rafamadriz/friendly-snippets") -- a bunch of snippets to use
-
-    -- LSP
-    use("neovim/nvim-lspconfig") -- enable LSP
-    use("williamboman/nvim-lsp-installer") -- simple to use language server installer
-    use("tamago324/nlsp-settings.nvim") -- language server settings defined in json for
-    use("folke/trouble.nvim")
-
-    -- Telescope
-    use("nvim-telescope/telescope.nvim")
-    use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
-    use("nvim-telescope/telescope-file-browser.nvim")
-    use("nvim-telescope/telescope-media-files.nvim")
-
-    -- Treesitter
-    use({
-        "nvim-treesitter/nvim-treesitter",
-        run = ":TSUpdate",
-    })
-    use("p00f/nvim-ts-rainbow")
-
-    -- format code
-    use("mhartington/formatter.nvim")
-
-    -- Git
-    use("lewis6991/gitsigns.nvim")
 
     -- Automatically set up the configuration after cloning packer.nvim
     if PACKER_BOOTSTRAP then
