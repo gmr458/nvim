@@ -53,27 +53,77 @@ return packer.startup(function(use)
     use("ThePrimeagen/jvim.nvim")
     use("b0o/SchemaStore.nvim")
     use("kyazdani42/nvim-web-devicons")
-    use("kyazdani42/nvim-tree.lua")
-    use("b3nj5m1n/kommentary")
-    use("lewis6991/gitsigns.nvim")
-    use("akinsho/bufferline.nvim")
-    use("akinsho/toggleterm.nvim")
-    use("mhartington/formatter.nvim")
+    use({
+        "kyazdani42/nvim-tree.lua",
+        cmd = "NvimTreeToggle",
+        config = "require('config.nvim-tree')",
+    })
+    use({
+        "b3nj5m1n/kommentary",
+        event = "BufRead",
+        config = "require('config.kommentary')",
+    })
+    use({
+        "lewis6991/gitsigns.nvim",
+        event = "BufRead",
+        config = "require('config.gitsigns')",
+    })
+    use({
+        "akinsho/bufferline.nvim",
+        event = "BufWinEnter",
+        config = "require('config.bufferline')",
+    })
+    use({
+        "akinsho/toggleterm.nvim",
+        cmd = "ToggleTerm",
+        config = "require('config.toggleterm')",
+    })
+    use({
+        "mhartington/formatter.nvim",
+        cmd = { "Format", "FormatWrite" },
+        config = "require('config.formatter')",
+    })
+    use({
+        "windwp/nvim-autopairs",
+        after = "nvim-cmp",
+        config = "require('config.autopairs')",
+    })
 
     -- Treesitter
     use({
         "nvim-treesitter/nvim-treesitter",
         run = ":TSUpdate",
+        event = "BufWinEnter",
+        config = "require('config.treesitter')",
     })
-    use("p00f/nvim-ts-rainbow")
-    use("windwp/nvim-autopairs")
-    use("norcalli/nvim-colorizer.lua")
-    use("lukas-reineke/indent-blankline.nvim")
+    use({
+        "p00f/nvim-ts-rainbow",
+        after = "nvim-treesitter",
+    })
+    use({
+        "norcalli/nvim-colorizer.lua",
+        ft = {
+            "css",
+            "html",
+            "javascript",
+            "json",
+            "jsonc",
+            "lua",
+            "yaml",
+        },
+        config = "require('config.colorizer')",
+    })
+    use({
+        "lukas-reineke/indent-blankline.nvim",
+        event = "BufRead",
+        config = "require('config.indent-blankline')",
+    })
 
     -- Colorschemes
     use({
         "catppuccin/nvim",
         as = "catppuccin",
+        config = "require('config.colorschemes.catppuccin')",
     })
     use("rebelot/kanagawa.nvim")
     use("marko-cerovac/material.nvim")
@@ -86,16 +136,14 @@ return packer.startup(function(use)
     use("olimorris/onedarkpro.nvim")
 
     -- Telescope
-    use("nvim-telescope/telescope.nvim")
+    use({
+        "nvim-telescope/telescope.nvim",
+        cmd = "Telescope",
+        config = "require('config.telescope')",
+    })
     use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
     use("nvim-telescope/telescope-file-browser.nvim")
     use("nvim-telescope/telescope-media-files.nvim")
-
-    -- LSP
-    use("neovim/nvim-lspconfig") -- enable LSP
-    use("williamboman/nvim-lsp-installer") -- simple to use language server installer
-    use("tamago324/nlsp-settings.nvim") -- language server settings defined in json for
-    use("folke/trouble.nvim")
 
     -- cmp plugins
     use("hrsh7th/nvim-cmp") -- The completion plugin
@@ -104,6 +152,12 @@ return packer.startup(function(use)
     use("hrsh7th/cmp-cmdline") -- cmdline completions
     use("saadparwaiz1/cmp_luasnip") -- snippet completions
     use("hrsh7th/cmp-nvim-lsp") -- lsp completions
+
+    -- LSP
+    use("neovim/nvim-lspconfig") -- enable LSP
+    use("williamboman/nvim-lsp-installer") -- simple to use language server installer
+    use("tamago324/nlsp-settings.nvim") -- language server settings defined in json for
+    use("folke/trouble.nvim")
 
     -- snippets
     use("L3MON4D3/LuaSnip") --snippet engine
