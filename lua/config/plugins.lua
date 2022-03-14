@@ -108,15 +108,30 @@ return packer.startup(function(use)
     use({
         "catppuccin/nvim",
         as = "catppuccin",
-        config = "require('config.colorschemes.catppuccin')",
+        -- config = "require('config.colorschemes.catppuccin')",
     })
-    use("rebelot/kanagawa.nvim")
-    use("marko-cerovac/material.nvim")
-    use("navarasu/onedark.nvim")
+    use({
+        "rebelot/kanagawa.nvim",
+        -- config = "require('config.colorschemes.kanagawa')",
+    })
+    use({
+        "marko-cerovac/material.nvim",
+        -- config = "require('config.colorschemes.material')",
+    })
+    use({
+        "navarasu/onedark.nvim",
+        config = "require('config.colorschemes.onedark')",
+    })
     use("tiagovla/tokyodark.nvim")
-    use("Mofiqul/dracula.nvim")
+    use({
+        "Mofiqul/dracula.nvim",
+        -- config = "require('config.colorschemes.dracula')",
+    })
     use("yashguptaz/calvera-dark.nvim")
-    use("projekt0n/github-nvim-theme")
+    use({
+        "projekt0n/github-nvim-theme",
+        -- config = "require('config.colorschemes.github')",
+    })
     use("folke/tokyonight.nvim")
     use("olimorris/onedarkpro.nvim")
 
