@@ -34,7 +34,6 @@ configs.setup({
         "make",
         "markdown",
         "php",
-        "phpdoc",
         "pug",
         "python",
         "r",

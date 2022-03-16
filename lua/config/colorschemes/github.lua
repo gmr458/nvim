@@ -1,4 +1,5 @@
 local status_ok, github = pcall(require, "github-theme")
+
 if not status_ok then
     return
 end
@@ -11,7 +12,6 @@ github.setup({
     function_style = "italic",
     variable_style = "NONE",
     overrides = function(c)
-        -- local config = require("github-theme.config")
         return {
             VertSplit = { bg = c.bg_sidebar },
             StatusLine = { bg = c.bg_sidebar },

@@ -1,52 +1,49 @@
 local M = {}
 
--- TODO: backfill this to template
-M.setup = function()
-    local signs = {
-        { name = "DiagnosticSignError", text = "" },
-        { name = "DiagnosticSignWarn", text = "" },
-        { name = "DiagnosticSignHint", text = "" },
-        { name = "DiagnosticSignInfo", text = "" },
-    }
+local signs = {
+    { name = "DiagnosticSignError", text = "" },
+    { name = "DiagnosticSignWarn", text = "" },
+    { name = "DiagnosticSignHint", text = "" },
+    { name = "DiagnosticSignInfo", text = "" },
+}
 
-    for _, sign in ipairs(signs) do
-        vim.fn.sign_define(
-            sign.name,
-            { texthl = sign.name, text = sign.text, numhl = "" }
-        )
-    end
-
-    local config = {
-        virtual_text = true,
-        signs = false,
-        underline = false,
-        update_in_insert = false,
-        severity_sort = false,
-    }
-
-    vim.diagnostic.config(config)
-
-    local borderchars = {
-        "┌",
-        "─",
-        "┐",
-        "│",
-        "┘",
-        "─",
-        "└",
-        "│",
-    }
-
-    vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
-        vim.lsp.handlers.hover,
-        { border = borderchars }
-    )
-
-    vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
-        vim.lsp.handlers.signature_help,
-        { border = borderchars }
+for _, sign in ipairs(signs) do
+    vim.fn.sign_define(
+        sign.name,
+        { texthl = sign.name, text = sign.text, numhl = "" }
     )
 end
+
+local config = {
+    virtual_text = true,
+    signs = false,
+    underline = false,
+    update_in_insert = false,
+    severity_sort = false,
+}
+
+vim.diagnostic.config(config)
+
+local borderchars = {
+    "┌",
+    "─",
+    "┐",
+    "│",
+    "┘",
+    "─",
+    "└",
+    "│",
+}
+
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
+    vim.lsp.handlers.hover,
+    { border = borderchars }
+)
+
+vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
+    vim.lsp.handlers.signature_help,
+    { border = borderchars }
+)
 
 local function lsp_highlight_document(client)
     -- Set autocommands conditional on server_capabilities
