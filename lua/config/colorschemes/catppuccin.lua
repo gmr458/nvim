@@ -18,6 +18,12 @@ catppuccin.setup({
         treesitter = true,
         native_lsp = {
             enabled = true,
+            underlines = {
+                errors = "undercurl",
+                hints = "undercurl",
+                warnings = "undercurl",
+                information = "undercurl",
+            },
         },
         lsp_trouble = true,
         cmp = true,
