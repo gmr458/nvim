@@ -54,7 +54,6 @@ nvim_tree.setup({
     },
     view = {
         hide_root_folder = true,
-        side = "right",
         mappings = {
             list = {
                 { key = "s", cb = tree_cb("vsplit") },
