@@ -1,4 +1,5 @@
 local status_ok, lsp_installer = pcall(require, "nvim-lsp-installer")
+
 if not status_ok then
     return
 end
@@ -29,6 +30,11 @@ lsp_installer.on_server_ready(function(server)
     if server.name == "eslint" then
         local eslint_opts = require("config.lsp.settings.eslint")
         opts = vim.tbl_deep_extend("force", eslint_opts, opts)
+    end
+
+    if server.name == "tailwindcss" then
+        local tailwindcss_opts = require("config.lsp.settings.tailwindcss")
+        opts = vim.tbl_deep_extend("force", tailwindcss_opts, opts)
     end
 
     -- This setup() function is exactly the same as lspconfig's setup function.
