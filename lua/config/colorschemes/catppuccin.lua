@@ -5,7 +5,7 @@ if not status_ok then
 end
 
 catppuccin.setup({
-    transparent_background = false,
+    transparent_background = true,
     term_colors = true,
     styles = {
         comments = "NONE",
@@ -30,8 +30,8 @@ catppuccin.setup({
         gitsigns = true,
         telescope = true,
         nvimtree = {
-            enabled = true,
-            transparent_panel = false,
+            enabled = false,
+            -- transparent_panel = true,
         },
         bufferline = true,
         ts_rainbow = true,
@@ -47,7 +47,9 @@ catppuccin.remap({
     bashTSParameter = { style = "NONE" },
     cssTSProperty = { style = "NONE" },
     ErrorMsg = { style = "NONE" },
-    NormalFloat = { bg = colors.black2 },
+    NormalFloat = {
+        bg = config.transparent_background and "NONE" or colors.black2,
+    },
     NvimTreeStatusLine = {
         bg = nvimtree.enabled and colors.black1 or "none",
         fg = nvimtree.enabled and colors.black1 or "none",
@@ -57,6 +59,10 @@ catppuccin.remap({
         fg = nvimtree.enabled and colors.black1 or "none",
     },
     NvimTreeVertSplit = { bg = nvimtree.enabled and colors.black1 or "NONE" },
+    -- Pmenu = { bg = colors.black2 },
+    Pmenu = {
+        bg = config.transparent_background and colors.black2 or colors.black3,
+    },
     TSProperty = { style = "NONE" },
     TSInclude = { style = "italic" },
     TSOperator = { style = "NONE" },
