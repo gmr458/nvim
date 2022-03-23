@@ -19,7 +19,7 @@ local config = {
     signs = false,
     underline = true,
     update_in_insert = false,
-    severity_sort = false,
+    severity_sort = true,
 }
 
 vim.diagnostic.config(config)
