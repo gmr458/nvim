@@ -36,7 +36,6 @@ formatter.setup({
                         "--stdin-filepath",
                         vim.api.nvim_buf_get_name(0),
                         "--tab-width 4",
-                        "--print-width 120",
                     },
                     stdin = true,
                 }
