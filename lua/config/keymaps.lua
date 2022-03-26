@@ -63,12 +63,7 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 -- Telescope
 keymap("n", "tff", ":Telescope find_files hidden=true no_ignore=true<CR>", opts)
-keymap(
-    "n",
-    "tfg",
-    "<cmd>lua require('telescope.builtin').live_grep()<cr>",
-    opts
-)
+keymap("n", "tfg", ":Telescope live_grep<CR>", opts)
 keymap("n", "<space>fb", ":Telescope file_browser<CR>", { noremap = true })
 keymap("n", "<space>mf", ":Telescope media_files<CR>", { noremap = true })
 keymap("n", "<space>tb", ":Telescope buffers<CR>", { noremap = true })
