@@ -144,13 +144,24 @@ return packer.startup(function(use)
     use("nvim-telescope/telescope-file-browser.nvim")
     use("nvim-telescope/telescope-media-files.nvim")
 
-    use({ "neovim/nvim-lspconfig", config = "require('config.lsp')" })
+    use({
+        "neovim/nvim-lspconfig",
+        config = function()
+            require("config.lsp")
+            require("config.symbols-outline")
+        end,
+    })
     use({ "williamboman/nvim-lsp-installer", requires = "nvim-lspconfig" })
     use({ "tamago324/nlsp-settings.nvim", after = "nvim-lspconfig" })
     use({
         "folke/trouble.nvim",
         cmd = "Trouble",
         config = "require('config.trouble')",
+    })
+    use({
+        "simrat39/symbols-outline.nvim",
+        after = "nvim-lspconfig",
+        -- config = "require('config.symbols-outline')",
     })
 
     use({
