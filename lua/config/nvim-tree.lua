@@ -47,7 +47,6 @@ local tree_cb = nvim_tree_config.nvim_tree_callback
 
 nvim_tree.setup({
     disable_netrw = true,
-    auto_close = true,
     hijack_cursor = true,
     filters = {
         custom = { ".git", "node_modules" },
