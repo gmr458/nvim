@@ -1,5 +1,4 @@
 require("impatient")
-require("filetype").setup({})
 require("config.options")
 require("config.keymaps")
 require("config.plugins")
