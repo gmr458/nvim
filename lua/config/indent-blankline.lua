@@ -13,6 +13,8 @@ indent_blankline.setup({
         "toggleterm",
         "lsp-installer",
         "help",
+        "alpha",
+        "dashboard",
     },
 })
 

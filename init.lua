@@ -1,4 +1,4 @@
-require("impatient")
+require("impatient").enable_profile()
 require("config.options")
 require("config.keymaps")
 require("config.plugins")

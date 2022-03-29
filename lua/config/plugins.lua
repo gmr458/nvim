@@ -88,6 +88,10 @@ return packer.startup(function(use)
         after = "nvim-cmp",
         config = "require('config.autopairs')",
     })
+    use({
+        "goolord/alpha-nvim",
+        config = "require('config.alpha')",
+    })
 
     use({
         "nvim-treesitter/nvim-treesitter",
