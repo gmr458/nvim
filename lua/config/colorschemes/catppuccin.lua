@@ -42,7 +42,60 @@ local config = require("catppuccin.config").options
 local nvimtree = config.integrations.nvimtree
 local colors = require("catppuccin.api.colors").get_colors()
 
-catppuccin.remap({
+local remap_none = {
+    bashTSFuncBuiltin = { style = "NONE" },
+    bashTSParameter = { style = "NONE" },
+    cssTSProperty = { style = "NONE" },
+    ErrorMsg = { style = "NONE" },
+    NormalFloat = {
+        bg = config.transparent_background and "NONE" or colors.black2,
+    },
+    NvimTreeStatusLine = {
+        bg = nvimtree.enabled and colors.black1 or "none",
+        fg = nvimtree.enabled and colors.black1 or "none",
+    },
+    NvimTreeStatuslineNc = {
+        bg = nvimtree.enabled and colors.black1 or "none",
+        fg = nvimtree.enabled and colors.black1 or "none",
+    },
+    NvimTreeVertSplit = { bg = nvimtree.enabled and colors.black1 or "NONE" },
+    -- Pmenu = { bg = colors.black2 },
+    Pmenu = {
+        bg = config.transparent_background and colors.black2 or colors.black3,
+    },
+    TSProperty = { style = "NONE" },
+    TSInclude = { style = "NONE" },
+    TSOperator = { style = "NONE" },
+    TSKeywordOperator = { style = "NONE" },
+    TSPunctSpecial = { style = "NONE" },
+    TSFloat = { style = "NONE" },
+    TSNumber = { style = "NONE" },
+    TSBoolean = { style = "NONE" },
+    TSConditional = { style = "NONE" },
+    TSRepeat = { style = "NONE" },
+    TSException = { style = "NONE" },
+    TSConstBuiltin = { style = "NONE" },
+    TSFuncBuiltin = { style = "NONE" },
+    TSTypeBuiltin = { style = "NONE" },
+    TSVariableBuiltin = { style = "NONE" },
+    TSFunction = { style = "NONE" },
+    TSParameter = { style = "NONE" },
+    TSKeywordFunction = { style = "NONE" },
+    TSKeyword = { style = "NONE" },
+    TSKeywordReturn = { style = "NONE" },
+    TSMethod = { style = "NONE" },
+    TSNamespace = { style = "NONE" },
+    TSStringRegex = { style = "NONE" },
+    TSVariable = { style = "NONE" },
+    TSTagAttribute = { style = "NONE" },
+    TSURI = { style = "underline" },
+    TSLiteral = { style = "NONE" },
+    TSEmphasis = { style = "NONE" },
+    TSStringEscape = { style = "NONE" },
+    typescriptTSProperty = { style = "NONE" },
+}
+
+local remap_italic = {
     bashTSFuncBuiltin = { style = "NONE" },
     bashTSParameter = { style = "NONE" },
     cssTSProperty = { style = "NONE" },
@@ -93,6 +146,8 @@ catppuccin.remap({
     TSEmphasis = { style = "NONE" },
     TSStringEscape = { style = "NONE" },
     typescriptTSProperty = { style = "NONE" },
-})
+}
+
+catppuccin.remap(remap_none)
 
 vim.cmd([[colorscheme catppuccin]])
