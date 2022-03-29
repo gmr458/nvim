@@ -48,8 +48,14 @@ return packer.startup(function(use)
     use("nvim-lua/plenary.nvim")
 
     -- use("nvim-lualine/lualine.nvim")
-    use("ThePrimeagen/jvim.nvim")
-    use("b0o/SchemaStore.nvim")
+    use({
+        "ThePrimeagen/jvim.nvim",
+        ft = { "json", "jsonc" },
+    })
+    use({
+        "b0o/SchemaStore.nvim",
+        ft = { "json", "jsonc" },
+    })
     use("kyazdani42/nvim-web-devicons")
     use({
         "kyazdani42/nvim-tree.lua",
@@ -161,7 +167,6 @@ return packer.startup(function(use)
     use({
         "simrat39/symbols-outline.nvim",
         after = "nvim-lspconfig",
-        -- config = "require('config.symbols-outline')",
     })
 
     use({
