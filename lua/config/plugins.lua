@@ -161,7 +161,7 @@ return packer.startup(function(use)
         "williamboman/nvim-lsp-installer",
         after = "nvim-lspconfig",
     })
-    use({ "tamago324/nlsp-settings.nvim", after = "nvim-lspconfig" })
+    use({ "tamago324/nlsp-settings.nvim", requires = "nvim-lspconfig" })
     use({
         "folke/trouble.nvim",
         cmd = "Trouble",
