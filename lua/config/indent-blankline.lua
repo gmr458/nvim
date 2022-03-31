@@ -15,6 +15,7 @@ indent_blankline.setup({
         "help",
         "alpha",
         "dashboard",
+        "lspinfo",
     },
 })
 
