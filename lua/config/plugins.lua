@@ -154,7 +154,10 @@ return packer.startup(function(use)
     use("nvim-telescope/telescope-media-files.nvim")
 
     -- LSP
-    use("williamboman/nvim-lsp-installer")
+    use({
+        "williamboman/nvim-lsp-installer",
+        event = "BufReadPre",
+    })
     use({
         "neovim/nvim-lspconfig",
         after = "nvim-lsp-installer",
