@@ -156,7 +156,7 @@ return packer.startup(function(use)
     -- LSP
     use({
         "williamboman/nvim-lsp-installer",
-        event = "BufReadPre",
+        event = { "BufReadPre", "InsertEnter" },
     })
     use({
         "neovim/nvim-lspconfig",
@@ -188,7 +188,6 @@ return packer.startup(function(use)
             { "hrsh7th/cmp-nvim-lua", after = "nvim-cmp" },
             { "hrsh7th/cmp-buffer", after = "nvim-cmp" },
             { "hrsh7th/cmp-path", after = "nvim-cmp" },
-            { "hrsh7th/cmp-cmdline", after = "nvim-cmp" },
             { "saadparwaiz1/cmp_luasnip", after = "nvim-cmp" },
         },
         config = "require('config.cmp')",
