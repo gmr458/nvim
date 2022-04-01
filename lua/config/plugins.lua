@@ -41,7 +41,7 @@ packer.init({
 return packer.startup(function(use)
     use("wbthomason/packer.nvim")
 
-    use("lewis6991/impatient.nvim")
+    -- use("lewis6991/impatient.nvim")
     -- use("nathom/filetype.nvim")
 
     use("nvim-lua/popup.nvim")
@@ -93,6 +93,7 @@ return packer.startup(function(use)
         config = "require('config.alpha')",
     })
 
+    -- Treesitter
     use({
         "nvim-treesitter/nvim-treesitter",
         run = ":TSUpdate",
@@ -111,6 +112,7 @@ return packer.startup(function(use)
         config = "require('config.indent-blankline')",
     })
 
+    -- Colorschemes
     use({
         "catppuccin/nvim",
         as = "catppuccin",
@@ -141,6 +143,7 @@ return packer.startup(function(use)
     use("folke/tokyonight.nvim")
     use("olimorris/onedarkpro.nvim")
 
+    -- Telescope
     use({
         "nvim-telescope/telescope.nvim",
         cmd = "Telescope",
@@ -150,16 +153,19 @@ return packer.startup(function(use)
     use("nvim-telescope/telescope-file-browser.nvim")
     use("nvim-telescope/telescope-media-files.nvim")
 
+    -- LSP
+    use("williamboman/nvim-lsp-installer")
     use({
         "neovim/nvim-lspconfig",
+        after = "nvim-lsp-installer",
         config = function()
             require("config.lsp")
             require("config.symbols-outline")
         end,
     })
     use({
-        "williamboman/nvim-lsp-installer",
-        requires = "nvim-lspconfig",
+        "hrsh7th/cmp-nvim-lsp",
+        after = "nvim-lsp-installer",
     })
     use({
         "folke/trouble.nvim",
@@ -168,14 +174,14 @@ return packer.startup(function(use)
     })
     use({
         "simrat39/symbols-outline.nvim",
-        after = "nvim-lspconfig",
+        cmd = { "SymbolsOutline", "SymbolsOutlineOpen" },
     })
 
+    -- Completion
     use({
         "hrsh7th/nvim-cmp",
         event = "InsertEnter",
         requires = {
-            { "hrsh7th/cmp-nvim-lsp", after = "nvim-lspconfig" },
             { "hrsh7th/cmp-buffer", after = "nvim-cmp" },
             { "hrsh7th/cmp-path", after = "nvim-cmp" },
             { "hrsh7th/cmp-cmdline", after = "nvim-cmp" },
