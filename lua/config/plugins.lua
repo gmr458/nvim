@@ -53,7 +53,10 @@ return packer.startup(function(use)
         -- after = "nvim-lspconfig",
         ft = { "json", "jsonc" },
     })
-    use("kyazdani42/nvim-web-devicons")
+    use({
+        "kyazdani42/nvim-web-devicons",
+        after = "catppuccin",
+    })
     use({
         "kyazdani42/nvim-tree.lua",
         cmd = "NvimTreeToggle",
