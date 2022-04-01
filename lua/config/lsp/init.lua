@@ -5,4 +5,4 @@ if not status_ok then
 end
 
 require("config.lsp.lsp-installer")
-require("config.lsp.handlers")
+require("config.lsp.handlers").setup()
