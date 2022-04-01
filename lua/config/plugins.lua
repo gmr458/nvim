@@ -50,7 +50,8 @@ return packer.startup(function(use)
     -- use("nvim-lualine/lualine.nvim")
     use({
         "b0o/SchemaStore.nvim",
-        after = "nvim-lspconfig",
+        -- after = "nvim-lspconfig",
+        ft = { "json", "jsonc" },
     })
     use("kyazdani42/nvim-web-devicons")
     use({
