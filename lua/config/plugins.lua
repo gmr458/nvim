@@ -182,6 +182,7 @@ return packer.startup(function(use)
         "hrsh7th/nvim-cmp",
         event = "InsertEnter",
         requires = {
+            { "hrsh7th/cmp-nvim-lua", after = "nvim-cmp" },
             { "hrsh7th/cmp-buffer", after = "nvim-cmp" },
             { "hrsh7th/cmp-path", after = "nvim-cmp" },
             { "hrsh7th/cmp-cmdline", after = "nvim-cmp" },
