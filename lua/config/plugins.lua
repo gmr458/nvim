@@ -73,7 +73,7 @@ return packer.startup(function(use)
     })
     use({
         "akinsho/bufferline.nvim",
-        event = "BufWinEnter",
+        event = { "BufReadPre", "InsertEnter" },
         config = "require('config.bufferline')",
     })
     use({
