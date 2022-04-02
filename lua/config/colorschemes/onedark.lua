@@ -26,8 +26,24 @@ onedark.setup({
         strings = "none",
         variables = "none",
     },
-    colors = {}, -- Override default colors
-    highlights = {}, -- Override highlight groups
+    colors = {
+        red = "#f65866",
+        orange = "#dd9046",
+        yellow = "#efbd5d",
+        green = "#8bcd5b",
+        cyan = "#34bfd0",
+        blue = "#41a7fc",
+        purple = "#c75ae8",
+    }, -- Override default colors
+    highlights = {
+        rainbowcol1 = { fg = "$red" },
+        rainbowcol2 = { fg = "$orange" },
+        rainbowcol3 = { fg = "$yellow" },
+        rainbowcol4 = { fg = "$green" },
+        rainbowcol5 = { fg = "$cyan" },
+        rainbowcol6 = { fg = "$blue" },
+        rainbowcol7 = { fg = "$purple" },
+    }, -- Override highlight groups
     diagnostics = {
         darker = true, -- darker colors for diagnostic
         undercurl = true, -- use undercurl instead of underline for diagnostics
