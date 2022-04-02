@@ -99,7 +99,10 @@ return packer.startup(function(use)
         run = ":TSUpdate",
         config = "require('config.treesitter')",
     })
-    use({ "p00f/nvim-ts-rainbow", after = "nvim-treesitter" })
+    use({
+        "p00f/nvim-ts-rainbow",
+        event = "BufReadPre",
+    })
     use({
         "norcalli/nvim-colorizer.lua",
         ft = { "css", "html", "javascript", "json", "jsonc", "lua", "yaml" },
