@@ -52,10 +52,7 @@ return packer.startup(function(use)
         "b0o/SchemaStore.nvim",
         ft = { "json", "jsonc" },
     })
-    use({
-        "kyazdani42/nvim-web-devicons",
-        after = "catppuccin",
-    })
+    use("kyazdani42/nvim-web-devicons")
     use({
         "kyazdani42/nvim-tree.lua",
         cmd = "NvimTreeToggle",
@@ -63,7 +60,7 @@ return packer.startup(function(use)
     })
     use({
         "b3nj5m1n/kommentary",
-        event = "BufRead",
+        event = { "BufReadPre", "InsertEnter" },
         config = "require('config.kommentary')",
     })
     use({
@@ -100,7 +97,6 @@ return packer.startup(function(use)
     use({
         "nvim-treesitter/nvim-treesitter",
         run = ":TSUpdate",
-        event = "BufWinEnter",
         config = "require('config.treesitter')",
     })
     use({ "p00f/nvim-ts-rainbow", after = "nvim-treesitter" })
@@ -111,40 +107,40 @@ return packer.startup(function(use)
     })
     use({
         "lukas-reineke/indent-blankline.nvim",
-        event = "BufRead",
+        event = "BufReadPre",
         config = "require('config.indent-blankline')",
     })
 
     -- Colorschemes
-    use({
+    --[[ use({
         "catppuccin/nvim",
         as = "catppuccin",
         -- config = "require('config.colorschemes.catppuccin')",
-    })
-    use({
+    }) ]]
+    --[[ use({
         "rebelot/kanagawa.nvim",
         -- config = "require('config.colorschemes.kanagawa')",
-    })
-    use({
+    }) ]]
+    --[[ use({
         "marko-cerovac/material.nvim",
         -- config = "require('config.colorschemes.material')",
-    })
+    }) ]]
     use({
         "navarasu/onedark.nvim",
         config = "require('config.colorschemes.onedark')",
     })
-    use("tiagovla/tokyodark.nvim")
-    use({
+    -- use("tiagovla/tokyodark.nvim")
+    --[[ use({
         "Mofiqul/dracula.nvim",
         -- config = "require('config.colorschemes.dracula')",
-    })
-    use("yashguptaz/calvera-dark.nvim")
-    use({
+    }) ]]
+    -- use("yashguptaz/calvera-dark.nvim")
+    --[[ use({
         "projekt0n/github-nvim-theme",
         -- config = "require('config.colorschemes.github')",
-    })
-    use("folke/tokyonight.nvim")
-    use("olimorris/onedarkpro.nvim")
+    }) ]]
+    -- use("folke/tokyonight.nvim")
+    -- use("olimorris/onedarkpro.nvim")
 
     -- Telescope
     use({
