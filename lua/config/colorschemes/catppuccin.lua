@@ -5,7 +5,7 @@ if not status_ok then
 end
 
 catppuccin.setup({
-    transparent_background = true,
+    transparent_background = false,
     term_colors = true,
     styles = {
         comments = "NONE",
@@ -18,6 +18,12 @@ catppuccin.setup({
         treesitter = true,
         native_lsp = {
             enabled = true,
+            virtual_text = {
+                errors = "NONE",
+                hints = "NONE",
+                warnings = "NONE",
+                information = "NONE",
+            },
             underlines = {
                 errors = "undercurl",
                 hints = "undercurl",
@@ -27,14 +33,38 @@ catppuccin.setup({
         },
         lsp_trouble = true,
         cmp = true,
+        lsp_saga = false,
+        gitgutter = false,
         gitsigns = true,
         telescope = true,
         nvimtree = {
-            enabled = false,
-            -- transparent_panel = true,
+            enabled = true,
+            show_root = false,
+            transparent_panel = false,
         },
+        neotree = {
+            enabled = false,
+            show_root = false,
+            transparent_panel = false,
+        },
+        which_key = false,
+        indent_blankline = {
+            enabled = true,
+            colored_indent_levels = true,
+        },
+        dashboard = false,
+        neogit = false,
+        vim_sneak = false,
+        fern = false,
+        barbar = false,
         bufferline = true,
+        markdown = true,
+        lightspeed = false,
         ts_rainbow = true,
+        hop = false,
+        notify = false,
+        telekasten = false,
+        symbols_outline = true,
     },
 })
 
