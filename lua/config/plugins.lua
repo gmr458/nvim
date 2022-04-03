@@ -70,7 +70,30 @@ return packer.startup(function(use)
     })
     use({
         "akinsho/bufferline.nvim",
-        event = { "BufReadPre", "InsertEnter" },
+        event = { "InsertEnter" },
+        ft = {
+            "c",
+            "cpp",
+            "cs",
+            "css",
+            "dockerfile",
+            "go",
+            "html",
+            "java",
+            "javascript",
+            "javascriptreact",
+            "json",
+            "jsonc",
+            "kotlin",
+            "lua",
+            "php",
+            "python",
+            "rust",
+            "sql",
+            "typescript",
+            "typescriptreact",
+            "vim",
+        },
         config = "require('config.bufferline')",
     })
     use({
@@ -88,10 +111,10 @@ return packer.startup(function(use)
         after = "nvim-cmp",
         config = "require('config.autopairs')",
     })
-    use({
+    --[[ use({
         "goolord/alpha-nvim",
         config = "require('config.alpha')",
-    })
+    }) ]]
 
     -- Treesitter
     use({
