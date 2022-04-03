@@ -1,6 +1,6 @@
 -- init.lua
 vim.g.symbols_outline = {
-    highlight_hovered_item = true,
+    highlight_hovered_item = false,
     show_guides = true,
     auto_preview = false,
     position = "right",
