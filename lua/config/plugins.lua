@@ -158,7 +158,29 @@ return packer.startup(function(use)
     -- LSP
     use({
         "williamboman/nvim-lsp-installer",
-        event = { "BufReadPre", "InsertEnter" },
+        ft = {
+            "c",
+            "cpp",
+            "cs",
+            "css",
+            "dockerfile",
+            "go",
+            "html",
+            "java",
+            "javascript",
+            "javascriptreact",
+            "json",
+            "jsonc",
+            "kotlin",
+            "lua",
+            "php",
+            "python",
+            "rust",
+            "sql",
+            "typescript",
+            "typescriptreact",
+            "vim",
+        },
     })
     use({
         "neovim/nvim-lspconfig",
