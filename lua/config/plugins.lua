@@ -110,7 +110,29 @@ return packer.startup(function(use)
     })
     use({
         "lukas-reineke/indent-blankline.nvim",
-        event = "BufReadPre",
+        ft = {
+            "c",
+            "cpp",
+            "cs",
+            "css",
+            "dockerfile",
+            "go",
+            "html",
+            "java",
+            "javascript",
+            "javascriptreact",
+            "json",
+            "jsonc",
+            "kotlin",
+            "lua",
+            "php",
+            "python",
+            "rust",
+            "sql",
+            "typescript",
+            "typescriptreact",
+            "vim",
+        },
         config = "require('config.indent-blankline')",
     })
 
