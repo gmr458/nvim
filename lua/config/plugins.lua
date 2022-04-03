@@ -44,17 +44,14 @@ return packer.startup(function(use)
     use("lewis6991/impatient.nvim")
     -- use("nathom/filetype.nvim")
 
-    use("nvim-lua/popup.nvim")
-    use("nvim-lua/plenary.nvim")
-
     -- use("nvim-lualine/lualine.nvim")
     use({
         "b0o/SchemaStore.nvim",
         ft = { "json", "jsonc" },
     })
-    use("kyazdani42/nvim-web-devicons")
     use({
         "kyazdani42/nvim-tree.lua",
+        requires = { "kyazdani42/nvim-web-devicons" },
         cmd = "NvimTreeToggle",
         config = "require('config.nvim-tree')",
     })
@@ -70,29 +67,37 @@ return packer.startup(function(use)
     })
     use({
         "akinsho/bufferline.nvim",
-        event = { "InsertEnter" },
+        requires = { "kyazdani42/nvim-web-devicons" },
         ft = {
+            "asm",
             "c",
+            "cmd",
             "cpp",
             "cs",
             "css",
             "dockerfile",
             "go",
+            "gomod",
+            "hercules",
             "html",
             "java",
             "javascript",
             "javascriptreact",
+            "jproperties",
             "json",
             "jsonc",
             "kotlin",
             "lua",
+            "markdown",
             "php",
             "python",
             "rust",
             "sql",
+            "toml",
             "typescript",
             "typescriptreact",
             "vim",
+            "xml",
         },
         config = "require('config.bufferline')",
     })
@@ -124,22 +129,16 @@ return packer.startup(function(use)
     })
     use({
         "p00f/nvim-ts-rainbow",
-        event = "BufReadPre",
-    })
-    use({
-        "norcalli/nvim-colorizer.lua",
-        ft = { "css", "html", "javascript", "json", "jsonc", "lua", "yaml" },
-        config = "require('config.colorizer')",
-    })
-    use({
-        "lukas-reineke/indent-blankline.nvim",
         ft = {
             "c",
+            "cmd",
             "cpp",
             "cs",
             "css",
             "dockerfile",
             "go",
+            "gomod",
+            "hercules",
             "html",
             "java",
             "javascript",
@@ -152,9 +151,47 @@ return packer.startup(function(use)
             "python",
             "rust",
             "sql",
+            "toml",
             "typescript",
             "typescriptreact",
             "vim",
+            "xml",
+        },
+    })
+    use({
+        "norcalli/nvim-colorizer.lua",
+        ft = { "css", "html", "javascript", "json", "jsonc", "lua", "yaml" },
+        config = "require('config.colorizer')",
+    })
+    use({
+        "lukas-reineke/indent-blankline.nvim",
+        ft = {
+            "c",
+            "cmd",
+            "cpp",
+            "cs",
+            "css",
+            "dockerfile",
+            "go",
+            "gomod",
+            "hercules",
+            "html",
+            "java",
+            "javascript",
+            "javascriptreact",
+            "json",
+            "jsonc",
+            "kotlin",
+            "lua",
+            "php",
+            "python",
+            "rust",
+            "sql",
+            "toml",
+            "typescript",
+            "typescriptreact",
+            "vim",
+            "xml",
         },
         config = "require('config.indent-blankline')",
     })
@@ -193,12 +230,20 @@ return packer.startup(function(use)
     -- Telescope
     use({
         "nvim-telescope/telescope.nvim",
+        requires = { "nvim-lua/plenary.nvim" },
         cmd = "Telescope",
         config = "require('config.telescope')",
     })
     use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
     use("nvim-telescope/telescope-file-browser.nvim")
-    use("nvim-telescope/telescope-media-files.nvim")
+    use({
+        "nvim-telescope/telescope-media-files.nvim",
+        requires = {
+            "nvim-lua/popup.nvim",
+            "nvim-lua/plenary.nvim",
+            "nvim-telescope/telescope.nvim",
+        },
+    })
 
     -- LSP
     use({
