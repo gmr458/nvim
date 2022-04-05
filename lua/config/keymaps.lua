@@ -118,9 +118,3 @@ vim.api.nvim_set_keymap(
     "<cmd>Trouble lsp_references<cr>",
     { silent = true, noremap = true }
 )
-
--- jvim
-keymap("n", "<left>", ":lua require('jvim').to_parent()<CR>", opts)
-keymap("n", "<right>", ":lua require('jvim').descend()<CR>", opts)
-keymap("n", "<up>", ":lua require('jvim').prev_sibling()<CR>", opts)
-keymap("n", "<down>", ":lua require('jvim').next_sibling()<CR>", opts)
