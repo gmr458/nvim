@@ -6,15 +6,6 @@ end
 
 telescope.setup({
     defaults = {
-        vimgrep_arguments = {
-            "rg",
-            "--color=never",
-            "--no-heading",
-            "--with-filename",
-            "--line-number",
-            "--column",
-            "--smart-case",
-        },
         prompt_prefix = "   ",
         layout_config = {
             preview_width = 0.7,
@@ -31,23 +22,22 @@ telescope.setup({
             "┘",
             "└",
         },
-        prompt_title = true,
         file_ignore_patterns = {
             ".git/",
-            "node_modules/",
-            "dist/",
-            "build/",
-            "venv/",
-            "bin/",
-            "obj/",
-            "target/",
+            "node_modules",
+            "dist",
+            "build",
+            "venv",
+            "bin",
+            "obj",
+            "target",
             ".exe",
-            "__pycache__/",
-            ".vscode/",
+            "__pycache__",
+            ".vscode",
         },
         color_devicons = true,
         set_env = { ["COLORTERM"] = "truecolor" },
-        path_display = { "shorten" },
+        preview = false,
         extensions = {
             media_files = {
                 find_cmd = "rg",

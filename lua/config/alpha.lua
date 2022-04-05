@@ -33,16 +33,25 @@ dashboard.section.buttons.val = {
         "  Find file",
         ":Telescope find_files hidden=true no_ignore=true<CR>"
     ),
-    dashboard.button("tfg", "  Live grep", ":Telescope live_grep<CR>"),
+    dashboard.button(
+        "tfv",
+        "  Find file with preview",
+        ":Telescope find_files preview=true hidden=true no_ignore=true<CR>"
+    ),
+    dashboard.button(
+        "tfg",
+        "  Live grep",
+        ":Telescope live_grep preview=true<CR>"
+    ),
     dashboard.button(
         "<space>fb",
         "  File browser",
-        ":Telescope file_browser<CR>"
+        ":Telescope file_browser preview=true<CR>"
     ),
     dashboard.button(
         "<space>mf",
         "  Media files",
-        ":Telescope media_files<CR>"
+        ":Telescope media_files preview=true<CR>"
     ),
     dashboard.button("q", "  Quit NVIM", ":qa<CR>"),
 }
