@@ -69,10 +69,9 @@ keymap("n", "<space>mf", ":Telescope media_files<CR>", { noremap = true })
 keymap("n", "<space>tb", ":Telescope buffers<CR>", { noremap = true })
 
 -- Nvim Tree
-keymap("n", "<C-n>", ":NvimTreeToggle<CR>", opts)
+keymap("n", "<C-n>", ":NvimTreeFindFileToggle<CR>", opts)
 vim.cmd([[tnoremap <silent> <C-n> <C-\><C-n>:NvimTreeToggle<CR>]])
 keymap("n", "<leader>r", ":NvimTreeRefresh<CR>", opts)
-keymap("n", "<leader>n", ":NvimTreeFindFile<CR>", opts)
 
 -- nohlsearch
 keymap("n", "<Leader>nh", ":nohlsearch<CR>", opts)
