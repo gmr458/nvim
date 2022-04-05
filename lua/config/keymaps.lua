@@ -63,10 +63,31 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 -- Telescope
 keymap("n", "tff", ":Telescope find_files hidden=true no_ignore=true<CR>", opts)
-keymap("n", "tfg", ":Telescope live_grep<CR>", opts)
-keymap("n", "<space>fb", ":Telescope file_browser<CR>", { noremap = true })
-keymap("n", "<space>mf", ":Telescope media_files<CR>", { noremap = true })
-keymap("n", "<space>tb", ":Telescope buffers<CR>", { noremap = true })
+keymap(
+    "n",
+    "tfv",
+    ":Telescope find_files preview=true hidden=true no_ignore=true<CR>",
+    opts
+)
+keymap("n", "tfg", ":Telescope live_grep preview=true<CR>", opts)
+keymap(
+    "n",
+    "<space>fb",
+    ":Telescope file_browser preview=true<CR>",
+    { noremap = true }
+)
+keymap(
+    "n",
+    "<space>mf",
+    ":Telescope media_files preview=true<CR>",
+    { noremap = true }
+)
+keymap(
+    "n",
+    "<space>tb",
+    ":Telescope buffers preview=true<CR>",
+    { noremap = true }
+)
 
 -- Nvim Tree
 keymap("n", "<C-n>", ":NvimTreeFindFileToggle<CR>", opts)
