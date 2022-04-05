@@ -38,90 +38,72 @@ packer.init({
     },
 })
 
+local filetypes_i_use = {
+    "asm",
+    "c",
+    "cmd",
+    "cpp",
+    "cs",
+    "css",
+    "dockerfile",
+    "go",
+    "gomod",
+    "hercules",
+    "html",
+    "java",
+    "javascript",
+    "javascriptreact",
+    "jproperties",
+    "json",
+    "jsonc",
+    "kotlin",
+    "lua",
+    "markdown",
+    "php",
+    "python",
+    "rust",
+    "sql",
+    "toml",
+    "typescript",
+    "typescriptreact",
+    "vim",
+    "xml",
+}
+
+local filetype_with_lsp = {
+    "c",
+    "cmd",
+    "cpp",
+    "cs",
+    "css",
+    "dockerfile",
+    "go",
+    "html",
+    "java",
+    "javascript",
+    "javascriptreact",
+    "json",
+    "jsonc",
+    "kotlin",
+    "lua",
+    "php",
+    "python",
+    "rust",
+    "sql",
+    "typescript",
+    "typescriptreact",
+    "vim",
+}
+
 return packer.startup(function(use)
+    -- Packer can manage itself
     use("wbthomason/packer.nvim")
 
+    -- Speed up loading Lua modules in Neovim to improve startup time
     use("lewis6991/impatient.nvim")
-    -- use("nathom/filetype.nvim")
 
-    -- use("nvim-lualine/lualine.nvim")
-    use({
-        "b0o/SchemaStore.nvim",
-        ft = { "json", "jsonc" },
-    })
-    use({
-        "kyazdani42/nvim-tree.lua",
-        cmd = "NvimTreeToggle",
-        config = "require('config.nvim-tree')",
-    })
-    use({
-        "kyazdani42/nvim-web-devicons",
-        ft = { "NvimTree", "TelescopePrompt" },
-    })
-    use({
-        "b3nj5m1n/kommentary",
-        event = { "BufReadPre", "InsertEnter" },
-        config = "require('config.kommentary')",
-    })
-    use({
-        "lewis6991/gitsigns.nvim",
-        event = "BufRead",
-        config = "require('config.gitsigns')",
-    })
-    use({
-        "akinsho/bufferline.nvim",
-        ft = {
-            "asm",
-            "c",
-            "cmd",
-            "cpp",
-            "cs",
-            "css",
-            "dockerfile",
-            "go",
-            "gomod",
-            "hercules",
-            "html",
-            "java",
-            "javascript",
-            "javascriptreact",
-            "jproperties",
-            "json",
-            "jsonc",
-            "kotlin",
-            "lua",
-            "markdown",
-            "php",
-            "python",
-            "rust",
-            "sql",
-            "toml",
-            "typescript",
-            "typescriptreact",
-            "vim",
-            "xml",
-        },
-        config = "require('config.bufferline')",
-    })
-    use({
-        "akinsho/toggleterm.nvim",
-        cmd = "ToggleTerm",
-        config = "require('config.toggleterm')",
-    })
-    use({
-        "mhartington/formatter.nvim",
-        cmd = { "Format", "FormatWrite" },
-        config = "require('config.formatter')",
-    })
-    use({
-        "windwp/nvim-autopairs",
-        after = "nvim-cmp",
-        config = "require('config.autopairs')",
-    })
-    use({
-        "goolord/alpha-nvim",
-        config = "require('config.alpha')",
-    })
+    -- Easily speed up your neovim startup time! (natively implemented in Neovim 0.7.0)
+    -- use("nathom/filetype.nvim")
 
     -- Treesitter
     use({
@@ -131,71 +113,12 @@ return packer.startup(function(use)
     })
     use({
         "p00f/nvim-ts-rainbow",
-        ft = {
-            "c",
-            "cmd",
-            "cpp",
-            "cs",
-            "css",
-            "dockerfile",
-            "go",
-            "gomod",
-            "hercules",
-            "html",
-            "java",
-            "javascript",
-            "javascriptreact",
-            "json",
-            "jsonc",
-            "kotlin",
-            "lua",
-            "php",
-            "python",
-            "rust",
-            "sql",
-            "toml",
-            "typescript",
-            "typescriptreact",
-            "vim",
-            "xml",
-        },
+        ft = filetypes_i_use,
     })
     use({
         "norcalli/nvim-colorizer.lua",
         ft = { "css", "html", "javascript", "json", "jsonc", "lua", "yaml" },
         config = "require('config.colorizer')",
-    })
-    use({
-        "lukas-reineke/indent-blankline.nvim",
-        ft = {
-            "c",
-            "cmd",
-            "cpp",
-            "cs",
-            "css",
-            "dockerfile",
-            "go",
-            "gomod",
-            "hercules",
-            "html",
-            "java",
-            "javascript",
-            "javascriptreact",
-            "json",
-            "jsonc",
-            "kotlin",
-            "lua",
-            "php",
-            "python",
-            "rust",
-            "sql",
-            "toml",
-            "typescript",
-            "typescriptreact",
-            "vim",
-            "xml",
-        },
-        config = "require('config.indent-blankline')",
     })
 
     -- Colorschemes
@@ -250,29 +173,7 @@ return packer.startup(function(use)
     -- LSP
     use({
         "williamboman/nvim-lsp-installer",
-        ft = {
-            "c",
-            "cpp",
-            "cs",
-            "css",
-            "dockerfile",
-            "go",
-            "html",
-            "java",
-            "javascript",
-            "javascriptreact",
-            "json",
-            "jsonc",
-            "kotlin",
-            "lua",
-            "php",
-            "python",
-            "rust",
-            "sql",
-            "typescript",
-            "typescriptreact",
-            "vim",
-        },
+        ft = filetype_with_lsp,
     })
     use({
         "neovim/nvim-lspconfig",
@@ -313,6 +214,61 @@ return packer.startup(function(use)
         "L3MON4D3/LuaSnip",
         event = "InsertEnter",
         requires = "rafamadriz/friendly-snippets",
+    })
+
+    -- Other plugins
+    -- use("nvim-lualine/lualine.nvim")
+    use({
+        "b0o/SchemaStore.nvim",
+        ft = { "json", "jsonc" },
+    })
+    use({
+        "kyazdani42/nvim-tree.lua",
+        cmd = "NvimTreeFindFileToggle",
+        config = "require('config.nvim-tree')",
+    })
+    use({
+        "kyazdani42/nvim-web-devicons",
+        ft = { "NvimTree", "TelescopePrompt" },
+    })
+    use({
+        "b3nj5m1n/kommentary",
+        ft = filetypes_i_use,
+        config = "require('config.kommentary')",
+    })
+    use({
+        "lewis6991/gitsigns.nvim",
+        event = "BufRead",
+        config = "require('config.gitsigns')",
+    })
+    use({
+        "akinsho/bufferline.nvim",
+        ft = filetypes_i_use,
+        config = "require('config.bufferline')",
+    })
+    use({
+        "akinsho/toggleterm.nvim",
+        cmd = "ToggleTerm",
+        config = "require('config.toggleterm')",
+    })
+    use({
+        "mhartington/formatter.nvim",
+        cmd = { "Format", "FormatWrite" },
+        config = "require('config.formatter')",
+    })
+    use({
+        "windwp/nvim-autopairs",
+        after = "nvim-cmp",
+        config = "require('config.autopairs')",
+    })
+    use({
+        "lukas-reineke/indent-blankline.nvim",
+        ft = filetypes_i_use,
+        config = "require('config.indent-blankline')",
+    })
+    use({
+        "goolord/alpha-nvim",
+        config = "require('config.alpha')",
     })
 
     -- Automatically set up the configuration after cloning packer.nvim
