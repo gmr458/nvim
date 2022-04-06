@@ -42,6 +42,7 @@ local filetypes_i_use = {
     "asm",
     "c",
     "cmd",
+    "conf",
     "cpp",
     "cs",
     "css",
