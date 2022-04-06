@@ -68,6 +68,7 @@ local filetypes_i_use = {
     "typescriptreact",
     "vim",
     "xml",
+    "yaml",
 }
 
 local filetype_with_lsp = {
