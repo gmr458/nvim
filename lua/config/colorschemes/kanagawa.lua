@@ -4,25 +4,21 @@ if not status_ok then
     return
 end
 
-local colors = require("kanagawa.colors").setup()
-
 kanagawa.setup({
     undercurl = true,
-    commentStyle = "italic",
-    functionStyle = "italic",
-    keywordStyle = "italic",
-    statementStyle = "italic",
+    commentStyle = "NONE",
+    functionStyle = "NONE",
+    keywordStyle = "NONE",
+    statementStyle = "NONE",
     typeStyle = "NONE",
     variablebuiltinStyle = "NONE",
     specialReturn = true,
     specialException = true,
     transparent = false,
     dimInactive = false,
+    globalStatus = true,
     colors = {},
-    overrides = {
-        NvimTreeVertSplit = { bg = colors.sumiInk1 },
-        StatusLineNC = { bg = colors.sumiInk1 },
-    },
+    overrides = {},
 })
 
 vim.cmd("colorscheme kanagawa")

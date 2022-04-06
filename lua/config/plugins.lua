@@ -129,18 +129,18 @@ return packer.startup(function(use)
         as = "catppuccin",
         -- config = "require('config.colorschemes.catppuccin')",
     }) ]]
-    --[[ use({
+    use({
         "rebelot/kanagawa.nvim",
-        -- config = "require('config.colorschemes.kanagawa')",
-    }) ]]
+        config = "require('config.colorschemes.kanagawa')",
+    })
     --[[ use({
         "marko-cerovac/material.nvim",
         -- config = "require('config.colorschemes.material')",
     }) ]]
-    use({
-        "navarasu/onedark.nvim",
-        config = "require('config.colorschemes.onedark')",
-    })
+    -- use({
+    --     "navarasu/onedark.nvim",
+    --     config = "require('config.colorschemes.onedark')",
+    -- })
     -- use("tiagovla/tokyodark.nvim")
     --[[ use({
         "Mofiqul/dracula.nvim",
