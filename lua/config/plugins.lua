@@ -70,6 +70,7 @@ local filetypes_i_use = {
     "vim",
     "xml",
     "yaml",
+    "zsh",
 }
 
 local filetype_with_lsp = {
