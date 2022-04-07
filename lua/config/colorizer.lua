@@ -5,6 +5,7 @@ if not status_ok then
 end
 
 colorizer.setup({
+    "conf",
     "css",
     "html",
     "javascript",
