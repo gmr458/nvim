@@ -49,7 +49,7 @@ nvim_tree.setup({
     disable_netrw = true,
     hijack_cursor = true,
     filters = {
-        custom = { ".git", "node_modules" },
+        custom = { ".git/", "node_modules" },
     },
     view = {
         hide_root_folder = true,
