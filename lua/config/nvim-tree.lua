@@ -1,4 +1,3 @@
-vim.g.nvim_tree_indent_markers = 1
 vim.g.nvim_tree_group_empty = 1
 vim.g.nvim_tree_special_files = {}
 vim.g.nvim_tree_show_icons = {
@@ -48,9 +47,6 @@ local tree_cb = nvim_tree_config.nvim_tree_callback
 nvim_tree.setup({
     disable_netrw = true,
     hijack_cursor = true,
-    filters = {
-        custom = { ".git/", "node_modules" },
-    },
     view = {
         hide_root_folder = true,
         mappings = {
@@ -61,12 +57,21 @@ nvim_tree.setup({
             },
         },
     },
+    renderer = { indent_markers = { enable = true } },
+    filters = { custom = { ".git/", "node_modules" } },
     actions = {
         open_file = {
             window_picker = {
                 exclude = {
-                    filetype = { "notify", "packer", "qf", "TelescopePrompt" },
-                    buftype = { "terminal" },
+                    filetype = {
+                        "notify",
+                        "packer",
+                        "qf",
+                        "diff",
+                        "fugitive",
+                        "fugitiveblame",
+                    },
+                    buftype = { "nofile", "terminal", "help" },
                 },
             },
         },
