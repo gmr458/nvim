@@ -4,8 +4,18 @@ if not status_ok then
     return
 end
 
+local action_layout = require("telescope.actions.layout")
+
 telescope.setup({
     defaults = {
+        mappings = {
+            n = {
+                ["<C-p>"] = action_layout.toggle_preview,
+            },
+            i = {
+                ["<C-p>"] = action_layout.toggle_preview,
+            },
+        },
         prompt_prefix = "   ",
         layout_config = {
             preview_width = 0.7,
