@@ -63,12 +63,12 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 -- Telescope
 keymap("n", "tff", ":Telescope find_files hidden=true no_ignore=true<CR>", opts)
-keymap(
-    "n",
-    "tfv",
-    ":Telescope find_files preview=true hidden=true no_ignore=true<CR>",
-    opts
-)
+-- keymap(
+--     "n",
+--     "tfv",
+--     ":Telescope find_files preview=true hidden=true no_ignore=true<CR>",
+--     opts
+-- )
 keymap("n", "tfg", ":Telescope live_grep preview=true<CR>", opts)
 keymap(
     "n",

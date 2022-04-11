@@ -136,11 +136,11 @@ return packer.startup(function(use)
     })
 
     -- Colorschemes
-    --[[ use({
-        "catppuccin/nvim",
-        as = "catppuccin",
-        -- config = "require('config.colorschemes.catppuccin')",
-    }) ]]
+    -- use({
+    --     "catppuccin/nvim",
+    --     as = "catppuccin",
+    --     config = "require('config.colorschemes.catppuccin')",
+    -- })
     use({
         "rebelot/kanagawa.nvim",
         config = "require('config.colorschemes.kanagawa')",

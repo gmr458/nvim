@@ -37,12 +37,16 @@ telescope.setup({
         },
         color_devicons = true,
         set_env = { ["COLORTERM"] = "truecolor" },
-        preview = false,
         extensions = {
             media_files = {
                 find_cmd = "rg",
                 filetypes = { "jpeg" },
             },
+        },
+    },
+    pickers = {
+        find_files = {
+            previewer = false,
         },
     },
 })
