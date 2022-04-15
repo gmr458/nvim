@@ -12,7 +12,9 @@ if fn.empty(fn.glob(install_path)) > 0 then
         "https://github.com/wbthomason/packer.nvim",
         install_path,
     })
-    print("Installing packer, close and reopen Neovim...")
+    print(
+        "Installing packer, plugins and treesitter parsers. After the installation is finished close and open Neovim."
+    )
     vim.cmd([[packadd packer.nvim]])
 end
 
