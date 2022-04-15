@@ -52,12 +52,16 @@ cmp.setup({
             luasnip.lsp_expand(args.body)
         end,
     },
+    window = {
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
+    },
     mapping = {
-        ["<S-k>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
-        ["<S-j>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
+        ["<S-k>"] = cmp.mapping.scroll_docs(-4),
+        ["<S-j>"] = cmp.mapping.scroll_docs(4),
         ["<C-k>"] = cmp.mapping.select_prev_item(),
         ["<C-j>"] = cmp.mapping.select_next_item(),
-        ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
+        ["<C-Space>"] = cmp.mapping.complete(),
         ["<C-e>"] = cmp.mapping({
             i = cmp.mapping.abort(),
             c = cmp.mapping.close(),
@@ -102,19 +106,17 @@ cmp.setup({
             return vim_item
         end,
     },
-    sources = {
-        { name = "luasnip" },
+    sources = cmp.config.sources({
         { name = "nvim_lua" },
         { name = "nvim_lsp" },
-        { name = "buffer" },
+        { name = "luasnip" },
         { name = "path" },
-    },
+    }, {
+        { name = "buffer" },
+    }),
     confirm_opts = {
         behavior = cmp.ConfirmBehavior.Replace,
         select = false,
-    },
-    documentation = {
-        border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" },
     },
 })
 
