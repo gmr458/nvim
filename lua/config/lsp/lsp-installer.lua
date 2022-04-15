@@ -12,6 +12,16 @@ lsp_installer.on_server_ready(function(server)
         capabilities = require("config.lsp.handlers").capabilities,
     }
 
+    if server.name == "denols" then
+        local denols_opts = require("config.lsp.settings.denols")
+        opts = vim.tbl_deep_extend("force", denols_opts, opts)
+    end
+
+    if server.name == "eslint" then
+        local eslint_opts = require("config.lsp.settings.eslint")
+        opts = vim.tbl_deep_extend("force", eslint_opts, opts)
+    end
+
     if server.name == "jsonls" then
         local jsonls_opts = require("config.lsp.settings.jsonls")
         opts = vim.tbl_deep_extend("force", jsonls_opts, opts)
@@ -22,19 +32,14 @@ lsp_installer.on_server_ready(function(server)
         opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
     end
 
-    if server.name == "tsserver" then
-        local tsserver_opts = require("config.lsp.settings.tsserver")
-        opts = vim.tbl_deep_extend("force", tsserver_opts, opts)
-    end
-
-    if server.name == "eslint" then
-        local eslint_opts = require("config.lsp.settings.eslint")
-        opts = vim.tbl_deep_extend("force", eslint_opts, opts)
-    end
-
     if server.name == "tailwindcss" then
         local tailwindcss_opts = require("config.lsp.settings.tailwindcss")
         opts = vim.tbl_deep_extend("force", tailwindcss_opts, opts)
+    end
+
+    if server.name == "tsserver" then
+        local tsserver_opts = require("config.lsp.settings.tsserver")
+        opts = vim.tbl_deep_extend("force", tsserver_opts, opts)
     end
 
     -- This setup() function is exactly the same as lspconfig's setup function.
