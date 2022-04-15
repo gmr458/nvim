@@ -235,6 +235,10 @@ return packer.startup(function(use)
     -- Other plugins
     -- use("nvim-lualine/lualine.nvim")
     use({
+        "NMAC427/guess-indent.nvim",
+        config = "require('config.guess_indent')",
+    })
+    use({
         "b0o/SchemaStore.nvim",
         ft = { "json", "jsonc" },
     })
