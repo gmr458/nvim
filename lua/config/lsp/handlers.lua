@@ -189,6 +189,8 @@ local function lsp_highlight_document(client)
 end
 
 M.on_attach = function(client, bufnr)
+    client.resolved_capabilities.document_formatting = false
+    client.resolved_capabilities.document_range_formatting = false
     lsp_keymaps(bufnr)
     lsp_highlight_document(client)
 end
