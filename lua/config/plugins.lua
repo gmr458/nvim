@@ -212,6 +212,11 @@ return packer.startup(function(use)
         "simrat39/symbols-outline.nvim",
         cmd = { "SymbolsOutline", "SymbolsOutlineOpen" },
     })
+    use({
+        "jose-elias-alvarez/null-ls.nvim",
+        after = "nvim-lspconfig",
+        config = "require('config.lsp.null-ls')",
+    })
 
     -- Completion
     use({
@@ -270,11 +275,6 @@ return packer.startup(function(use)
         "akinsho/toggleterm.nvim",
         cmd = "ToggleTerm",
         config = "require('config.toggleterm')",
-    })
-    use({
-        "mhartington/formatter.nvim",
-        cmd = { "Format", "FormatWrite" },
-        config = "require('config.formatter')",
     })
     use({
         "windwp/nvim-autopairs",
