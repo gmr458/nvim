@@ -17,6 +17,7 @@ local options = {
     hlsearch = true,
     ignorecase = true,
     incsearch = true,
+    laststatus = 3,
     mouse = "a",
     number = true,
     -- numberwidth = 2,

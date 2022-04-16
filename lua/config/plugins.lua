@@ -20,14 +20,11 @@ end
 
 -- Autocommand that reloads neovim whenever you save the plugins.lua file
 local packer_group = vim.api.nvim_create_augroup("Packer", { clear = true })
-vim.api.nvim_create_autocmd(
-    "BufWritePost",
-    {
-        command = "source <afile> | PackerSync",
-        group = packer_group,
-        pattern = "plugins.lua",
-    }
-)
+vim.api.nvim_create_autocmd("BufWritePost", {
+    command = "source <afile> | PackerSync",
+    group = packer_group,
+    pattern = "plugins.lua",
+})
 
 local status_ok, packer = pcall(require, "packer")
 
@@ -241,7 +238,11 @@ return packer.startup(function(use)
     })
 
     -- Other plugins
-    -- use("nvim-lualine/lualine.nvim")
+    use({
+        "nvim-lualine/lualine.nvim",
+        ft = filetypes_i_use,
+        config = "require('config.lualine')",
+    })
     use({
         "NMAC427/guess-indent.nvim",
         config = "require('config.guess_indent')",
