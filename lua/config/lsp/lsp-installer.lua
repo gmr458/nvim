@@ -17,6 +17,11 @@ lsp_installer.on_server_ready(function(server)
         opts = vim.tbl_deep_extend("force", denols_opts, opts)
     end
 
+    if server.name == "emmet_ls" then
+        local emmet_opts = require("config.lsp.settings.emmet-ls")
+        opts = vim.tbl_deep_extend("force", emmet_opts, opts)
+    end
+
     if server.name == "eslint" then
         local eslint_opts = require("config.lsp.settings.eslint")
         opts = vim.tbl_deep_extend("force", eslint_opts, opts)
