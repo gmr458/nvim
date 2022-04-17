@@ -266,7 +266,7 @@ return packer.startup(function(use)
     })
     use({
         "b3nj5m1n/kommentary",
-        ft = filetypes_i_use,
+        event = "BufRead",
         config = "require('config.kommentary')",
     })
     use({
