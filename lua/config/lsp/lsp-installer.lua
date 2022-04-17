@@ -22,6 +22,11 @@ lsp_installer.on_server_ready(function(server)
         opts = vim.tbl_deep_extend("force", eslint_opts, opts)
     end
 
+    if server.name == "html" then
+        local html_opts = require("config.lsp.settings.html")
+        opts = vim.tbl_deep_extend("force", html_opts, opts)
+    end
+
     if server.name == "jsonls" then
         local jsonls_opts = require("config.lsp.settings.jsonls")
         opts = vim.tbl_deep_extend("force", jsonls_opts, opts)
