@@ -56,33 +56,25 @@ cmp.setup({
         completion = cmp.config.window.bordered(),
         documentation = cmp.config.window.bordered(),
     },
-    mapping = {
-        ["<S-k>"] = cmp.mapping.scroll_docs(-4),
-        ["<S-j>"] = cmp.mapping.scroll_docs(4),
-        ["<C-k>"] = cmp.mapping.select_prev_item(),
-        ["<C-j>"] = cmp.mapping.select_next_item(),
+    mapping = cmp.mapping.preset.insert({
         ["<C-Space>"] = cmp.mapping.complete(),
-        ["<C-e>"] = cmp.mapping({
+        ["<C-c>"] = cmp.mapping({
             i = cmp.mapping.abort(),
             c = cmp.mapping.close(),
         }),
-        ["<CR>"] = cmp.mapping.confirm({ select = true }),
+        ["<CR>"] = cmp.mapping.confirm({
+            behavior = cmp.ConfirmBehavior.Replace,
+            select = true,
+        }),
         ["<Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
-            elseif luasnip.expandable() then
-                luasnip.expand()
             elseif luasnip.expand_or_jumpable() then
                 luasnip.expand_or_jump()
-            elseif check_backspace() then
-                fallback()
             else
                 fallback()
             end
-        end, {
-            "i",
-            "s",
-        }),
+        end, { "i", "s" }),
         ["<S-Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_prev_item()
@@ -91,11 +83,8 @@ cmp.setup({
             else
                 fallback()
             end
-        end, {
-            "i",
-            "s",
-        }),
-    },
+        end, { "i", "s" }),
+    }),
     formatting = {
         format = function(entry, vim_item)
             vim_item.kind = string.format(
