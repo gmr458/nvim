@@ -62,6 +62,7 @@ nvim_tree.setup({
         custom = { ".git", "node_modules" },
         exclude = { ".gitignore" },
     },
+    git = { ignore = false },
     actions = {
         open_file = {
             window_picker = {
