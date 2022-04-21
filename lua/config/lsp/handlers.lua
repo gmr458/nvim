@@ -8,6 +8,17 @@ M.setup = function()
         { name = "DiagnosticSignInfo", text = "" },
     }
 
+    local borderchars = {
+        "┌",
+        "─",
+        "┐",
+        "│",
+        "┘",
+        "─",
+        "└",
+        "│",
+    }
+
     for _, sign in ipairs(signs) do
         vim.fn.sign_define(
             sign.name,
@@ -21,20 +32,10 @@ M.setup = function()
         underline = true,
         update_in_insert = false,
         severity_sort = true,
+        float = { border = borderchars },
     }
 
     vim.diagnostic.config(config)
-
-    local borderchars = {
-        "┌",
-        "─",
-        "┐",
-        "│",
-        "┘",
-        "─",
-        "└",
-        "│",
-    }
 
     vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
         vim.lsp.handlers.hover,
@@ -45,6 +46,15 @@ M.setup = function()
         vim.lsp.handlers.signature_help,
         { border = borderchars }
     )
+
+    local lspconfig_window = require("lspconfig.ui.windows")
+    local old_defaults = lspconfig_window.default_opts
+
+    function lspconfig_window.default_opts(opts)
+        local win_opts = old_defaults(opts)
+        win_opts.border = borderchars
+        return win_opts
+    end
 end
 
 local function lsp_keymaps(bufnr)
@@ -56,7 +66,7 @@ local function lsp_keymaps(bufnr)
         bufnr,
         "n",
         "<space>e",
-        "<cmd>lua vim.diagnostic.open_float(nil, { border = { '┌' , '─' , '┐' , '│' , '┘' , '─' , '└' , '│' } })<CR>",
+        "<cmd>lua vim.diagnostic.open_float()<CR>",
         opts_keymap
     )
     vim.api.nvim_buf_set_keymap(

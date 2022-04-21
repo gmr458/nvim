@@ -23,6 +23,8 @@ kanagawa.setup({
     overrides = {
         -- NvimTreeNormal = { bg = default_colors.sumiInk0 },
         -- NvimTreeNormalNC = { link = "NvimTreeNormal" },
+        NormalFloat = { link = "Normal" },
+        FloatBorder = { link = "Normal" },
     },
 })
 
