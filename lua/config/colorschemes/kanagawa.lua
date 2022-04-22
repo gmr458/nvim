@@ -4,7 +4,7 @@ if not status_ok then
     return
 end
 
--- local default_colors = require("kanagawa.colors").setup()
+local default_colors = require("kanagawa.colors").setup()
 
 kanagawa.setup({
     undercurl = true,
@@ -21,10 +21,14 @@ kanagawa.setup({
     globalStatus = true,
     colors = {},
     overrides = {
-        -- NvimTreeNormal = { bg = default_colors.sumiInk0 },
-        -- NvimTreeNormalNC = { link = "NvimTreeNormal" },
+        NvimTreeNormal = { bg = default_colors.sumiInk0 },
+        NvimTreeNormalNC = { link = "NvimTreeNormal" },
         NormalFloat = { link = "Normal" },
         FloatBorder = { link = "Normal" },
+        WinSeparator = {
+            bg = default_colors.sumiInk0,
+            fg = default_colors.sumiInk0,
+        },
     },
 })
 
