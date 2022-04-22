@@ -29,6 +29,7 @@ kanagawa.setup({
             bg = default_colors.sumiInk0,
             fg = default_colors.sumiInk0,
         },
+        TSInclude = { fg = default_colors.springBlue },
     },
 })
 
