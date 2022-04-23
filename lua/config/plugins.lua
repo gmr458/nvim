@@ -248,6 +248,12 @@ return packer.startup(function(use)
     --     config = "require('config.lualine')",
     -- })
     use({
+        "phaazon/hop.nvim",
+        branch = "v1",
+        event = "BufRead",
+        config = "require('config.hop')",
+    })
+    use({
         "NMAC427/guess-indent.nvim",
         config = "require('config.guess_indent')",
     })
