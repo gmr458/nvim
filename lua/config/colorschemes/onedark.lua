@@ -28,6 +28,9 @@ onedark.setup({
     },
     colors = {}, -- Override default colors
     highlights = {
+        NvimTreeNormal = { bg = "$bg0" },
+        NvimTreeNormalNC = { bg = "$bg0" },
+        NvimTreeEndOfBuffer = { bg = "$bg0" },
         rainbowcol1 = { fg = "#ffd700" },
         rainbowcol2 = { fg = "#ff0084" },
     }, -- Override highlight groups
