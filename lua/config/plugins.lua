@@ -155,10 +155,10 @@ return packer.startup(function(use)
         "marko-cerovac/material.nvim",
         -- config = "require('config.colorschemes.material')",
     }) ]]
-    -- use({
-    --     "navarasu/onedark.nvim",
-    --     config = "require('config.colorschemes.onedark')",
-    -- })
+    use({
+        "navarasu/onedark.nvim",
+        -- config = "require('config.colorschemes.onedark')",
+    })
     -- use("tiagovla/tokyodark.nvim")
     --[[ use({
         "Mofiqul/dracula.nvim",
