@@ -225,7 +225,7 @@ return packer.startup(function(use)
     -- Completion
     use({
         "hrsh7th/nvim-cmp",
-        event = "InsertCharPre",
+        event = "InsertEnter",
         requires = {
             { "hrsh7th/cmp-nvim-lua", after = "nvim-cmp" },
             { "hrsh7th/cmp-buffer", after = "nvim-cmp" },
@@ -237,7 +237,7 @@ return packer.startup(function(use)
 
     use({
         "L3MON4D3/LuaSnip",
-        event = "InsertCharPre",
+        event = "InsertEnter",
         requires = "rafamadriz/friendly-snippets",
     })
 
