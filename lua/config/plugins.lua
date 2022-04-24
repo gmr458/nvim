@@ -242,11 +242,11 @@ return packer.startup(function(use)
     })
 
     -- Other plugins
-    -- use({
-    --     "nvim-lualine/lualine.nvim",
-    --     ft = filetypes_i_use,
-    --     config = "require('config.lualine')",
-    -- })
+    use({
+        "nvim-lualine/lualine.nvim",
+        ft = filetypes_i_use,
+        config = "require('config.lualine')",
+    })
     use({
         "phaazon/hop.nvim",
         branch = "v1",
