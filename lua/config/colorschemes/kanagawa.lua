@@ -8,12 +8,12 @@ local default_colors = require("kanagawa.colors").setup()
 
 kanagawa.setup({
     undercurl = true,
-    commentStyle = "NONE",
+    commentStyle = "italic",
     functionStyle = "NONE",
-    keywordStyle = "NONE",
-    statementStyle = "NONE",
+    keywordStyle = "italic",
+    statementStyle = "italic",
     typeStyle = "NONE",
-    variablebuiltinStyle = "NONE",
+    variablebuiltinStyle = "italic",
     specialReturn = true,
     specialException = true,
     transparent = false,
