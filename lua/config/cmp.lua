@@ -12,39 +12,6 @@ end
 
 require("luasnip.loaders.from_vscode").lazy_load()
 
-local check_backspace = function()
-    local col = vim.fn.col(".") - 1
-    return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
-end
-
-local lspkindicons = {
-    Text = "",
-    Method = "",
-    Function = "",
-    Constructor = "",
-    Field = "",
-    Variable = "",
-    Class = "𝓒",
-    Interface = "",
-    Module = "",
-    Property = "ﰠ",
-    Unit = "",
-    Value = "",
-    Enum = "",
-    Keyword = "",
-    Snippet = "",
-    Color = "",
-    File = "",
-    Reference = "",
-    Folder = "",
-    EnumMember = "",
-    Constant = "",
-    Struct = "𝓢",
-    Event = "",
-    Operator = "",
-    TypeParameter = "",
-}
-
 cmp.setup({
     preselect = cmp.PreselectMode.None,
     snippet = {
@@ -85,16 +52,6 @@ cmp.setup({
             end
         end, { "i", "s" }),
     }),
-    formatting = {
-        format = function(entry, vim_item)
-            vim_item.kind = string.format(
-                "%s %s",
-                lspkindicons[vim_item.kind],
-                vim_item.kind
-            )
-            return vim_item
-        end,
-    },
     sources = cmp.config.sources({
         { name = "nvim_lua" },
         { name = "nvim_lsp" },
