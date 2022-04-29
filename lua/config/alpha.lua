@@ -26,12 +26,15 @@ dashboard.section.header.val = {
     [[░░░░░    ░░░░░  ░░░░░░   ░░░░░░     ░░░░░    ░░░░░ ░░░░░ ░░░ ░░░░░ ]],
 }
 
+local opts = { noremap = true, silent = true }
+
 dashboard.section.buttons.val = {
-    dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
+    dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>", opts),
     dashboard.button(
         "tff",
         "  Find file",
-        ":Telescope find_files hidden=true no_ignore=true<CR>"
+        ":Telescope find_files hidden=true no_ignore=true<CR>",
+        opts
     ),
     -- dashboard.button(
     --     "tfv",
@@ -41,19 +44,22 @@ dashboard.section.buttons.val = {
     dashboard.button(
         "tfg",
         "  Live grep",
-        ":Telescope live_grep preview=true<CR>"
+        ":Telescope live_grep preview=true<CR>",
+        opts
     ),
     dashboard.button(
         "<space>fb",
         "  File browser",
-        ":Telescope file_browser preview=true<CR>"
+        ":Telescope file_browser preview=true<CR>",
+        opts
     ),
     dashboard.button(
         "<space>mf",
         "  Media files",
-        ":Telescope media_files preview=true<CR>"
+        ":Telescope media_files preview=true<CR>",
+        opts
     ),
-    dashboard.button("q", "  Quit NVIM", ":qa<CR>"),
+    dashboard.button("q", "  Quit NVIM", ":qa<CR>", opts),
 }
 
 dashboard.config.opts.noautocmd = true

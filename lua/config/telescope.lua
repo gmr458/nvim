@@ -34,6 +34,7 @@ telescope.setup({
         },
         file_ignore_patterns = {
             ".git/",
+            ".git\\",
             "node_modules",
             "dist",
             "build",
@@ -44,6 +45,7 @@ telescope.setup({
             ".exe",
             "__pycache__",
             ".vscode",
+            "vendor",
         },
         color_devicons = true,
         set_env = { ["COLORTERM"] = "truecolor" },
