@@ -8,14 +8,13 @@ indent_blankline.setup({
     show_current_context = true,
     show_current_context_start = false,
     filetype_exclude = {
+        "alpha",
+        "help",
+        "lsp-installer",
+        "lspinfo",
         "NvimTree",
         "packer",
         "toggleterm",
-        "lsp-installer",
-        "help",
-        "alpha",
-        "dashboard",
-        "lspinfo",
     },
 })
 

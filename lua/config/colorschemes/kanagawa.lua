@@ -21,16 +21,18 @@ kanagawa.setup({
     globalStatus = true,
     colors = {},
     overrides = {
+        FloatBorder = { link = "Normal" },
+        NormalFloat = { link = "Normal" },
+        NvimTreeGitIgnored = { fg = default_colors.fujiGray },
         -- NvimTreeNormal = { bg = default_colors.sumiInk0 },
         -- NvimTreeNormalNC = { link = "NvimTreeNormal" },
-        NvimTreeGitIgnored = { fg = default_colors.fujiGray },
-        NormalFloat = { link = "Normal" },
-        FloatBorder = { link = "Normal" },
+        StatusLine = { bg = default_colors.sumiInk1 },
+        StatusLineNC = { bg = default_colors.sumiInk1 },
+        TSInclude = { fg = default_colors.springBlue },
         -- WinSeparator = {
         --     bg = default_colors.sumiInk0,
         --     fg = default_colors.sumiInk0,
         -- },
-        TSInclude = { fg = default_colors.springBlue },
     },
 })
 
