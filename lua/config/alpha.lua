@@ -6,15 +6,6 @@ end
 
 local dashboard = require("alpha.themes.dashboard")
 
--- dashboard.section.header.val = {
--- [[                               __                ]],
--- [[  ___     ___    ___   __  __ /\_\    ___ ___    ]],
--- [[ / _ `\  / __`\ / __`\/\ \/\ \\/\ \  / __` __`\  ]],
--- [[/\ \/\ \/\  __//\ \_\ \ \ \_/ |\ \ \/\ \/\ \/\ \ ]],
--- [[\ \_\ \_\ \____\ \____/\ \___/  \ \_\ \_\ \_\ \_\]],
--- [[ \/_/\/_/\/____/\/___/  \/__/    \/_/\/_/\/_/\/_/]],
--- }
-
 dashboard.section.header.val = {
     [[ ██████   █████                                ███                 ]],
     [[░░██████ ░░███                                ░░░                  ]],
@@ -36,11 +27,6 @@ dashboard.section.buttons.val = {
         ":Telescope find_files hidden=true no_ignore=true<CR>",
         opts
     ),
-    -- dashboard.button(
-    --     "tfv",
-    --     "  Find file with preview",
-    --     ":Telescope find_files preview=true hidden=true no_ignore=true<CR>"
-    -- ),
     dashboard.button(
         "tfg",
         "  Live grep",
@@ -62,6 +48,6 @@ dashboard.section.buttons.val = {
     dashboard.button("q", "  Quit NVIM", ":qa<CR>", opts),
 }
 
-dashboard.config.opts.noautocmd = true
+dashboard.config.opts.noautocmd = false
 
 alpha.setup(dashboard.config)
