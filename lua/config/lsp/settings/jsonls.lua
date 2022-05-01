@@ -1,29 +1,13 @@
 local status_ok, schemastore = pcall(require, "schemastore")
 
-if not status_ok then
-    return {
-        setup = {
-            commands = {
-                Format = {
-                    function()
-                        vim.lsp.buf.range_formatting(
-                            {},
-                            { 0, 0 },
-                            { vim.fn.line("$"), 0 }
-                        )
-                    end,
-                },
-            },
-        },
-    }
+local schemas = {}
+
+if status_ok then
+    schemas = schemastore.json.schemas()
 end
 
 return {
-    settings = {
-        json = {
-            schemas = schemastore.json.schemas(),
-        },
-    },
+    settings = { json = { schemas = schemas } },
     setup = {
         commands = {
             Format = {

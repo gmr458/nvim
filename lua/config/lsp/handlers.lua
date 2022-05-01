@@ -1,5 +1,30 @@
 local M = {}
 
+M.servers = {
+    "angularls",
+    "bashls",
+    "clangd",
+    "cssls",
+    "denols",
+    "dockerls",
+    "emmet_ls",
+    "eslint",
+    "gopls",
+    "html",
+    "intelephense",
+    "jdtls",
+    "jsonls",
+    "kotlin_language_server",
+    "omnisharp",
+    "pyright",
+    "rust_analyzer",
+    "sqls",
+    "sumneko_lua",
+    "tailwindcss",
+    "tsserver",
+    "vimls",
+}
+
 M.setup = function()
     -- local signs = {
     --     { name = "DiagnosticSignError", text = "" },
