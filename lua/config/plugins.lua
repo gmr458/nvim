@@ -40,7 +40,7 @@ packer.init({
     },
 })
 
-local filetypes_i_use = {
+local filetypes = {
     "asm",
     "c",
     "cmd",
@@ -80,7 +80,7 @@ local filetypes_i_use = {
     "zsh",
 }
 
-local filetype_with_lsp = {
+local filetypes_lsp = {
     "c",
     "cmd",
     "cpp",
@@ -127,7 +127,7 @@ return packer.startup(function(use)
     })
     use({
         "p00f/nvim-ts-rainbow",
-        ft = filetypes_i_use,
+        ft = filetypes,
     })
     use({
         "norcalli/nvim-colorizer.lua",
@@ -145,10 +145,10 @@ return packer.startup(function(use)
     })
 
     -- Colorschemes
-    use({
-        "ellisonleao/gruvbox.nvim",
-        -- config = "require('config.colorschemes.gruvbox')",
-    })
+    -- use({
+    --     "ellisonleao/gruvbox.nvim",
+    --     -- config = "require('config.colorschemes.gruvbox')",
+    -- })
     -- use({
     --     "catppuccin/nvim",
     --     as = "catppuccin",
@@ -200,7 +200,7 @@ return packer.startup(function(use)
     -- LSP
     use({
         "williamboman/nvim-lsp-installer",
-        ft = filetype_with_lsp,
+        ft = filetypes_lsp,
     })
     use({
         "neovim/nvim-lspconfig",
@@ -252,7 +252,7 @@ return packer.startup(function(use)
     -- Other plugins
     use({
         "nvim-lualine/lualine.nvim",
-        ft = filetypes_i_use,
+        ft = filetypes,
         config = "require('config.lualine')",
     })
     use({
@@ -267,7 +267,7 @@ return packer.startup(function(use)
     })
     use({
         "b0o/SchemaStore.nvim",
-        ft = { "json", "jsonc" },
+        after = "nvim-lsp-installer",
     })
     use({
         "kyazdani42/nvim-tree.lua",
@@ -290,7 +290,7 @@ return packer.startup(function(use)
     })
     use({
         "akinsho/bufferline.nvim",
-        ft = filetypes_i_use,
+        ft = filetypes,
         config = "require('config.bufferline')",
     })
     use({
@@ -305,7 +305,7 @@ return packer.startup(function(use)
     })
     use({
         "lukas-reineke/indent-blankline.nvim",
-        ft = filetypes_i_use,
+        ft = filetypes,
         config = "require('config.indent-blankline')",
     })
     use({
