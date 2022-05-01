@@ -20,13 +20,13 @@ end
 
 vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
 
-local Terminal = require("toggleterm.terminal").Terminal
-
 local opts = { noremap = true, silent = true }
 
 local close_terminal = function(term)
     vim.api.nvim_buf_set_keymap(term.bufnr, "n", "q", "<cmd>close<CR>", opts)
 end
+
+local Terminal = require("toggleterm.terminal").Terminal
 
 -- Node.js
 local node = Terminal:new({
