@@ -126,6 +126,10 @@ return packer.startup(function(use)
         config = "require('config.treesitter')",
     })
     use({
+        "nvim-treesitter/playground",
+        after = "nvim-treesitter",
+    })
+    use({
         "p00f/nvim-ts-rainbow",
         ft = filetypes,
     })
@@ -146,6 +150,10 @@ return packer.startup(function(use)
 
     -- Colorschemes
     -- use({
+    --     "sainnhe/gruvbox-material",
+    --     config = "require('config.colorschemes.gruvbox_material')",
+    -- })
+    -- use({
     --     "ellisonleao/gruvbox.nvim",
     --     -- config = "require('config.colorschemes.gruvbox')",
     -- })
@@ -156,26 +164,26 @@ return packer.startup(function(use)
     -- })
     use({
         "rebelot/kanagawa.nvim",
-        config = "require('config.colorschemes.kanagawa')",
+        -- config = "require('config.colorschemes.kanagawa')",
     })
     --[[ use({
         "marko-cerovac/material.nvim",
         -- config = "require('config.colorschemes.material')",
     }) ]]
-    use({
-        "navarasu/onedark.nvim",
-        -- config = "require('config.colorschemes.onedark')",
-    })
+    -- use({
+    --     "navarasu/onedark.nvim",
+    --     -- config = "require('config.colorschemes.onedark')",
+    -- })
     -- use("tiagovla/tokyodark.nvim")
     --[[ use({
         "Mofiqul/dracula.nvim",
         -- config = "require('config.colorschemes.dracula')",
     }) ]]
     -- use("yashguptaz/calvera-dark.nvim")
-    --[[ use({
+    use({
         "projekt0n/github-nvim-theme",
-        -- config = "require('config.colorschemes.github')",
-    }) ]]
+        config = "require('config.colorschemes.github')",
+    })
     -- use("folke/tokyonight.nvim")
     -- use("olimorris/onedarkpro.nvim")
 

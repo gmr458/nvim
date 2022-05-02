@@ -5,17 +5,25 @@ if not status_ok then
 end
 
 github.setup({
-    theme_style = "dark_default",
-    dark_sidebar = true,
     comment_style = "italic",
-    keyword_style = "italic",
-    function_style = "italic",
-    variable_style = "NONE",
+    dark_sidebar = false,
+    dev = true,
+    function_style = "NONE",
+    keyword_style = "NONE",
     overrides = function(c)
         return {
-            VertSplit = { bg = c.bg_sidebar },
-            StatusLine = { bg = c.bg_sidebar },
-            StatusLineNC = { bg = c.bg_sidebar },
+            goTSConstBuiltin = { fg = c.bright_blue },
+            goTSFuncBuiltin = { fg = c.magenta },
+            goTSFunction = { fg = c.magenta },
+            goTSMethod = { fg = c.magenta },
+            goTSProperty = { fg = c.bright_blue },
+            goTSType = { fg = c.fg },
+            goTSTypeBuiltin = { fg = c.fg },
+            StatusLine = { bg = c.bg },
+            StatusLineNC = { bg = c.bg },
+            WinSeparator = { fg = c.bg2 },
         }
     end,
+    theme_style = "dark_default",
+    variable_style = "NONE",
 })
