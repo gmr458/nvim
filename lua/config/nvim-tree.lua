@@ -59,7 +59,7 @@ nvim_tree.setup({
     },
     renderer = { indent_markers = { enable = true } },
     filters = {
-        custom = { ".git", "node_modules" },
+        custom = { "^\\.git$", "node_modules" },
         exclude = { ".gitignore" },
     },
     git = { ignore = false },
