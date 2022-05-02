@@ -298,6 +298,7 @@ return packer.startup(function(use)
     })
     use({
         "akinsho/bufferline.nvim",
+        tag = "v2.*",
         ft = filetypes,
         config = "require('config.bufferline')",
     })
