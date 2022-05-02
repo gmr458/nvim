@@ -24,6 +24,6 @@ github.setup({
             WinSeparator = { fg = c.bg2 },
         }
     end,
-    theme_style = "dark_default",
+    theme_style = "dark_default", -- dark, dimmed, dark_default, dark_colorblind, light, light_default, light_colorblind
     variable_style = "NONE",
 })
