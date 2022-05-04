@@ -24,6 +24,21 @@ vim.cmd([[
         " See `autoload/gruvbox_material.vim` for the format of `l:palette`.
         call gruvbox_material#highlight('StatusLine', l:palette.bg0, l:palette.none)
         call gruvbox_material#highlight('NvimTreeGitIgnored', l:palette.grey0, l:palette.none, 'bold')
+        call gruvbox_material#highlight('TSStringNamespace', l:palette.green, l:palette.none)
+        call gruvbox_material#highlight('goTSNamespace', l:palette.aqua, l:palette.none)
+        call gruvbox_material#highlight('goTSProperty', l:palette.blue, l:palette.none)
+        call gruvbox_material#highlight('DiagnosticError', l:palette.red, l:palette.none)
+        call gruvbox_material#highlight('DiagnosticFloatingError', l:palette.red, l:palette.bg0)
+        call gruvbox_material#highlight('DiagnosticVirtualTextError', l:palette.red, l:palette.none)
+        call gruvbox_material#highlight('DiagnosticWarn', l:palette.yellow, l:palette.none)
+        call gruvbox_material#highlight('DiagnosticFloatingWarn', l:palette.yellow, l:palette.bg0)
+        call gruvbox_material#highlight('DiagnosticVirtualTextWarn', l:palette.yellow, l:palette.none)
+        call gruvbox_material#highlight('DiagnosticInfo', l:palette.blue, l:palette.none)
+        call gruvbox_material#highlight('DiagnosticFloatingInfo', l:palette.blue, l:palette.bg0)
+        call gruvbox_material#highlight('DiagnosticVirtualTextInfo', l:palette.blue, l:palette.none)
+        call gruvbox_material#highlight('DiagnosticHint', l:palette.aqua, l:palette.none)
+        call gruvbox_material#highlight('DiagnosticFloatingHint', l:palette.aqua, l:palette.bg0)
+        call gruvbox_material#highlight('DiagnosticVirtualTextHint', l:palette.aqua, l:palette.none)
     endfunction
 
     augroup GruvboxMaterialCustom
