@@ -125,10 +125,10 @@ return packer.startup(function(use)
         run = ":TSUpdate",
         config = "require('config.treesitter')",
     })
-    -- use({
-    --     "nvim-treesitter/playground",
-    --     after = "nvim-treesitter",
-    -- })
+    use({
+        "nvim-treesitter/playground",
+        after = "nvim-treesitter",
+    })
     use({
         "p00f/nvim-ts-rainbow",
         ft = filetypes,
@@ -156,6 +156,10 @@ return packer.startup(function(use)
     -- use({
     --     "ellisonleao/gruvbox.nvim",
     --     config = "require('config.colorschemes.gruvbox')",
+    -- })
+    -- use({
+    --     "gruvbox-community/gruvbox",
+    --     config = "require('config.colorschemes.gruvbox_community')",
     -- })
     -- use({
     --     "catppuccin/nvim",
