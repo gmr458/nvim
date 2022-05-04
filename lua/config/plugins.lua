@@ -155,7 +155,7 @@ return packer.startup(function(use)
     })
     -- use({
     --     "ellisonleao/gruvbox.nvim",
-    --     -- config = "require('config.colorschemes.gruvbox')",
+    --     config = "require('config.colorschemes.gruvbox')",
     -- })
     -- use({
     --     "catppuccin/nvim",
