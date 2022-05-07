@@ -262,10 +262,15 @@ return packer.startup(function(use)
     })
 
     -- Other plugins
+    -- use({
+    --     "nvim-lualine/lualine.nvim",
+    --     ft = filetypes,
+    --     config = "require('config.lualine')",
+    -- })
     use({
-        "nvim-lualine/lualine.nvim",
-        ft = filetypes,
-        config = "require('config.lualine')",
+        "feline-nvim/feline.nvim",
+        after = "alpha-nvim",
+        config = "require('config.feline')",
     })
     use({
         "phaazon/hop.nvim",
