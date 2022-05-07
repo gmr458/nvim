@@ -43,5 +43,3 @@ This config is highly influenced by [LunarVim/Neovim-from-scratch](https://githu
 ![screenshot03](./screenshots/screenshot03.png)
 
 ![screenshot04](./screenshots/screenshot04.png)
-
-<video src="https://raw.githubusercontent.com/gmr458/nvim/main/screenshots/video.mp4" width="100%"></video>
