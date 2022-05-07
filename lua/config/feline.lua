@@ -257,6 +257,7 @@ feline.setup({
         },
         bufnames = {},
     },
+    disable = { filetypes = { "^alpha$" } },
     theme = kanagawa,
     components = components,
 })
