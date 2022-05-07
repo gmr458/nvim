@@ -2,8 +2,10 @@
 
 ## Requirements
 
-1. Neovim >= v0.6.1
+1. Neovim >= v0.7.0
 2. Git
+3. [Nvim Treesitter requirements](https://github.com/nvim-treesitter/nvim-treesitter#requirements)
+3. [Nvim LSP Installer requirements](https://github.com/williamboman/nvim-lsp-installer#installation)
 
 ## Installation
 
@@ -12,25 +14,34 @@
 > Powershell
 
 ```shell
-git clone https://github.com/gmr458/dotfiles-neovim.git "$Env:LOCALAPPDATA\nvim"
+git clone https://github.com/gmr458/nvim.git "$Env:LOCALAPPDATA\nvim"
 ```
 
 > CMD
 
 ```shell
-git clone https://github.com/gmr458/dotfiles-neovim.git %USERPROFILE%\AppData\Local\nvim
+git clone https://github.com/gmr458/nvim.git %USERPROFILE%\AppData\Local\nvim
 ```
 
 > Linux
 
 ```shell
-git clone https://github.com/gmr458/dotfiles-neovim.git ~/.config/nvim
+git clone https://github.com/gmr458/nvim.git ~/.config/nvim
 ```
 
-2. Open Neovim and the plugins will be installed automatically.
+2. Open Neovim, plugins and treesitter parsers will be installed automatically.
 
-3. For LSP servers I am using [nvim-lsp-installer](https://github.com/williamboman/nvim-lsp-installer)
+3. Open the init.lua file, lsp-config will load and the LSP servers will be installed automatically.
 
 This config is highly influenced by [LunarVim/Neovim-from-scratch](https://github.com/LunarVim/Neovim-from-scratch)
 
-## [Click here to see screenshots](./PREVIEW.md)
+## Preview
+![screenshot01](./screenshots/screenshot01.png)
+
+![screenshot02](./screenshots/screenshot02.png)
+
+![screenshot03](./screenshots/screenshot03.png)
+
+![screenshot04](./screenshots/screenshot04.png)
+
+<video src="https://raw.githubusercontent.com/gmr458/nvim/main/screenshots/video.mp4" width="100%"></video>
