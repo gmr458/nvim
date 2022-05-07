@@ -26,6 +26,12 @@ kanagawa.setup({
         javascriptTSConstructor = { fg = default_colors.crystalBlue },
         NormalFloat = { link = "Normal" },
         NvimTreeGitIgnored = { fg = default_colors.fujiGray },
+        NvimTreeNormal = { bg = default_colors.sumiInk0 },
+        NvimTreeNormalNC = { link = "NvimTreeNormal" },
+        NvimTreeWinSeparator = {
+            bg = default_colors.sumiInk1,
+            fg = default_colors.sumiInk1,
+        },
         StatusLine = { bg = default_colors.sumiInk1 },
         TSConditional = { fg = default_colors.oniViolet, style = "italic" },
         TSInclude = { fg = default_colors.surimiOrange, style = "italic" },
