@@ -60,6 +60,9 @@ telescope.setup({
         find_files = {
             previewer = false,
         },
+        oldfiles = {
+            previewer = false,
+        },
     },
 })
 

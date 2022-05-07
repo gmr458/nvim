@@ -11,7 +11,6 @@ dashboard.section.header.val = require("config.alpha_headers").Bloody
 local opts = { noremap = true, silent = true }
 
 dashboard.section.buttons.val = {
-    dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>", opts),
     dashboard.button(
         "tff",
         "  Find file",
@@ -25,17 +24,12 @@ dashboard.section.buttons.val = {
         opts
     ),
     dashboard.button(
-        "<space>fb",
-        "  File browser",
-        ":Telescope file_browser preview=true<CR>",
+        "tfr",
+        "  Recent File",
+        ":Telescope oldfiles preview=false<CR>",
         opts
     ),
-    dashboard.button(
-        "<space>mf",
-        "  Media files",
-        ":Telescope media_files preview=true<CR>",
-        opts
-    ),
+    dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>", opts),
     dashboard.button("q", "  Quit NVIM", ":qa<CR>", opts),
 }
 
