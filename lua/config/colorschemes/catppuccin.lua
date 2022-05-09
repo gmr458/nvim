@@ -38,7 +38,7 @@ catppuccin.setup({
         gitsigns = true,
         telescope = true,
         nvimtree = {
-            enabled = false,
+            enabled = true,
             show_root = false,
             transparent_panel = false,
         },
@@ -68,116 +68,34 @@ catppuccin.setup({
     },
 })
 
--- local config = require("catppuccin.config").options
--- local nvimtree = config.integrations.nvimtree
--- local colors = require("catppuccin.api.colors").get_colors()
+local colors = require("catppuccin.api.colors").get_colors()
 
--- local remap_none = {
---     bashTSFuncBuiltin = { style = "NONE" },
---     bashTSParameter = { style = "NONE" },
---     cssTSProperty = { style = "NONE" },
---     ErrorMsg = { style = "NONE" },
---     NormalFloat = {
---         bg = config.transparent_background and "NONE" or colors.black2,
---     },
---     NvimTreeStatusLine = {
---         bg = nvimtree.enabled and colors.black1 or "none",
---         fg = nvimtree.enabled and colors.black1 or "none",
---     },
---     NvimTreeStatuslineNc = {
---         bg = nvimtree.enabled and colors.black1 or "none",
---         fg = nvimtree.enabled and colors.black1 or "none",
---     },
---     NvimTreeVertSplit = { bg = nvimtree.enabled and colors.black1 or "NONE" },
---     -- Pmenu = { bg = colors.black2 },
---     Pmenu = {
---         bg = config.transparent_background and colors.black2 or colors.black3,
---     },
---     TSProperty = { style = "NONE" },
---     TSInclude = { style = "NONE" },
---     TSOperator = { style = "NONE" },
---     TSKeywordOperator = { style = "NONE" },
---     TSPunctSpecial = { style = "NONE" },
---     TSFloat = { style = "NONE" },
---     TSNumber = { style = "NONE" },
---     TSBoolean = { style = "NONE" },
---     TSConditional = { style = "NONE" },
---     TSRepeat = { style = "NONE" },
---     TSException = { style = "NONE" },
---     TSConstBuiltin = { style = "NONE" },
---     TSFuncBuiltin = { style = "NONE" },
---     TSTypeBuiltin = { style = "NONE" },
---     TSVariableBuiltin = { style = "NONE" },
---     TSFunction = { style = "NONE" },
---     TSParameter = { style = "NONE" },
---     TSKeywordFunction = { style = "NONE" },
---     TSKeyword = { style = "NONE" },
---     TSKeywordReturn = { style = "NONE" },
---     TSMethod = { style = "NONE" },
---     TSNamespace = { style = "NONE" },
---     TSStringRegex = { style = "NONE" },
---     TSVariable = { style = "NONE" },
---     TSTagAttribute = { style = "NONE" },
---     TSURI = { style = "underline" },
---     TSLiteral = { style = "NONE" },
---     TSEmphasis = { style = "NONE" },
---     TSStringEscape = { style = "NONE" },
---     typescriptTSProperty = { style = "NONE" },
--- }
-
--- local remap_italic = {
---     bashTSFuncBuiltin = { style = "NONE" },
---     bashTSParameter = { style = "NONE" },
---     cssTSProperty = { style = "NONE" },
---     ErrorMsg = { style = "NONE" },
---     NormalFloat = {
---         bg = config.transparent_background and "NONE" or colors.black2,
---     },
---     NvimTreeStatusLine = {
---         bg = nvimtree.enabled and colors.black1 or "none",
---         fg = nvimtree.enabled and colors.black1 or "none",
---     },
---     NvimTreeStatuslineNc = {
---         bg = nvimtree.enabled and colors.black1 or "none",
---         fg = nvimtree.enabled and colors.black1 or "none",
---     },
---     NvimTreeVertSplit = { bg = nvimtree.enabled and colors.black1 or "NONE" },
---     -- Pmenu = { bg = colors.black2 },
---     Pmenu = {
---         bg = config.transparent_background and colors.black2 or colors.black3,
---     },
---     TSProperty = { style = "NONE" },
---     TSInclude = { style = "italic" },
---     TSOperator = { style = "NONE" },
---     TSKeywordOperator = { style = "NONE" },
---     TSPunctSpecial = { style = "NONE" },
---     TSFloat = { style = "NONE" },
---     TSNumber = { style = "NONE" },
---     TSBoolean = { style = "italic" },
---     TSConditional = { style = "italic" },
---     TSRepeat = { style = "italic" },
---     TSException = { style = "NONE" },
---     TSConstBuiltin = { style = "italic" },
---     TSFuncBuiltin = { style = "italic" },
---     TSTypeBuiltin = { style = "italic" },
---     TSVariableBuiltin = { style = "italic" },
---     TSFunction = { style = "NONE" },
---     TSParameter = { style = "NONE" },
---     TSKeywordFunction = { style = "italic" },
---     TSKeyword = { style = "italic" },
---     TSKeywordReturn = { style = "italic" },
---     TSMethod = { style = "italic" },
---     TSNamespace = { style = "NONE" },
---     TSStringRegex = { style = "NONE" },
---     TSVariable = { style = "NONE" },
---     TSTagAttribute = { style = "NONE" },
---     TSURI = { style = "underline" },
---     TSLiteral = { style = "italic" },
---     TSEmphasis = { style = "NONE" },
---     TSStringEscape = { style = "NONE" },
---     typescriptTSProperty = { style = "NONE" },
--- }
-
--- catppuccin.remap(remap_none)
+catppuccin.remap({
+    FloatBorder = { link = "Normal" },
+    NormalFloat = { link = "Normal" },
+    StatusLine = { bg = colors.black2 },
+    TelescopeBorder = {
+        bg = colors.black1,
+        fg = colors.black1,
+    },
+    TelescopeNormal = { bg = colors.black1 },
+    TelescopePreviewBorder = {
+        bg = colors.black1,
+        fg = colors.black1,
+    },
+    TelescopePreviewNormal = { bg = colors.black1 },
+    TelescopePreviewTitle = { bg = colors.black1 },
+    TelescopePromptBorder = {
+        bg = colors.black1,
+        fg = colors.black1,
+    },
+    TelescopePromptNormal = {
+        bg = colors.black1,
+    },
+    TelescopePromptTitle = {
+        bg = colors.black1,
+        fg = colors.white,
+    },
+})
 
 vim.cmd([[colorscheme catppuccin]])
