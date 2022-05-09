@@ -17,6 +17,7 @@ telescope.setup({
             },
         },
         prompt_prefix = "   ",
+        selection_caret = "",
         layout_config = {
             preview_width = 0.7,
             width = 0.9,
