@@ -4,7 +4,7 @@ if not status_ok then
     return
 end
 
-local default_colors = require("kanagawa.colors").setup()
+local colors = require("kanagawa.colors").setup()
 
 kanagawa.setup({
     undercurl = true,
@@ -22,45 +22,52 @@ kanagawa.setup({
     colors = {},
     overrides = {
         FloatBorder = { link = "Normal" },
-        goTSNamespace = { fg = default_colors.fujiWhite },
-        javascriptTSConstructor = { fg = default_colors.crystalBlue },
+        goTSNamespace = { fg = colors.fujiWhite },
+        javascriptTSConstructor = { fg = colors.crystalBlue },
         NormalFloat = { link = "Normal" },
-        NvimTreeGitIgnored = { fg = default_colors.fujiGray },
-        NvimTreeNormal = { bg = default_colors.sumiInk0 },
+        NvimTreeGitIgnored = { fg = colors.fujiGray },
+        NvimTreeNormal = { bg = colors.sumiInk0 },
         NvimTreeNormalNC = { link = "NvimTreeNormal" },
         NvimTreeWinSeparator = {
-            bg = default_colors.sumiInk1,
-            fg = default_colors.sumiInk1,
+            bg = colors.sumiInk1,
+            fg = colors.sumiInk1,
         },
-        StatusLine = { bg = default_colors.sumiInk1 },
+        StatusLine = { bg = colors.sumiInk1 },
         TelescopeBorder = {
-            bg = default_colors.sumiInk0,
-            fg = default_colors.sumiInk0,
+            bg = colors.sumiInk0,
+            fg = colors.sumiInk0,
         },
-        TelescopeNormal = { bg = default_colors.sumiInk0 },
+        TelescopeNormal = { bg = colors.sumiInk0 },
         TelescopePreviewBorder = {
-            bg = default_colors.sumiInk0,
-            fg = default_colors.sumiInk0,
+            bg = colors.sumiInk0,
+            fg = colors.sumiInk0,
         },
-        TelescopePreviewNormal = { bg = default_colors.sumiInk0 },
-        TelescopePreviewTitle = { bg = default_colors.sumiInk0 },
+        TelescopePreviewNormal = { bg = colors.sumiInk0 },
+        TelescopePreviewTitle = { bg = colors.sumiInk0 },
         TelescopePromptBorder = {
-            bg = default_colors.sumiInk0,
-            fg = default_colors.sumiInk0,
+            bg = colors.sumiInk0,
+            fg = colors.sumiInk0,
         },
         TelescopePromptNormal = {
-            bg = default_colors.sumiInk0,
+            bg = colors.sumiInk0,
         },
         TelescopePromptTitle = {
-            bg = default_colors.sumiInk0,
-            fg = default_colors.fujiWhite,
+            bg = colors.sumiInk0,
+            fg = colors.fujiWhite,
         },
-        TSConditional = { fg = default_colors.oniViolet, style = "italic" },
-        TSInclude = { fg = default_colors.surimiOrange, style = "italic" },
-        TSKeyword = { fg = default_colors.oniViolet, style = "italic" },
-        TSKeywordFunction = { fg = default_colors.oniViolet, style = "italic" },
-        TSKeywordReturn = { fg = default_colors.oniViolet, style = "italic" },
-        TSMethod = { fg = default_colors.crystalBlue, style = "italic" },
+        ToggleTerm1NormalFloat = {
+            bg = colors.sumiInk0,
+        },
+        ToggleTerm1FloatBorder = {
+            bg = colors.sumiInk0,
+            fg = colors.sumiInk0,
+        },
+        TSConditional = { fg = colors.oniViolet, style = "italic" },
+        TSInclude = { fg = colors.surimiOrange, style = "italic" },
+        TSKeyword = { fg = colors.oniViolet, style = "italic" },
+        TSKeywordFunction = { fg = colors.oniViolet, style = "italic" },
+        TSKeywordReturn = { fg = colors.oniViolet, style = "italic" },
+        TSMethod = { fg = colors.crystalBlue, style = "italic" },
         TSTypeBuiltin = { style = "italic" },
     },
 })

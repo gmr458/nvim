@@ -96,6 +96,13 @@ catppuccin.remap({
         bg = colors.black1,
         fg = colors.white,
     },
+    ToggleTerm1NormalFloat = {
+        bg = colors.black1,
+    },
+    ToggleTerm1FloatBorder = {
+        bg = colors.black1,
+        fg = colors.black1,
+    },
 })
 
 vim.cmd([[colorscheme catppuccin]])
