@@ -161,14 +161,14 @@ return packer.startup(function(use)
     --     "gruvbox-community/gruvbox",
     --     config = "require('config.colorschemes.gruvbox_community')",
     -- })
-    -- use({
-    --     "catppuccin/nvim",
-    --     as = "catppuccin",
-    --     config = "require('config.colorschemes.catppuccin')",
-    -- })
+    use({
+        "catppuccin/nvim",
+        as = "catppuccin",
+        config = "require('config.colorschemes.catppuccin')",
+    })
     use({
         "rebelot/kanagawa.nvim",
-        config = "require('config.colorschemes.kanagawa')",
+        -- config = "require('config.colorschemes.kanagawa')",
     })
     --[[ use({
         "marko-cerovac/material.nvim",
