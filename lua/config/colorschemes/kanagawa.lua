@@ -33,6 +33,28 @@ kanagawa.setup({
             fg = default_colors.sumiInk1,
         },
         StatusLine = { bg = default_colors.sumiInk1 },
+        TelescopeBorder = {
+            bg = default_colors.sumiInk0,
+            fg = default_colors.sumiInk0,
+        },
+        TelescopeNormal = { bg = default_colors.sumiInk0 },
+        TelescopePreviewBorder = {
+            bg = default_colors.sumiInk0,
+            fg = default_colors.sumiInk0,
+        },
+        TelescopePreviewNormal = { bg = default_colors.sumiInk0 },
+        TelescopePreviewTitle = { bg = default_colors.sumiInk0 },
+        TelescopePromptBorder = {
+            bg = default_colors.sumiInk0,
+            fg = default_colors.sumiInk0,
+        },
+        TelescopePromptNormal = {
+            bg = default_colors.sumiInk0,
+        },
+        TelescopePromptTitle = {
+            bg = default_colors.sumiInk0,
+            fg = default_colors.fujiWhite,
+        },
         TSConditional = { fg = default_colors.oniViolet, style = "italic" },
         TSInclude = { fg = default_colors.surimiOrange, style = "italic" },
         TSKeyword = { fg = default_colors.oniViolet, style = "italic" },
