@@ -4,8 +4,6 @@ local opts = {
         "css",
         "htmldjango",
         "django-html",
-        "javascriptreact",
-        "typescriptreact",
     },
 }
 
