@@ -7,7 +7,7 @@ end
 configs.setup({
     ensure_installed = "all", -- A list of parser names, or "all"
     sync_install = false, -- Install parsers synchronously (only applied to `ensure_installed`)
-    ignore_install = { "html", "css" }, -- List of parsers to ignore installing (for "all")
+    ignore_install = {}, -- List of parsers to ignore installing (for "all")
     highlight = {
         enable = true, -- `false` will disable the whole extension
 
