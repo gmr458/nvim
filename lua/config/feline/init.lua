@@ -4,7 +4,7 @@ if not status_ok then
     return
 end
 
-local theme = "catppuccin"
+local theme = "gruvbox_material"
 
 feline.setup({
     force_inactive = {
@@ -27,6 +27,6 @@ feline.setup({
         bufnames = {},
     },
     disable = { filetypes = { "^alpha$" } },
-    theme = require("config.feline.themes." .. theme).palette(),
+    theme = require("config.feline.themes." .. theme).palette("dark", "hard"),
     components = require("config.feline.themes." .. theme).components(),
 })
