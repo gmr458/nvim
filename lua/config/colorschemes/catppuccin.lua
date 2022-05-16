@@ -71,6 +71,8 @@ catppuccin.setup({
 local colors = require("catppuccin.api.colors").get_colors()
 
 catppuccin.remap({
+    CmpPMenu = { bg = colors.black1 },
+    CmpPMenuBorder = { bg = colors.black1, fg = colors.black1 },
     FloatBorder = { bg = colors.black1, fg = colors.black1 },
     NormalFloat = { bg = colors.black1 },
     StatusLine = { bg = colors.black2 },

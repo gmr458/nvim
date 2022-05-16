@@ -21,6 +21,8 @@ kanagawa.setup({
     globalStatus = true,
     colors = {},
     overrides = {
+        CmpPMenu = { bg = colors.sumiInk0 },
+        CmpPMenuBorder = { bg = colors.sumiInk0, fg = colors.sumiInk0 },
         FloatBorder = { bg = colors.sumiInk0, fg = colors.sumiInk0 },
         goTSNamespace = { fg = colors.fujiWhite },
         javascriptTSConstructor = { fg = colors.crystalBlue },
