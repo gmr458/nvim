@@ -20,8 +20,32 @@ cmp.setup({
         end,
     },
     window = {
-        completion = cmp.config.window.bordered(),
-        documentation = cmp.config.window.bordered(),
+        completion = {
+            border = {
+                "┌",
+                "─",
+                "┐",
+                "│",
+                "┘",
+                "─",
+                "└",
+                "│",
+            },
+            winhighlight = "Normal:CmpPmenu,FloatBorder:CmpPmenuBorder,CursorLine:PmenuSel,Search:None",
+        },
+        documentation = {
+            border = {
+                "┌",
+                "─",
+                "┐",
+                "│",
+                "┘",
+                "─",
+                "└",
+                "│",
+            },
+            winhighlight = "Normal:CmpPmenu,FloatBorder:CmpPmenuBorder,CursorLine:PmenuSel,Search:None",
+        },
     },
     mapping = cmp.mapping.preset.insert({
         ["<C-Space>"] = cmp.mapping.complete(),
