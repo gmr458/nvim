@@ -71,8 +71,8 @@ catppuccin.setup({
 local colors = require("catppuccin.api.colors").get_colors()
 
 catppuccin.remap({
-    FloatBorder = { link = "Normal" },
-    NormalFloat = { link = "Normal" },
+    FloatBorder = { bg = colors.black1, fg = colors.black1 },
+    NormalFloat = { bg = colors.black1 },
     StatusLine = { bg = colors.black2 },
     TelescopeBorder = {
         bg = colors.black1,

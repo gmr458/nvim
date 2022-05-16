@@ -21,10 +21,10 @@ kanagawa.setup({
     globalStatus = true,
     colors = {},
     overrides = {
-        FloatBorder = { link = "Normal" },
+        FloatBorder = { bg = colors.sumiInk0, fg = colors.sumiInk0 },
         goTSNamespace = { fg = colors.fujiWhite },
         javascriptTSConstructor = { fg = colors.crystalBlue },
-        NormalFloat = { link = "Normal" },
+        NormalFloat = { bg = colors.sumiInk0 },
         NvimTreeGitIgnored = { fg = colors.fujiGray },
         NvimTreeNormal = { bg = colors.sumiInk0 },
         NvimTreeNormalNC = { link = "NvimTreeNormal" },
