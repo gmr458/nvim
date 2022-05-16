@@ -21,6 +21,7 @@ kanagawa.setup({
     globalStatus = true,
     colors = {},
     overrides = {
+        PMenu = { bg = colors.sumiInk0 },
         CmpPMenu = { bg = colors.sumiInk0 },
         CmpPMenuBorder = { bg = colors.sumiInk0, fg = colors.sumiInk0 },
         FloatBorder = { bg = colors.sumiInk0, fg = colors.sumiInk0 },
