@@ -63,6 +63,7 @@ local filetypes = {
     "jsonc",
     "kotlin",
     "lua",
+    "make",
     "markdown",
     "php",
     "python",
