@@ -63,14 +63,14 @@ M.components = function()
                 return {
                     name = vi_mode_utils.get_mode_highlight_name(),
                     fg = vi_mode_utils.get_mode_color(),
-                    style = "bold",
+                    style = "NONE",
                 }
             end,
             icon = "",
         },
         {
             provider = "file_info",
-            hl = { fg = "fg", bg = "wave_blue2", style = "bold" },
+            hl = { fg = "fg", bg = "wave_blue2", style = "NONE" },
             left_sep = {
                 " ",
                 "block",
@@ -99,7 +99,7 @@ M.components = function()
         {
             provider = "git_branch",
             icon = " ",
-            hl = { fg = "fg", style = "bold" },
+            hl = { fg = "fg", style = "NONE" },
             left_sep = " ",
             right_sep = {
                 " ",
@@ -186,7 +186,7 @@ M.components = function()
         },
         {
             provider = "line_percentage",
-            hl = { style = "bold" },
+            hl = { style = "NONE" },
             left_sep = {
                 { str = "slant_right_2_thin", hl = { fg = "wave_blue2" } },
                 " ",
@@ -202,7 +202,7 @@ M.components = function()
     components.inactive[1] = {
         {
             provider = "file_type",
-            hl = { fg = "fg", bg = "wave_blue2", style = "bold" },
+            hl = { fg = "fg", bg = "wave_blue2", style = "NONE" },
             left_sep = { str = " ", hl = { bg = "wave_blue2" } },
             right_sep = {
                 { str = " ", hl = { bg = "wave_blue2" } },
