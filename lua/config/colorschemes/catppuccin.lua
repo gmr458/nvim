@@ -71,39 +71,39 @@ catppuccin.setup({
 local colors = require("catppuccin.api.colors").get_colors()
 
 catppuccin.remap({
-    CmpPMenu = { bg = colors.black1 },
-    CmpPMenuBorder = { bg = colors.black1, fg = colors.black1 },
-    FloatBorder = { bg = colors.black1, fg = colors.black1 },
-    NormalFloat = { bg = colors.black1 },
+    CmpPMenu = { bg = colors.black0 },
+    CmpPMenuBorder = { bg = colors.black0, fg = colors.black0 },
+    FloatBorder = { bg = colors.black0, fg = colors.black1 },
+    NormalFloat = { bg = colors.black0 },
     StatusLine = { bg = colors.black2 },
     TelescopeBorder = {
-        bg = colors.black1,
-        fg = colors.black1,
+        bg = colors.black0,
+        fg = colors.black0,
     },
-    TelescopeNormal = { bg = colors.black1 },
+    TelescopeNormal = { bg = colors.black0 },
     TelescopePreviewBorder = {
-        bg = colors.black1,
-        fg = colors.black1,
+        bg = colors.black0,
+        fg = colors.black0,
     },
-    TelescopePreviewNormal = { bg = colors.black1 },
-    TelescopePreviewTitle = { bg = colors.black1 },
+    TelescopePreviewNormal = { bg = colors.black0 },
+    TelescopePreviewTitle = { bg = colors.black0 },
     TelescopePromptBorder = {
-        bg = colors.black1,
-        fg = colors.black1,
+        bg = colors.black0,
+        fg = colors.black0,
     },
     TelescopePromptNormal = {
-        bg = colors.black1,
+        bg = colors.black0,
     },
     TelescopePromptTitle = {
-        bg = colors.black1,
+        bg = colors.black0,
         fg = colors.white,
     },
     ToggleTerm1NormalFloat = {
-        bg = colors.black1,
+        bg = colors.black0,
     },
     ToggleTerm1FloatBorder = {
-        bg = colors.black1,
-        fg = colors.black1,
+        bg = colors.black0,
+        fg = colors.black0,
     },
 })
 

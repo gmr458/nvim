@@ -9,7 +9,6 @@ vim.cmd([[
         " See `colors/gruvbox-material.vim` for all predefined highlight groups.
         highlight! link FloatBorder Normal
         highlight! link NormalFloat Normal
-    
 
         " Initialize the color palette.
         " The first parameter is a valid value for `g:gruvbox_material_background`,
@@ -39,6 +38,7 @@ vim.cmd([[
         call gruvbox_material#highlight('DiagnosticHint', l:palette.aqua, l:palette.none)
         call gruvbox_material#highlight('DiagnosticFloatingHint', l:palette.aqua, l:palette.bg0)
         call gruvbox_material#highlight('DiagnosticVirtualTextHint', l:palette.aqua, l:palette.none)
+        call gruvbox_material#highlight('NvimTreeWinSeparator', l:palette.bg0, l:palette.bg0)
     endfunction
 
     augroup GruvboxMaterialCustom
