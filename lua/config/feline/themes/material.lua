@@ -6,9 +6,37 @@ M.palette = function()
     local palette = {
         -- bg and fg are mandatory
         fg = colors.fg,
-        bg = colors.fg,
+        bg = "#0B0C13",
 
-        -- colors
+        -- Common colors
+        white = colors.white,
+        gray = colors.gray,
+        black = colors.black,
+        red = colors.red,
+        green = colors.green,
+        yellow = colors.yellow,
+        blue = colors.blue,
+        paleblue = colors.paleblue,
+        cyan = colors.cyan,
+        purple = colors.purple,
+        orange = colors.orange,
+        pink = colors.pink,
+
+        -- Dark colors
+        darkred = colors.darkred,
+        darkgreen = colors.darkgreen,
+        darkyellow = colors.darkyellow,
+        darkblue = colors.darkblue,
+        darkcyan = colors.darkcyan,
+        darkpurple = colors.darkpurple,
+        darkorange = colors.darkorange,
+
+        error = colors.error,
+        link = colors.link,
+        cursor = colors.cursor,
+        title = colors.title,
+
+        none = "NONE",
     }
 
     return palette
@@ -20,42 +48,33 @@ M.components = function()
     local vi_mode_utils = require("feline.providers.vi_mode")
 
     components.active[1] = {
-        { provider = "█ ", hl = { fg = "black4" } },
+        { provider = "█ ", hl = { fg = "blue" } },
         {
             provider = "vi_mode",
             hl = function()
                 return {
                     name = vi_mode_utils.get_mode_highlight_name(),
-                    fg = vi_mode_utils.get_mode_color(),
                     style = "NONE",
                 }
             end,
             icon = "",
+            right_sep = { " " },
         },
         {
             provider = "file_info",
-            hl = { fg = "fg", bg = "black4", style = "NONE" },
-            left_sep = { " ", "block", { str = "", hl = { bg = "black4" } } },
+            hl = { fg = "fg", style = "NONE" },
+            left_sep = {
+                { str = "slant_right_thin", hl = { fg = "blue" } },
+                " ",
+            },
             right_sep = {
-                { str = " ", hl = { bg = "black4" } },
-                "slant_right",
+                " ",
+                { str = "slant_right_thin", hl = { fg = "blue" } },
             },
         },
-        {
-            provider = "git_diff_added",
-            icon = " +",
-            hl = { fg = "green" },
-        },
-        {
-            provider = "git_diff_changed",
-            icon = " ~",
-            hl = { fg = "yellow" },
-        },
-        {
-            provider = "git_diff_removed",
-            icon = " -",
-            hl = { fg = "red" },
-        },
+        { provider = "git_diff_added", icon = " +", hl = { fg = "green" } },
+        { provider = "git_diff_changed", icon = " ~", hl = { fg = "yellow" } },
+        { provider = "git_diff_removed", icon = " -", hl = { fg = "red" } },
         {
             provider = "git_branch",
             icon = " ",
@@ -63,7 +82,7 @@ M.components = function()
             left_sep = " ",
             right_sep = {
                 " ",
-                { str = "slant_right_thin", hl = { fg = "black4" } },
+                { str = "slant_right_thin", hl = { fg = "blue" } },
             },
         },
         {
@@ -78,12 +97,12 @@ M.components = function()
         },
         {
             provider = "diagnostic_hints",
-            hl = { fg = "rosewater" },
+            hl = { fg = "purple" },
             icon = "  ",
         },
         {
             provider = "diagnostic_info",
-            hl = { fg = "sky" },
+            hl = { fg = "paleblue" },
             icon = "  ",
         },
         {
@@ -95,17 +114,9 @@ M.components = function()
                     local percentage = lsp.percentage or 0
                     local title = lsp.title or ""
 
-                    local spinners = {
-                        "",
-                        "",
-                        "",
-                    }
+                    local spinners = { "", "", "" }
 
-                    local success_icon = {
-                        "",
-                        "",
-                        "",
-                    }
+                    local success_icon = { "", "", "" }
 
                     local ms = vim.loop.hrtime() / 1000000
                     local frame = math.floor(ms / 120) % #spinners
@@ -139,7 +150,7 @@ M.components = function()
         {
             provider = "position",
             left_sep = {
-                { str = "slant_right_2_thin", hl = { fg = "black4" } },
+                { str = "slant_right_2_thin", hl = { fg = "blue" } },
                 " ",
             },
             right_sep = " ",
@@ -148,29 +159,36 @@ M.components = function()
             provider = "line_percentage",
             hl = { style = "NONE" },
             left_sep = {
-                { str = "slant_right_2_thin", hl = { fg = "black4" } },
+                { str = "slant_right_2_thin", hl = { fg = "blue" } },
                 " ",
             },
             right_sep = " ",
         },
         {
             provider = "█",
-            hl = { fg = "black4" },
+            hl = { fg = "blue" },
         },
     }
 
     components.inactive[1] = {
+        { provider = "█ ", hl = { fg = "blue" } },
         {
             provider = "file_type",
-            hl = { fg = "fg", bg = "black4", style = "NONE" },
-            left_sep = { str = " ", hl = { bg = "black4" } },
+            hl = { fg = "fg", style = "NONE" },
             right_sep = {
-                { str = " ", hl = { bg = "black4" } },
-                "slant_right",
+                " ",
+                { str = "slant_right_thin", hl = { fg = "blue" } },
             },
         },
         -- Empty component to fix the highlight till the end of the statusline
         {},
+    }
+
+    components.inactive[2] = {
+        {
+            provider = "█",
+            hl = { fg = "blue" },
+        },
     }
 
     return components

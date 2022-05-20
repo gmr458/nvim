@@ -35,11 +35,11 @@ M.palette = function(mode, contrast)
         palette.fg = palette.fg1
 
         if contrast == "hard" then
-            palette.bg = palette.bg0
+            palette.bg = "#0F1112"
         elseif contrast == "medium" then
-            palette.bg = palette.bg0_h
+            palette.bg = "#161616"
         elseif contrast == "soft" then
-            palette.bg = palette.bg0
+            palette.bg = "#1B1A19"
         end
 
         return palette
@@ -94,13 +94,13 @@ M.components = function()
     local vi_mode_utils = require("feline.providers.vi_mode")
 
     components.active[1] = {
-        { provider = "█ ", hl = { fg = "bg1" } },
+        { provider = "█ ", hl = { fg = "fg4" } },
+        -- { provider = "█ "},
         {
             provider = "vi_mode",
             hl = function()
                 return {
                     name = vi_mode_utils.get_mode_highlight_name(),
-                    fg = vi_mode_utils.get_mode_color(),
                     style = "NONE",
                 }
             end,
@@ -108,15 +108,14 @@ M.components = function()
         },
         {
             provider = "file_info",
-            hl = { fg = "fg", bg = "bg1", style = "NONE" },
+            hl = { fg = "fg", style = "NONE" },
             left_sep = {
+                { str = "slant_right_thin", hl = { fg = "fg4" } },
                 " ",
-                "block",
-                { str = "", hl = { bg = "bg1" } },
             },
             right_sep = {
-                { str = " ", hl = { bg = "bg1" } },
-                "slant_right",
+                " ",
+                { str = "slant_right_thin", hl = { fg = "fg4" } },
             },
         },
         {
@@ -141,7 +140,7 @@ M.components = function()
             left_sep = " ",
             right_sep = {
                 " ",
-                { str = "slant_right_thin", hl = { fg = "bg1" } },
+                { str = "slant_right_thin", hl = { fg = "fg4" } },
             },
         },
         {
@@ -173,17 +172,9 @@ M.components = function()
                     local percentage = lsp.percentage or 0
                     local title = lsp.title or ""
 
-                    local spinners = {
-                        "",
-                        "",
-                        "",
-                    }
+                    local spinners = { "", "", "" }
 
-                    local success_icon = {
-                        "",
-                        "",
-                        "",
-                    }
+                    local success_icon = { "", "", "" }
 
                     local ms = vim.loop.hrtime() / 1000000
                     local frame = math.floor(ms / 120) % #spinners
@@ -217,7 +208,7 @@ M.components = function()
         {
             provider = "position",
             left_sep = {
-                { str = "slant_right_2_thin", hl = { fg = "bg1" } },
+                { str = "slant_right_2_thin", hl = { fg = "fg4" } },
                 " ",
             },
             right_sep = " ",
@@ -226,25 +217,25 @@ M.components = function()
             provider = "line_percentage",
             hl = { style = "NONE" },
             left_sep = {
-                { str = "slant_right_2_thin", hl = { fg = "bg1" } },
+                { str = "slant_right_2_thin", hl = { fg = "fg4" } },
                 " ",
             },
             right_sep = " ",
         },
         {
             provider = "█",
-            hl = { fg = "bg1" },
+            hl = { fg = "fg4" },
         },
     }
 
     components.inactive[1] = {
+        { provider = "█ ", hl = { fg = "fg4" } },
         {
             provider = "file_type",
-            hl = { fg = "fg", bg = "bg1", style = "NONE" },
-            left_sep = { str = " ", hl = { bg = "bg1" } },
+            hl = { fg = "fg", style = "NONE" },
             right_sep = {
-                { str = " ", hl = { bg = "bg1" } },
-                "slant_right",
+                " ",
+                { str = "slant_right_thin", hl = { fg = "fg4" } },
             },
         },
         -- Empty component to fix the highlight till the end of the statusline
