@@ -6,7 +6,7 @@ M.palette = function()
     local palette = {
         -- bg and fg are mandatory
         fg = colors.fujiWhite,
-        bg = colors.sumiInk0,
+        bg = "#111116",
 
         -- colors
         fuji_white = colors.fujiWhite,
@@ -62,23 +62,22 @@ M.components = function()
             hl = function()
                 return {
                     name = vi_mode_utils.get_mode_highlight_name(),
-                    fg = vi_mode_utils.get_mode_color(),
                     style = "NONE",
                 }
             end,
             icon = "",
+            right_sep = { " " },
         },
         {
             provider = "file_info",
-            hl = { fg = "fg", bg = "wave_blue2", style = "NONE" },
+            hl = { fg = "fg", style = "NONE" },
             left_sep = {
+                { str = "slant_right_thin", hl = { fg = "wave_blue2" } },
                 " ",
-                "block",
-                { str = "", hl = { bg = "wave_blue2" } },
             },
             right_sep = {
-                { str = " ", hl = { bg = "wave_blue2" } },
-                "slant_right",
+                " ",
+                { str = "slant_right_thin", hl = { fg = "wave_blue2" } },
             },
         },
         {
@@ -135,17 +134,9 @@ M.components = function()
                     local percentage = lsp.percentage or 0
                     local title = lsp.title or ""
 
-                    local spinners = {
-                        "",
-                        "",
-                        "",
-                    }
+                    local spinners = { "", "", "" }
 
-                    local success_icon = {
-                        "",
-                        "",
-                        "",
-                    }
+                    local success_icon = { "", "", "" }
 
                     local ms = vim.loop.hrtime() / 1000000
                     local frame = math.floor(ms / 120) % #spinners
@@ -200,17 +191,24 @@ M.components = function()
     }
 
     components.inactive[1] = {
+        { provider = "█ ", hl = { fg = "wave_blue2" } },
         {
             provider = "file_type",
-            hl = { fg = "fg", bg = "wave_blue2", style = "NONE" },
-            left_sep = { str = " ", hl = { bg = "wave_blue2" } },
+            hl = { fg = "fg", style = "NONE" },
             right_sep = {
-                { str = " ", hl = { bg = "wave_blue2" } },
-                "slant_right",
+                " ",
+                { str = "slant_right_thin", hl = { fg = "wave_blue2" } },
             },
         },
         -- Empty component to fix the highlight till the end of the statusline
         {},
+    }
+
+    components.inactive[2] = {
+        {
+            provider = "█",
+            hl = { fg = "wave_blue2" },
+        },
     }
 
     return components

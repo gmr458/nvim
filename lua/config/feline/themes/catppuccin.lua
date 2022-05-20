@@ -6,7 +6,7 @@ M.palette = function()
     local palette = {
         -- bg and fg are mandatory
         fg = colors.white,
-        bg = colors.black1,
+        bg = colors.black0,
 
         -- colors
         flamingo = colors.flamingo,
@@ -48,7 +48,6 @@ M.components = function()
             hl = function()
                 return {
                     name = vi_mode_utils.get_mode_highlight_name(),
-                    fg = vi_mode_utils.get_mode_color(),
                     style = "NONE",
                 }
             end,
@@ -56,28 +55,19 @@ M.components = function()
         },
         {
             provider = "file_info",
-            hl = { fg = "fg", bg = "black4", style = "NONE" },
-            left_sep = { " ", "block", { str = "", hl = { bg = "black4" } } },
+            hl = { fg = "fg", style = "NONE" },
+            left_sep = {
+                { str = "slant_right_thin", hl = { fg = "black4" } },
+                " ",
+            },
             right_sep = {
-                { str = " ", hl = { bg = "black4" } },
-                "slant_right",
+                " ",
+                { str = "slant_right_thin", hl = { fg = "black4" } },
             },
         },
-        {
-            provider = "git_diff_added",
-            icon = " +",
-            hl = { fg = "green" },
-        },
-        {
-            provider = "git_diff_changed",
-            icon = " ~",
-            hl = { fg = "yellow" },
-        },
-        {
-            provider = "git_diff_removed",
-            icon = " -",
-            hl = { fg = "red" },
-        },
+        { provider = "git_diff_added", icon = " +", hl = { fg = "green" } },
+        { provider = "git_diff_changed", icon = " ~", hl = { fg = "yellow" } },
+        { provider = "git_diff_removed", icon = " -", hl = { fg = "red" } },
         {
             provider = "git_branch",
             icon = " ",
@@ -117,17 +107,9 @@ M.components = function()
                     local percentage = lsp.percentage or 0
                     local title = lsp.title or ""
 
-                    local spinners = {
-                        "",
-                        "",
-                        "",
-                    }
+                    local spinners = { "", "", "" }
 
-                    local success_icon = {
-                        "",
-                        "",
-                        "",
-                    }
+                    local success_icon = { "", "", "" }
 
                     local ms = vim.loop.hrtime() / 1000000
                     local frame = math.floor(ms / 120) % #spinners
@@ -175,25 +157,24 @@ M.components = function()
             },
             right_sep = " ",
         },
-        {
-            provider = "█",
-            hl = { fg = "black4" },
-        },
+        { provider = "█", hl = { fg = "black4" } },
     }
 
     components.inactive[1] = {
+        { provider = "█ ", hl = { fg = "black4" } },
         {
             provider = "file_type",
-            hl = { fg = "fg", bg = "black4", style = "NONE" },
-            left_sep = { str = " ", hl = { bg = "black4" } },
+            hl = { fg = "fg", style = "NONE" },
             right_sep = {
-                { str = " ", hl = { bg = "black4" } },
-                "slant_right",
+                " ",
+                { str = "slant_right_thin", hl = { fg = "black4" } },
             },
         },
         -- Empty component to fix the highlight till the end of the statusline
         {},
     }
+
+    components.inactive[2] = { { provider = "█", hl = { fg = "black4" } } }
 
     return components
 end
