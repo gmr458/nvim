@@ -28,11 +28,10 @@ onedark.setup({
     },
     colors = {}, -- Override default colors
     highlights = {
-        NvimTreeEndOfBuffer = { bg = "$bg0" },
-        NvimTreeNormal = { bg = "$bg0" },
-        NvimTreeNormalNC = { bg = "$bg0" },
-        rainbowcol1 = { fg = "#ffd700" },
-        rainbowcol2 = { fg = "#ff0084" },
+        NvimTreeWinSeparator = {
+            bg = "$bg0",
+            fg = "$bg0",
+        },
     }, -- Override highlight groups
     diagnostics = {
         darker = false, -- darker colors for diagnostic
