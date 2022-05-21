@@ -5,18 +5,13 @@ if not status_ok then
 end
 
 local themes = {
-    calvera_dark = "calvera-dark",
     catppuccin = "catppuccin",
-    dracula = "dracula",
     github = "github",
     gruvbox = "gruvbox",
-    gruvbox_material = "gruvbox_material",
+    gruvbox_material = "gruvbox-material",
     kanagawa = "kanagawa",
     material = "material",
     onedark = "onedark",
-    onedarkpro = "onedarkpro",
-    tokyodark = "tokyodark",
-    tokyonight = "tokyonight",
 }
 
 local theme = themes.kanagawa
