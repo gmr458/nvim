@@ -148,6 +148,12 @@ return packer.startup(function(use)
         },
         config = "require('config.colorizer')",
     })
+    -- Lua
+    use({
+        "SmiteshP/nvim-gps",
+        after = "nvim-treesitter",
+        config = "require('config.nvim-gps')",
+    })
 
     -- Colorschemes
     use({
@@ -269,7 +275,7 @@ return packer.startup(function(use)
     })
     use({
         "NMAC427/guess-indent.nvim",
-        config = "require('config.guess_indent')",
+        config = "require('config.guess-indent')",
     })
     use({
         "b0o/SchemaStore.nvim",
