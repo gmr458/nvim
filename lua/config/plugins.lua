@@ -282,7 +282,7 @@ return packer.startup(function(use)
     })
     use({
         "kyazdani42/nvim-web-devicons",
-        ft = { "NvimTree", "TelescopePrompt" },
+        after = "alpha-nvim",
     })
     use({
         "b3nj5m1n/kommentary",
