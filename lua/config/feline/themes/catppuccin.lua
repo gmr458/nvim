@@ -41,6 +41,8 @@ M.components = function()
 
     local vi_mode_utils = require("feline.providers.vi_mode")
 
+    local nvim_gps = require("nvim-gps")
+
     components.active[1] = {
         { provider = "█ ", hl = { fg = "black4" } },
         {
@@ -77,26 +79,6 @@ M.components = function()
                 " ",
                 { str = "slant_right_thin", hl = { fg = "black4" } },
             },
-        },
-        {
-            provider = "diagnostic_errors",
-            hl = { fg = "red" },
-            icon = "  ",
-        },
-        {
-            provider = "diagnostic_warnings",
-            hl = { fg = "yellow" },
-            icon = "  ",
-        },
-        {
-            provider = "diagnostic_hints",
-            hl = { fg = "rosewater" },
-            icon = "  ",
-        },
-        {
-            provider = "diagnostic_info",
-            hl = { fg = "sky" },
-            icon = "  ",
         },
         {
             provider = function()
@@ -136,6 +118,35 @@ M.components = function()
                 return ""
             end,
             hl = { fg = "green" },
+        },
+        {
+            provider = "diagnostic_errors",
+            hl = { fg = "red" },
+            icon = "  ",
+        },
+        {
+            provider = "diagnostic_warnings",
+            hl = { fg = "yellow" },
+            icon = "  ",
+        },
+        {
+            provider = "diagnostic_hints",
+            hl = { fg = "rosewater" },
+            icon = "  ",
+        },
+        {
+            provider = "diagnostic_info",
+            hl = { fg = "sky" },
+            icon = "  ",
+        },
+        {
+            provider = function()
+                return nvim_gps.get_location()
+            end,
+            enabled = function()
+                return nvim_gps.is_available()
+            end,
+            left_sep = " ",
         },
     }
 
