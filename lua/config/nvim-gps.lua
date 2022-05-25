@@ -98,5 +98,5 @@ nvim_gps.setup({
             },
         },
     },
-    separator = " > ",
+    separator = " ❯ ",
 })

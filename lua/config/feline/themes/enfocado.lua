@@ -56,7 +56,10 @@ M.components = function()
             right_sep = { " " },
         },
         {
-            provider = "file_info",
+            provider = {
+                name = "file_info",
+                opts = { file_readonly_icon = " " },
+            },
             hl = { fg = "fg_0", style = "NONE" },
             left_sep = {
                 { str = "slant_right_thin", hl = { fg = "fg" } },
