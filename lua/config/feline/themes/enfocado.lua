@@ -3,9 +3,7 @@ local M = {}
 M.palette = function()
     local palette = {
         -- bg and fg are mandatory
-        -- bg = "#252525",
         bg = "#121212",
-        -- fg = "#B9B9B9",
         fg = "#777777",
 
         -- colors
