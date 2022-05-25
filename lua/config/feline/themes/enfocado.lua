@@ -5,7 +5,8 @@ M.palette = function()
         -- bg and fg are mandatory
         -- bg = "#252525",
         bg = "#121212",
-        fg = "#B9B9B9",
+        -- fg = "#B9B9B9",
+        fg = "#777777",
 
         -- colors
         bg_0 = "#181818",
@@ -44,7 +45,7 @@ M.components = function()
     local nvim_gps = require("nvim-gps")
 
     components.active[1] = {
-        { provider = "█ ", hl = { fg = "br_cyan" } },
+        { provider = "█ ", hl = { fg = "green" } },
         {
             provider = "vi_mode",
             hl = function()
@@ -58,14 +59,14 @@ M.components = function()
         },
         {
             provider = "file_info",
-            hl = { fg = "fg", style = "NONE" },
+            hl = { fg = "fg_0", style = "NONE" },
             left_sep = {
-                { str = "slant_right_thin", hl = { fg = "br_cyan" } },
+                { str = "slant_right_thin", hl = { fg = "fg" } },
                 " ",
             },
             right_sep = {
                 " ",
-                { str = "slant_right_thin", hl = { fg = "br_cyan" } },
+                { str = "slant_right_thin", hl = { fg = "fg" } },
             },
         },
         {
@@ -90,7 +91,7 @@ M.components = function()
             left_sep = " ",
             right_sep = {
                 " ",
-                { str = "slant_right_thin", hl = { fg = "br_cyan" } },
+                { str = "slant_right_thin", hl = { fg = "fg" } },
             },
         },
         {
@@ -130,7 +131,7 @@ M.components = function()
 
                 return ""
             end,
-            hl = { fg = "br_cyan" },
+            hl = { fg = "green" },
         },
         {
             provider = "diagnostic_errors",
@@ -167,7 +168,7 @@ M.components = function()
         {
             provider = "position",
             left_sep = {
-                { str = "slant_right_2_thin", hl = { fg = "br_cyan" } },
+                { str = "slant_right_2_thin", hl = { fg = "fg" } },
                 " ",
             },
             right_sep = " ",
@@ -176,25 +177,25 @@ M.components = function()
             provider = "line_percentage",
             hl = { style = "NONE" },
             left_sep = {
-                { str = "slant_right_2_thin", hl = { fg = "br_cyan" } },
+                { str = "slant_right_2_thin", hl = { fg = "fg" } },
                 " ",
             },
             right_sep = " ",
         },
         {
             provider = "█",
-            hl = { fg = "br_cyan" },
+            hl = { fg = "green" },
         },
     }
 
     components.inactive[1] = {
-        { provider = "█ ", hl = { fg = "br_cyan" } },
+        { provider = "█ ", hl = { fg = "green" } },
         {
             provider = "file_type",
             hl = { fg = "fg", style = "NONE" },
             right_sep = {
                 " ",
-                { str = "slant_right_thin", hl = { fg = "br_cyan" } },
+                { str = "slant_right_thin", hl = { fg = "fg" } },
             },
         },
         -- Empty component to fix the highlight till the end of the statusline
@@ -204,7 +205,7 @@ M.components = function()
     components.inactive[2] = {
         {
             provider = "█",
-            hl = { fg = "br_cyan" },
+            hl = { fg = "green" },
         },
     }
 

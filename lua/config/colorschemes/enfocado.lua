@@ -21,6 +21,8 @@ vim.cmd([[
             autocmd ColorScheme enfocado highlight DiagnosticFloatingInfo guibg=#181818
             autocmd ColorScheme enfocado highlight DiagnosticFloatingWarn guibg=#181818
             autocmd ColorScheme enfocado highlight StatusLine guibg=#181818
+            autocmd ColorScheme enfocado highlight TelescopeSelection guibg=#181818 guifg=#368AEB
+            autocmd ColorScheme enfocado highlight TelescopeMultiSelection guibg=#181818
             autocmd ColorScheme enfocado highlight NvimTreeNormal guibg=#0D0D0D
             autocmd ColorScheme enfocado highlight! link NvimTreeNormalNC NvimTreeNormal
             autocmd ColorScheme enfocado highlight NvimTreeWinSeparator guibg=#181818 guifg=#181818
