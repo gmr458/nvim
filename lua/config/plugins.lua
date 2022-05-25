@@ -162,6 +162,10 @@ return packer.startup(function(use)
         -- config = "require('config.colorschemes.catppuccin')",
     })
     use({
+        "wuelnerdotexe/vim-enfocado",
+        config = "require('config.colorschemes.enfocado')",
+    })
+    use({
         "projekt0n/github-nvim-theme",
         -- config = "require('config.colorschemes.github')",
     })
@@ -175,7 +179,7 @@ return packer.startup(function(use)
     })
     use({
         "rebelot/kanagawa.nvim",
-        config = "require('config.colorschemes.kanagawa')",
+        -- config = "require('config.colorschemes.kanagawa')",
     })
     use({
         "marko-cerovac/material.nvim",
