@@ -6,6 +6,7 @@ end
 
 local themes = {
     catppuccin = "catppuccin",
+    enfocado = "enfocado",
     github = "github",
     gruvbox = "gruvbox",
     gruvbox_material = "gruvbox-material",
@@ -14,7 +15,7 @@ local themes = {
     onedark = "onedark",
 }
 
-local theme = themes.kanagawa
+local theme = themes.enfocado
 
 feline.setup({
     force_inactive = {
