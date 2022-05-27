@@ -46,6 +46,10 @@ vim.cmd([[
             autocmd ColorScheme enfocado highlight NvimTreeNormal guibg=#0D0D0D
             autocmd ColorScheme enfocado highlight! link NvimTreeNormalNC NvimTreeNormal
             autocmd ColorScheme enfocado highlight NvimTreeWinSeparator guibg=#181818 guifg=#181818
+
+            " Toggle Term
+            autocmd ColorScheme enfocado highlight ToggleTerm1NormalFloat guibg=#121212
+            autocmd ColorScheme enfocado highlight ToggleTerm1FloatBorder guibg=#121212 guifg=#121212
     augroup END
 
     colorscheme enfocado
