@@ -85,36 +85,33 @@ end
 local function lsp_keymaps(bufnr)
     local opts_keymap = { noremap = true, silent = true }
 
-    vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
-
-    vim.api.nvim_buf_set_keymap(
-        bufnr,
+    vim.api.nvim_set_keymap(
         "n",
         "<space>e",
         "<cmd>lua vim.diagnostic.open_float()<CR>",
         opts_keymap
     )
-    vim.api.nvim_buf_set_keymap(
-        bufnr,
+    vim.api.nvim_set_keymap(
         "n",
         "[d",
         "<cmd>lua vim.diagnostic.goto_prev()<CR>",
         opts_keymap
     )
-    vim.api.nvim_buf_set_keymap(
-        bufnr,
+    vim.api.nvim_set_keymap(
         "n",
         "]d",
         "<cmd>lua vim.diagnostic.goto_next()<CR>",
         opts_keymap
     )
-    vim.api.nvim_buf_set_keymap(
-        bufnr,
+    vim.api.nvim_set_keymap(
         "n",
         "<space>q",
         "<cmd>lua vim.diagnostic.setloclist()<CR>",
         opts_keymap
     )
+
+    vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
+
     vim.api.nvim_buf_set_keymap(
         bufnr,
         "n",
