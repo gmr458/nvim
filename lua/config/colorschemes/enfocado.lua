@@ -15,8 +15,8 @@ vim.cmd([[
     augroup enfocado_customization
         autocmd!
             " Float windows
-            autocmd ColorScheme enfocado highlight NormalFloat guibg=#181818
-            autocmd ColorScheme enfocado highlight FloatBorder guibg=#181818
+            autocmd ColorScheme enfocado highlight NormalFloat guibg=#121212
+            autocmd ColorScheme enfocado highlight FloatBorder guibg=#121212 guifg=#121212
 
             " Diagnostic floating windows
             autocmd ColorScheme enfocado highlight DiagnosticFloatingError guibg=#181818
