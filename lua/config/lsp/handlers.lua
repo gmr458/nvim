@@ -18,6 +18,7 @@ M.servers = {
     "omnisharp",
     "pyright",
     "rust_analyzer",
+    "solargraph",
     "sqls",
     "sumneko_lua",
     "tailwindcss",

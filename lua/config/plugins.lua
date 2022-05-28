@@ -66,6 +66,7 @@ local filetypes = {
     "make",
     "markdown",
     "php",
+    "proto",
     "python",
     "ruby",
     "rust",
@@ -163,7 +164,7 @@ return packer.startup(function(use)
     })
     use({
         "wuelnerdotexe/vim-enfocado",
-        config = "require('config.colorschemes.enfocado')",
+        -- config = "require('config.colorschemes.enfocado')",
     })
     use({
         "projekt0n/github-nvim-theme",
@@ -179,7 +180,7 @@ return packer.startup(function(use)
     })
     use({
         "rebelot/kanagawa.nvim",
-        -- config = "require('config.colorschemes.kanagawa')",
+        config = "require('config.colorschemes.kanagawa')",
     })
     use({
         "marko-cerovac/material.nvim",

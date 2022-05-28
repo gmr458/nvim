@@ -6,6 +6,8 @@ end
 
 local colors = require("kanagawa.colors").setup()
 
+local bg_alt = "#111116"
+
 kanagawa.setup({
     undercurl = true,
     commentStyle = "italic",
@@ -21,10 +23,10 @@ kanagawa.setup({
     globalStatus = true,
     colors = {},
     overrides = {
-        FloatBorder = { bg = colors.sumiInk0, fg = colors.sumiInk0 },
+        FloatBorder = { bg = bg_alt, fg = bg_alt },
+        NormalFloat = { bg = bg_alt },
         goTSNamespace = { fg = colors.fujiWhite },
         javascriptTSConstructor = { fg = colors.crystalBlue },
-        NormalFloat = { bg = colors.sumiInk0 },
         NvimTreeGitIgnored = { fg = colors.fujiGray },
         NvimTreeNormal = { bg = colors.sumiInk0 },
         NvimTreeNormalNC = { link = "NvimTreeNormal" },
@@ -56,11 +58,11 @@ kanagawa.setup({
             fg = colors.fujiWhite,
         },
         ToggleTerm1NormalFloat = {
-            bg = colors.sumiInk0,
+            bg = bg_alt,
         },
         ToggleTerm1FloatBorder = {
-            bg = colors.sumiInk0,
-            fg = colors.sumiInk0,
+            bg = bg_alt,
+            fg = bg_alt,
         },
         TSConditional = { fg = colors.oniViolet, style = "italic" },
         TSInclude = { fg = colors.surimiOrange, style = "italic" },
