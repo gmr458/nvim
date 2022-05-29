@@ -99,10 +99,14 @@ catppuccin.remap({
     TelescopePromptNormal = { bg = colors.crust },
     TelescopePromptTitle = { bg = colors.crust, fg = colors.text },
     TelescopeSelection = { bg = colors.crust, fg = colors.green },
+    TelescopeMultiSelection = { bg = colors.crust },
 
     -- ToggleTerm
     ToggleTerm1FloatBorder = { bg = colors.crust, fg = colors.crust },
     ToggleTerm1NormalFloat = { bg = colors.crust },
+
+    -- Treesitter
+    TSNamespace = { style = "NONE" },
 })
 
 vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
