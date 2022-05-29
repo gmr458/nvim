@@ -23,47 +23,36 @@ kanagawa.setup({
     globalStatus = true,
     colors = {},
     overrides = {
+        -- Float
         FloatBorder = { bg = bg_alt, fg = bg_alt },
         NormalFloat = { bg = bg_alt },
-        goTSNamespace = { fg = colors.fujiWhite },
-        javascriptTSConstructor = { fg = colors.crystalBlue },
+
+        -- StatusLine
+        StatusLine = { bg = colors.sumiInk1 },
+
+        -- NvimTree
         NvimTreeGitIgnored = { fg = colors.fujiGray },
         NvimTreeNormal = { bg = colors.sumiInk0 },
         NvimTreeNormalNC = { link = "NvimTreeNormal" },
-        NvimTreeWinSeparator = {
-            bg = colors.sumiInk1,
-            fg = colors.sumiInk1,
-        },
-        StatusLine = { bg = colors.sumiInk1 },
-        TelescopeBorder = {
-            bg = colors.sumiInk0,
-            fg = colors.sumiInk0,
-        },
+        NvimTreeWinSeparator = { bg = colors.sumiInk1, fg = colors.sumiInk1 },
+
+        -- Telescope
+        TelescopeBorder = { bg = colors.sumiInk0, fg = colors.sumiInk0 },
         TelescopeNormal = { bg = colors.sumiInk0 },
-        TelescopePreviewBorder = {
-            bg = colors.sumiInk0,
-            fg = colors.sumiInk0,
-        },
+        TelescopePreviewBorder = { bg = colors.sumiInk0, fg = colors.sumiInk0 },
         TelescopePreviewNormal = { bg = colors.sumiInk0 },
         TelescopePreviewTitle = { bg = colors.sumiInk0 },
-        TelescopePromptBorder = {
-            bg = colors.sumiInk0,
-            fg = colors.sumiInk0,
-        },
-        TelescopePromptNormal = {
-            bg = colors.sumiInk0,
-        },
-        TelescopePromptTitle = {
-            bg = colors.sumiInk0,
-            fg = colors.fujiWhite,
-        },
-        ToggleTerm1NormalFloat = {
-            bg = bg_alt,
-        },
-        ToggleTerm1FloatBorder = {
-            bg = bg_alt,
-            fg = bg_alt,
-        },
+        TelescopePromptBorder = { bg = colors.sumiInk0, fg = colors.sumiInk0 },
+        TelescopePromptNormal = { bg = colors.sumiInk0 },
+        TelescopePromptTitle = { bg = colors.sumiInk0, fg = colors.fujiWhite },
+
+        -- ToggleTerm
+        ToggleTerm1NormalFloat = { bg = bg_alt },
+        ToggleTerm1FloatBorder = { bg = bg_alt, fg = bg_alt },
+
+        -- Treesitter
+        goTSNamespace = { fg = colors.fujiWhite },
+        javascriptTSConstructor = { fg = colors.crystalBlue },
         TSConditional = { fg = colors.oniViolet, style = "italic" },
         TSInclude = { fg = colors.surimiOrange, style = "italic" },
         TSKeyword = { fg = colors.oniViolet, style = "italic" },
