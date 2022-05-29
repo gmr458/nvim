@@ -45,6 +45,8 @@ kanagawa.setup({
         TelescopePromptBorder = { bg = colors.sumiInk0, fg = colors.sumiInk0 },
         TelescopePromptNormal = { bg = colors.sumiInk0 },
         TelescopePromptTitle = { bg = colors.sumiInk0, fg = colors.fujiWhite },
+        TelescopeSelection = { bg = colors.crust, fg = colors.springGreen },
+        TelescopeMultiSelection = { bg = colors.sumiInk0 },
 
         -- ToggleTerm
         ToggleTerm1NormalFloat = { bg = bg_alt },

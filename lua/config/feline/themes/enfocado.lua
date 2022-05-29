@@ -58,7 +58,7 @@ M.components = function()
                 name = "file_info",
                 opts = { file_readonly_icon = " " },
             },
-            hl = { fg = "fg_0", style = "NONE" },
+            hl = { style = "NONE" },
             left_sep = {
                 { str = "slant_right_thin", hl = { fg = "fg" } },
                 " ",
@@ -130,7 +130,6 @@ M.components = function()
 
                 return ""
             end,
-            hl = { fg = "green" },
         },
         {
             provider = "diagnostic_errors",

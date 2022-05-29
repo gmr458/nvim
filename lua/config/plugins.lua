@@ -154,11 +154,11 @@ return packer.startup(function(use)
     use({
         "catppuccin/nvim",
         as = "catppuccin",
-        config = "require('config.colorschemes.catppuccin')",
+        -- config = "require('config.colorschemes.catppuccin')",
     })
     use({
         "wuelnerdotexe/vim-enfocado",
-        -- config = "require('config.colorschemes.enfocado')",
+        config = "require('config.colorschemes.enfocado')",
     })
     use({
         "projekt0n/github-nvim-theme",
