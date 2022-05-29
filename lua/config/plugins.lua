@@ -149,12 +149,6 @@ return packer.startup(function(use)
         },
         config = "require('config.colorizer')",
     })
-    -- Lua
-    use({
-        "SmiteshP/nvim-gps",
-        after = "nvim-treesitter",
-        config = "require('config.nvim-gps')",
-    })
 
     -- Colorschemes
     use({
