@@ -45,30 +45,18 @@ material.setup({
     },
     async_loading = true, -- Load parts of the theme asyncronously for faster startup (turned on by default)
     custom_highlights = {
-        NvimTreeWinSeparator = {
-            bg = colors.bg,
-            fg = colors.bg,
-        },
-        StatusLine = {
-            bg = colors.bg,
-        },
+        -- NvimTree
+        NvimTreeWinSeparator = { bg = colors.bg, fg = colors.bg },
+
+        -- StatusLine
+        StatusLine = { bg = colors.bg },
+
+        -- Telescope
         TelescopeNormal = { bg = colors.bg_alt },
-        TelescopePreviewBorder = {
-            bg = colors.bg_alt,
-            fg = colors.bg_alt,
-        },
-        TelescopePromptBorder = {
-            bg = colors.bg_alt,
-            fg = colors.bg_alt,
-        },
-        TelescopePromptTitle = {
-            bg = colors.bg_alt,
-            fg = colors.fg,
-        },
-        TelescopeResultsBorder = {
-            bg = colors.bg_alt,
-            fg = colors.bg_alt,
-        },
+        TelescopePreviewBorder = { bg = colors.bg_alt, fg = colors.bg_alt },
+        TelescopePromptBorder = { bg = colors.bg_alt, fg = colors.bg_alt },
+        TelescopePromptTitle = { bg = colors.bg_alt, fg = colors.fg },
+        TelescopeResultsBorder = { bg = colors.bg_alt, fg = colors.bg_alt },
     },
 })
 

@@ -3,37 +3,11 @@ local M = {}
 M.palette = function()
     local colors = require("catppuccin.api.colors").get_colors()
 
-    local palette = {
-        -- bg and fg are mandatory
-        fg = colors.white,
-        bg = colors.black0,
+    -- bg and fg are mandatory
+    colors.bg = colors.crust
+    colors.fg = colors.text
 
-        -- colors
-        flamingo = colors.flamingo,
-        mauve = colors.mauve,
-        pink = colors.pink,
-        maroon = colors.maroon,
-        red = colors.red,
-        peach = colors.peach,
-        yellow = colors.yellow,
-        green = colors.green,
-        teal = colors.teal,
-        blue = colors.blue,
-        sky = colors.sky,
-        black0 = colors.black0,
-        black1 = colors.black1,
-        black2 = colors.black2,
-        black3 = colors.black3,
-        black4 = colors.black4,
-        gray0 = colors.gray0,
-        gray1 = colors.gray1,
-        gray2 = colors.gray2,
-        white = colors.white,
-        lavender = colors.lavender,
-        rosewater = colors.rosewater,
-    }
-
-    return palette
+    return colors
 end
 
 M.components = function()
@@ -42,7 +16,7 @@ M.components = function()
     local vi_mode_utils = require("feline.providers.vi_mode")
 
     components.active[1] = {
-        { provider = "█ ", hl = { fg = "black4" } },
+        { provider = "█ ", hl = { fg = "sapphire" } },
         {
             provider = "vi_mode",
             hl = function()
@@ -52,17 +26,18 @@ M.components = function()
                 }
             end,
             icon = "",
+            right_sep = " ",
         },
         {
             provider = "file_info",
             hl = { fg = "fg", style = "NONE" },
             left_sep = {
-                { str = "slant_right_thin", hl = { fg = "black4" } },
+                { str = "slant_right_thin", hl = { fg = "overlay2" } },
                 " ",
             },
             right_sep = {
                 " ",
-                { str = "slant_right_thin", hl = { fg = "black4" } },
+                { str = "slant_right_thin", hl = { fg = "overlay2" } },
             },
         },
         { provider = "git_diff_added", icon = " +", hl = { fg = "green" } },
@@ -75,7 +50,7 @@ M.components = function()
             left_sep = " ",
             right_sep = {
                 " ",
-                { str = "slant_right_thin", hl = { fg = "black4" } },
+                { str = "slant_right_thin", hl = { fg = "overlay2" } },
             },
         },
         {
@@ -115,7 +90,7 @@ M.components = function()
 
                 return ""
             end,
-            hl = { fg = "green" },
+            hl = { fg = "rosewater" },
         },
         {
             provider = "diagnostic_errors",
@@ -143,7 +118,7 @@ M.components = function()
         {
             provider = "position",
             left_sep = {
-                { str = "slant_right_2_thin", hl = { fg = "black4" } },
+                { str = "slant_right_2_thin", hl = { fg = "overlay2" } },
                 " ",
             },
             right_sep = " ",
@@ -152,29 +127,29 @@ M.components = function()
             provider = "line_percentage",
             hl = { style = "NONE" },
             left_sep = {
-                { str = "slant_right_2_thin", hl = { fg = "black4" } },
+                { str = "slant_right_2_thin", hl = { fg = "overlay2" } },
                 " ",
             },
             right_sep = " ",
         },
-        { provider = "█", hl = { fg = "black4" } },
+        { provider = "█", hl = { fg = "sapphire" } },
     }
 
     components.inactive[1] = {
-        { provider = "█ ", hl = { fg = "black4" } },
+        { provider = "█ ", hl = { fg = "sapphire" } },
         {
             provider = "file_type",
             hl = { fg = "fg", style = "NONE" },
             right_sep = {
                 " ",
-                { str = "slant_right_thin", hl = { fg = "black4" } },
+                { str = "slant_right_thin", hl = { fg = "overlay2" } },
             },
         },
         -- Empty component to fix the highlight till the end of the statusline
         {},
     }
 
-    components.inactive[2] = { { provider = "█", hl = { fg = "black4" } } }
+    components.inactive[2] = { { provider = "█", hl = { fg = "sapphire" } } }
 
     return components
 end

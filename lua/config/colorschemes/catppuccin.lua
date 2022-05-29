@@ -6,13 +6,20 @@ end
 
 catppuccin.setup({
     transparent_background = false,
-    term_colors = true,
+    term_colors = false,
     styles = {
-        comments = "NONE",
+        comments = "italic",
+        conditionals = "NONE",
+        loops = "NONE",
         functions = "NONE",
         keywords = "NONE",
         strings = "NONE",
         variables = "NONE",
+        numbers = "NONE",
+        booleans = "NONE",
+        properties = "NONE",
+        types = "NONE",
+        operators = "NONE",
     },
     integrations = {
         treesitter = true,
@@ -57,11 +64,11 @@ catppuccin.setup({
         vim_sneak = false,
         fern = false,
         barbar = false,
-        bufferline = false,
+        bufferline = true,
         markdown = false,
         lightspeed = false,
         ts_rainbow = true,
-        hop = false,
+        hop = true,
         notify = false,
         telekasten = false,
         symbols_outline = true,
@@ -71,40 +78,33 @@ catppuccin.setup({
 local colors = require("catppuccin.api.colors").get_colors()
 
 catppuccin.remap({
-    CmpPMenu = { bg = colors.black0 },
-    CmpPMenuBorder = { bg = colors.black0, fg = colors.black0 },
-    FloatBorder = { bg = colors.black0, fg = colors.black1 },
-    NormalFloat = { bg = colors.black0 },
-    StatusLine = { bg = colors.black2 },
-    TelescopeBorder = {
-        bg = colors.black0,
-        fg = colors.black0,
-    },
-    TelescopeNormal = { bg = colors.black0 },
-    TelescopePreviewBorder = {
-        bg = colors.black0,
-        fg = colors.black0,
-    },
-    TelescopePreviewNormal = { bg = colors.black0 },
-    TelescopePreviewTitle = { bg = colors.black0 },
-    TelescopePromptBorder = {
-        bg = colors.black0,
-        fg = colors.black0,
-    },
-    TelescopePromptNormal = {
-        bg = colors.black0,
-    },
-    TelescopePromptTitle = {
-        bg = colors.black0,
-        fg = colors.white,
-    },
-    ToggleTerm1NormalFloat = {
-        bg = colors.black0,
-    },
-    ToggleTerm1FloatBorder = {
-        bg = colors.black0,
-        fg = colors.black0,
-    },
+    -- BufferLine
+    BufferLineCloseButton = { bg = "#161622" },
+    BufferLineIndicatorVisible = { bg = colors.mantle },
+
+    -- Float
+    FloatBorder = { bg = colors.crust, fg = colors.crust },
+    NormalFloat = { bg = colors.crust },
+
+    -- StatusLine
+    StatusLine = { bg = colors.base },
+
+    -- Telescope
+    TelescopeBorder = { bg = colors.crust, fg = colors.crust },
+    TelescopeNormal = { bg = colors.crust },
+    TelescopePreviewBorder = { bg = colors.crust, fg = colors.crust },
+    TelescopePreviewNormal = { bg = colors.crust },
+    TelescopePreviewTitle = { bg = colors.crust },
+    TelescopePromptBorder = { bg = colors.crust, fg = colors.crust },
+    TelescopePromptNormal = { bg = colors.crust },
+    TelescopePromptTitle = { bg = colors.crust, fg = colors.text },
+    TelescopeSelection = { bg = colors.crust, fg = colors.green },
+
+    -- ToggleTerm
+    ToggleTerm1FloatBorder = { bg = colors.crust, fg = colors.crust },
+    ToggleTerm1NormalFloat = { bg = colors.crust },
 })
+
+vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
 
 vim.cmd([[colorscheme catppuccin]])
