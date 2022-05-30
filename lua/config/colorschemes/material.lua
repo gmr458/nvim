@@ -45,6 +45,12 @@ material.setup({
     },
     async_loading = true, -- Load parts of the theme asyncronously for faster startup (turned on by default)
     custom_highlights = {
+        -- Float
+        FloatBorder = { bg = colors.bg_alt, fg = colors.bg_alt },
+
+        -- BufferLine
+        BufferLineFill = { bg = colors.bg_alt },
+
         -- NvimTree
         NvimTreeWinSeparator = { bg = colors.bg, fg = colors.bg },
 
@@ -56,7 +62,13 @@ material.setup({
         TelescopePreviewBorder = { bg = colors.bg_alt, fg = colors.bg_alt },
         TelescopePromptBorder = { bg = colors.bg_alt, fg = colors.bg_alt },
         TelescopePromptTitle = { bg = colors.bg_alt, fg = colors.fg },
+        TelescopeSelection = { bg = colors.bg_alt, fg = colors.green },
+        TelescopeMultiSelection = { bg = colors.bg_alt },
         TelescopeResultsBorder = { bg = colors.bg_alt, fg = colors.bg_alt },
+
+        -- ToggleTerm
+        ToggleTerm1FloatBorder = { bg = colors.bg_alt, fg = colors.bg_alt },
+        ToggleTerm1NormalFloat = { bg = colors.bg_alt },
     },
 })
 
