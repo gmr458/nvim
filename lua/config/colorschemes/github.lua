@@ -16,6 +16,10 @@ github.setup({
     keyword_style = "NONE",
     overrides = function(c)
         return {
+            -- Float
+            FloatBorder = { bg = c.bg2, fg = c.bg2 },
+            NormalFloat = { bg = c.bg2 },
+
             -- StatusLine
             StatusLine = { bg = c.bg },
             StatusLineNC = { bg = c.bg },
@@ -37,6 +41,10 @@ github.setup({
             TelescopePromptTitle = { bg = c.bg2, fg = c.fg },
             TelescopeSelection = { bg = c.bg2, fg = c.green },
             TelescopeMultiSelection = { bg = c.bg2 },
+
+            -- ToggleTerm
+            ToggleTerm1FloatBorder = { bg = c.bg2, fg = c.bg2 },
+            ToggleTerm1NormalFloat = { bg = c.bg2 },
 
             -- Treesitter
             goTSConstBuiltin = { fg = c.bright_blue },
