@@ -94,10 +94,11 @@ catppuccin.remap({
     TelescopeNormal = { bg = colors.crust },
     TelescopePreviewBorder = { bg = colors.crust, fg = colors.crust },
     TelescopePreviewNormal = { bg = colors.crust },
-    TelescopePreviewTitle = { bg = colors.crust },
+    TelescopePreviewTitle = { bg = colors.crust, fg = colors.text },
     TelescopePromptBorder = { bg = colors.crust, fg = colors.crust },
     TelescopePromptNormal = { bg = colors.crust },
     TelescopePromptTitle = { bg = colors.crust, fg = colors.text },
+    TelescopeResultsTitle = { bg = colors.crust, fg = colors.text },
     TelescopeSelection = { bg = colors.crust, fg = colors.green },
     TelescopeMultiSelection = { bg = colors.crust },
 

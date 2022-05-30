@@ -60,8 +60,10 @@ material.setup({
         -- Telescope
         TelescopeNormal = { bg = colors.bg_alt },
         TelescopePreviewBorder = { bg = colors.bg_alt, fg = colors.bg_alt },
+        TelescopePreviewTitle = { bg = colors.bg_alt, fg = colors.fg },
         TelescopePromptBorder = { bg = colors.bg_alt, fg = colors.bg_alt },
         TelescopePromptTitle = { bg = colors.bg_alt, fg = colors.fg },
+        TelescopeResultsTitle = { bg = colors.bg_alt, fg = colors.fg },
         TelescopeSelection = { bg = colors.bg_alt, fg = colors.green },
         TelescopeMultiSelection = { bg = colors.bg_alt },
         TelescopeResultsBorder = { bg = colors.bg_alt, fg = colors.bg_alt },

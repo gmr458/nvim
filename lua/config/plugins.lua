@@ -165,14 +165,6 @@ return packer.startup(function(use)
         -- config = "require('config.colorschemes.github')",
     })
     use({
-        "ellisonleao/gruvbox.nvim",
-        -- config = "require('config.colorschemes.gruvbox')",
-    })
-    use({
-        "sainnhe/gruvbox-material",
-        -- config = "require('config.colorschemes.gruvbox_material')",
-    })
-    use({
         "rebelot/kanagawa.nvim",
         -- config = "require('config.colorschemes.kanagawa')",
     })
