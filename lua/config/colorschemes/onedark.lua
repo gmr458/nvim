@@ -4,8 +4,12 @@ if not status_ok then
     return
 end
 
+local M = {}
+
+M.style = "deep" -- Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
+
 onedark.setup({
-    style = "deep", -- Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
+    style = M.style,
     transparent = false,
     term_colors = true,
     ending_tildes = false, -- Show the end-of-buffer tildes. By default they are hidden
@@ -28,10 +32,33 @@ onedark.setup({
     },
     colors = {}, -- Override default colors
     highlights = {
-        NvimTreeWinSeparator = {
-            bg = "$bg0",
-            fg = "$bg0",
-        },
+        -- Float
+        FloatBorder = { bg = "$black", fg = "$black" },
+        NormalFloat = { bg = "$black" },
+
+        -- NvimTree
+        NvimTreeWinSeparator = { bg = "$bg0", fg = "$bg0" },
+
+        -- StatusLine
+        StatusLine = { bg = "$bg0" },
+
+        -- Telescope
+        TelescopeBorder = { bg = "$black", fg = "$black" },
+        TelescopeNormal = { bg = "$black" },
+        TelescopePreviewBorder = { bg = "$black", fg = "$black" },
+        TelescopePreviewNormal = { bg = "$black" },
+        TelescopePreviewTitle = { bg = "$black", fg = "$fg" },
+        TelescopePromptBorder = { bg = "$black", fg = "$black" },
+        TelescopePromptNormal = { bg = "$black" },
+        TelescopePromptTitle = { bg = "$black", fg = "$fg" },
+        TelescopeResultsBorder = { bg = "$black", fg = "$black" },
+        TelescopeResultsTitle = { bg = "$black", fg = "$fg" },
+        TelescopeSelection = { bg = "$black", fg = "$green" },
+        TelescopeMultiSelection = { bg = "$black" },
+
+        -- ToggleTerm
+        ToggleTerm1FloatBorder = { bg = "$black", fg = "$black" },
+        ToggleTerm1NormalFloat = { bg = "$black" },
     }, -- Override highlight groups
     diagnostics = {
         darker = false, -- darker colors for diagnostic
@@ -41,3 +68,5 @@ onedark.setup({
 })
 
 onedark.load()
+
+return M

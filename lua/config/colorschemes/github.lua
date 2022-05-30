@@ -35,10 +35,12 @@ github.setup({
             TelescopeNormal = { bg = c.bg2 },
             TelescopePreviewBorder = { bg = c.bg2, fg = c.bg2 },
             TelescopePreviewNormal = { bg = c.bg2 },
-            TelescopePreviewTitle = { bg = c.bg2 },
+            TelescopePreviewTitle = { bg = c.bg2, fg = c.fg },
             TelescopePromptBorder = { bg = c.bg2, fg = c.bg2 },
             TelescopePromptNormal = { bg = c.bg2 },
             TelescopePromptTitle = { bg = c.bg2, fg = c.fg },
+            TelescopeResultsBorder = { bg = c.bg2, fg = c.bg2 },
+            TelescopeResultsTitle = { bg = c.bg2, fg = c.fg },
             TelescopeSelection = { bg = c.bg2, fg = c.green },
             TelescopeMultiSelection = { bg = c.bg2 },
 

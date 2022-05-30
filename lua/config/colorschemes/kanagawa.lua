@@ -41,10 +41,11 @@ kanagawa.setup({
         TelescopeNormal = { bg = colors.sumiInk0 },
         TelescopePreviewBorder = { bg = colors.sumiInk0, fg = colors.sumiInk0 },
         TelescopePreviewNormal = { bg = colors.sumiInk0 },
-        TelescopePreviewTitle = { bg = colors.sumiInk0 },
+        TelescopePreviewTitle = { bg = colors.sumiInk0, fg = colors.fujiWhite },
         TelescopePromptBorder = { bg = colors.sumiInk0, fg = colors.sumiInk0 },
         TelescopePromptNormal = { bg = colors.sumiInk0 },
         TelescopePromptTitle = { bg = colors.sumiInk0, fg = colors.fujiWhite },
+        TelescopeResultsTitle = { bg = colors.sumiInk0, fg = colors.fujiWhite },
         TelescopeSelection = { bg = colors.crust, fg = colors.springGreen },
         TelescopeMultiSelection = { bg = colors.sumiInk0 },
 

@@ -33,7 +33,7 @@ vim.cmd([[
             autocmd ColorScheme enfocado highlight TelescopeNormal guibg=#121212
             autocmd ColorScheme enfocado highlight TelescopePreviewBorder guibg=#121212 guifg=#121212
             autocmd ColorScheme enfocado highlight TelescopePreviewNormal guibg=#121212
-            autocmd ColorScheme enfocado highlight TelescopePreviewTitle guibg=#121212
+            autocmd ColorScheme enfocado highlight TelescopePreviewTitle guibg=#121212 guifg=#777777
             autocmd ColorScheme enfocado highlight TelescopePromptBorder guibg=#121212 guifg=#121212
             autocmd ColorScheme enfocado highlight TelescopePromptNormal guibg=#121212
             autocmd ColorScheme enfocado highlight TelescopePromptTitle guibg=#121212 guifg=#777777

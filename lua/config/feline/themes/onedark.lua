@@ -1,13 +1,31 @@
 local M = {}
 
 M.palette = function()
-    local palette = {
-        -- bg and fg are mandatory
-        -- fg = ,
-        -- bg = ,
+    local palette = require("onedark.palette")
+    local style = require("config.colorschemes.onedark").style
 
-        -- colors
-    }
+    if style == "cool" then
+        palette.cool.bg = palette.cool.black
+        return palette.cool
+    elseif style == "dark" then
+        palette.dark.bg = palette.dark.black
+        return palette.dark
+    elseif style == "darker" then
+        palette.darker.bg = palette.darker.black
+        return palette.darker
+    elseif style == "deep" then
+        palette.deep.bg = palette.deep.black
+        return palette.deep
+    elseif style == "light" then
+        palette.light.bg = palette.light.black
+        return palette.light
+    elseif style == "warm" then
+        palette.warm.bg = palette.warm.black
+        return palette.warm
+    elseif style == "warmer" then
+        palette.warmer.bg = palette.warmer.black
+        return palette.warmer
+    end
 
     return palette
 end
@@ -18,7 +36,7 @@ M.components = function()
     local vi_mode_utils = require("feline.providers.vi_mode")
 
     components.active[1] = {
-        { provider = "█ ", hl = { fg = "wave_blue2" } },
+        { provider = "█ " },
         {
             provider = "vi_mode",
             hl = function()
@@ -32,40 +50,31 @@ M.components = function()
         },
         {
             provider = "file_info",
-            hl = { fg = "fg", style = "NONE" },
-            left_sep = {
-                { str = "slant_right_thin", hl = { fg = "wave_blue2" } },
-                " ",
-            },
-            right_sep = {
-                " ",
-                { str = "slant_right_thin", hl = { fg = "wave_blue2" } },
-            },
+            hl = { style = "NONE" },
+            left_sep = { { str = "slant_right_thin", hl = { fg = "fg" } }, " " },
+            right_sep = { " ", { str = "slant_right_thin", hl = { fg = "fg" } } },
         },
         {
             provider = "git_diff_added",
             icon = " +",
-            hl = { fg = "autumn_green" },
+            hl = { fg = "green" },
         },
         {
             provider = "git_diff_changed",
             icon = " ~",
-            hl = { fg = "autumn_yellow" },
+            hl = { fg = "blue" },
         },
         {
             provider = "git_diff_removed",
             icon = " -",
-            hl = { fg = "autumn_red" },
+            hl = { fg = "red" },
         },
         {
             provider = "git_branch",
             icon = " ",
-            hl = { fg = "fg", style = "NONE" },
+            hl = { style = "NONE" },
             left_sep = " ",
-            right_sep = {
-                " ",
-                { str = "slant_right_thin", hl = { fg = "wave_blue2" } },
-            },
+            right_sep = { " ", { str = "slant_right_thin", hl = { fg = "fg" } } },
         },
         {
             provider = function()
@@ -104,26 +113,26 @@ M.components = function()
 
                 return ""
             end,
-            hl = { fg = "spring_green" },
+            hl = { fg = "green" },
         },
         {
             provider = "diagnostic_errors",
-            hl = { fg = "samurai_red" },
+            hl = { fg = "red" },
             icon = "  ",
         },
         {
             provider = "diagnostic_warnings",
-            hl = { fg = "ronin_yellow" },
+            hl = { fg = "yellow" },
             icon = "  ",
         },
         {
             provider = "diagnostic_hints",
-            hl = { fg = "wave_aqua1" },
+            hl = { fg = "purple" },
             icon = "  ",
         },
         {
             provider = "diagnostic_info",
-            hl = { fg = "dragon_blue" },
+            hl = { fg = "cyan" },
             icon = "  ",
         },
     }
@@ -131,47 +140,30 @@ M.components = function()
     components.active[2] = {
         {
             provider = "position",
-            left_sep = {
-                { str = "slant_right_2_thin", hl = { fg = "wave_blue2" } },
-                " ",
-            },
+            left_sep = { { str = "slant_right_2_thin", hl = { fg = "fg" } }, " " },
             right_sep = " ",
         },
         {
             provider = "line_percentage",
             hl = { style = "NONE" },
-            left_sep = {
-                { str = "slant_right_2_thin", hl = { fg = "wave_blue2" } },
-                " ",
-            },
+            left_sep = { { str = "slant_right_2_thin", hl = { fg = "fg" } }, " " },
             right_sep = " ",
         },
-        {
-            provider = "█",
-            hl = { fg = "wave_blue2" },
-        },
+        { provider = "█" },
     }
 
     components.inactive[1] = {
-        { provider = "█ ", hl = { fg = "wave_blue2" } },
+        { provider = "█ " },
         {
             provider = "file_type",
-            hl = { fg = "fg", style = "NONE" },
-            right_sep = {
-                " ",
-                { str = "slant_right_thin", hl = { fg = "wave_blue2" } },
-            },
+            hl = { style = "NONE" },
+            right_sep = { " ", { str = "slant_right_thin", hl = { fg = "fg" } } },
         },
         -- Empty component to fix the highlight till the end of the statusline
         {},
     }
 
-    components.inactive[2] = {
-        {
-            provider = "█",
-            hl = { fg = "wave_blue2" },
-        },
-    }
+    components.inactive[2] = { { provider = "█" } }
 
     return components
 end
