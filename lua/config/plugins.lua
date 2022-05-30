@@ -263,7 +263,6 @@ return packer.startup(function(use)
     -- })
     use({
         "feline-nvim/feline.nvim",
-        after = "catppuccin",
         config = "require('config.feline')",
     })
     use({
