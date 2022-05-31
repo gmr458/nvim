@@ -35,11 +35,30 @@ git clone https://github.com/gmr458/nvim.git ~/.config/nvim
 
 This config is highly influenced by [LunarVim/Neovim-from-scratch](https://github.com/LunarVim/Neovim-from-scratch)
 
-## Preview
-![screenshot01](./screenshots/screenshot01.png)
+<details><summary><b>Click to show preview</b></summary>
 
-![screenshot02](./screenshots/screenshot02.png)
+### [Catppuccin](https://github.com/catppuccin/nvim)
+![catppuccin_mocha01](./screenshots/catppuccin_mocha01.png)
+![catppuccin_mocha02](./screenshots/catppuccin_mocha02.png)
 
-![screenshot03](./screenshots/screenshot03.png)
+### [Enfocado](https://github.com/wuelnerdotexe/vim-enfocado)
+![enfocado01](./screenshots/enfocado01.png)
+![enfocado02](./screenshots/enfocado02.png)
 
-![screenshot04](./screenshots/screenshot04.png)
+### [GitHub Dark Default](https://github.com/projekt0n/github-nvim-theme)
+![enfocado01](./screenshots/github_dark_default01.png)
+![enfocado02](./screenshots/github_dark_default02.png)
+
+### [Kanagawa](https://github.com/rebelot/kanagawa.nvim)
+![kanagawa01](./screenshots/kanagawa01.png)
+![kanagawa02](./screenshots/kanagawa02.png)
+
+### [Material Ocean Deep](https://github.com/marko-cerovac/material.nvim)
+![material_deep_ocean01](./screenshots/material_deep_ocean01.png)
+![material_deep_ocean02](./screenshots/material_deep_ocean02.png)
+
+### [OneDark Deep](https://github.com/navarasu/onedark.nvim)
+![onedark_deep01](./screenshots/onedark_deep01.png)
+![onedark_deep02](./screenshots/onedark_deep02.png)
+
+</details>
