@@ -30,6 +30,7 @@ nvim_tree.setup({
     reload_on_bufenter = false,
     respect_buf_cwd = false,
     view = {
+        adaptive_size = false,
         width = 30,
         height = 30,
         hide_root_folder = true,
@@ -40,11 +41,7 @@ nvim_tree.setup({
         signcolumn = "yes",
         mappings = {
             custom_only = false,
-            list = {
-                { key = "s", cb = tree_cb("vsplit") },
-                { key = "z", cb = tree_cb("") },
-                { key = "m", cb = tree_cb("") },
-            },
+            list = {},
         },
     },
     renderer = {
@@ -139,8 +136,15 @@ nvim_tree.setup({
             global = false,
             restrict_above_cwd = false,
         },
+        expand_all = {
+            max_folder_discovery = 300,
+        },
         open_file = {
+            quit_on_open = false,
+            resize_window = true,
             window_picker = {
+                enable = true,
+                chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
                 exclude = {
                     filetype = {
                         "notify",
@@ -153,6 +157,9 @@ nvim_tree.setup({
                     buftype = { "nofile", "terminal", "help" },
                 },
             },
+        },
+        remove_file = {
+            close_window = true,
         },
     },
     trash = {
