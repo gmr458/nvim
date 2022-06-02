@@ -9,12 +9,5 @@ bufferline.setup({
         offsets = { { filetype = "NvimTree", text = "", padding = 0 } },
         separator_style = { "", "" },
     },
+    highlights = { buffer_selected = { gui = "none" } },
 })
-
--- bufferline.setup({
---     options = {
---         indicator_icon = " ",
---         separator_style = { "", "" },
---     },
---     -- highlights = { buffer_selected = { gui = "bold" } },
--- })
