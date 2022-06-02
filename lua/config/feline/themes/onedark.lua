@@ -51,8 +51,14 @@ M.components = function()
         {
             provider = "file_info",
             hl = { style = "NONE" },
-            left_sep = { { str = "slant_right_thin", hl = { fg = "fg" } }, " " },
-            right_sep = { " ", { str = "slant_right_thin", hl = { fg = "fg" } } },
+            left_sep = {
+                { str = "slant_right_thin", hl = { fg = "fg" } },
+                " ",
+            },
+            right_sep = {
+                " ",
+                { str = "slant_right_thin", hl = { fg = "fg" } },
+            },
         },
         {
             provider = "git_diff_added",
@@ -74,7 +80,10 @@ M.components = function()
             icon = " ",
             hl = { style = "NONE" },
             left_sep = " ",
-            right_sep = { " ", { str = "slant_right_thin", hl = { fg = "fg" } } },
+            right_sep = {
+                " ",
+                { str = "slant_right_thin", hl = { fg = "fg" } },
+            },
         },
         {
             provider = function()
@@ -140,13 +149,19 @@ M.components = function()
     components.active[2] = {
         {
             provider = "position",
-            left_sep = { { str = "slant_right_2_thin", hl = { fg = "fg" } }, " " },
+            left_sep = {
+                { str = "slant_right_2_thin", hl = { fg = "fg" } },
+                " ",
+            },
             right_sep = " ",
         },
         {
             provider = "line_percentage",
             hl = { style = "NONE" },
-            left_sep = { { str = "slant_right_2_thin", hl = { fg = "fg" } }, " " },
+            left_sep = {
+                { str = "slant_right_2_thin", hl = { fg = "fg" } },
+                " ",
+            },
             right_sep = " ",
         },
         { provider = "█" },
@@ -157,7 +172,10 @@ M.components = function()
         {
             provider = "file_type",
             hl = { style = "NONE" },
-            right_sep = { " ", { str = "slant_right_thin", hl = { fg = "fg" } } },
+            right_sep = {
+                " ",
+                { str = "slant_right_thin", hl = { fg = "fg" } },
+            },
         },
         -- Empty component to fix the highlight till the end of the statusline
         {},
