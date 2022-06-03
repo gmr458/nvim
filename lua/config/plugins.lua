@@ -244,7 +244,11 @@ return packer.startup(function(use)
     use({
         "L3MON4D3/LuaSnip",
         event = "InsertEnter",
-        requires = "rafamadriz/friendly-snippets",
+    })
+    use("rafamadriz/friendly-snippets")
+    use({
+        "dsznajder/vscode-react-javascript-snippets",
+        run = "yarn install --frozen-lockfile && yarn compile",
     })
 
     -- Other plugins
