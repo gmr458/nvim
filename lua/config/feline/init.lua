@@ -15,7 +15,7 @@ local themes = {
     onedark = "onedark",
 }
 
-local theme = themes.enfocado
+local theme = themes.kanagawa
 
 feline.setup({
     force_inactive = {
