@@ -10,7 +10,7 @@ local bg_alt = "#111116"
 
 kanagawa.setup({
     undercurl = true,
-    commentStyle = "italic",
+    commentStyle = "NONE",
     functionStyle = "NONE",
     keywordStyle = "NONE",
     statementStyle = "NONE",
@@ -63,6 +63,20 @@ kanagawa.setup({
         TSKeywordReturn = { fg = colors.oniViolet, style = "italic" },
         TSMethod = { fg = colors.crystalBlue, style = "italic" },
         TSTypeBuiltin = { style = "italic" },
+
+        -- Disable bold
+        Conceal = { style = "NONE" },
+        CursorLineNr = { style = "NONE" },
+        MatchParen = { style = "NONE" },
+        ModeMsg = { style = "NONE" },
+        Title = { style = "NONE" },
+        Boolean = { style = "NONE" },
+        Bold = { style = "NONE" },
+        Todo = { style = "NONE" },
+        TSKeywordOperator = { style = "NONE" },
+        TSStringEscape = { style = "NONE" },
+        NvimTreeRootFolder = { style = "NONE" },
+        NvimTreeExecFile = { style = "NONE" },
     },
 })
 
