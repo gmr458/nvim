@@ -55,8 +55,8 @@ vim.g.neovide_refresh_rate = 60
 vim.g.neovide_fullscreen = true
 vim.g.neovide_input_use_logo = true
 vim.g.neovide_profiler = false
-vim.g.neovide_cursor_animation_length = 0.1
-vim.g.neovide_cursor_trail_length = 0.1
+-- vim.g.neovide_cursor_animation_length = 0.1
+-- vim.g.neovide_cursor_trail_length = 0.01
 vim.g.neovide_cursor_antialiasing = true
 
 vim.cmd([[
