@@ -127,6 +127,10 @@ return packer.startup(function(use)
         run = ":TSUpdate",
         config = "require('config.treesitter')",
     })
+    use({
+        "nvim-treesitter/nvim-treesitter-context",
+        after = "nvim-treesitter",
+    })
     -- use({
     --     "nvim-treesitter/playground",
     --     after = "nvim-treesitter",
