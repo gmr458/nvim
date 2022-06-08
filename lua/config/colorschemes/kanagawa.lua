@@ -63,6 +63,8 @@ kanagawa.setup({
         TSKeywordReturn = { fg = colors.oniViolet, style = "italic" },
         TSMethod = { fg = colors.crystalBlue, style = "italic" },
         TSTypeBuiltin = { style = "italic" },
+        TreesitterContext = { bg = colors.sumiInk2 },
+        TreesitterContextLineNumber = { bg = colors.sumiInk2 },
 
         -- Disable bold
         Conceal = { style = "NONE" },
