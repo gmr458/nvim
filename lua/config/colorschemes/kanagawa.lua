@@ -7,17 +7,18 @@ end
 local colors = require("kanagawa.colors").setup()
 
 local bg_alt = "#111116"
+local bg_alt_2 = "#16161d"
 
 kanagawa.setup({
     undercurl = true,
-    commentStyle = "NONE",
-    functionStyle = "NONE",
-    keywordStyle = "NONE",
-    statementStyle = "NONE",
-    typeStyle = "NONE",
-    variablebuiltinStyle = "NONE",
+    commentStyle = { italic = false, bold = false },
+    functionStyle = { italic = false, bold = false },
+    keywordStyle = { italic = false, bold = false },
+    statementStyle = { italic = false, bold = false },
+    typeStyle = { italic = false, bold = false },
+    variablebuiltinStyle = { italic = false, bold = false },
     specialReturn = false,
-    specialException = true,
+    specialException = false,
     transparent = false,
     dimInactive = false,
     globalStatus = true,
@@ -26,6 +27,8 @@ kanagawa.setup({
         -- Float
         FloatBorder = { bg = bg_alt, fg = bg_alt },
         NormalFloat = { bg = bg_alt },
+
+        BufferLineFill = { bg = bg_alt },
 
         -- StatusLine
         StatusLine = { bg = colors.sumiInk1 },
@@ -37,17 +40,17 @@ kanagawa.setup({
         NvimTreeWinSeparator = { bg = colors.sumiInk1, fg = colors.sumiInk1 },
 
         -- Telescope
-        TelescopeBorder = { bg = colors.sumiInk0, fg = colors.sumiInk0 },
-        TelescopeNormal = { bg = colors.sumiInk0 },
-        TelescopePreviewBorder = { bg = colors.sumiInk0, fg = colors.sumiInk0 },
-        TelescopePreviewNormal = { bg = colors.sumiInk0 },
-        TelescopePreviewTitle = { bg = colors.sumiInk0, fg = colors.fujiWhite },
-        TelescopePromptBorder = { bg = colors.sumiInk0, fg = colors.sumiInk0 },
-        TelescopePromptNormal = { bg = colors.sumiInk0 },
-        TelescopePromptTitle = { bg = colors.sumiInk0, fg = colors.fujiWhite },
-        TelescopeResultsTitle = { bg = colors.sumiInk0, fg = colors.fujiWhite },
+        TelescopeBorder = { bg = bg_alt, fg = bg_alt },
+        TelescopeNormal = { bg = bg_alt },
+        TelescopePreviewBorder = { bg = bg_alt, fg = bg_alt },
+        TelescopePreviewNormal = { bg = bg_alt },
+        TelescopePreviewTitle = { bg = bg_alt, fg = colors.fujiWhite },
+        TelescopePromptBorder = { bg = bg_alt, fg = bg_alt },
+        TelescopePromptNormal = { bg = bg_alt },
+        TelescopePromptTitle = { bg = bg_alt, fg = colors.fujiWhite },
+        TelescopeResultsTitle = { bg = bg_alt, fg = colors.fujiWhite },
         TelescopeSelection = { bg = colors.crust, fg = colors.springGreen },
-        TelescopeMultiSelection = { bg = colors.sumiInk0 },
+        TelescopeMultiSelection = { bg = bg_alt },
 
         -- ToggleTerm
         ToggleTerm1NormalFloat = { bg = bg_alt },
@@ -56,29 +59,29 @@ kanagawa.setup({
         -- Treesitter
         goTSNamespace = { fg = colors.fujiWhite },
         javascriptTSConstructor = { fg = colors.crystalBlue },
-        TSConditional = { fg = colors.oniViolet, style = "italic" },
-        TSInclude = { fg = colors.surimiOrange, style = "italic" },
-        TSKeyword = { fg = colors.oniViolet, style = "italic" },
-        TSKeywordFunction = { fg = colors.oniViolet, style = "italic" },
-        TSKeywordReturn = { fg = colors.oniViolet, style = "italic" },
-        TSMethod = { fg = colors.crystalBlue, style = "italic" },
-        TSTypeBuiltin = { style = "italic" },
+        TSConditional = { fg = colors.oniViolet, italic = true },
+        TSInclude = { fg = colors.surimiOrange, italic = true },
+        TSKeyword = { fg = colors.oniViolet, italic = true },
+        TSKeywordFunction = { fg = colors.oniViolet, italic = true },
+        TSKeywordReturn = { fg = colors.oniViolet, italic = true },
+        TSMethod = { fg = colors.crystalBlue, italic = true },
+        TSTypeBuiltin = { italic = true },
         TreesitterContext = { bg = colors.sumiInk2 },
         TreesitterContextLineNumber = { bg = colors.sumiInk2 },
 
         -- Disable bold
-        Conceal = { style = "NONE" },
-        CursorLineNr = { style = "NONE" },
-        MatchParen = { style = "NONE" },
-        ModeMsg = { style = "NONE" },
-        Title = { style = "NONE" },
-        Boolean = { style = "NONE" },
-        Bold = { style = "NONE" },
-        Todo = { style = "NONE" },
-        TSKeywordOperator = { style = "NONE" },
-        TSStringEscape = { style = "NONE" },
-        NvimTreeRootFolder = { style = "NONE" },
-        NvimTreeExecFile = { style = "NONE" },
+        Conceal = { bold = false },
+        CursorLineNr = { bold = false },
+        MatchParen = { bold = false },
+        ModeMsg = { bold = false },
+        Title = { bold = false },
+        Boolean = { bold = false },
+        Bold = { bold = false },
+        Todo = { bold = false },
+        TSKeywordOperator = { bold = false },
+        TSStringEscape = { bold = false },
+        NvimTreeRootFolder = { bold = false },
+        NvimTreeExecFile = { bold = false },
     },
 })
 
