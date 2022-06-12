@@ -109,6 +109,8 @@ catppuccin.remap({
     -- Treesitter
     TSNamespace = { style = "NONE" },
     TSParameter = { style = "NONE" },
+    TreesitterContext = { bg = colors.surface0 },
+    TreesitterContextLineNumber = { bg = colors.surface0 },
 })
 
 vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
