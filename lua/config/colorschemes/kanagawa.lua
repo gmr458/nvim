@@ -56,6 +56,9 @@ kanagawa.setup({
         ToggleTerm1NormalFloat = { bg = bg_alt },
         ToggleTerm1FloatBorder = { bg = bg_alt, fg = bg_alt },
 
+        -- Packer
+        packerSuccess = { bg = bg_alt },
+
         -- Treesitter
         goTSNamespace = { fg = colors.fujiWhite },
         javascriptTSConstructor = { fg = colors.crystalBlue },
