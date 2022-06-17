@@ -1,12 +1,10 @@
-local status_ok, github = pcall(require, "github-theme")
+local status_github, github = pcall(require, "github-theme")
 
-if not status_ok then
+if not status_github then
     return
 end
 
-local M = {}
-
-M.theme = "dark_default" -- dark, dimmed, dark_default, dark_colorblind, light, light_default, light_colorblind
+local theme = "dark_default" -- dark, dimmed, dark_default, dark_colorblind, light, light_default, light_colorblind
 
 github.setup({
     comment_style = "italic",
@@ -56,10 +54,43 @@ github.setup({
             goTSProperty = { fg = c.bright_blue },
             goTSType = { fg = c.fg },
             goTSTypeBuiltin = { fg = c.fg },
+
+            -- TreesitterContext
+            TreesitterContext = { bg = c.bg_highlight },
+            TreesitterContextLineNumber = { bg = c.bg_highlight },
         }
     end,
-    theme_style = M.theme,
+    theme_style = theme,
     variable_style = "NONE",
 })
 
-return M
+local status_feline, feline = pcall(require, "feline")
+
+if not status_feline then
+    return
+end
+
+feline.setup({
+    force_inactive = {
+        filetypes = {
+            "^NvimTree$",
+            "^packer$",
+            "^startify$",
+            "^fugitive$",
+            "^fugitiveblame$",
+            "^qf$",
+            "^help$",
+            "^TelescopePrompt$",
+            "^alpha$",
+            "^lsp%-installer$",
+            "^lspinfo$",
+        },
+        buftypes = {
+            "^terminal$",
+        },
+        bufnames = {},
+    },
+    disable = { filetypes = { "^alpha$" } },
+    theme = require("config.feline.themes.github").palette(theme),
+    components = require("config.feline.themes.github").components(),
+})

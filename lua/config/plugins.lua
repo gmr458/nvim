@@ -158,7 +158,7 @@ return packer.startup(function(use)
     use({
         "catppuccin/nvim",
         as = "catppuccin",
-        -- config = "require('config.colorschemes.catppuccin')",
+        config = "require('config.colorschemes.catppuccin')",
     })
     use({
         "wuelnerdotexe/vim-enfocado",
@@ -170,7 +170,7 @@ return packer.startup(function(use)
     })
     use({
         "rebelot/kanagawa.nvim",
-        config = "require('config.colorschemes.kanagawa')",
+        -- config = "require('config.colorschemes.kanagawa')",
     })
     use({
         "marko-cerovac/material.nvim",
@@ -261,10 +261,7 @@ return packer.startup(function(use)
     --     ft = filetypes,
     --     config = "require('config.lualine')",
     -- })
-    use({
-        "feline-nvim/feline.nvim",
-        config = "require('config.feline')",
-    })
+    use("feline-nvim/feline.nvim")
     use({
         "phaazon/hop.nvim",
         branch = "v1",

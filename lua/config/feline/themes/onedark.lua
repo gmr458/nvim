@@ -1,8 +1,7 @@
 local M = {}
 
-M.palette = function()
+M.palette = function(style)
     local palette = require("onedark.palette")
-    local style = require("config.colorschemes.onedark").style
 
     if style == "cool" then
         palette.cool.bg = palette.cool.black

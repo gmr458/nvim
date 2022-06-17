@@ -1,6 +1,6 @@
-local status_ok, catppuccin = pcall(require, "catppuccin")
+local status_catppuccin, catppuccin = pcall(require, "catppuccin")
 
-if not status_ok then
+if not status_catppuccin then
     return
 end
 
@@ -81,6 +81,7 @@ catppuccin.remap({
     -- BufferLine
     BufferLineCloseButton = { bg = "#161622" },
     BufferLineIndicatorVisible = { bg = colors.mantle },
+    BufferLineFill = { bg = colors.crust },
 
     -- Float
     FloatBorder = { bg = colors.crust, fg = colors.crust },
@@ -114,5 +115,37 @@ catppuccin.remap({
 })
 
 vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
+
+local status_feline, feline = pcall(require, "feline")
+
+if not status_feline then
+    return
+end
+
+feline.setup({
+    force_inactive = {
+        filetypes = {
+            "^NvimTree$",
+            "^packer$",
+            "^startify$",
+            "^fugitive$",
+            "^fugitiveblame$",
+            "^qf$",
+            "^help$",
+            "^TelescopePrompt$",
+            "^alpha$",
+            "^lsp%-installer$",
+            "^lspinfo$",
+        },
+        buftypes = {
+            "^terminal$",
+        },
+        bufnames = {},
+    },
+    disable = { filetypes = { "^alpha$" } },
+    -- components = require("catppuccin.core.integrations.feline"),
+    theme = require("config.feline.themes.catppuccin").palette(),
+    components = require("config.feline.themes.catppuccin").components(),
+})
 
 vim.cmd([[colorscheme catppuccin]])
