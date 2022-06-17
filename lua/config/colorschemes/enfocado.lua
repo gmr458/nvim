@@ -1,3 +1,34 @@
+local status_ok, feline = pcall(require, "feline")
+
+if not status_ok then
+    return
+end
+
+feline.setup({
+    force_inactive = {
+        filetypes = {
+            "^NvimTree$",
+            "^packer$",
+            "^startify$",
+            "^fugitive$",
+            "^fugitiveblame$",
+            "^qf$",
+            "^help$",
+            "^TelescopePrompt$",
+            "^alpha$",
+            "^lsp%-installer$",
+            "^lspinfo$",
+        },
+        buftypes = {
+            "^terminal$",
+        },
+        bufnames = {},
+    },
+    disable = { filetypes = { "^alpha$" } },
+    theme = require("config.feline.themes.enfocado").palette(),
+    components = require("config.feline.themes.enfocado").components(),
+})
+
 vim.cmd([[
     let g:enfocado_style = "neture" " Available: nature or neon
 
@@ -50,6 +81,10 @@ vim.cmd([[
             " Toggle Term
             autocmd ColorScheme enfocado highlight ToggleTerm1NormalFloat guibg=#121212
             autocmd ColorScheme enfocado highlight ToggleTerm1FloatBorder guibg=#121212 guifg=#121212
+
+            " TreesitterContext
+            autocmd ColorScheme enfocado highlight TreesitterContext guibg=#121212
+            autocmd ColorScheme enfocado highlight TreesitterContextLineNumber guibg=#121212
     augroup END
 
     colorscheme enfocado

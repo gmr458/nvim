@@ -1,7 +1,6 @@
 local M = {}
 
-M.palette = function()
-    local theme = require("config.colorschemes.github").theme
+M.palette = function(theme)
     local colors = require("github-theme.colors").setup({ theme_style = theme })
 
     colors.bg = colors.bg2

@@ -4,12 +4,10 @@ if not status_ok then
     return
 end
 
-local M = {}
-
-M.style = "deep" -- Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
+local style = "deep" -- Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
 
 onedark.setup({
-    style = M.style,
+    style = style,
     transparent = false,
     term_colors = true,
     ending_tildes = false, -- Show the end-of-buffer tildes. By default they are hidden
@@ -59,6 +57,10 @@ onedark.setup({
         -- ToggleTerm
         ToggleTerm1FloatBorder = { bg = "$black", fg = "$black" },
         ToggleTerm1NormalFloat = { bg = "$black" },
+
+        -- TreesitterContext
+        TreesitterContext = { bg = "$bg3" },
+        TreesitterContextLineNumber = { bg = "$bg3" },
     }, -- Override highlight groups
     diagnostics = {
         darker = false, -- darker colors for diagnostic
@@ -69,4 +71,33 @@ onedark.setup({
 
 onedark.load()
 
-return M
+local status_feline, feline = pcall(require, "feline")
+
+if not status_feline then
+    return
+end
+
+feline.setup({
+    force_inactive = {
+        filetypes = {
+            "^NvimTree$",
+            "^packer$",
+            "^startify$",
+            "^fugitive$",
+            "^fugitiveblame$",
+            "^qf$",
+            "^help$",
+            "^TelescopePrompt$",
+            "^alpha$",
+            "^lsp%-installer$",
+            "^lspinfo$",
+        },
+        buftypes = {
+            "^terminal$",
+        },
+        bufnames = {},
+    },
+    disable = { filetypes = { "^alpha$" } },
+    theme = require("config.feline.themes.onedark").palette(style),
+    components = require("config.feline.themes.onedark").components(),
+})
