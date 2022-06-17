@@ -8,7 +8,7 @@ catppuccin.setup({
     transparent_background = false,
     term_colors = false,
     styles = {
-        comments = "italic",
+        comments = "NONE",
         conditionals = "NONE",
         loops = "NONE",
         functions = "NONE",
@@ -79,6 +79,7 @@ local colors = require("catppuccin.api.colors").get_colors()
 
 catppuccin.remap({
     -- BufferLine
+    BufferLineBufferSelected = { style = "italic" },
     BufferLineCloseButton = { bg = "#161622" },
     BufferLineIndicatorVisible = { bg = colors.mantle },
     BufferLineFill = { bg = colors.crust },
@@ -100,7 +101,11 @@ catppuccin.remap({
     TelescopePromptNormal = { bg = colors.crust },
     TelescopePromptTitle = { bg = colors.crust, fg = colors.text },
     TelescopeResultsTitle = { bg = colors.crust, fg = colors.text },
-    TelescopeSelection = { bg = colors.crust, fg = colors.green },
+    TelescopeSelection = {
+        bg = colors.crust,
+        fg = colors.green,
+        style = "NONE",
+    },
     TelescopeMultiSelection = { bg = colors.crust },
 
     -- ToggleTerm
@@ -112,6 +117,35 @@ catppuccin.remap({
     TSParameter = { style = "NONE" },
     TreesitterContext = { bg = colors.surface0 },
     TreesitterContextLineNumber = { bg = colors.surface0 },
+
+    -- Disable bold
+    ErrorMsg = { style = "italic" },
+    MatchParen = { style = "NONE" },
+    ModeMsg = { style = "NONE" },
+    PmenuSel = { style = "NONE" },
+    QuickFixLine = { style = "NONE" },
+    Search = { style = "NONE" },
+    Title = { style = "NONE" },
+    Visual = { style = "NONE" },
+    VisualNOS = { style = "NONE" },
+    Bold = { style = "NONE" },
+    Todo = { style = "NONE" },
+    htmlH1 = { style = "NONE" },
+    htmlH2 = { style = "NONE" },
+    mkdCodeStart = { style = "NONE" },
+    mkdCodeEnd = { style = "NONE" },
+    TSTextReference = { style = "NONE" },
+    TSTitle = { style = "NONE" },
+    TSStrong = { style = "NONE" },
+    LightspeedShorcutOverlapped = { style = "NONE" },
+    NvimTreeRootFolder = { style = "NONE" },
+    NeoTreeRootName = { style = "NONE" },
+    markdownHeadingDelimiter = { style = "NONE" },
+    HopNextKey = { style = "underline" },
+    HopNextKey1 = { style = "NONE" },
+    HopNextKey2 = { style = "italic" },
+    CmpItemAbbrMatch = { style = "NONE" },
+    CmpItemAbbrMatchFuzzy = { style = "NONE" },
 })
 
 vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
