@@ -25,6 +25,7 @@ M.servers = {
     "tailwindcss",
     "tsserver",
     "vimls",
+    "yamlls",
 }
 
 M.setup = function()
