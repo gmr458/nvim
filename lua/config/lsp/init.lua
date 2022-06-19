@@ -55,5 +55,10 @@ for _, server in pairs(servers) do
         config = vim.tbl_deep_extend("force", tsserver_config, config)
     end
 
+    if server == "yamlls" then
+        local yamlls_config = require("config.lsp.settings.yamlls")
+        config = vim.tbl_deep_extend("force", yamlls_config, config)
+    end
+
     require("lspconfig")[server].setup(config)
 end
