@@ -23,7 +23,7 @@ local options = {
     -- numberwidth = 2,
     omnifunc = "syntaxcomplete#Complete",
     pumheight = 10,
-    relativenumber = false,
+    relativenumber = true,
     ruler = false,
     scrolloff = 8,
     shiftwidth = 4,
@@ -59,13 +59,13 @@ vim.g.neovide_profiler = false
 -- vim.g.neovide_cursor_trail_length = 0.01
 vim.g.neovide_cursor_antialiasing = true
 
-vim.cmd([[
-    set clipboard+=unnamedplus
-    se mouse+=a
+-- vim.cmd([[
+--     set clipboard+=unnamedplus
+--     se mouse+=a
 
-    noremap <C-C> "+y
-    noremap <C-V> "+p
-    cnoremap <C-V> <C-r>+
-    imap <C-V> <C-r>+
-    set t_md=
-]])
+--     noremap <C-C> "+y
+--     noremap <C-V> "+p
+--     cnoremap <C-V> <C-r>+
+--     imap <C-V> <C-r>+
+--     set t_md=
+-- ]])
