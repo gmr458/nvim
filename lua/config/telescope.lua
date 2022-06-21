@@ -66,6 +66,9 @@ telescope.setup({
         },
     },
     pickers = {
+        buffers = {
+            previewer = false,
+        },
         find_files = {
             previewer = false,
         },
