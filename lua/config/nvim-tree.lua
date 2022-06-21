@@ -8,7 +8,7 @@ end
 -- nested options are documented by accessing them with `.` (eg: `:help nvim-tree.view.mappings.list`).
 nvim_tree.setup({
     auto_reload_on_write = true,
-    create_in_closed_folder = false,
+    create_in_closed_folder = true,
     disable_netrw = true,
     hijack_cursor = true,
     hijack_netrw = false,
@@ -18,11 +18,13 @@ nvim_tree.setup({
     open_on_setup_file = false,
     open_on_tab = false,
     sort_by = "name",
+    root_dirs = {},
+    prefer_startup_root = false,
     update_cwd = false,
     reload_on_bufenter = false,
     respect_buf_cwd = false,
     view = {
-        adaptive_size = false,
+        adaptive_size = true,
         width = 30,
         height = 30,
         hide_root_folder = true,
@@ -45,8 +47,9 @@ nvim_tree.setup({
         indent_markers = {
             enable = true,
             icons = {
-                corner = "└ ",
+                orner = "└ ",
                 edge = "│ ",
+                item = "│ ",
                 none = "  ",
             },
         },
@@ -94,6 +97,7 @@ nvim_tree.setup({
     update_focused_file = {
         enable = true,
         update_cwd = false,
+        update_root = false,
         ignore_list = {},
     },
     ignore_ft_on_setup = {},
@@ -155,7 +159,7 @@ nvim_tree.setup({
         },
     },
     trash = {
-        cmd = "trash",
+        cmd = "gio trash",
         require_confirm = true,
     },
     live_filter = {
@@ -172,6 +176,7 @@ nvim_tree.setup({
             diagnostics = false,
             git = false,
             profile = false,
+            watcher = false,
         },
     },
 })

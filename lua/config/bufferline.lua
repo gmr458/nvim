@@ -9,6 +9,7 @@ bufferline.setup({
         indicator_icon = " ",
         offsets = { { filetype = "NvimTree", text = "", padding = 0 } },
         separator_style = { "", "" },
+        sort_by = "insert_at_end",
     },
     highlights = { buffer_selected = { gui = "none" } },
 })
