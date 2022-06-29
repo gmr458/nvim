@@ -27,6 +27,7 @@ kanagawa.setup({
         FloatBorder = { bg = bg_alt, fg = bg_alt },
         NormalFloat = { bg = bg_alt },
 
+        -- BufferLine
         BufferLineFill = { bg = bg_alt },
 
         -- StatusLine
@@ -64,6 +65,7 @@ kanagawa.setup({
         TSConditional = { fg = colors.oniViolet, italic = true },
         TSInclude = { fg = colors.surimiOrange, italic = true },
         TSKeyword = { fg = colors.oniViolet, italic = true },
+        TSKeywordOperator = { fg = colors.oniViolet, italic = true },
         TSKeywordFunction = { fg = colors.oniViolet, italic = true },
         TSKeywordReturn = { fg = colors.oniViolet, italic = true },
         TSMethod = { fg = colors.crystalBlue, italic = true },
@@ -80,7 +82,6 @@ kanagawa.setup({
         Boolean = { bold = false },
         Bold = { bold = false },
         Todo = { bold = false },
-        TSKeywordOperator = { bold = false },
         TSStringEscape = { bold = false },
         NvimTreeRootFolder = { bold = false },
         NvimTreeExecFile = { bold = false },
