@@ -159,7 +159,7 @@ return packer.startup(function(use)
     use({
         "catppuccin/nvim",
         as = "catppuccin",
-        config = "require('config.colorschemes.catppuccin')",
+        -- config = "require('config.colorschemes.catppuccin')",
     })
     use({
         "wuelnerdotexe/vim-enfocado",
@@ -170,8 +170,12 @@ return packer.startup(function(use)
         -- config = "require('config.colorschemes.github')",
     })
     use({
+        "ellisonleao/gruvbox.nvim",
+        -- config = "require('config.colorschemes.gruvbox')",
+    })
+    use({
         "rebelot/kanagawa.nvim",
-        -- config = "require('config.colorschemes.kanagawa')",
+        config = "require('config.colorschemes.kanagawa')",
     })
     use({
         "marko-cerovac/material.nvim",
