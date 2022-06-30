@@ -10,7 +10,7 @@ local bg_alt = "#111116"
 
 kanagawa.setup({
     undercurl = true,
-    commentStyle = { italic = false, bold = false },
+    commentStyle = { italic = true, bold = false },
     functionStyle = { italic = false, bold = false },
     keywordStyle = { italic = false, bold = false },
     statementStyle = { italic = false, bold = false },

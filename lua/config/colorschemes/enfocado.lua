@@ -54,6 +54,11 @@ vim.cmd([[
             autocmd ColorScheme enfocado highlight DiagnosticFloatingHint guibg=#121212
             autocmd ColorScheme enfocado highlight DiagnosticFloatingInfo guibg=#121212
             autocmd ColorScheme enfocado highlight DiagnosticFloatingWarn guibg=#121212
+            autocmd ColorScheme enfocado highlight DiagnosticVirtualTextError guibg=#181818
+            autocmd ColorScheme enfocado highlight DiagnosticVirtualTextError guibg=#181818 guifg=#ED4A46
+            autocmd ColorScheme enfocado highlight DiagnosticVirtualTextHint guibg=#181818 guifg=#368AEB
+            autocmd ColorScheme enfocado highlight DiagnosticVirtualTextInfo guibg=#181818 guifg=#DBB32D
+            autocmd ColorScheme enfocado highlight DiagnosticVirtualTextWarn guibg=#181818 guifg=#E67F43
 
             " Statusline
             autocmd ColorScheme enfocado highlight StatusLine guibg=#181818
