@@ -24,7 +24,7 @@ nvim_tree.setup({
     reload_on_bufenter = false,
     respect_buf_cwd = false,
     view = {
-        adaptive_size = true,
+        adaptive_size = false,
         width = 30,
         height = 30,
         hide_root_folder = true,

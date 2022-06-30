@@ -156,35 +156,35 @@ return packer.startup(function(use)
     })
 
     -- Colorschemes
-    use({
-        "catppuccin/nvim",
-        as = "catppuccin",
-        -- config = "require('config.colorschemes.catppuccin')",
-    })
-    use({
-        "wuelnerdotexe/vim-enfocado",
-        -- config = "require('config.colorschemes.enfocado')",
-    })
-    use({
-        "projekt0n/github-nvim-theme",
-        -- config = "require('config.colorschemes.github')",
-    })
-    use({
-        "ellisonleao/gruvbox.nvim",
-        -- config = "require('config.colorschemes.gruvbox')",
-    })
+    -- use({
+    --     "catppuccin/nvim",
+    --     as = "catppuccin",
+    --     -- config = "require('config.colorschemes.catppuccin')",
+    -- })
+    -- use({
+    --     "wuelnerdotexe/vim-enfocado",
+    --     -- config = "require('config.colorschemes.enfocado')",
+    -- })
+    -- use({
+    --     "projekt0n/github-nvim-theme",
+    --     -- config = "require('config.colorschemes.github')",
+    -- })
+    -- use({
+    --     "ellisonleao/gruvbox.nvim",
+    --     -- config = "require('config.colorschemes.gruvbox')",
+    -- })
     use({
         "rebelot/kanagawa.nvim",
         config = "require('config.colorschemes.kanagawa')",
     })
-    use({
-        "marko-cerovac/material.nvim",
-        -- config = "require('config.colorschemes.material')",
-    })
-    use({
-        "navarasu/onedark.nvim",
-        -- config = "require('config.colorschemes.onedark')",
-    })
+    -- use({
+    --     "marko-cerovac/material.nvim",
+    --     -- config = "require('config.colorschemes.material')",
+    -- })
+    -- use({
+    --     "navarasu/onedark.nvim",
+    --     -- config = "require('config.colorschemes.onedark')",
+    -- })
 
     -- Telescope
     use({
