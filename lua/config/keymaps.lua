@@ -123,3 +123,35 @@ vim.api.nvim_set_keymap(
     "<cmd>HopChar2<cr>",
     { silent = true, noremap = true }
 )
+
+-- Insert single quotes
+vim.api.nvim_set_keymap(
+    "n",
+    "<leader>sq",
+    "ciw'<C-r>\"'<Esc>",
+    { silent = true, noremap = true }
+)
+
+-- Remove single quotes
+vim.api.nvim_set_keymap(
+    "n",
+    "<leader>usq",
+    "di'hPl2x",
+    { silent = true, noremap = true }
+)
+
+-- Insert double quotes
+vim.api.nvim_set_keymap(
+    "n",
+    "<leader>dq",
+    "ciw\"<C-r>\"\"<Esc>",
+    { silent = true, noremap = true }
+)
+
+-- Remove double quotes
+vim.api.nvim_set_keymap(
+    "n",
+    "<leader>udq",
+    "di\"hPl2x",
+    { silent = true, noremap = true }
+)
