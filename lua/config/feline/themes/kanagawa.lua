@@ -97,7 +97,7 @@ M.components = function()
         },
         {
             provider = "git_branch",
-            icon = " ",
+            icon = " ",
             hl = { fg = "fg", style = "NONE" },
             left_sep = " ",
             right_sep = {
