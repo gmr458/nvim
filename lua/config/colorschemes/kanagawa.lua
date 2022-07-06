@@ -60,7 +60,7 @@ kanagawa.setup({
         packerSuccess = { bg = bg_alt },
 
         -- Treesitter
-        goTSNamespace = { fg = colors.fujiWhite },
+        TSNamespace = { fg = colors.fujiWhite },
         javascriptTSConstructor = { fg = colors.crystalBlue },
         TSConditional = { fg = colors.oniViolet, italic = true },
         TSInclude = { fg = colors.surimiOrange, italic = true },
@@ -69,7 +69,7 @@ kanagawa.setup({
         TSKeywordFunction = { fg = colors.oniViolet, italic = true },
         TSKeywordReturn = { fg = colors.oniViolet, italic = true },
         TSMethod = { fg = colors.crystalBlue, italic = true },
-        TSTypeBuiltin = { italic = true },
+        TSTypeBuiltin = { fg = colors.waveAqua2, italic = true },
         TreesitterContext = { bg = colors.sumiInk2 },
         TreesitterContextLineNumber = { bg = colors.sumiInk2 },
 
