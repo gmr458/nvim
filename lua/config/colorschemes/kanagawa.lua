@@ -65,7 +65,11 @@ kanagawa.setup({
         TSConditional = { fg = colors.oniViolet, italic = true },
         TSInclude = { fg = colors.surimiOrange, italic = true },
         TSKeyword = { fg = colors.oniViolet, italic = true },
-        TSKeywordOperator = { fg = colors.oniViolet, italic = true },
+        TSKeywordOperator = {
+            fg = colors.oniViolet,
+            italic = true,
+            bold = false,
+        },
         TSKeywordFunction = { fg = colors.oniViolet, italic = true },
         TSKeywordReturn = { fg = colors.oniViolet, italic = true },
         TSMethod = { fg = colors.crystalBlue, italic = true },
