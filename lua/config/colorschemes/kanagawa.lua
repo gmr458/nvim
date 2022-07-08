@@ -77,6 +77,9 @@ kanagawa.setup({
         TreesitterContext = { bg = colors.sumiInk2 },
         TreesitterContextLineNumber = { bg = colors.sumiInk2 },
 
+        -- Trouble
+        TroubleCount = { bg = colors.sumiInk1 },
+
         -- Disable bold
         Conceal = { bold = false },
         CursorLineNr = { bold = false },
