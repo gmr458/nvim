@@ -8,10 +8,10 @@ end
 -- nested options are documented by accessing them with `.` (eg: `:help nvim-tree.view.mappings.list`).
 nvim_tree.setup({
     auto_reload_on_write = true,
-    create_in_closed_folder = true,
-    disable_netrw = true,
+    create_in_closed_folder = false,
+    disable_netrw = false,
     hijack_cursor = true,
-    hijack_netrw = false,
+    hijack_netrw = true,
     hijack_unnamed_buffer_when_opening = false,
     ignore_buffer_on_setup = false,
     open_on_setup = false,
@@ -20,11 +20,12 @@ nvim_tree.setup({
     sort_by = "name",
     root_dirs = {},
     prefer_startup_root = false,
-    update_cwd = false,
+    sync_root_with_cwd = false,
     reload_on_bufenter = false,
     respect_buf_cwd = false,
     view = {
         adaptive_size = false,
+        centralize_selection = false,
         width = 30,
         height = 30,
         hide_root_folder = true,
@@ -42,6 +43,7 @@ nvim_tree.setup({
         add_trailing = false,
         group_empty = false,
         highlight_git = true,
+        full_name = false,
         highlight_opened_files = "name", -- none, icon, name or all, Default: none
         root_folder_modifier = ":~",
         indent_markers = {
@@ -61,7 +63,7 @@ nvim_tree.setup({
             show = {
                 file = true,
                 folder = true,
-                folder_arrow = true,
+                folder_arrow = false,
                 git = true,
             },
             glyphs = {
@@ -89,6 +91,7 @@ nvim_tree.setup({
             },
         },
         special_files = {},
+        symlink_destination = true,
     },
     hijack_directories = {
         enable = true,
@@ -96,7 +99,6 @@ nvim_tree.setup({
     },
     update_focused_file = {
         enable = true,
-        update_cwd = false,
         update_root = false,
         ignore_list = {},
     },
@@ -120,9 +122,14 @@ nvim_tree.setup({
         custom = { "^\\.git$", "node_modules" },
         exclude = { ".gitignore" },
     },
+    filesystem_watchers = {
+        enable = false,
+        interval = 100,
+        debounce_delay = 50,
+    },
     git = {
         enable = true,
-        ignore = false,
+        ignore = true,
         timeout = 400,
     },
     actions = {
@@ -132,9 +139,7 @@ nvim_tree.setup({
             global = false,
             restrict_above_cwd = false,
         },
-        expand_all = {
-            max_folder_discovery = 300,
-        },
+        expand_all = { max_folder_discovery = 300 },
         open_file = {
             quit_on_open = false,
             resize_window = true,
