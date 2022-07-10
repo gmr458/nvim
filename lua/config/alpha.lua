@@ -6,7 +6,7 @@ end
 
 local dashboard = require("alpha.themes.dashboard")
 
-dashboard.section.header.val = require("config.alpha-headers").Bloody
+dashboard.section.header.val = require("config.alpha-headers").Fraktur
 
 local opts = { noremap = true, silent = true }
 
