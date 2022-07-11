@@ -155,3 +155,19 @@ vim.api.nvim_set_keymap(
     "di\"hPl2x",
     { silent = true, noremap = true }
 )
+
+-- Insert single quotes visual mode
+vim.api.nvim_set_keymap(
+    "v",
+    "<leader>sq",
+    "xi'<Esc>pA'<Esc>",
+    { silent = true, noremap = true }
+)
+
+-- Insert double quotes visual mode
+vim.api.nvim_set_keymap(
+    "v",
+    "<leader>dq",
+    "xi\"<Esc>pA\"<Esc>",
+    { silent = true, noremap = true }
+)
