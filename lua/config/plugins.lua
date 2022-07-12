@@ -106,6 +106,7 @@ local filetypes_lsp = {
     "rust",
     "sh",
     "sql",
+    "toml",
     "typescript",
     "typescriptreact",
     "vim",
