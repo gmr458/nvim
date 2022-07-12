@@ -23,6 +23,7 @@ M.servers = {
     "sqls",
     "sumneko_lua",
     "tailwindcss",
+    "taplo",
     "tsserver",
     "vimls",
     "yamlls",
@@ -65,15 +66,11 @@ M.setup = function()
 
     vim.diagnostic.config(config)
 
-    vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
-        vim.lsp.handlers.hover,
-        { border = borderchars }
-    )
+    vim.lsp.handlers["textDocument/hover"] =
+        vim.lsp.with(vim.lsp.handlers.hover, { border = borderchars })
 
-    vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
-        vim.lsp.handlers.signature_help,
-        { border = borderchars }
-    )
+    vim.lsp.handlers["textDocument/signatureHelp"] =
+        vim.lsp.with(vim.lsp.handlers.signature_help, { border = borderchars })
 
     local lspconfig_window = require("lspconfig.ui.windows")
     local old_defaults = lspconfig_window.default_opts
