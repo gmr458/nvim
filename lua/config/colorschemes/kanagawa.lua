@@ -63,18 +63,18 @@ kanagawa.setup({
         -- Treesitter
         TSNamespace = { fg = colors.fujiWhite },
         javascriptTSConstructor = { fg = colors.crystalBlue },
-        TSConditional = { fg = colors.oniViolet, italic = true },
-        TSInclude = { fg = colors.surimiOrange, italic = true },
-        TSKeyword = { fg = colors.oniViolet, italic = true },
-        TSKeywordOperator = {
-            fg = colors.oniViolet,
-            italic = true,
-            bold = false,
-        },
-        TSKeywordFunction = { fg = colors.oniViolet, italic = true },
-        TSKeywordReturn = { fg = colors.oniViolet, italic = true },
-        TSMethod = { fg = colors.crystalBlue, italic = true },
-        TSTypeBuiltin = { fg = colors.waveAqua2, italic = true },
+        -- TSConditional = { fg = colors.oniViolet, italic = true },
+        -- TSInclude = { fg = colors.surimiOrange, italic = true },
+        -- TSKeyword = { fg = colors.oniViolet, italic = true },
+        -- TSKeywordOperator = {
+        --     fg = colors.oniViolet,
+        --     italic = true,
+        --     bold = false,
+        -- },
+        -- TSKeywordFunction = { fg = colors.oniViolet, italic = true },
+        -- TSKeywordReturn = { fg = colors.oniViolet, italic = true },
+        -- TSMethod = { fg = colors.crystalBlue, italic = true },
+        -- TSTypeBuiltin = { fg = colors.waveAqua2, italic = true },
         TreesitterContext = { bg = colors.sumiInk2 },
         TreesitterContextLineNumber = { bg = colors.sumiInk2 },
 
@@ -82,49 +82,18 @@ kanagawa.setup({
         TroubleCount = { bg = colors.sumiInk1 },
 
         -- Disable bold
-        Conceal = { bold = false },
-        CursorLineNr = { bold = false },
-        MatchParen = { bold = false },
-        ModeMsg = { bold = false },
-        Title = { bold = false },
-        Boolean = { bold = false },
-        Bold = { bold = false },
-        Todo = { bold = false },
-        TSStringEscape = { bold = false },
-        NvimTreeRootFolder = { bold = false },
-        NvimTreeExecFile = { bold = false },
+        -- Conceal = { bold = false },
+        -- CursorLineNr = { bold = false },
+        -- MatchParen = { bold = false },
+        -- ModeMsg = { bold = false },
+        -- Title = { bold = false },
+        -- Boolean = { bold = false },
+        -- Bold = { bold = false },
+        -- Todo = { bold = false },
+        -- TSStringEscape = { bold = false },
+        -- NvimTreeRootFolder = { bold = false },
+        -- NvimTreeExecFile = { bold = false },
     },
-})
-
-local status_feline, feline = pcall(require, "feline")
-
-if not status_feline then
-    return
-end
-
-feline.setup({
-    force_inactive = {
-        filetypes = {
-            "^NvimTree$",
-            "^packer$",
-            "^startify$",
-            "^fugitive$",
-            "^fugitiveblame$",
-            "^qf$",
-            "^help$",
-            "^TelescopePrompt$",
-            "^alpha$",
-            "^lsp%-installer$",
-            "^lspinfo$",
-        },
-        buftypes = {
-            "^terminal$",
-        },
-        bufnames = {},
-    },
-    disable = { filetypes = { "^alpha$" } },
-    theme = require("config.feline.themes.kanagawa").palette(),
-    components = require("config.feline.themes.kanagawa").components(),
 })
 
 vim.cmd("colorscheme kanagawa")

@@ -121,7 +121,7 @@ return packer.startup(function(use)
     use("lewis6991/impatient.nvim")
 
     -- Easily speed up your neovim startup time! (natively implemented in Neovim 0.7.0)
-    -- use("nathom/filetype.nvim")
+    use("nathom/filetype.nvim")
 
     -- Treesitter
     use({
@@ -131,7 +131,7 @@ return packer.startup(function(use)
     })
     use({
         "nvim-treesitter/nvim-treesitter-context",
-        after = "nvim-treesitter",
+        ft = filetypes,
     })
     use({
         "nvim-treesitter/playground",
@@ -267,7 +267,11 @@ return packer.startup(function(use)
     --     ft = filetypes,
     --     config = "require('config.lualine')",
     -- })
-    use("feline-nvim/feline.nvim")
+    use({
+        "feline-nvim/feline.nvim",
+        after = "alpha-nvim",
+        config = "require('config.feline')",
+    })
     use({
         "phaazon/hop.nvim",
         branch = "v1",
@@ -289,7 +293,8 @@ return packer.startup(function(use)
     })
     use({
         "kyazdani42/nvim-web-devicons",
-        after = "alpha-nvim",
+        -- after = "alpha-nvim",
+        ft = filetypes,
     })
     use({
         "b3nj5m1n/kommentary",
