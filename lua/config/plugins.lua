@@ -227,10 +227,10 @@ return packer.startup(function(use)
         cmd = "Trouble",
         config = "require('config.trouble')",
     })
-    use({
-        "simrat39/symbols-outline.nvim",
-        cmd = { "SymbolsOutline", "SymbolsOutlineOpen" },
-    })
+    -- use({
+    --     "simrat39/symbols-outline.nvim",
+    --     cmd = { "SymbolsOutline", "SymbolsOutlineOpen" },
+    -- })
     use({
         "jose-elias-alvarez/null-ls.nvim",
         after = "nvim-lspconfig",
