@@ -21,6 +21,7 @@ kanagawa.setup({
     transparent = false,
     dimInactive = false,
     globalStatus = true,
+    terminalColors = true,
     colors = {},
     overrides = {
         -- Float

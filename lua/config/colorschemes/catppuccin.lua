@@ -4,15 +4,18 @@ if not status_catppuccin then
     return
 end
 
+local colors = require("catppuccin.api.colors").get_colors()
+
 catppuccin.setup({
+    -- dim_inactive = false,
     transparent_background = false,
     term_colors = false,
     styles = {
         comments = "italic",
-        conditionals = "italic",
-        loops = "italic",
+        conditionals = "NONE",
+        loops = "NONE",
         functions = "NONE",
-        keywords = "italic",
+        keywords = "NONE",
         strings = "NONE",
         variables = "NONE",
         numbers = "NONE",
@@ -38,6 +41,7 @@ catppuccin.setup({
                 information = "undercurl",
             },
         },
+        coc_nvim = false,
         lsp_trouble = true,
         cmp = true,
         lsp_saga = false,
@@ -72,78 +76,76 @@ catppuccin.setup({
         notify = false,
         telekasten = false,
         symbols_outline = true,
+        mini = false,
     },
-})
+    custom_highlights = {
+        -- BufferLine
+        BufferLineBufferSelected = { style = "italic" },
+        BufferLineCloseButton = { bg = "#161622" },
+        BufferLineIndicatorVisible = { bg = colors.mantle },
+        BufferLineFill = { bg = colors.crust },
 
-local colors = require("catppuccin.api.colors").get_colors()
+        -- Float
+        FloatBorder = { bg = colors.crust, fg = colors.crust },
+        NormalFloat = { bg = colors.crust },
 
-catppuccin.remap({
-    -- BufferLine
-    BufferLineBufferSelected = { style = "italic" },
-    BufferLineCloseButton = { bg = "#161622" },
-    BufferLineIndicatorVisible = { bg = colors.mantle },
-    BufferLineFill = { bg = colors.crust },
+        -- StatusLine
+        StatusLine = { bg = colors.base },
 
-    -- Float
-    FloatBorder = { bg = colors.crust, fg = colors.crust },
-    NormalFloat = { bg = colors.crust },
+        -- Telescope
+        TelescopeBorder = { bg = colors.crust, fg = colors.crust },
+        TelescopeNormal = { bg = colors.crust },
+        TelescopePreviewBorder = { bg = colors.crust, fg = colors.crust },
+        TelescopePreviewNormal = { bg = colors.crust },
+        TelescopePreviewTitle = { bg = colors.crust, fg = colors.text },
+        TelescopePromptBorder = { bg = colors.crust, fg = colors.crust },
+        TelescopePromptNormal = { bg = colors.crust },
+        TelescopePromptTitle = { bg = colors.crust, fg = colors.text },
+        TelescopeResultsTitle = { bg = colors.crust, fg = colors.text },
+        TelescopeSelection = {
+            bg = colors.crust,
+            fg = colors.green,
+            style = "NONE",
+        },
+        TelescopeMultiSelection = { bg = colors.crust },
 
-    -- StatusLine
-    StatusLine = { bg = colors.base },
+        -- ToggleTerm
+        ToggleTerm1FloatBorder = { bg = colors.crust, fg = colors.crust },
+        ToggleTerm1NormalFloat = { bg = colors.crust },
 
-    -- Telescope
-    TelescopeBorder = { bg = colors.crust, fg = colors.crust },
-    TelescopeNormal = { bg = colors.crust },
-    TelescopePreviewBorder = { bg = colors.crust, fg = colors.crust },
-    TelescopePreviewNormal = { bg = colors.crust },
-    TelescopePreviewTitle = { bg = colors.crust, fg = colors.text },
-    TelescopePromptBorder = { bg = colors.crust, fg = colors.crust },
-    TelescopePromptNormal = { bg = colors.crust },
-    TelescopePromptTitle = { bg = colors.crust, fg = colors.text },
-    TelescopeResultsTitle = { bg = colors.crust, fg = colors.text },
-    TelescopeSelection = {
-        bg = colors.crust,
-        fg = colors.green,
-        style = "NONE",
+        -- Treesitter
+        -- TSNamespace = { style = "NONE" },
+        -- TSParameter = { style = "NONE" },
+        -- TSKeywordOperator = { style = "italic" },
+        TreesitterContext = { bg = colors.surface0 },
+        TreesitterContextLineNumber = { bg = colors.surface0 },
+
+        -- Disable bold
+        -- ErrorMsg = { style = "italic" },
+        -- MatchParen = { style = "NONE" },
+        -- ModeMsg = { style = "NONE" },
+        -- QuickFixLine = { style = "NONE" },
+        -- Title = { style = "NONE" },
+        -- VisualNOS = { style = "NONE" },
+        -- Bold = { style = "NONE" },
+        -- Todo = { style = "NONE" },
+        -- htmlH1 = { style = "NONE" },
+        -- htmlH2 = { style = "NONE" },
+        -- mkdCodeStart = { style = "NONE" },
+        -- mkdCodeEnd = { style = "NONE" },
+        -- TSTextReference = { style = "NONE" },
+        -- TSTitle = { style = "NONE" },
+        -- TSStrong = { style = "NONE" },
+        -- LightspeedShorcutOverlapped = { style = "NONE" },
+        -- NvimTreeRootFolder = { style = "NONE" },
+        -- NeoTreeRootName = { style = "NONE" },
+        -- markdownHeadingDelimiter = { style = "NONE" },
+        -- HopNextKey = { style = "underline" },
+        -- HopNextKey1 = { style = "NONE" },
+        -- HopNextKey2 = { style = "italic" },
+        -- CmpItemAbbrMatch = { style = "NONE" },
+        -- CmpItemAbbrMatchFuzzy = { style = "NONE" },
     },
-    TelescopeMultiSelection = { bg = colors.crust },
-
-    -- ToggleTerm
-    ToggleTerm1FloatBorder = { bg = colors.crust, fg = colors.crust },
-    ToggleTerm1NormalFloat = { bg = colors.crust },
-
-    -- Treesitter
-    TSNamespace = { style = "NONE" },
-    TSParameter = { style = "NONE" },
-    TSKeywordOperator = { style = "italic" },
-    TreesitterContext = { bg = colors.surface0 },
-    TreesitterContextLineNumber = { bg = colors.surface0 },
-
-    -- Disable bold
-    ErrorMsg = { style = "italic" },
-    MatchParen = { style = "NONE" },
-    ModeMsg = { style = "NONE" },
-    QuickFixLine = { style = "NONE" },
-    Title = { style = "NONE" },
-    VisualNOS = { style = "NONE" },
-    Bold = { style = "NONE" },
-    Todo = { style = "NONE" },
-    htmlH1 = { style = "NONE" },
-    htmlH2 = { style = "NONE" },
-    mkdCodeStart = { style = "NONE" },
-    mkdCodeEnd = { style = "NONE" },
-    TSTextReference = { style = "NONE" },
-    TSTitle = { style = "NONE" },
-    TSStrong = { style = "NONE" },
-    LightspeedShorcutOverlapped = { style = "NONE" },
-    NvimTreeRootFolder = { style = "NONE" },
-    NeoTreeRootName = { style = "NONE" },
-    markdownHeadingDelimiter = { style = "NONE" },
-    HopNextKey = { style = "underline" },
-    HopNextKey1 = { style = "NONE" },
-    HopNextKey2 = { style = "italic" },
-    CmpItemAbbrMatch = { style = "NONE" },
-    CmpItemAbbrMatchFuzzy = { style = "NONE" },
 })
 
 vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
@@ -175,7 +177,6 @@ feline.setup({
         bufnames = {},
     },
     disable = { filetypes = { "^alpha$" } },
-    -- components = require("catppuccin.core.integrations.feline"),
     theme = require("config.feline.themes.catppuccin").palette(),
     components = require("config.feline.themes.catppuccin").components(),
 })
