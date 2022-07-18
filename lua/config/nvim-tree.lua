@@ -69,6 +69,7 @@ nvim_tree.setup({
             glyphs = {
                 default = "",
                 symlink = "",
+                bookmark = "",
                 folder = {
                     arrow_closed = "",
                     arrow_open = "",
@@ -110,6 +111,7 @@ nvim_tree.setup({
     diagnostics = {
         enable = false,
         show_on_dirs = false,
+        debounce_delay = 50,
         icons = {
             hint = "",
             info = "",
@@ -130,6 +132,7 @@ nvim_tree.setup({
     git = {
         enable = true,
         ignore = true,
+        show_on_dirs = true,
         timeout = 400,
     },
     actions = {
@@ -139,7 +142,7 @@ nvim_tree.setup({
             global = false,
             restrict_above_cwd = false,
         },
-        expand_all = { max_folder_discovery = 300 },
+        expand_all = { max_folder_discovery = 300, exclude = {} },
         open_file = {
             quit_on_open = false,
             resize_window = true,
