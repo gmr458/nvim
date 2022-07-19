@@ -1,6 +1,6 @@
 local util = require("lspconfig.util")
 
-local opts = {
+return {
     root_dir = util.root_pattern(
         ".eslintrc.js",
         ".eslintrc.cjs",
@@ -10,5 +10,3 @@ local opts = {
         "package.json"
     ),
 }
-
-return opts

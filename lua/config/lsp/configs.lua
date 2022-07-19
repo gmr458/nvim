@@ -1,6 +1,10 @@
-local M = {}
+local status_lsp_installer, lsp_installer = pcall(require, "nvim-lsp-installer")
 
-M.servers = {
+if not status_lsp_installer then
+    return
+end
+
+local servers = {
     "angularls",
     "bashls",
     "clangd",
@@ -29,57 +33,72 @@ M.servers = {
     "yamlls",
 }
 
-M.setup = function()
-    -- local signs = {
-    --     { name = "DiagnosticSignError", text = "" },
-    --     { name = "DiagnosticSignWarn", text = "" },
-    --     { name = "DiagnosticSignHint", text = "" },
-    --     { name = "DiagnosticSignInfo", text = "" },
-    -- }
+lsp_installer.setup({
+    ensure_installed = servers,
+    automatic_installation = true,
+    ui = {
+        icons = {
+            server_installed = "✓",
+            server_uninstalled = "✗",
+        },
+    },
+})
 
-    local borderchars = {
-        "┌",
-        "─",
-        "┐",
-        "│",
-        "┘",
-        "─",
-        "└",
-        "│",
-    }
+local status_lspconfig, lspconfig = pcall(require, "lspconfig")
 
-    -- for _, sign in ipairs(signs) do
-    --     vim.fn.sign_define(
-    --         sign.name,
-    --         { texthl = sign.name, text = sign.text, numhl = "" }
-    --     )
-    -- end
+if not status_lspconfig then
+    return
+end
 
-    local config = {
-        virtual_text = true,
-        signs = false,
-        underline = true,
-        update_in_insert = false,
-        severity_sort = true,
-        float = { border = borderchars },
-    }
+-- local signs = {
+--     { name = "DiagnosticSignError", text = "" },
+--     { name = "DiagnosticSignWarn", text = "" },
+--     { name = "DiagnosticSignHint", text = "" },
+--     { name = "DiagnosticSignInfo", text = "" },
+-- }
 
-    vim.diagnostic.config(config)
+local borderchars = {
+    "┌",
+    "─",
+    "┐",
+    "│",
+    "┘",
+    "─",
+    "└",
+    "│",
+}
 
-    vim.lsp.handlers["textDocument/hover"] =
-        vim.lsp.with(vim.lsp.handlers.hover, { border = borderchars })
+-- for _, sign in ipairs(signs) do
+--     vim.fn.sign_define(
+--         sign.name,
+--         { texthl = sign.name, text = sign.text, numhl = "" }
+--     )
+-- end
 
-    vim.lsp.handlers["textDocument/signatureHelp"] =
-        vim.lsp.with(vim.lsp.handlers.signature_help, { border = borderchars })
+local config = {
+    virtual_text = true,
+    signs = false,
+    underline = true,
+    update_in_insert = false,
+    severity_sort = true,
+    float = { border = borderchars },
+}
 
-    local lspconfig_window = require("lspconfig.ui.windows")
-    local old_defaults = lspconfig_window.default_opts
+vim.diagnostic.config(config)
 
-    function lspconfig_window.default_opts(opts)
-        local win_opts = old_defaults(opts)
-        win_opts.border = borderchars
-        return win_opts
-    end
+vim.lsp.handlers["textDocument/hover"] =
+    vim.lsp.with(vim.lsp.handlers.hover, { border = borderchars })
+
+vim.lsp.handlers["textDocument/signatureHelp"] =
+    vim.lsp.with(vim.lsp.handlers.signature_help, { border = borderchars })
+
+local lspconfig_window = require("lspconfig.ui.windows")
+local old_defaults = lspconfig_window.default_opts
+
+function lspconfig_window.default_opts(opts)
+    local win_opts = old_defaults(opts)
+    win_opts.border = borderchars
+    return win_opts
 end
 
 local function lsp_keymaps(bufnr)
@@ -221,21 +240,35 @@ local function lsp_highlight_document(client)
     end
 end
 
-M.on_attach = function(client, bufnr)
+local on_attach = function(client, bufnr)
     client.resolved_capabilities.document_formatting = false
     client.resolved_capabilities.document_range_formatting = false
     lsp_keymaps(bufnr)
     lsp_highlight_document(client)
 end
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
+local status_cmp_nvim_lsp, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 
-local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
-
-if not status_ok then
+if not status_cmp_nvim_lsp then
     return
 end
 
-M.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
+local capabilities = cmp_nvim_lsp.update_capabilities(
+    vim.lsp.protocol.make_client_capabilities()
+)
 
-return M
+for _, server in pairs(servers) do
+    local opts = {
+        on_attach = on_attach,
+        capabilities = capabilities,
+    }
+
+    local has_custom_opts, server_custom_opts =
+        pcall(require, "config.lsp.settings." .. server)
+
+    if has_custom_opts then
+        opts = vim.tbl_deep_extend("force", opts, server_custom_opts)
+    end
+
+    lspconfig[server].setup(opts)
+end

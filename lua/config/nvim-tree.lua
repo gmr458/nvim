@@ -126,7 +126,6 @@ nvim_tree.setup({
     },
     filesystem_watchers = {
         enable = false,
-        interval = 100,
         debounce_delay = 50,
     },
     git = {
@@ -181,6 +180,7 @@ nvim_tree.setup({
             all = false,
             config = false,
             copy_paste = false,
+            dev = false,
             diagnostics = false,
             git = false,
             profile = false,
