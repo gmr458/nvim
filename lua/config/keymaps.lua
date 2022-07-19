@@ -79,12 +79,7 @@ vim.cmd([[nnoremap <silent> <A-d> :ToggleTerm<CR>]])
 vim.cmd([[tnoremap <silent> <A-d> <C-\><C-n>:ToggleTerm<CR>]])
 
 -- Trouble
-vim.api.nvim_set_keymap(
-    "n",
-    "<leader>xx",
-    "<cmd>Trouble<cr>",
-    { silent = true, noremap = true }
-)
+vim.api.nvim_set_keymap("n", "<leader>xx", "<cmd>Trouble<cr>", { silent = true, noremap = true })
 vim.api.nvim_set_keymap(
     "n",
     "<leader>xw",
@@ -117,57 +112,22 @@ vim.api.nvim_set_keymap(
 )
 
 -- Hop
-vim.api.nvim_set_keymap(
-    "n",
-    "<Space>s",
-    "<cmd>HopChar2<cr>",
-    { silent = true, noremap = true }
-)
+vim.api.nvim_set_keymap("n", "<Space>s", "<cmd>HopChar2<cr>", { silent = true, noremap = true })
 
 -- Insert single quotes
-vim.api.nvim_set_keymap(
-    "n",
-    "<leader>sq",
-    "ciw'<C-r>\"'<Esc>",
-    { silent = true, noremap = true }
-)
+vim.api.nvim_set_keymap("n", "<leader>sq", "ciw'<C-r>\"'<Esc>", { silent = true, noremap = true })
 
 -- Remove single quotes
-vim.api.nvim_set_keymap(
-    "n",
-    "<leader>usq",
-    "di'hPl2x",
-    { silent = true, noremap = true }
-)
+vim.api.nvim_set_keymap("n", "<leader>usq", "di'hPl2x", { silent = true, noremap = true })
 
 -- Insert double quotes
-vim.api.nvim_set_keymap(
-    "n",
-    "<leader>dq",
-    "ciw\"<C-r>\"\"<Esc>",
-    { silent = true, noremap = true }
-)
+vim.api.nvim_set_keymap("n", "<leader>dq", "ciw\"<C-r>\"\"<Esc>", { silent = true, noremap = true })
 
 -- Remove double quotes
-vim.api.nvim_set_keymap(
-    "n",
-    "<leader>udq",
-    "di\"hPl2x",
-    { silent = true, noremap = true }
-)
+vim.api.nvim_set_keymap("n", "<leader>udq", "di\"hPl2x", { silent = true, noremap = true })
 
 -- Insert single quotes visual mode
-vim.api.nvim_set_keymap(
-    "v",
-    "<leader>sq",
-    "xi'<Esc>pA'<Esc>",
-    { silent = true, noremap = true }
-)
+vim.api.nvim_set_keymap("v", "<leader>sq", "xi'<Esc>pA'<Esc>", { silent = true, noremap = true })
 
 -- Insert double quotes visual mode
-vim.api.nvim_set_keymap(
-    "v",
-    "<leader>dq",
-    "xi\"<Esc>pA\"<Esc>",
-    { silent = true, noremap = true }
-)
+vim.api.nvim_set_keymap("v", "<leader>dq", "xi\"<Esc>pA\"<Esc>", { silent = true, noremap = true })

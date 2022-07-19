@@ -101,130 +101,44 @@ function lspconfig_window.default_opts(opts)
     return win_opts
 end
 
-local function lsp_keymaps(bufnr)
-    local opts_keymap = { noremap = true, silent = true }
+-- Mappings.
+-- See `:help vim.diagnostic.*` for documentation on any of the below functions
+local opts = { noremap = true, silent = true }
 
-    vim.api.nvim_set_keymap(
-        "n",
-        "<space>e",
-        "<cmd>lua vim.diagnostic.open_float()<CR>",
-        opts_keymap
-    )
-    vim.api.nvim_set_keymap(
-        "n",
-        "[d",
-        "<cmd>lua vim.diagnostic.goto_prev()<CR>",
-        opts_keymap
-    )
-    vim.api.nvim_set_keymap(
-        "n",
-        "]d",
-        "<cmd>lua vim.diagnostic.goto_next()<CR>",
-        opts_keymap
-    )
-    vim.api.nvim_set_keymap(
-        "n",
-        "<space>q",
-        "<cmd>lua vim.diagnostic.setloclist()<CR>",
-        opts_keymap
-    )
+vim.keymap.set("n", "<space>e", vim.diagnostic.open_float, opts)
+vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
+vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
+vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist, opts)
 
+-- Use an on_attach function to only map the following keys
+-- after the language server attaches to the current buffer
+local on_attach = function(client, bufnr)
+    client.resolved_capabilities.document_formatting = false
+    client.resolved_capabilities.document_range_formatting = false
+
+    -- Enable completion triggered by <c-x><c-o>
     vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
-    vim.api.nvim_buf_set_keymap(
-        bufnr,
-        "n",
-        "gD",
-        "<cmd>lua vim.lsp.buf.declaration()<CR>",
-        opts_keymap
-    )
-    vim.api.nvim_buf_set_keymap(
-        bufnr,
-        "n",
-        "gd",
-        "<cmd>lua vim.lsp.buf.definition()<CR>",
-        opts_keymap
-    )
-    vim.api.nvim_buf_set_keymap(
-        bufnr,
-        "n",
-        "J",
-        "<cmd>lua vim.lsp.buf.hover()<CR>",
-        opts_keymap
-    )
-    vim.api.nvim_buf_set_keymap(
-        bufnr,
-        "n",
-        "gi",
-        "<cmd>lua vim.lsp.buf.implementation()<CR>",
-        opts_keymap
-    )
-    vim.api.nvim_buf_set_keymap(
-        bufnr,
-        "n",
-        "<C-k>",
-        "<cmd>lua vim.lsp.buf.signature_help()<CR>",
-        opts_keymap
-    )
-    vim.api.nvim_buf_set_keymap(
-        bufnr,
-        "n",
-        "<space>wa",
-        "<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>",
-        opts_keymap
-    )
-    vim.api.nvim_buf_set_keymap(
-        bufnr,
-        "n",
-        "<space>wr",
-        "<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>",
-        opts_keymap
-    )
-    vim.api.nvim_buf_set_keymap(
-        bufnr,
-        "n",
-        "<space>wl",
-        "<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>",
-        opts_keymap
-    )
-    vim.api.nvim_buf_set_keymap(
-        bufnr,
-        "n",
-        "<space>D",
-        "<cmd>lua vim.lsp.buf.type_definition()<CR>",
-        opts_keymap
-    )
-    vim.api.nvim_buf_set_keymap(
-        bufnr,
-        "n",
-        "<space>rn",
-        "<cmd>lua vim.lsp.buf.rename()<CR>",
-        opts_keymap
-    )
-    vim.api.nvim_buf_set_keymap(
-        bufnr,
-        "n",
-        "<space>ca",
-        "<cmd>lua vim.lsp.buf.code_action()<CR>",
-        opts_keymap
-    )
-    vim.api.nvim_buf_set_keymap(
-        bufnr,
-        "n",
-        "gr",
-        "<cmd>lua vim.lsp.buf.references()<CR>",
-        opts_keymap
-    )
-    vim.api.nvim_buf_set_keymap(
-        bufnr,
-        "n",
-        "<space>f",
-        "<cmd>lua vim.lsp.buf.formatting()<CR>",
-        opts_keymap
-    )
-end
+    -- Mappings.
+    -- See `:help vim.lsp.*` for documentation on any of the below functions
+    local bufopts = { noremap = true, silent = true, buffer = bufnr }
 
-local function lsp_highlight_document(client)
+    vim.keymap.set("n", "gD", vim.lsp.buf.declaration, bufopts)
+    vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufopts)
+    vim.keymap.set("n", "J", vim.lsp.buf.hover, bufopts)
+    vim.keymap.set("n", "gi", vim.lsp.buf.implementation, bufopts)
+    vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, bufopts)
+    vim.keymap.set("n", "<space>wa", vim.lsp.buf.add_workspace_folder, bufopts)
+    vim.keymap.set("n", "<space>wr", vim.lsp.buf.remove_workspace_folder, bufopts)
+    vim.keymap.set("n", "<space>wl", function()
+        print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+    end, bufopts)
+    vim.keymap.set("n", "<space>D", vim.lsp.buf.type_definition, bufopts)
+    vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, bufopts)
+    vim.keymap.set("n", "<space>ca", vim.lsp.buf.code_action, bufopts)
+    vim.keymap.set("n", "gr", vim.lsp.buf.references, bufopts)
+    vim.keymap.set("n", "<space>f", vim.lsp.buf.formatting, bufopts)
+
     if client.resolved_capabilities.document_highlight then
         vim.api.nvim_create_augroup("lsp_document_highlight", {})
         vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
@@ -240,35 +154,25 @@ local function lsp_highlight_document(client)
     end
 end
 
-local on_attach = function(client, bufnr)
-    client.resolved_capabilities.document_formatting = false
-    client.resolved_capabilities.document_range_formatting = false
-    lsp_keymaps(bufnr)
-    lsp_highlight_document(client)
-end
-
 local status_cmp_nvim_lsp, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 
 if not status_cmp_nvim_lsp then
     return
 end
 
-local capabilities = cmp_nvim_lsp.update_capabilities(
-    vim.lsp.protocol.make_client_capabilities()
-)
+local capabilities = cmp_nvim_lsp.update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 for _, server in pairs(servers) do
-    local opts = {
+    local server_opts = {
         on_attach = on_attach,
         capabilities = capabilities,
     }
 
-    local has_custom_opts, server_custom_opts =
-        pcall(require, "config.lsp.settings." .. server)
+    local has_custom_opts, server_custom_opts = pcall(require, "config.lsp.settings." .. server)
 
     if has_custom_opts then
-        opts = vim.tbl_deep_extend("force", opts, server_custom_opts)
+        server_opts = vim.tbl_deep_extend("force", server_opts, server_custom_opts)
     end
 
-    lspconfig[server].setup(opts)
+    lspconfig[server].setup(server_opts)
 end
