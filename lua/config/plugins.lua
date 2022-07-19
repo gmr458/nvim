@@ -213,10 +213,7 @@ return packer.startup(function(use)
     use({
         "neovim/nvim-lspconfig",
         after = "nvim-lsp-installer",
-        config = function()
-            require("config.lsp")
-            require("config.symbols-outline")
-        end,
+        config = "require('config.lsp')",
     })
     use({
         "hrsh7th/cmp-nvim-lsp",
@@ -227,13 +224,9 @@ return packer.startup(function(use)
         cmd = "Trouble",
         config = "require('config.trouble')",
     })
-    -- use({
-    --     "simrat39/symbols-outline.nvim",
-    --     cmd = { "SymbolsOutline", "SymbolsOutlineOpen" },
-    -- })
     use({
         "jose-elias-alvarez/null-ls.nvim",
-        after = "nvim-lspconfig",
+        ft = filetypes_lsp,
         config = "require('config.lsp.null-ls')",
     })
 
@@ -262,11 +255,6 @@ return packer.startup(function(use)
     })
 
     -- Other plugins
-    -- use({
-    --     "nvim-lualine/lualine.nvim",
-    --     ft = filetypes,
-    --     config = "require('config.lualine')",
-    -- })
     use({
         "feline-nvim/feline.nvim",
         after = "alpha-nvim",
@@ -293,8 +281,7 @@ return packer.startup(function(use)
     })
     use({
         "kyazdani42/nvim-web-devicons",
-        -- after = "alpha-nvim",
-        ft = filetypes,
+        after = "alpha-nvim",
     })
     use({
         "b3nj5m1n/kommentary",

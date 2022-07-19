@@ -1,4 +1,4 @@
-local opts = {
+return {
     filetypes = {
         "html",
         "css",
@@ -6,5 +6,3 @@ local opts = {
         "django-html",
     },
 }
-
-return opts

@@ -1,7 +1,5 @@
 local util = require("lspconfig.util")
 
-local opts = {
+return {
     root_dir = util.root_pattern("package.json"),
 }
-
-return opts
