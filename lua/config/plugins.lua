@@ -213,11 +213,8 @@ return packer.startup(function(use)
     use({
         "neovim/nvim-lspconfig",
         after = "nvim-lsp-installer",
+        module = "lspconfig",
         config = "require('config.lsp')",
-    })
-    use({
-        "hrsh7th/cmp-nvim-lsp",
-        after = "nvim-lsp-installer",
     })
     use({
         "folke/trouble.nvim",
@@ -232,23 +229,26 @@ return packer.startup(function(use)
 
     -- Completion
     use({
-        "hrsh7th/nvim-cmp",
+        "rafamadriz/friendly-snippets",
+        module = "cmp_nvim_lsp",
         event = "InsertEnter",
-        requires = {
-            { "hrsh7th/cmp-nvim-lua", after = "nvim-cmp" },
-            { "hrsh7th/cmp-nvim-lsp-signature-help", after = "nvim-cmp" },
-            { "saadparwaiz1/cmp_luasnip", after = "nvim-cmp" },
-            { "hrsh7th/cmp-path", after = "nvim-cmp" },
-            { "hrsh7th/cmp-buffer", after = "nvim-cmp" },
-        },
+    })
+    use({
+        "hrsh7th/nvim-cmp",
+        after = "friendly-snippets",
         config = "require('config.cmp')",
     })
-
     use({
         "L3MON4D3/LuaSnip",
-        event = "InsertEnter",
+        wants = "friendly-snippets",
+        after = "nvim-cmp",
     })
-    use("rafamadriz/friendly-snippets")
+    use({ "saadparwaiz1/cmp_luasnip", after = "LuaSnip" })
+    use({ "hrsh7th/cmp-nvim-lua", after = "cmp_luasnip" })
+    use({ "hrsh7th/cmp-nvim-lsp", after = "cmp-nvim-lua" })
+    use({ "hrsh7th/cmp-buffer", after = "cmp-nvim-lsp" })
+    use({ "hrsh7th/cmp-path", after = "cmp-buffer" })
+
     use({
         "dsznajder/vscode-react-javascript-snippets",
         run = "yarn install --frozen-lockfile && yarn compile",
