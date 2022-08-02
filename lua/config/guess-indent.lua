@@ -1,6 +1,7 @@
-local status_ok, guess_indent = pcall(require, "guess-indent")
+local guess_indent_loaded, guess_indent = pcall(require, "guess-indent")
 
-if not status_ok then
+if guess_indent_loaded == false then
+    print("guess-indent not loaded")
     return
 end
 

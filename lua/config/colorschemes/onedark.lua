@@ -1,6 +1,7 @@
-local status_ok, onedark = pcall(require, "onedark")
+local onedark_loaded, onedark = pcall(require, "onedark")
 
-if not status_ok then
+if onedark_loaded == false then
+    print("onedark not loaded")
     return
 end
 
@@ -71,9 +72,10 @@ onedark.setup({
 
 onedark.load()
 
-local status_feline, feline = pcall(require, "feline")
+local feline_loaded, feline = pcall(require, "feline")
 
-if not status_feline then
+if feline_loaded == false then
+    print("feline not loaded")
     return
 end
 

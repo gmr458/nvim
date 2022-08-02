@@ -1,6 +1,7 @@
-local status_ok, gruvbox = pcall(require, "gruvbox")
+local gruvbox_loaded, gruvbox = pcall(require, "gruvbox")
 
-if not status_ok then
+if gruvbox_loaded == false then
+    print("gruvbox not loaded")
     return
 end
 
@@ -77,9 +78,10 @@ gruvbox.setup({
     },
 })
 
-local status_feline, feline = pcall(require, "feline")
+local feline_loaded, feline = pcall(require, "feline")
 
-if not status_feline then
+if feline_loaded == false then
+    print("feline not loaded")
     return
 end
 

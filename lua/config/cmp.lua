@@ -1,18 +1,20 @@
-local cmp_status_ok, cmp = pcall(require, "cmp")
+local luasnip_loaded, luasnip = pcall(require, "luasnip")
 
-if not cmp_status_ok then
-    return
-end
-
-local snip_status_ok, luasnip = pcall(require, "luasnip")
-
-if not snip_status_ok then
+if luasnip_loaded == false then
+    print("luasnip not loaded")
     return
 end
 
 require("luasnip.loaders.from_vscode").lazy_load({
     path = "~/.local/share/nvim/site/pack/packer/start/vscode-es7-javascript-react-snippets",
 })
+
+local cmp_loaded, cmp = pcall(require, "cmp")
+
+if cmp_loaded == false then
+    print("cmp not loaded")
+    return
+end
 
 cmp.setup({
     preselect = cmp.PreselectMode.None,

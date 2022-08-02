@@ -1,6 +1,7 @@
-local status_ok, feline = pcall(require, "feline")
+local feline_loaded, feline = pcall(require, "feline")
 
-if not status_ok then
+if feline_loaded == false then
+    print("feline not loaded")
     return
 end
 

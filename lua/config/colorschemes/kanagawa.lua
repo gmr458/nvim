@@ -1,6 +1,7 @@
-local status_ok, kanagawa = pcall(require, "kanagawa")
+local kanagawa_loaded, kanagawa = pcall(require, "kanagawa")
 
-if not status_ok then
+if kanagawa_loaded == false then
+    print("kanagawa not loaded")
     return
 end
 

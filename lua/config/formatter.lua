@@ -1,6 +1,7 @@
-local status_ok, formatter = pcall(require, "formatter")
+local formatter_loaded, formatter = pcall(require, "formatter")
 
-if not status_ok then
+if formatter_loaded == false then
+    print("formatter not loaded")
     return
 end
 

@@ -1,6 +1,7 @@
-local status_ok, bufferline = pcall(require, "bufferline")
+local bufferline_loaded, bufferline = pcall(require, "bufferline")
 
-if not status_ok then
+if bufferline_loaded == false then
+    print("bufferline not loaded")
     return
 end
 

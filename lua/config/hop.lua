@@ -1,6 +1,7 @@
-local status_ok, hop = pcall(require, "hop")
+local hop_loaded, hop = pcall(require, "hop")
 
-if not status_ok then
+if hop_loaded == false then
+    print("hop not loaded")
     return
 end
 

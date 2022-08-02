@@ -1,6 +1,7 @@
-local status_ok, impatient = pcall(require, "impatient")
+local impatient_loaded, impatient = pcall(require, "impatient")
 
-if not status_ok then
+if impatient_loaded == false then
+    print("impatient not loaded")
     return
 end
 

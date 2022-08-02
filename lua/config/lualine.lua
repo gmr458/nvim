@@ -1,6 +1,7 @@
-local status_ok, lualine = pcall(require, "lualine")
+local lualine_loaded, lualine = pcall(require, "lualine")
 
-if not status_ok then
+if lualine_loaded == false then
+    print("lualine not loaded")
     return
 end
 

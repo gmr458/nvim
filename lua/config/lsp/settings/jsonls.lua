@@ -1,8 +1,8 @@
-local status_ok, schemastore = pcall(require, "schemastore")
+local schemastore_loaded, schemastore = pcall(require, "schemastore")
 
 local schemas = {}
 
-if status_ok then
+if schemastore_loaded then
     schemas = schemastore.json.schemas()
 end
 

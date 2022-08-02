@@ -1,6 +1,7 @@
-local status_ok, kommentary_config = pcall(require, "kommentary.config")
+local kommentary_config_loaded, kommentary_config = pcall(require, "kommentary.config")
 
-if not status_ok then
+if kommentary_config_loaded == false then
+    print("kommentary.config not loaded")
     return
 end
 

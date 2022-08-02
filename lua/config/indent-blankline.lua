@@ -1,6 +1,7 @@
-local status_ok, indent_blankline = pcall(require, "indent_blankline")
+local indent_blankline_loaded, indent_blankline = pcall(require, "indent_blankline")
 
-if not status_ok then
+if indent_blankline_loaded == false then
+    print("indent_blankline not loaded")
     return
 end
 

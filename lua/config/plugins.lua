@@ -26,9 +26,10 @@ vim.api.nvim_create_autocmd("BufWritePost", {
     pattern = "plugins.lua",
 })
 
-local status_ok, packer = pcall(require, "packer")
+local packer_loaded, packer = pcall(require, "packer")
 
-if not status_ok then
+if packer_loaded == false then
+    print("packer not loaded")
     return
 end
 
@@ -195,26 +196,22 @@ return packer.startup(function(use)
         config = "require('config.telescope')",
     })
     use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
-    -- use("nvim-telescope/telescope-file-browser.nvim")
-    -- use({
-    --     "nvim-telescope/telescope-media-files.nvim",
-    --     requires = {
-    --         "nvim-lua/popup.nvim",
-    --         "nvim-lua/plenary.nvim",
-    --         "nvim-telescope/telescope.nvim",
-    --     },
-    -- })
 
     -- LSP
     use({
-        "williamboman/nvim-lsp-installer",
+        "neovim/nvim-lspconfig",
         ft = filetypes_lsp,
+        config = "require('config.lsp.init')",
     })
     use({
-        "neovim/nvim-lspconfig",
-        after = "nvim-lsp-installer",
-        module = "lspconfig",
-        config = "require('config.lsp')",
+        "williamboman/mason.nvim",
+        after = "nvim-lspconfig",
+        config = "require('config.lsp.mason')",
+    })
+    use({
+        "williamboman/mason-lspconfig.nvim",
+        after = "mason.nvim",
+        config = "require('config.lsp.mason-lspconfig')",
     })
     use({
         "folke/trouble.nvim",
@@ -229,25 +226,23 @@ return packer.startup(function(use)
 
     -- Completion
     use({
-        "rafamadriz/friendly-snippets",
-        module = "cmp_nvim_lsp",
+        "L3MON4D3/LuaSnip",
         event = "InsertEnter",
+    })
+    use({
+        "rafamadriz/friendly-snippets",
+        after = "LuaSnip",
     })
     use({
         "hrsh7th/nvim-cmp",
         after = "friendly-snippets",
         config = "require('config.cmp')",
     })
-    use({
-        "L3MON4D3/LuaSnip",
-        wants = "friendly-snippets",
-        after = "nvim-cmp",
-    })
-    use({ "saadparwaiz1/cmp_luasnip", after = "LuaSnip" })
-    use({ "hrsh7th/cmp-nvim-lua", after = "cmp_luasnip" })
-    use({ "hrsh7th/cmp-nvim-lsp", after = "cmp-nvim-lua" })
-    use({ "hrsh7th/cmp-buffer", after = "cmp-nvim-lsp" })
-    use({ "hrsh7th/cmp-path", after = "cmp-buffer" })
+    use({ "saadparwaiz1/cmp_luasnip", after = "nvim-cmp" })
+    use({ "hrsh7th/cmp-nvim-lsp", after = "nvim-cmp" })
+    use({ "hrsh7th/cmp-buffer", after = "nvim-cmp" })
+    use({ "hrsh7th/cmp-path", after = "nvim-cmp" })
+    use({ "hrsh7th/cmp-nvim-lua", after = "nvim-cmp" })
 
     use({
         "dsznajder/vscode-react-javascript-snippets",
@@ -272,7 +267,7 @@ return packer.startup(function(use)
     })
     use({
         "b0o/SchemaStore.nvim",
-        after = "nvim-lsp-installer",
+        ft = { "json", "jsonc", "yaml" },
     })
     use({
         "kyazdani42/nvim-tree.lua",

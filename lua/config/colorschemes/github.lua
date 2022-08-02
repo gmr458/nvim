@@ -1,6 +1,7 @@
-local status_github, github = pcall(require, "github-theme")
+local github_theme_loaded, github = pcall(require, "github-theme")
 
-if not status_github then
+if github_theme_loaded == false then
+    print("github-theme not loaded")
     return
 end
 
@@ -64,9 +65,10 @@ github.setup({
     variable_style = "NONE",
 })
 
-local status_feline, feline = pcall(require, "feline")
+local feline_loaded, feline = pcall(require, "feline")
 
-if not status_feline then
+if feline_loaded == false then
+    print("feline not loaded")
     return
 end
 

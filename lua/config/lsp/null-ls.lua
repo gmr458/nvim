@@ -1,6 +1,7 @@
-local status_ok, null_ls = pcall(require, "null-ls")
+local null_ls_loaded, null_ls = pcall(require, "null-ls")
 
-if not status_ok then
+if null_ls_loaded == false then
+    print("null-ls not loaded")
     return
 end
 

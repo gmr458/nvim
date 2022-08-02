@@ -1,6 +1,7 @@
-local status_catppuccin, catppuccin = pcall(require, "catppuccin")
+local catppuccin_loaded, catppuccin = pcall(require, "catppuccin")
 
-if not status_catppuccin then
+if catppuccin_loaded == false then
+    print("catppuccin not loaded")
     return
 end
 
@@ -150,9 +151,10 @@ catppuccin.setup({
 
 vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
 
-local status_feline, feline = pcall(require, "feline")
+local feline_loaded, feline = pcall(require, "feline")
 
-if not status_feline then
+if feline_loaded == false then
+    print("feline not loaded")
     return
 end
 
