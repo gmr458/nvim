@@ -11,10 +11,10 @@ telescope.setup({
     defaults = {
         mappings = {
             n = {
-                ["<C-p>"] = action_layout.toggle_preview,
+                ["<C-y>"] = action_layout.toggle_preview,
             },
             i = {
-                ["<C-p>"] = action_layout.toggle_preview,
+                ["<C-y>"] = action_layout.toggle_preview,
             },
         },
         prompt_prefix = "   ",
