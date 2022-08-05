@@ -135,6 +135,12 @@ return packer.startup(function(use)
         ft = lsp,
         config = "require('config.lsp.null-ls')",
     })
+    use({
+        "glepnir/lspsaga.nvim",
+        after = "nvim-lspconfig",
+        branch = "main",
+        config = "require('config.lsp.lspsaga')",
+    })
 
     -- Completion
     use({
