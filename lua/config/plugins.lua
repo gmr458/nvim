@@ -35,6 +35,13 @@ packer.init({
 local normal = require("config.filetypes").normal
 local lsp = require("config.filetypes").lsp
 
+local build_vscode_react_javascript_snippets = "yarn install --frozen-lockfile && yarn compile"
+
+if vim.fn.has("win32") then
+    build_vscode_react_javascript_snippets =
+        "yarn install --frozen-lockfile && node_modules\\.bin\\tsc --noEmit false --module commonjs --outDir lib"
+end
+
 return packer.startup(function(use)
     -- Packer can manage itself
     use("wbthomason/packer.nvim")
@@ -164,13 +171,7 @@ return packer.startup(function(use)
 
     use({
         "dsznajder/vscode-react-javascript-snippets",
-        run = function()
-            if vim.fn.has("win32") then
-                return "yarn install --frozen-lockfile && .\node_modules\\.bin\tsc -p .\\ --noEmit false --module commonjs --outDir lib"
-            end
-
-            return "yarn install --frozen-lockfile && yarn compile"
-        end,
+        run = build_vscode_react_javascript_snippets,
     })
 
     -- Other plugins
