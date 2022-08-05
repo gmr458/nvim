@@ -144,16 +144,7 @@ return packer.startup(function(use)
     })
     use({
         "norcalli/nvim-colorizer.lua",
-        ft = {
-            "conf",
-            "css",
-            "html",
-            "javascript",
-            "json",
-            "jsonc",
-            "lua",
-            "yaml",
-        },
+        cmd = "ColorizerToggle",
         config = "require('config.colorizer')",
     })
 
@@ -258,7 +249,7 @@ return packer.startup(function(use)
     use({
         "phaazon/hop.nvim",
         branch = "v1",
-        event = "BufRead",
+        cmd = "HopChar2",
         config = "require('config.hop')",
     })
     use({
