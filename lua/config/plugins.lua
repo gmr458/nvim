@@ -1,10 +1,7 @@
-local fn = vim.fn
+local install_path = vim.fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 
--- Automatically install packer
-local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
-
-if fn.empty(fn.glob(install_path)) > 0 then
-    PACKER_BOOTSTRAP = fn.system({
+if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
+    PACKER_BOOTSTRAP = vim.fn.system({
         "git",
         "clone",
         "--depth",
@@ -12,23 +9,17 @@ if fn.empty(fn.glob(install_path)) > 0 then
         "https://github.com/wbthomason/packer.nvim",
         install_path,
     })
+
     print(
         "Installing packer, plugins and treesitter parsers. After the installation is finished close and open Neovim."
     )
+
     vim.cmd([[packadd packer.nvim]])
 end
 
--- Autocommand that reloads neovim whenever you save the plugins.lua file
-local packer_group = vim.api.nvim_create_augroup("Packer", { clear = true })
-vim.api.nvim_create_autocmd("BufWritePost", {
-    command = "source <afile> | PackerSync",
-    group = packer_group,
-    pattern = "plugins.lua",
-})
-
 local packer_loaded, packer = pcall(require, "packer")
 
-if packer_loaded == false then
+if not packer_loaded then
     print("packer not loaded")
     return
 end
@@ -41,78 +32,8 @@ packer.init({
     },
 })
 
-local filetypes = {
-    "asm",
-    "c",
-    "cmd",
-    "conf",
-    "cpp",
-    "cs",
-    "css",
-    "django-html",
-    "dockerfile",
-    "go",
-    "gomod",
-    "hercules",
-    "html",
-    "htmldjango",
-    "java",
-    "javascript",
-    "javascriptreact",
-    "jproperties",
-    "json",
-    "jsonc",
-    "kotlin",
-    "lua",
-    "make",
-    "markdown",
-    "php",
-    "proto",
-    "python",
-    "ruby",
-    "rust",
-    "sh",
-    "sql",
-    "tmux",
-    "toml",
-    "typescript",
-    "typescriptreact",
-    "vim",
-    "xml",
-    "yaml",
-    "zsh",
-}
-
-local filetypes_lsp = {
-    "c",
-    "cmd",
-    "cpp",
-    "cs",
-    "css",
-    "django-html",
-    "dockerfile",
-    "go",
-    "html",
-    "htmldjango",
-    "java",
-    "javascript",
-    "javascriptreact",
-    "json",
-    "jsonc",
-    "kotlin",
-    "lua",
-    "php",
-    "python",
-    "ruby",
-    "rust",
-    "sh",
-    "sql",
-    "toml",
-    "typescript",
-    "typescriptreact",
-    "vim",
-    "yaml",
-}
+local normal = require("config.filetypes").normal
+local lsp = require("config.filetypes").lsp
 
 return packer.startup(function(use)
     -- Packer can manage itself
@@ -132,7 +53,7 @@ return packer.startup(function(use)
     })
     use({
         "nvim-treesitter/nvim-treesitter-context",
-        ft = filetypes,
+        ft = normal,
     })
     use({
         "nvim-treesitter/playground",
@@ -140,7 +61,7 @@ return packer.startup(function(use)
     })
     use({
         "p00f/nvim-ts-rainbow",
-        ft = filetypes,
+        ft = normal,
     })
     use({
         "norcalli/nvim-colorizer.lua",
@@ -191,7 +112,7 @@ return packer.startup(function(use)
     -- LSP
     use({
         "neovim/nvim-lspconfig",
-        ft = filetypes_lsp,
+        ft = lsp,
         config = "require('config.lsp.init')",
     })
     use({
@@ -211,7 +132,7 @@ return packer.startup(function(use)
     })
     use({
         "jose-elias-alvarez/null-ls.nvim",
-        ft = filetypes_lsp,
+        ft = lsp,
         config = "require('config.lsp.null-ls')",
     })
 
@@ -237,7 +158,13 @@ return packer.startup(function(use)
 
     use({
         "dsznajder/vscode-react-javascript-snippets",
-        run = "yarn install --frozen-lockfile && yarn compile",
+        run = function()
+            if vim.fn.has("win32") then
+                return "yarn install --frozen-lockfile && .\node_modules\\.bin\tsc -p .\\ --noEmit false --module commonjs --outDir lib"
+            end
+
+            return "yarn install --frozen-lockfile && yarn compile"
+        end,
     })
 
     -- Other plugins
@@ -282,7 +209,7 @@ return packer.startup(function(use)
     use({
         "akinsho/bufferline.nvim",
         tag = "v2.*",
-        ft = filetypes,
+        ft = normal,
         config = "require('config.bufferline')",
     })
     use({
@@ -298,7 +225,7 @@ return packer.startup(function(use)
     })
     use({
         "lukas-reineke/indent-blankline.nvim",
-        ft = filetypes,
+        ft = normal,
         config = "require('config.indent-blankline')",
     })
     use({
