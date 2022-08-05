@@ -1,6 +1,6 @@
 local catppuccin_loaded, catppuccin = pcall(require, "catppuccin")
 
-if catppuccin_loaded == false then
+if not catppuccin_loaded then
     print("catppuccin not loaded")
     return
 end
@@ -153,7 +153,7 @@ vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
 
 local feline_loaded, feline = pcall(require, "feline")
 
-if feline_loaded == false then
+if not feline_loaded then
     print("feline not loaded")
     return
 end

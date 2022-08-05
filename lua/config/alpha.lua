@@ -1,6 +1,6 @@
 local alpha_loaded, alpha = pcall(require, "alpha")
 
-if alpha_loaded == false then
+if not alpha_loaded then
     print("alpha not loaded")
     return
 end

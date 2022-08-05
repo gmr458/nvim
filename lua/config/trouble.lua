@@ -1,6 +1,6 @@
 local trouble_loaded, trouble = pcall(require, "trouble")
 
-if trouble_loaded == false then
+if not trouble_loaded then
     return
 end
 

@@ -1,6 +1,6 @@
 local hop_loaded, hop = pcall(require, "hop")
 
-if hop_loaded == false then
+if not hop_loaded then
     print("hop not loaded")
     return
 end

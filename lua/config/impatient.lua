@@ -1,6 +1,6 @@
 local impatient_loaded, impatient = pcall(require, "impatient")
 
-if impatient_loaded == false then
+if not impatient_loaded then
     print("impatient not loaded")
     return
 end

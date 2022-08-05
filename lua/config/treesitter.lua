@@ -1,6 +1,6 @@
 local treesitter_configs_loaded, configs = pcall(require, "nvim-treesitter.configs")
 
-if treesitter_configs_loaded == false then
+if not treesitter_configs_loaded then
     print("nvim-treesitter.configs not loaded")
     return
 end
@@ -43,7 +43,7 @@ configs.setup({
 
 local treesitter_context_loaded, context = pcall(require, "treesitter-context")
 
-if treesitter_context_loaded == false then
+if not treesitter_context_loaded then
     print("treesitter-context not loaded")
     return
 end

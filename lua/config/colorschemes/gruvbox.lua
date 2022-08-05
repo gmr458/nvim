@@ -1,6 +1,6 @@
 local gruvbox_loaded, gruvbox = pcall(require, "gruvbox")
 
-if gruvbox_loaded == false then
+if not gruvbox_loaded then
     print("gruvbox not loaded")
     return
 end
@@ -80,7 +80,7 @@ gruvbox.setup({
 
 local feline_loaded, feline = pcall(require, "feline")
 
-if feline_loaded == false then
+if not feline_loaded then
     print("feline not loaded")
     return
 end

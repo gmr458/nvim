@@ -1,6 +1,6 @@
 local feline_loaded, feline = pcall(require, "feline")
 
-if feline_loaded == false then
+if not feline_loaded then
     print("feline not loaded")
     return
 end

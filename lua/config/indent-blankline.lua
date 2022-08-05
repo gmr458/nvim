@@ -1,6 +1,6 @@
 local indent_blankline_loaded, indent_blankline = pcall(require, "indent_blankline")
 
-if indent_blankline_loaded == false then
+if not indent_blankline_loaded then
     print("indent_blankline not loaded")
     return
 end

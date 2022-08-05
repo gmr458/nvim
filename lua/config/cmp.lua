@@ -1,6 +1,6 @@
 local luasnip_loaded, luasnip = pcall(require, "luasnip")
 
-if luasnip_loaded == false then
+if not luasnip_loaded then
     print("luasnip not loaded")
     return
 end
@@ -11,7 +11,7 @@ require("luasnip.loaders.from_vscode").lazy_load({
 
 local cmp_loaded, cmp = pcall(require, "cmp")
 
-if cmp_loaded == false then
+if not cmp_loaded then
     print("cmp not loaded")
     return
 end

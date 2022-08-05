@@ -1,6 +1,6 @@
 local telescope_loaded, telescope = pcall(require, "telescope")
 
-if telescope_loaded == false then
+if not telescope_loaded then
     print("telescope not loaded")
     return
 end

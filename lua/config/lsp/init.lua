@@ -1,6 +1,6 @@
 local lspconfig_loaded, lspconfig = pcall(require, "lspconfig")
 
-if lspconfig_loaded == false then
+if not lspconfig_loaded then
     print("lspconfig not loaded")
     return
 end
@@ -99,7 +99,7 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 
 local servers_loaded, servers = pcall(require, "config.lsp.servers")
 
-if servers_loaded == false then
+if not servers_loaded then
     print("config.lsp.servers not loaded")
     return
 end

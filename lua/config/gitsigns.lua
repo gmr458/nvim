@@ -1,6 +1,6 @@
 local gitsigns_loaded, gitsigns = pcall(require, "gitsigns")
 
-if gitsigns_loaded == false then
+if not gitsigns_loaded then
     print("gitsigns not loaded")
     return
 end

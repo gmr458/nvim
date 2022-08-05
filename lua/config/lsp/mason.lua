@@ -1,6 +1,6 @@
 local mason_loaded, mason = pcall(require, "mason")
 
-if mason_loaded == false then
+if not mason_loaded then
     print("mason not loaded")
     return
 end

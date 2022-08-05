@@ -1,6 +1,6 @@
 local nvim_tree_loaded, nvim_tree = pcall(require, "nvim-tree")
 
-if nvim_tree_loaded == false then
+if not nvim_tree_loaded then
     print("nvim-tree not loaded")
     return
 end

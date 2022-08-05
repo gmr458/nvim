@@ -1,6 +1,6 @@
 local lualine_loaded, lualine = pcall(require, "lualine")
 
-if lualine_loaded == false then
+if not lualine_loaded then
     print("lualine not loaded")
     return
 end

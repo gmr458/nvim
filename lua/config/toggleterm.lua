@@ -1,6 +1,6 @@
 local toggleterm_loaded, toggleterm = pcall(require, "toggleterm")
 
-if toggleterm_loaded == false then
+if not toggleterm_loaded then
     print("toggleterm not loaded")
     return
 end

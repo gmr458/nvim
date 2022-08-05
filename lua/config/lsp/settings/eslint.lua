@@ -1,6 +1,6 @@
 local util_loaded, util = pcall(require, "lspconfig.util")
 
-if util_loaded == false then
+if not util_loaded then
     print("lspconfig.util not loaded")
     return
 end

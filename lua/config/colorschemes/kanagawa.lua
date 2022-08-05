@@ -1,6 +1,6 @@
 local kanagawa_loaded, kanagawa = pcall(require, "kanagawa")
 
-if kanagawa_loaded == false then
+if not kanagawa_loaded then
     print("kanagawa not loaded")
     return
 end

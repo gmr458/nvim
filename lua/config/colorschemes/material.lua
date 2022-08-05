@@ -1,6 +1,6 @@
 local material_loaded, material = pcall(require, "material")
 
-if material_loaded == false then
+if not material_loaded then
     print("material not loaded")
     return
 end
@@ -77,7 +77,7 @@ material.setup({
 
 local feline_loaded, feline = pcall(require, "feline")
 
-if feline_loaded == false then
+if not feline_loaded then
     print("feline not loaded")
     return
 end
