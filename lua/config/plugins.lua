@@ -37,9 +37,9 @@ local lsp = require("config.lsp.filetypes").get_filetypes_lsp_use()
 
 local build_vscode_react_javascript_snippets = "yarn install --frozen-lockfile && yarn compile"
 
-if vim.fn.has("win32") then
-    build_vscode_react_javascript_snippets =
-        "yarn install --frozen-lockfile && node_modules\\.bin\\tsc --noEmit false --module commonjs --outDir lib"
+if not vim.fn.has("win32") then
+    -- Build vscode react javascript snippets for Windows
+    build_vscode_react_javascript_snippets = "yarn install --frozen-lockfile && node_modules\\.bin\\tsc --noEmit false --module commonjs --outDir lib"
 end
 
 return packer.startup(function(use)

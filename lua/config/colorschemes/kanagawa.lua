@@ -7,7 +7,7 @@ end
 
 local colors = require("kanagawa.colors").setup()
 
-local bg_alt = "#111116"
+local sumiInkCustom = "#111116"
 
 kanagawa.setup({
     undercurl = true,
@@ -26,11 +26,11 @@ kanagawa.setup({
     colors = {},
     overrides = {
         -- Float
-        FloatBorder = { bg = bg_alt, fg = bg_alt },
-        NormalFloat = { bg = bg_alt },
+        FloatBorder = { bg = colors.sumiInk1, fg = colors.sumiInk4 },
+        NormalFloat = { bg = colors.sumiInk1 },
 
-        -- BufferLine
-        BufferLineFill = { bg = bg_alt },
+        -- Cmp
+        CmpPmenuBorder = { fg = colors.sumiInk4 },
 
         -- StatusLine
         StatusLine = { bg = colors.sumiInk1 },
@@ -42,58 +42,35 @@ kanagawa.setup({
         NvimTreeWinSeparator = { bg = colors.sumiInk1, fg = colors.sumiInk1 },
 
         -- Telescope
-        TelescopeBorder = { bg = bg_alt, fg = bg_alt },
-        TelescopeNormal = { bg = bg_alt },
-        TelescopePreviewBorder = { bg = bg_alt, fg = bg_alt },
-        TelescopePreviewNormal = { bg = bg_alt },
-        TelescopePreviewTitle = { bg = bg_alt, fg = colors.fujiWhite },
-        TelescopePromptBorder = { bg = bg_alt, fg = bg_alt },
-        TelescopePromptNormal = { bg = bg_alt },
-        TelescopePromptTitle = { bg = bg_alt, fg = colors.fujiWhite },
-        TelescopeResultsTitle = { bg = bg_alt, fg = colors.fujiWhite },
+        TelescopeBorder = { bg = sumiInkCustom, fg = sumiInkCustom },
+        TelescopeNormal = { bg = sumiInkCustom },
+        TelescopePreviewBorder = { bg = sumiInkCustom, fg = sumiInkCustom },
+        TelescopePreviewNormal = { bg = sumiInkCustom },
+        TelescopePreviewTitle = { bg = sumiInkCustom, fg = colors.fujiWhite },
+        TelescopePromptBorder = { bg = sumiInkCustom, fg = sumiInkCustom },
+        TelescopePromptNormal = { bg = sumiInkCustom },
+        TelescopePromptTitle = { bg = sumiInkCustom, fg = colors.fujiWhite },
+        TelescopeResultsTitle = { bg = sumiInkCustom, fg = colors.fujiWhite },
         TelescopeSelection = { bg = colors.crust, fg = colors.springGreen },
-        TelescopeMultiSelection = { bg = bg_alt },
+        TelescopeMultiSelection = { bg = sumiInkCustom },
 
         -- ToggleTerm
-        ToggleTerm1NormalFloat = { bg = bg_alt },
-        ToggleTerm1FloatBorder = { bg = bg_alt, fg = bg_alt },
+        ToggleTerm1NormalFloat = { bg = sumiInkCustom },
+        ToggleTerm1FloatBorder = { bg = sumiInkCustom, fg = sumiInkCustom },
 
-        -- Packer
-        packerSuccess = { bg = bg_alt },
-
-        -- Treesitter
-        TSNamespace = { fg = colors.fujiWhite },
-        javascriptTSConstructor = { fg = colors.crystalBlue },
-        -- TSConditional = { fg = colors.oniViolet, italic = true },
-        -- TSInclude = { fg = colors.surimiOrange, italic = true },
-        -- TSKeyword = { fg = colors.oniViolet, italic = true },
-        -- TSKeywordOperator = {
-        --     fg = colors.oniViolet,
-        --     italic = true,
-        --     bold = false,
-        -- },
-        -- TSKeywordFunction = { fg = colors.oniViolet, italic = true },
-        -- TSKeywordReturn = { fg = colors.oniViolet, italic = true },
-        -- TSMethod = { fg = colors.crystalBlue, italic = true },
-        -- TSTypeBuiltin = { fg = colors.waveAqua2, italic = true },
+        -- TreesitterContext
         TreesitterContext = { bg = colors.sumiInk2 },
         TreesitterContextLineNumber = { bg = colors.sumiInk2 },
 
+        -- LSP Saga
+        LspSagaCodeActionBorder = { fg = colors.sumiInk4 },
+        LspSagaLspFinderBorder = { fg = colors.sumiInk4 },
+        LspSagaAutoPreview = { fg = colors.sumiInk4 },
+        LspSagaDefPreviewBorder = { fg = colors.sumiInk4 },
+        LspSagaRenameBorder = { fg = colors.sumiInk4 },
+
         -- Trouble
         TroubleCount = { bg = colors.sumiInk1 },
-
-        -- Disable bold
-        -- Conceal = { bold = false },
-        -- CursorLineNr = { bold = false },
-        -- MatchParen = { bold = false },
-        -- ModeMsg = { bold = false },
-        -- Title = { bold = false },
-        -- Boolean = { bold = false },
-        -- Bold = { bold = false },
-        -- Todo = { bold = false },
-        -- TSStringEscape = { bold = false },
-        -- NvimTreeRootFolder = { bold = false },
-        -- NvimTreeExecFile = { bold = false },
     },
 })
 
