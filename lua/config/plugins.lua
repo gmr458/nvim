@@ -32,8 +32,8 @@ packer.init({
     },
 })
 
-local normal = require("config.filetypes").normal
-local lsp = require("config.filetypes").lsp
+local normal = require("config.utils").filetypes_simple_use
+local lsp = require("config.lsp.filetypes").get_filetypes_lsp_use()
 
 local build_vscode_react_javascript_snippets = "yarn install --frozen-lockfile && yarn compile"
 

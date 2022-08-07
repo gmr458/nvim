@@ -1,5 +1,9 @@
+if require("config.utils").running_on_wsl() then
+    return {}
+end
+
 return {
-    "angularls",
+    -- "angularls",
     "bashls",
     "clangd",
     "cssls",

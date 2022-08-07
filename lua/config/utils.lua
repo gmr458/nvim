@@ -1,6 +1,20 @@
 local M = {}
 
-M.normal = {
+M.running_on_wsl = function()
+    if vim.fn.has("linux") then
+        local kernel_release = vim.fn.system({ "uname", "-r" })
+
+        if string.find(kernel_release, "WSL", 1, true) ~= nil then
+            return true
+        end
+
+        return false
+    end
+
+    return false
+end
+
+M.filetypes_simple_use = {
     "asm",
     "c",
     "cmd",
@@ -40,37 +54,6 @@ M.normal = {
     "xml",
     "yaml",
     "zsh",
-}
-
-M.lsp = {
-    "c",
-    "cmd",
-    "cpp",
-    "cs",
-    "css",
-    "django-html",
-    "dockerfile",
-    "go",
-    "html",
-    "htmldjango",
-    "java",
-    "javascript",
-    "javascriptreact",
-    "json",
-    "jsonc",
-    "kotlin",
-    "lua",
-    "php",
-    "python",
-    "ruby",
-    "rust",
-    "sh",
-    "sql",
-    "toml",
-    "typescript",
-    "typescriptreact",
-    "vim",
-    "yaml",
 }
 
 return M
