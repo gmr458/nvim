@@ -17,21 +17,18 @@ local borderchars = {
 }
 
 local config = {
-    virtual_text = true,
+    virtual_text = { source = "always" },
     signs = false,
     underline = true,
     update_in_insert = false,
     severity_sort = true,
-    float = { border = borderchars },
+    float = { source = "always", border = borderchars },
 }
 
 vim.diagnostic.config(config)
 
-vim.lsp.handlers["textDocument/hover"] =
-    vim.lsp.with(vim.lsp.handlers.hover, { border = borderchars })
-
-vim.lsp.handlers["textDocument/signatureHelp"] =
-    vim.lsp.with(vim.lsp.handlers.signature_help, { border = borderchars })
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = borderchars })
+vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = borderchars })
 
 local lspconfig_window = require("lspconfig.ui.windows")
 local old_defaults = lspconfig_window.default_opts
@@ -81,15 +78,21 @@ local on_attach = function(client, bufnr)
     vim.keymap.set("n", "<space>f", vim.lsp.buf.formatting, bufopts)
 
     if client.resolved_capabilities.document_highlight then
-        vim.api.nvim_create_augroup("lsp_document_highlight", {})
+        vim.api.nvim_create_augroup("lsp_document_highlight", {
+            clear = false,
+        })
+        vim.api.nvim_clear_autocmds({
+            buffer = bufnr,
+            group = "lsp_document_highlight",
+        })
         vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
             group = "lsp_document_highlight",
-            buffer = 0,
+            buffer = bufnr,
             callback = vim.lsp.buf.document_highlight,
         })
         vim.api.nvim_create_autocmd("CursorMoved", {
             group = "lsp_document_highlight",
-            buffer = 0,
+            buffer = bufnr,
             callback = vim.lsp.buf.clear_references,
         })
     end
@@ -97,12 +100,7 @@ end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 
-local servers_loaded, servers = pcall(require, "config.lsp.servers")
-
-if not servers_loaded then
-    print("config.lsp.servers not loaded")
-    return
-end
+local servers = require("config.lsp.servers").get_servers()
 
 for _, server in pairs(servers) do
     local server_opts = {

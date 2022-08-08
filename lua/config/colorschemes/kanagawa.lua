@@ -62,6 +62,10 @@ kanagawa.setup({
         TreesitterContext = { bg = colors.sumiInk2 },
         TreesitterContextLineNumber = { bg = colors.sumiInk2 },
 
+        -- Treesitter
+        TSNamespace = { fg = colors.fujiWhite },
+        javascriptTSConstructor = { fg = colors.crystalBlue },
+
         -- LSP Saga
         LspSagaCodeActionBorder = { fg = colors.sumiInk4 },
         LspSagaLspFinderBorder = { fg = colors.sumiInk4 },

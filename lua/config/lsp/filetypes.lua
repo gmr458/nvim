@@ -14,6 +14,7 @@ M.get_filetypes_lsp_use = function()
         "django-html",
         "dockerfile",
         "go",
+        "gomod",
         "html",
         "htmldjango",
         "java",

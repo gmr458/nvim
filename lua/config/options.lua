@@ -69,3 +69,5 @@ vim.g.neovide_cursor_antialiasing = true
 --     imap <C-V> <C-r>+
 --     set t_md=
 -- ]])
+
+vim.cmd([[language en_US]])
