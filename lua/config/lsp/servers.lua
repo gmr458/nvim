@@ -1,7 +1,7 @@
 local M = {}
 
 M.get_servers = function()
-    if require("config.utils").running_on_wsl() then
+    if require("config.utils").running_wsl() then
         return {}
     end
 

@@ -1,14 +1,9 @@
 local M = {}
 
-M.running_on_wsl = function()
-    if vim.fn.has("linux") then
+M.running_wsl = function()
+    if vim.loop.os_uname().sysname == "Linux" then
         local kernel_release = vim.fn.system({ "uname", "-r" })
-
-        if string.find(kernel_release, "WSL", 1, true) ~= nil then
-            return true
-        end
-
-        return false
+        return string.find(kernel_release, "WSL", 1, true) ~= nil
     end
 
     return false

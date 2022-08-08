@@ -5,14 +5,8 @@ if not treesitter_configs_loaded then
     return
 end
 
-local ensure_installed = "all"
-
-if require("config.utils").running_on_wsl() then
-    ensure_installed = {}
-end
-
 configs.setup({
-    ensure_installed = ensure_installed, -- A list of parser names, or "all"
+    ensure_installed = require("config.utils").running_wsl() and {} or "all", -- A list of parser names, or "all"
     sync_install = false, -- Install parsers synchronously (only applied to `ensure_installed`)
     ignore_install = {}, -- List of parsers to ignore installing (for "all")
     highlight = {
