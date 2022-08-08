@@ -70,4 +70,6 @@ vim.g.neovide_cursor_antialiasing = true
 --     set t_md=
 -- ]])
 
-vim.cmd([[language en_US]])
+if vim.loop.os_uname().sysname == "Windows_NT" then
+    vim.cmd([[language en_US]])
+end

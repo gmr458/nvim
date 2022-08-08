@@ -33,7 +33,7 @@ packer.init({
 })
 
 local normal = require("config.utils").filetypes_simple_use
-local lsp = require("config.lsp.filetypes").get_filetypes_lsp_use()
+local lsp = require("config.lsp.filetypes")
 
 local build_vscode_react_javascript_snippets = "yarn install --frozen-lockfile && yarn compile"
 
@@ -55,7 +55,9 @@ return packer.startup(function(use)
     -- Treesitter
     use({
         "nvim-treesitter/nvim-treesitter",
-        run = ":TSUpdate",
+        run = function()
+            require("nvim-treesitter.install").update({ with_sync = true })
+        end,
         config = "require('config.treesitter')",
     })
     use({
