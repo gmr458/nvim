@@ -56,7 +56,7 @@ M.components = function()
     local vi_mode_utils = require("feline.providers.vi_mode")
 
     components.active[1] = {
-        { provider = "█ ", hl = { fg = "wave_blue2" } },
+        { provider = "█ ", hl = { fg = "sumi_ink4" } },
         {
             provider = "vi_mode",
             hl = function()
@@ -189,12 +189,12 @@ M.components = function()
         },
         {
             provider = "█",
-            hl = { fg = "wave_blue2" },
+            hl = { fg = "sumi_ink4" },
         },
     }
 
     components.inactive[1] = {
-        { provider = "█ ", hl = { fg = "wave_blue2" } },
+        { provider = "█ ", hl = { fg = "sumi_ink4" } },
         {
             provider = "file_type",
             hl = { fg = "fg", style = "NONE" },
@@ -210,7 +210,7 @@ M.components = function()
     components.inactive[2] = {
         {
             provider = "█",
-            hl = { fg = "wave_blue2" },
+            hl = { fg = "sumi_ink4" },
         },
     }
 
