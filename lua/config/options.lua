@@ -1,56 +1,45 @@
-local options = {
-    background = "dark",
-    backspace = "indent,eol,start",
-    backup = false,
-    -- clipboard = "unnamedplus",
-    cmdheight = 1,
-    -- colorcolumn = "80",
-    completeopt = { "menu", "menuone", "noselect" },
-    conceallevel = 0,
-    cursorline = true,
-    encoding = "UTF-8",
-    errorbells = false,
-    expandtab = true,
-    fileencoding = "UTF-8",
-    guifont = "Iosevka Fixed:h12",
-    hidden = true,
-    hlsearch = true,
-    ignorecase = true,
-    incsearch = true,
-    laststatus = 3,
-    mouse = "a",
-    number = true,
-    -- numberwidth = 2,
-    omnifunc = "syntaxcomplete#Complete",
-    pumheight = 10,
-    relativenumber = true,
-    ruler = false,
-    scrolloff = 8,
-    shiftwidth = 4,
-    showmode = false,
-    -- showtabline = 4,
-    sidescrolloff = 8,
-    signcolumn = "yes",
-    smartcase = true,
-    smartindent = true,
-    splitbelow = true,
-    splitright = true,
-    swapfile = false,
-    tabstop = 4,
-    termguicolors = true,
-    undofile = false,
-    updatetime = 300,
-    wrap = false,
-    writebackup = false,
-}
+vim.opt.background = "dark" -- "dark" or "light", used for highlight colors
+vim.opt.clipboard = "unnamedplus" -- use the clipboard as the unnamed register
+vim.opt.cmdheight = 1 -- number of lines to use for the command-line
+vim.opt.completeopt = { "menu", "menuone", "noselect" } -- options for Insert mode completion
+vim.opt.confirm = true -- ask what to do about unsaved/read-only files
+vim.opt.cursorline = true -- highlight the screen line of the cursor
+vim.opt.expandtab = true -- use spaces when <Tab> is inserted
+vim.opt.guifont = "Iosevka Fixed" -- GUI: Name(s) of font(s) to be used
+vim.opt.laststatus = 3 -- tells when last window has status lines
+vim.opt.mouse = "a" -- enable the use of mouse clicks
+vim.opt.number = true -- print the line number in front of each line
+vim.opt.numberwidth = 1 -- number of columns used for the line number
+-- vim.opt.omnifunc = "syntaxcomplete#Complete" -- function for filetype-specific completion -- temporal
+vim.opt.pumheight = 10 -- maximum height of the popup menu
+vim.opt.relativenumber = true -- show relative line number in front of each line
+vim.opt.scroll = 4 -- lines to scroll with CTRL-U and CTRL-D
+vim.opt.scrolloff = 4 -- minimum nr. of lines above and below cursor
+vim.opt.showmode = false -- message on status line to show current mode
+vim.opt.showtabline = 0 -- tells when the tab pages line is displayed
+vim.opt.sidescroll = 5 -- minimum number of columns to scroll horizontal
+vim.opt.sidescrolloff = 5 -- min. nr. of columns to left and right of cursor
+vim.opt.signcolumn = "yes" -- when and how to display the sign column
+vim.opt.smartcase = true -- no ignore case when pattern has uppercase
+vim.opt.smartindent = true -- smart autoindenting for C programs
+vim.opt.spell = false -- enable spell checking
+vim.opt.spelllang = "en_us" -- language(s) to do spell checking for
+vim.opt.spelloptions = "camel" -- options for spell checking
+vim.opt.splitbelow = true -- new window from split is below the current one
+vim.opt.splitright = true -- new window is put right of the current one
+vim.opt.swapfile = false -- whether to use a swapfile for a buffer
+-- vim.opt.tabline = "default" -- custom format for the console tab pages line
+vim.opt.tabstop = 4 -- number of spaces that <Tab> in file uses
+vim.opt.termguicolors = true -- enables 24-bit RGB color in the TUI
+-- vim.opt.verbose = 16 -- give informative messages -- for debug
+-- vim.opt.verbosefile = "default" -- file to write messages in -- for debug
+vim.opt.wrap = false -- long lines wrap and continue on the next line
 
-for k, v in pairs(options) do
-    vim.opt[k] = v
+if vim.loop.os_uname().sysname == "Windows_NT" then
+    vim.cmd([[language en_US]])
 end
 
-vim.opt.shortmess:append("c")
-vim.g.vim_json_warnings = false
-
+-- Neovide options
 vim.g.neovide_refresh_rate = 60
 vim.g.neovide_fullscreen = true
 vim.g.neovide_input_use_logo = true
@@ -58,18 +47,3 @@ vim.g.neovide_profiler = false
 -- vim.g.neovide_cursor_animation_length = 0.1
 -- vim.g.neovide_cursor_trail_length = 0.01
 vim.g.neovide_cursor_antialiasing = true
-
--- vim.cmd([[
---     set clipboard+=unnamedplus
---     se mouse+=a
-
---     noremap <C-C> "+y
---     noremap <C-V> "+p
---     cnoremap <C-V> <C-r>+
---     imap <C-V> <C-r>+
---     set t_md=
--- ]])
-
-if vim.loop.os_uname().sysname == "Windows_NT" then
-    vim.cmd([[language en_US]])
-end
