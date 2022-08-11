@@ -34,7 +34,8 @@ keymap("n", "m", ":bnext<CR>", opts)
 keymap("n", "z", ":bprevious<CR>", opts)
 
 -- Delete current buffer
-keymap("n", "<leader>bd", ":bd!<CR>", opts)
+vim.cmd([[nnoremap <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>]])
+-- keymap("n", "<leader>bd", ":bd!<CR>", opts)
 
 -- Move text up and down
 keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
@@ -131,3 +132,13 @@ vim.api.nvim_set_keymap("v", "<leader>sq", "xi'<Esc>pA'<Esc>", { silent = true, 
 
 -- Insert double quotes visual mode
 vim.api.nvim_set_keymap("v", "<leader>dq", "xi\"<Esc>pA\"<Esc>", { silent = true, noremap = true })
+
+-- Dot not yank with x
+vim.keymap.set("n", "x", "\"_x")
+
+-- Increment/decrement
+vim.keymap.set("n", "+", "<C-a>")
+vim.keymap.set("n", "-", "<C-x>")
+
+-- Select all
+vim.keymap.set("n", "<C-a>", "gg<S-v>G")
