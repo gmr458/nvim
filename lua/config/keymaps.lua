@@ -35,7 +35,7 @@ keymap("n", "z", ":bprevious<CR>", opts)
 
 -- Delete current buffer
 vim.cmd([[nnoremap <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>]])
--- keymap("n", "<leader>bd", ":bd!<CR>", opts)
+keymap("n", "<leader>bd", ":bd!<CR>", opts)
 
 -- Move text up and down
 keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
