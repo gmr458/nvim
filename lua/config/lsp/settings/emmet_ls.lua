@@ -1,8 +1,3 @@
 return {
-    filetypes = {
-        "html",
-        "css",
-        "htmldjango",
-        "django-html",
-    },
+    filetypes = { "css", "django-html", "ejs", "handlebars", "hbs", "html", "htmldjango", "pug" },
 }

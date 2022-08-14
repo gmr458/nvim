@@ -12,5 +12,5 @@ bufferline.setup({
         separator_style = { "", "" },
         sort_by = "insert_at_end",
     },
-    highlights = { buffer_selected = { gui = "none" } },
+    highlights = { buffer_selected = { bold = false, italic = false } },
 })

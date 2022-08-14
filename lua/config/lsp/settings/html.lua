@@ -1,3 +1,1 @@
-return {
-    filetypes = { "html", "htmldjango", "django-html", "handlebars" },
-}
+return { filetypes = { "django-html", "ejs", "handlebars", "hbs", "html", "htmldjango", "pug" } }
