@@ -5,4 +5,18 @@ if not mason_loaded then
     return
 end
 
-mason.setup()
+mason.setup({
+    ui = {
+        border = {
+            "┌",
+            "─",
+            "┐",
+            "│",
+            "┘",
+            "─",
+            "└",
+            "│",
+        },
+    },
+    max_concurrent_installers = 1,
+})
