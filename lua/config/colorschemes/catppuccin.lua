@@ -7,11 +7,13 @@ end
 
 vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
 
+local colors = require("catppuccin.palettes").get_palette()
+
 catppuccin.setup({
     transparent_background = false,
     term_colors = true,
     compile = {
-        enabled = true,
+        enabled = false,
         path = vim.fn.stdpath("cache") .. "/catppuccin",
     },
     dim_inactive = {
@@ -21,14 +23,14 @@ catppuccin.setup({
     },
     styles = {
         comments = { "italic" },
-        conditionals = {},
-        loops = {},
+        conditionals = { "italic" },
+        loops = { "italic" },
         functions = {},
-        keywords = {},
+        keywords = { "italic" },
         strings = {},
         variables = {},
         numbers = {},
-        booleans = {},
+        booleans = { "italic" },
         properties = {},
         types = {},
         operators = {},
@@ -99,6 +101,49 @@ catppuccin.setup({
     },
     color_overrides = {},
     highlight_overrides = {},
+    custom_highlights = {
+        NormalFloat = { bg = colors.base },
+
+        StatusLine = { bg = colors.base },
+
+        -- Treesitter
+        TSNamespace = { style = {} },
+        TSParameter = { style = {} },
+        TSTypeBuiltin = { style = { "italic" } },
+
+        -- TreesitterContext
+        TreesitterContext = { bg = colors.surface0 },
+        TreesitterContextLineNumber = { bg = colors.surface0 },
+
+        -- Telescope
+        TelescopeBorder = { bg = colors.crust, fg = colors.crust },
+        TelescopeNormal = { bg = colors.crust },
+
+        -- Telescope Preview
+        TelescopePreviewBorder = { bg = colors.mantle, fg = colors.mantle },
+        TelescopePreviewNormal = { bg = colors.mantle },
+        TelescopePreviewTitle = { bg = colors.mantle, fg = colors.mantle },
+
+        -- Telescope Prompt
+        TelescopePromptBorder = { bg = colors.surface0, fg = colors.surface0 },
+        TelescopePromptNormal = { bg = colors.surface0 },
+        TelescopePromptTitle = { bg = colors.surface0, fg = colors.surface0 },
+
+        -- Telescope Selection
+        TelescopeSelection = { bg = colors.crust, fg = colors.green },
+        TelescopeMultiSelection = { bg = colors.crust },
+
+        -- ToggleTerm
+        ToggleTerm1NormalFloat = { bg = colors.crust },
+        ToggleTerm1FloatBorder = { bg = colors.crust, fg = colors.crust },
+
+        -- LSP Saga
+        LspFloatWinNormal = { bg = colors.base },
+        LspSagaFinderSelection = { fg = colors.blue },
+
+        -- Trouble
+        TroubleCount = { bg = colors.base },
+    },
 })
 
 vim.cmd([[colorscheme catppuccin]])

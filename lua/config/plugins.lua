@@ -99,7 +99,7 @@ return packer.startup(function(use)
     -- })
     -- use({
     --     "rebelot/kanagawa.nvim",
-    --     config = "require('config.colorschemes.kanagawa')",
+    --     -- config = "require('config.colorschemes.kanagawa')",
     -- })
     -- use({
     --     "marko-cerovac/material.nvim",

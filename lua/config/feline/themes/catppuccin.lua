@@ -1,7 +1,7 @@
 local M = {}
 
 M.palette = function()
-    local colors = require("catppuccin.api.colors").get_colors()
+    local colors = require("catppuccin.palettes").get_palette()
 
     -- bg and fg are mandatory
     colors.bg = colors.crust
@@ -16,7 +16,7 @@ M.components = function()
     local vi_mode_utils = require("feline.providers.vi_mode")
 
     components.active[1] = {
-        { provider = "█ ", hl = { fg = "sapphire" } },
+        { provider = "█ ", hl = { fg = "blue" } },
         {
             provider = "vi_mode",
             hl = function()
@@ -26,10 +26,13 @@ M.components = function()
                 }
             end,
             icon = "",
-            right_sep = " ",
+            right_sep = { " " },
         },
         {
-            provider = "file_info",
+            provider = {
+                name = "file_info",
+                opts = { file_readonly_icon = " " },
+            },
             hl = { fg = "fg", style = "NONE" },
             left_sep = {
                 { str = "slant_right_thin", hl = { fg = "overlay2" } },
@@ -45,7 +48,7 @@ M.components = function()
         { provider = "git_diff_removed", icon = " -", hl = { fg = "red" } },
         {
             provider = "git_branch",
-            icon = " ",
+            icon = { str = " ", hl = { fg = "peach" } },
             hl = { fg = "fg", style = "NONE" },
             left_sep = " ",
             right_sep = {
@@ -109,7 +112,7 @@ M.components = function()
         },
         {
             provider = "diagnostic_info",
-            hl = { fg = "sky" },
+            hl = { fg = "blue" },
             icon = "  ",
         },
     }
@@ -132,11 +135,11 @@ M.components = function()
             },
             right_sep = " ",
         },
-        { provider = "█", hl = { fg = "sapphire" } },
+        { provider = "█", hl = { fg = "blue" } },
     }
 
     components.inactive[1] = {
-        { provider = "█ ", hl = { fg = "sapphire" } },
+        { provider = "█ ", hl = { fg = "blue" } },
         {
             provider = "file_type",
             hl = { fg = "fg", style = "NONE" },
@@ -149,7 +152,7 @@ M.components = function()
         {},
     }
 
-    components.inactive[2] = { { provider = "█", hl = { fg = "sapphire" } } }
+    components.inactive[2] = { { provider = "█", hl = { fg = "blue" } } }
 
     return components
 end
