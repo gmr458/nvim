@@ -5,6 +5,13 @@ if not feline_loaded then
     return
 end
 
+local ctp_feline_loaded, ctp_feline = pcall(require, "catppuccin.groups.integrations.feline")
+
+if not ctp_feline_loaded then
+    print("ctp_feline not loaded")
+    return
+end
+
 feline.setup({
     force_inactive = {
         filetypes = {
@@ -26,6 +33,5 @@ feline.setup({
         bufnames = {},
     },
     disable = { filetypes = { "^alpha$" } },
-    theme = require("config.feline.themes.kanagawa").palette(),
-    components = require("config.feline.themes.kanagawa").components(),
+    components = ctp_feline.get(),
 })

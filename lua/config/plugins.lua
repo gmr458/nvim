@@ -79,11 +79,12 @@ return packer.startup(function(use)
     })
 
     -- Colorschemes
-    -- use({
-    --     "catppuccin/nvim",
-    --     as = "catppuccin",
-    --     -- config = "require('config.colorschemes.catppuccin')",
-    -- })
+    use({
+        "catppuccin/nvim",
+        as = "catppuccin",
+        run = ":CatppuccinCompile",
+        config = "require('config.colorschemes.catppuccin')",
+    })
     -- use({
     --     "wuelnerdotexe/vim-enfocado",
     --     -- config = "require('config.colorschemes.enfocado')",
@@ -96,10 +97,10 @@ return packer.startup(function(use)
     --     "ellisonleao/gruvbox.nvim",
     --     -- config = "require('config.colorschemes.gruvbox')",
     -- })
-    use({
-        "rebelot/kanagawa.nvim",
-        config = "require('config.colorschemes.kanagawa')",
-    })
+    -- use({
+    --     "rebelot/kanagawa.nvim",
+    --     config = "require('config.colorschemes.kanagawa')",
+    -- })
     -- use({
     --     "marko-cerovac/material.nvim",
     --     -- config = "require('config.colorschemes.material')",
@@ -240,6 +241,11 @@ return packer.startup(function(use)
     use({
         "goolord/alpha-nvim",
         config = "require('config.alpha')",
+    })
+    use({
+        "axelvc/template-string.nvim",
+        ft = { "typescript", "javascript", "typescriptreact", "javascriptreact" },
+        config = "require('config.template-string')",
     })
 
     -- Automatically set up the configuration after cloning packer.nvim
