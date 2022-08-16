@@ -13,7 +13,7 @@ catppuccin.setup({
     transparent_background = false,
     term_colors = true,
     compile = {
-        enabled = false,
+        enabled = true,
         path = vim.fn.stdpath("cache") .. "/catppuccin",
     },
     dim_inactive = {
