@@ -242,11 +242,6 @@ return packer.startup(function(use)
         "goolord/alpha-nvim",
         config = "require('config.alpha')",
     })
-    use({
-        "axelvc/template-string.nvim",
-        ft = { "typescript", "javascript", "typescriptreact", "javascriptreact" },
-        config = "require('config.template-string')",
-    })
 
     -- Automatically set up the configuration after cloning packer.nvim
     if PACKER_BOOTSTRAP then
