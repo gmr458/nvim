@@ -136,20 +136,20 @@ return packer.startup(function(use)
         config = "require('config.lsp.mason-lspconfig')",
     })
     use({
-        "folke/trouble.nvim",
-        cmd = "Trouble",
-        config = "require('config.trouble')",
-    })
-    use({
         "jose-elias-alvarez/null-ls.nvim",
-        ft = lsp,
+        after = "mason-lspconfig.nvim",
         config = "require('config.lsp.null-ls')",
     })
     use({
         "glepnir/lspsaga.nvim",
-        after = "nvim-lspconfig",
+        after = "null-ls.nvim",
         branch = "main",
         config = "require('config.lsp.lspsaga')",
+    })
+    use({
+        "folke/trouble.nvim",
+        cmd = "Trouble",
+        config = "require('config.trouble')",
     })
 
     -- Completion
