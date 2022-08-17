@@ -11,8 +11,8 @@ require("luasnip.loaders.from_vscode").lazy_load({
 
 local cmp_loaded, cmp = pcall(require, "cmp")
 
-print("cmp not loaded")
 if not cmp_loaded then
+    print("cmp not loaded")
     return
 end
 

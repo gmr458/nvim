@@ -110,6 +110,7 @@ catppuccin.setup({
         TSNamespace = { style = {} },
         TSParameter = { style = {} },
         TSTypeBuiltin = { style = { "italic" } },
+        TSKeywordOperator = { style = { "italic" } },
 
         -- TreesitterContext
         TreesitterContext = { bg = colors.surface0 },
