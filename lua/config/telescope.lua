@@ -20,6 +20,7 @@ telescope.setup({
         prompt_prefix = "   ",
         selection_caret = "  ",
         multi_icon = "",
+        sorting_strategy = "ascending",
         layout_strategy = "horizontal",
         layout_config = {
             prompt_position = "top",
