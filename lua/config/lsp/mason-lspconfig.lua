@@ -5,11 +5,6 @@ if not mason_lspconfig_loaded then
     return
 end
 
-local servers_loaded, servers = pcall(require, "config.lsp.servers")
+local servers = require("config.lsp.servers").get_servers()
 
-if not servers_loaded then
-    print("config.lsp.servers not loaded")
-    return
-end
-
-mason_lspconfig.setup({ ensure_installed = servers })
+mason_lspconfig.setup({ ensure_installed = servers, automatic_installation = true })

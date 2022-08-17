@@ -48,7 +48,6 @@ configs.setup({
 local treesitter_context_loaded, context = pcall(require, "treesitter-context")
 
 if not treesitter_context_loaded then
-    print("treesitter-context not loaded")
     return
 end
 
