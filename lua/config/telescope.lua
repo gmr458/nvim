@@ -20,10 +20,13 @@ telescope.setup({
         prompt_prefix = "   ",
         selection_caret = "  ",
         multi_icon = "",
+        layout_strategy = "horizontal",
         layout_config = {
-            preview_width = 0.7,
-            width = 0.9,
+            prompt_position = "top",
+            scroll_speed = 4,
             height = 0.9,
+            width = 0.9,
+            preview_width = 0.7,
         },
         borderchars = {
             "─",
