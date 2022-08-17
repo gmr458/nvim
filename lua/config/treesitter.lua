@@ -5,8 +5,12 @@ if not treesitter_configs_loaded then
     return
 end
 
+local utils = require("config.utils")
+
+local running_windows_or_wsl = utils.running_windows() or utils.running_wsl()
+
 configs.setup({
-    ensure_installed = require("config.utils").running_wsl() and {} or "all", -- A list of parser names, or "all"
+    ensure_installed = running_windows_or_wsl and {} or "all", -- A list of parser names, or "all"
     sync_install = false, -- Install parsers synchronously (only applied to `ensure_installed`)
     ignore_install = {}, -- List of parsers to ignore installing (for "all")
     highlight = {

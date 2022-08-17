@@ -9,6 +9,10 @@ M.running_wsl = function()
     return false
 end
 
+M.running_windows = function()
+    return vim.loop.os_uname().sysname == "Windows_NT"
+end
+
 M.filetypes_simple_use = {
     "asm",
     "c",

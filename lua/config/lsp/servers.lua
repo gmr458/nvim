@@ -1,7 +1,9 @@
 local M = {}
 
+local utils = require("config.utils")
+
 M.get_servers = function()
-    if require("config.utils").running_wsl() then
+    if utils.running_windows() or utils.running_wsl() then
         return {}
     end
 
