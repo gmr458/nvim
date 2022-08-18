@@ -199,10 +199,7 @@ return packer.startup(function(use)
         "NMAC427/guess-indent.nvim",
         config = "require('config.guess-indent')",
     })
-    use({
-        "b0o/SchemaStore.nvim",
-        ft = { "json", "jsonc", "yaml" },
-    })
+    use("b0o/SchemaStore.nvim")
     use({
         "kyazdani42/nvim-tree.lua",
         cmd = "NvimTreeFindFileToggle",
