@@ -8,6 +8,7 @@ end
 lspsaga.init_lsp_saga({
     code_action_icon = "",
     code_action_lightbulb = {
+        enable = false,
         enable_in_insert = false,
         virtual_text = false,
     },
