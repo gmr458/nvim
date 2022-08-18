@@ -12,12 +12,7 @@ dashboard.section.header.val = require("config.alpha-headers").Fraktur
 local opts = { noremap = true, silent = true }
 
 dashboard.section.buttons.val = {
-    dashboard.button(
-        "tff",
-        "  Find file",
-        ":Telescope find_files hidden=true no_ignore=true<CR>",
-        opts
-    ),
+    dashboard.button("tff", "  Find file", ":Telescope find_files hidden=true no_ignore=true<CR>", opts),
     dashboard.button("tfg", "  Live grep", ":Telescope live_grep preview=true<CR>", opts),
     dashboard.button("tfr", "  Recent File", ":Telescope oldfiles preview=false<CR>", opts),
     dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>", opts),

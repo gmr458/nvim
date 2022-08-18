@@ -7,7 +7,7 @@ end
 
 local utils = require("config.utils")
 
-local running_windows_or_wsl = utils.running_windows() or utils.running_wsl()
+local running_windows_or_wsl = vim.loop.os_uname().sysname == "Windows_NT" or utils.running_wsl()
 
 configs.setup({
     ensure_installed = running_windows_or_wsl and {} or "all", -- A list of parser names, or "all"

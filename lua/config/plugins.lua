@@ -39,7 +39,8 @@ local build_vscode_react_javascript_snippets = "yarn install --frozen-lockfile &
 
 if vim.loop.os_uname().sysname == "Windows_NT" then
     -- Build vscode react javascript snippets for Windows
-    build_vscode_react_javascript_snippets = "yarn install --frozen-lockfile && node_modules\\.bin\\tsc --noEmit false --module commonjs --outDir lib"
+    build_vscode_react_javascript_snippets =
+        "yarn install --frozen-lockfile && node_modules\\.bin\\tsc --noEmit false --module commonjs --outDir lib"
 end
 
 return packer.startup(function(use)
@@ -246,6 +247,11 @@ return packer.startup(function(use)
     use({
         "goolord/alpha-nvim",
         config = "require('config.alpha')",
+    })
+    use({
+        "mhartington/formatter.nvim",
+        ft = normal,
+        config = "require('config.formatter')",
     })
 
     -- Automatically set up the configuration after cloning packer.nvim

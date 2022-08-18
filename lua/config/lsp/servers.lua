@@ -3,7 +3,7 @@ local M = {}
 local utils = require("config.utils")
 
 M.get_servers = function()
-    if utils.running_windows() or utils.running_wsl() then
+    if vim.loop.os_uname().sysname == "Windows_NT" or utils.running_wsl() then
         return {}
     end
 

@@ -5,177 +5,45 @@ if not formatter_loaded then
     return
 end
 
+local prettier_config = function()
+    return {
+        exe = "prettier",
+        args = { "--stdin-filepath", vim.fn.shellescape(vim.api.nvim_buf_get_name(0)) },
+        stdin = true,
+    }
+end
+
 formatter.setup({
     logging = false,
     filetype = {
-        css = {
-            -- prettier
-            function()
-                return {
-                    exe = "prettier",
-                    args = {
-                        "--stdin-filepath",
-                        vim.api.nvim_buf_get_name(0),
-                        "--tab-width 4",
-                    },
-                    stdin = true,
-                }
-            end,
-        },
+        css = { prettier_config },
         go = {
-            -- gofmt
             function()
-                return { exe = "gofmt", args = { "-w", "." }, stdin = false }
+                return { exe = "gofmt", args = { "-w" }, stdin = false }
             end,
         },
-        html = {
-            -- prettier
-            function()
-                return {
-                    exe = "prettier",
-                    args = {
-                        "--stdin-filepath",
-                        vim.api.nvim_buf_get_name(0),
-                        "--tab-width 4",
-                    },
-                    stdin = true,
-                }
-            end,
-        },
-        javascript = {
-            -- prettier
-            function()
-                return {
-                    exe = "prettier",
-                    args = {
-                        "--stdin-filepath",
-                        vim.api.nvim_buf_get_name(0),
-                        "--tab-width 4",
-                    },
-                    stdin = true,
-                }
-            end,
-        },
-        javascriptreact = {
-            -- prettier
-            function()
-                return {
-                    exe = "prettier",
-                    args = {
-                        "--stdin-filepath",
-                        vim.api.nvim_buf_get_name(0),
-                        "--tab-width 4",
-                    },
-                    stdin = true,
-                }
-            end,
-        },
-        json = {
-            -- prettier
-            function()
-                return {
-                    exe = "prettier",
-                    args = {
-                        "--stdin-filepath",
-                        vim.api.nvim_buf_get_name(0),
-                        "--tab-width 4",
-                    },
-                    stdin = true,
-                }
-            end,
-        },
-        jsonc = {
-            -- prettier
-            function()
-                return {
-                    exe = "prettier",
-                    args = {
-                        "--stdin-filepath",
-                        vim.api.nvim_buf_get_name(0),
-                        "--tab-width 4",
-                    },
-                    stdin = true,
-                }
-            end,
-        },
+        html = { prettier_config },
+        javascript = { prettier_config },
+        javascriptreact = { prettier_config },
+        json = { prettier_config },
+        jsonc = { prettier_config },
         lua = {
-            -- stylua
             function()
-                return {
-                    exe = "stylua",
-                    args = {
-                        "--call-parentheses Always",
-                        "--column-width 80",
-                        "--indent-type Spaces",
-                        "--indent-width 4",
-                        "--line-endings Unix",
-                        "--quote-style ForceDouble",
-                    },
-                    stdin = false,
-                }
+                return { exe = "stylua", stdin = false }
             end,
         },
         python = {
-            -- black
             function()
-                return {
-                    exe = "black",
-                    args = { vim.api.nvim_buf_get_name(0) },
-                    stdin = false,
-                }
+                return { exe = "black", stdin = false }
             end,
         },
         rust = {
-            -- rustfmt
             function()
-                return {
-                    exe = "rustfmt",
-                    args = { "--emit=stdout" },
-                    stdin = true,
-                }
+                return { exe = "rustfmt", stdin = false }
             end,
         },
-        scss = {
-            -- prettier
-            function()
-                return {
-                    exe = "prettier",
-                    args = {
-                        "--stdin-filepath",
-                        vim.api.nvim_buf_get_name(0),
-                        "--tab-width 4",
-                    },
-                    stdin = true,
-                }
-            end,
-        },
-        typescript = {
-            -- prettier
-            function()
-                return {
-                    exe = "prettier",
-                    args = {
-                        "--stdin-filepath",
-                        vim.api.nvim_buf_get_name(0),
-                        "--tab-width 4",
-                    },
-                    stdin = true,
-                }
-            end,
-        },
-        typescriptreact = {
-            -- prettier
-            function()
-                return {
-                    exe = "prettier",
-                    args = {
-                        "--stdin-filepath",
-                        vim.api.nvim_buf_get_name(0),
-                        "--tab-width 4",
-                    },
-                    stdin = true,
-                }
-            end,
-        },
+        scss = { prettier_config },
+        typescript = { prettier_config },
+        typescriptreact = { prettier_config },
     },
 })
