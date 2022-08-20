@@ -70,6 +70,29 @@ return packer.startup(function(use)
         cmd = "TSHighlightCapturesUnderCursor",
     })
     use({
+        "windwp/nvim-ts-autotag",
+        ft = {
+            "django-html",
+            "ejs",
+            "glimmer",
+            "handlebars",
+            "hbs",
+            "html",
+            "htmldjango",
+            "javascriptreact",
+            "jsx",
+            "markdown",
+            "php",
+            "pug",
+            "rescript",
+            "svelte",
+            "tsx",
+            "typescriptreact",
+            "vue",
+            "xml",
+        },
+    })
+    use({
         "p00f/nvim-ts-rainbow",
         ft = normal,
     })
@@ -164,12 +187,8 @@ return packer.startup(function(use)
         event = "InsertEnter",
     })
     use({
-        "rafamadriz/friendly-snippets",
-        after = "LuaSnip",
-    })
-    use({
         "hrsh7th/nvim-cmp",
-        after = "friendly-snippets",
+        after = "LuaSnip",
         config = "require('config.cmp')",
     })
     use({ "saadparwaiz1/cmp_luasnip", after = "nvim-cmp" })
@@ -182,6 +201,7 @@ return packer.startup(function(use)
         "dsznajder/vscode-react-javascript-snippets",
         run = build_vscode_react_javascript_snippets,
     })
+    use("rafamadriz/friendly-snippets")
 
     -- Other plugins
     use({
