@@ -106,10 +106,6 @@ catppuccin.setup({
 
         StatusLine = { bg = colors.base },
 
-        -- BufferLine
-        BufferLineBufferSelected = { style = {} },
-        BufferLineIndicatorVisible = { bg = colors.mantle },
-
         -- Treesitter
         TSNamespace = { style = {} },
         TSParameter = { style = {} },

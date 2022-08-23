@@ -16,6 +16,7 @@ indent_blankline.setup({
         "NvimTree",
         "packer",
         "toggleterm",
+        "diff",
     },
 })
 

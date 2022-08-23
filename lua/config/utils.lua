@@ -17,6 +17,7 @@ M.filetypes_simple_use = {
     "cpp",
     "cs",
     "css",
+    "diff",
     "django-html",
     "dockerfile",
     "go",

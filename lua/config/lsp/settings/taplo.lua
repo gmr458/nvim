@@ -5,4 +5,4 @@ if not schemastore_loaded then
     return
 end
 
-return { settings = { yaml = { schemas = schemastore.json.schemas(), validate = { enable = true } } } }
+return { settings = { toml = { schemas = schemastore.json.schemas(), validate = { enable = true } } } }
