@@ -147,4 +147,10 @@ catppuccin.setup({
     },
 })
 
+local catppuccin_cache_path = vim.fn.stdpath("cache") .. "/catppuccin"
+
+if vim.fn.empty(vim.fn.glob(catppuccin_cache_path)) > 0 then
+    catppuccin.compile()
+end
+
 vim.cmd([[colorscheme catppuccin]])

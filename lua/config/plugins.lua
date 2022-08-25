@@ -106,12 +106,6 @@ return packer.startup(function(use)
     use({
         "catppuccin/nvim",
         as = "catppuccin",
-        run = function()
-            local catppuccin = require("catppuccin")
-
-            catppuccin.clean()
-            catppuccin.compile()
-        end,
         config = "require('config.colorschemes.catppuccin')",
     })
     -- use({
