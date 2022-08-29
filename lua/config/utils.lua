@@ -20,6 +20,7 @@ M.filetypes_simple_use = {
     "diff",
     "django-html",
     "dockerfile",
+    "dosini",
     "go",
     "gomod",
     "hercules",
