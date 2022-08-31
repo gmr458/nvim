@@ -29,9 +29,9 @@ dashboard.custom_center = {
     {
         icon = "  ",
         desc = "Quit                                     ",
-        shortcut = "q",
+        shortcut = " ",
         action = "qa",
     },
 }
 
-dashboard.hide_statusline = true
+dashboard.hide_statusline = false

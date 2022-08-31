@@ -136,6 +136,7 @@ return packer.startup(function(use)
     -- Telescope
     use({
         "nvim-telescope/telescope.nvim",
+        branch = "0.1.x",
         requires = { "nvim-lua/plenary.nvim" },
         cmd = "Telescope",
         config = "require('config.telescope')",
@@ -200,7 +201,8 @@ return packer.startup(function(use)
     -- Other plugins
     use({
         "feline-nvim/feline.nvim",
-        after = "alpha-nvim",
+        -- after = "alpha-nvim",
+        after = "dashboard-nvim",
         config = "require('config.feline')",
     })
     use({
@@ -221,7 +223,8 @@ return packer.startup(function(use)
     })
     use({
         "kyazdani42/nvim-web-devicons",
-        after = "alpha-nvim",
+        -- after = "alpha-nvim",
+        after = "dashboard-nvim",
     })
     use({
         "b3nj5m1n/kommentary",
@@ -255,9 +258,13 @@ return packer.startup(function(use)
         ft = normal,
         config = "require('config.indent-blankline')",
     })
+    -- use({
+    --     "goolord/alpha-nvim",
+    --     config = "require('config.alpha')",
+    -- })
     use({
-        "goolord/alpha-nvim",
-        config = "require('config.alpha')",
+        "glepnir/dashboard-nvim",
+        config = "require('config.dashboard')",
     })
     use({
         "mhartington/formatter.nvim",
