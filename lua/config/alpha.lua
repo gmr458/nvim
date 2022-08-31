@@ -18,6 +18,4 @@ dashboard.section.buttons.val = {
     dashboard.button("q", "  Quit NVIM", ":qa<CR>", opts),
 }
 
--- dashboard.config.opts.noautocmd = false
-
 alpha.setup(dashboard.config)
