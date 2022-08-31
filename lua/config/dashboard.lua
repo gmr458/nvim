@@ -28,9 +28,8 @@ dashboard.custom_center = {
     },
     {
         icon = "  ",
-        desc = "Quit                                     ",
-        shortcut = " ",
-        action = "qa",
+        desc = "Quit                             ",
+        shortcut = "<space>qa",
     },
 }
 
