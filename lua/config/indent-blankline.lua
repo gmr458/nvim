@@ -17,6 +17,7 @@ indent_blankline.setup({
         "packer",
         "toggleterm",
         "diff",
+        "dashboard",
     },
 })
 

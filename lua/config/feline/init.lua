@@ -26,13 +26,14 @@ feline.setup({
             "^alpha$",
             "^lsp%-installer$",
             "^lspinfo$",
+            "^dashboard$",
         },
         buftypes = {
             "^terminal$",
         },
         bufnames = {},
     },
-    disable = { filetypes = { "^alpha$" } },
+    disable = { filetypes = { "^alpha$", "^dashboard$" } },
     theme = require("config.feline.themes." .. theme).palette(),
     components = require("config.feline.themes." .. theme).components(),
 })
