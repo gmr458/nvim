@@ -201,8 +201,7 @@ return packer.startup(function(use)
     -- Other plugins
     use({
         "feline-nvim/feline.nvim",
-        -- after = "alpha-nvim",
-        after = "dashboard-nvim",
+        after = "alpha-nvim",
         config = "require('config.feline')",
     })
     use({
@@ -223,8 +222,7 @@ return packer.startup(function(use)
     })
     use({
         "kyazdani42/nvim-web-devicons",
-        -- after = "alpha-nvim",
-        after = "dashboard-nvim",
+        after = "alpha-nvim",
     })
     use({
         "b3nj5m1n/kommentary",
@@ -258,13 +256,9 @@ return packer.startup(function(use)
         ft = normal,
         config = "require('config.indent-blankline')",
     })
-    -- use({
-    --     "goolord/alpha-nvim",
-    --     config = "require('config.alpha')",
-    -- })
     use({
-        "glepnir/dashboard-nvim",
-        config = "require('config.dashboard')",
+        "goolord/alpha-nvim",
+        config = "require('config.alpha')",
     })
     use({
         "mhartington/formatter.nvim",
