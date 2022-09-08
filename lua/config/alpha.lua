@@ -9,13 +9,11 @@ local dashboard = require("alpha.themes.dashboard")
 
 dashboard.section.header.val = require("config.headers").Bloody
 
-local opts = { noremap = true, silent = true }
-
 dashboard.section.buttons.val = {
-    dashboard.button("tff", "  Find file", ":Telescope find_files hidden=true no_ignore=true<CR>", opts),
-    dashboard.button("tfg", "  Live grep", ":Telescope live_grep preview=true<CR>", opts),
-    dashboard.button("tfr", "  Recent File", ":Telescope oldfiles preview=false<CR>", opts),
-    dashboard.button("q", "  Quit NVIM", ":qa<CR>", opts),
+    dashboard.button("tff", "  Find file", "<CMD>silent Telescope find_files hidden=true no_ignore=true<CR>"),
+    dashboard.button("tfg", "  Live grep", "<CMD>silent Telescope live_grep preview=true<CR>"),
+    dashboard.button("tfr", "  Recent File", "<CMD>silent Telescope oldfiles preview=false<CR>"),
+    dashboard.button("q", "  Quit NVIM", ":qa<CR>"),
 }
 
 alpha.setup(dashboard.config)
