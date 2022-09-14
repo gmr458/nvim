@@ -17,7 +17,6 @@ lspsaga.init_lsp_saga({
         ref = "",
         link = "",
     },
-    definition_preview_icon = "",
 })
 
 vim.keymap.set("n", "<space>ca", "<cmd>Lspsaga code_action<CR>", { silent = true })

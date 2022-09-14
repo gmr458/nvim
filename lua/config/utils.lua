@@ -39,6 +39,7 @@ M.filetypes_simple_use = {
     "php",
     "proto",
     "python",
+    "rasi",
     "ruby",
     "rust",
     "sh",
