@@ -9,6 +9,15 @@ M.running_wsl = function()
     return false
 end
 
+M.running_android = function()
+    if vim.loop.os_uname().sysname == "Linux" then
+        local kernel_release = vim.fn.system({ "uname", "-a" })
+        return string.find(kernel_release, "Android", 1, true) ~= nil
+    end
+
+    return false
+end
+
 M.filetypes_simple_use = {
     "asm",
     "c",
