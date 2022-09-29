@@ -7,10 +7,10 @@ end
 
 local utils = require("config.utils")
 
-local running_windows_or_wsl = vim.loop.os_uname().sysname == "Windows_NT" or utils.running_wsl()
+local running_windows_wsl_android = vim.loop.os_uname().sysname == "Windows_NT" or utils.running_wsl() or utils.running_android()
 
 configs.setup({
-    ensure_installed = running_windows_or_wsl and {} or "all", -- A list of parser names, or "all"
+    ensure_installed = running_windows_wsl_android and {} or "all", -- A list of parser names, or "all"
     sync_install = false, -- Install parsers synchronously (only applied to `ensure_installed`)
     ignore_install = {}, -- List of parsers to ignore installing (for "all")
     highlight = {
