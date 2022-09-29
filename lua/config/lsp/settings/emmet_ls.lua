@@ -1,6 +1,6 @@
 return {
     filetypes = {
-        "css",
+        -- "css",
         "django-html",
         "ejs",
         "handlebars",
