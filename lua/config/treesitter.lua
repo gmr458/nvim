@@ -7,7 +7,9 @@ end
 
 local utils = require("config.utils")
 
-local running_windows_wsl_android = vim.loop.os_uname().sysname == "Windows_NT" or utils.running_wsl() or utils.running_android()
+local running_windows_wsl_android = vim.loop.os_uname().sysname == "Windows_NT"
+    or utils.running_wsl()
+    or utils.running_android()
 
 configs.setup({
     ensure_installed = running_windows_wsl_android and {} or "all", -- A list of parser names, or "all"

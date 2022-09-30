@@ -107,10 +107,11 @@ catppuccin.setup({
         StatusLine = { bg = colors.base },
 
         -- Treesitter
-        TSNamespace = { style = {} },
-        TSParameter = { style = {} },
-        TSTypeBuiltin = { style = { "italic" } },
-        TSKeywordOperator = { style = { "italic" } },
+        ["@namespace"] = { style = {} },
+        ["@parameter"] = { style = {} },
+        ["@type.builtin"] = { style = { "italic" } },
+        ["@keyword.operator"] = { style = { "italic" } },
+        ["@method.call"] = { style = { "italic" } },
 
         -- TreesitterContext
         TreesitterContext = { bg = colors.surface0 },
