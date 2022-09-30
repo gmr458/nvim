@@ -55,6 +55,7 @@ M.filetypes_simple_use = {
     "sql",
     "tmux",
     "toml",
+    "txt",
     "typescript",
     "typescriptreact",
     "vim",
