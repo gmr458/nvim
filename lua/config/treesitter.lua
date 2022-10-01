@@ -65,11 +65,11 @@ context.setup({
             "class",
             "function",
             "method",
-            -- 'for', -- These won't appear in the context
-            -- 'while',
-            -- 'if',
-            -- 'switch',
-            -- 'case',
+            "for", -- These won't appear in the context
+            "while",
+            "if",
+            "switch",
+            "case",
         },
         -- Example for a specific filetype.
         -- If a pattern is missing, *open a PR* so everyone can benefit.

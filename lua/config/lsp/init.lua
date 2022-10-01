@@ -48,6 +48,19 @@ vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
 -- vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist, opts)
 
+local function attach_navic(client, bufnr)
+    -- vim.g.navic_silence = true
+
+    local navic_loaded, navic = pcall(require, "nvim-navic")
+
+    if not navic_loaded then
+        print("nvim-navic not loaded")
+        return
+    end
+
+    navic.attach(client, bufnr)
+end
+
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
@@ -96,6 +109,8 @@ local on_attach = function(client, bufnr)
             callback = vim.lsp.buf.clear_references,
         })
     end
+
+    attach_navic(client, bufnr)
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()

@@ -83,7 +83,7 @@ catppuccin.setup({
         vim_sneak = false,
         fern = false,
         barbar = false,
-        bufferline = true,
+        bufferline = false,
         markdown = false,
         lightspeed = false,
         leap = false,
@@ -96,7 +96,7 @@ catppuccin.setup({
         aerial = false,
         vimwiki = false,
         beacon = false,
-        navic = false,
+        navic = { enabled = true, custom_bg = colors.base },
         overseer = false,
     },
     color_overrides = {},
@@ -105,6 +105,12 @@ catppuccin.setup({
         NormalFloat = { bg = colors.base },
 
         StatusLine = { bg = colors.base },
+
+        WinBar = { fg = colors.text },
+
+        NavicText = { fg = colors.subtext0 },
+
+        NvimTreeRootFolder = { fg = colors.mantle },
 
         -- Treesitter
         ["@namespace"] = { style = {} },

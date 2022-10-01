@@ -35,6 +35,7 @@ vim.opt.tabstop = 4 -- number of spaces that <Tab> in file uses
 vim.opt.termguicolors = true -- enables 24-bit RGB color in the TUI
 -- vim.opt.verbose = 16 -- give informative messages -- for debug
 -- vim.opt.verbosefile = "default" -- file to write messages in -- for debug
+-- vim.opt.winbar = "%f"
 vim.opt.wrap = false -- long lines wrap and continue on the next line
 
 if vim.loop.os_uname().sysname == "Windows_NT" then

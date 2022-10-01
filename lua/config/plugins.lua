@@ -150,6 +150,11 @@ return packer.startup(function(use)
         config = "require('config.lsp.init')",
     })
     use({
+        "SmiteshP/nvim-navic",
+        after = "nvim-lspconfig",
+        config = "require('config.navic')",
+    })
+    use({
         "williamboman/mason.nvim",
         after = "nvim-lspconfig",
         config = "require('config.lsp.mason')",
@@ -234,12 +239,12 @@ return packer.startup(function(use)
         event = "BufRead",
         config = "require('config.gitsigns')",
     })
-    use({
-        "akinsho/bufferline.nvim",
-        tag = "v2.*",
-        ft = normal,
-        config = "require('config.bufferline')",
-    })
+    -- use({
+    --     "akinsho/bufferline.nvim",
+    --     tag = "v2.*",
+    --     ft = normal,
+    --     config = "require('config.bufferline')",
+    -- })
     use({
         "akinsho/toggleterm.nvim",
         tag = "v1.*",

@@ -18,6 +18,20 @@ M.running_android = function()
     return false
 end
 
+M.is_nil_or_empty_string = function(s)
+    return s == nil or s == ""
+end
+
+function M.is_unsaved()
+    local status_ok, is_unsaved = pcall(vim.api.nvim_buf_get_option, 0, "mod")
+
+    if not status_ok then
+        return nil
+    end
+
+    return is_unsaved
+end
+
 M.filetypes_simple_use = {
     "asm",
     "c",
