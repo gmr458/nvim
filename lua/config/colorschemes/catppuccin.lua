@@ -108,7 +108,7 @@ catppuccin.setup({
 
         WinBar = { fg = colors.text },
 
-        NavicText = { fg = colors.subtext0 },
+        NavicText = { fg = colors.text },
 
         NvimTreeRootFolder = { fg = colors.mantle },
 
