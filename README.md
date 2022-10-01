@@ -2,7 +2,7 @@
 
 ## Requirements
 
-1. Neovim >= v0.7.0
+1. Neovim >= v0.8.0
 2. Git
 3. [Nvim Treesitter requirements](https://github.com/nvim-treesitter/nvim-treesitter#requirements)
 3. [Nvim LSP Installer requirements](https://github.com/williamboman/nvim-lsp-installer#installation)
