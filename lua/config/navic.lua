@@ -5,6 +5,15 @@ if not navic_loaded then
     return
 end
 
+local M = {}
+
+local separators = {
+    "",
+    "❭",
+}
+
+M.separator = separators[1]
+
 navic.setup({
     icons = {
         File = "file ",
@@ -35,7 +44,9 @@ navic.setup({
         TypeParameter = "type parameter ",
     },
     highlight = true,
-    separator = " ❭ ",
+    separator = " " .. M.separator .. " ",
     depth_limit = 0,
     depth_limit_indicator = "..",
 })
+
+return M

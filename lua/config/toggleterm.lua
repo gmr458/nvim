@@ -8,6 +8,11 @@ end
 toggleterm.setup({
     direction = "float",
     start_in_insert = true,
+    highlights = {
+        Normal = { link = "ToggleTerm1NormalFloat" },
+        NormalFloat = { link = "ToggleTerm1NormalFloat" },
+        FloatBorder = { link = "ToggleTerm1FloatBorder" },
+    },
 })
 
 function _G.set_terminal_keymaps()

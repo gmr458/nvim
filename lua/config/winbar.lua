@@ -69,7 +69,8 @@ local get_navic = function()
     end
 
     if not require("config.utils").is_nil_or_empty_string(navic_location) then
-        return "❭" .. " " .. navic_location
+        -- return "❭" .. " " .. navic_location
+        return require("config.navic").separator .. " " .. navic_location
     end
 
     return ""
