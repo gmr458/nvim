@@ -15,7 +15,7 @@ navic.setup({
         Method = "method ",
         Property = "property ",
         Field = "field ",
-        Constructor = "constructor ", --
+        Constructor = "constructor ",
         Enum = "enum ",
         Interface = "interface ",
         Function = "function ",
@@ -35,7 +35,7 @@ navic.setup({
         TypeParameter = "type parameter ",
     },
     highlight = true,
-    separator = "  ",
+    separator = " ❭ ",
     depth_limit = 0,
     depth_limit_indicator = "..",
 })
