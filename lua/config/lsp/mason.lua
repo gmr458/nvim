@@ -18,5 +18,5 @@ mason.setup({
             "│",
         },
     },
-    max_concurrent_installers = 1,
+    -- max_concurrent_installers = 1,
 })

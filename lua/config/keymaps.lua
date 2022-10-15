@@ -30,8 +30,8 @@ keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- Navigate buffers
-keymap("n", "m", ":bnext<CR>", opts)
-keymap("n", "z", ":bprevious<CR>", opts)
+-- keymap("n", "m", ":bnext<CR>", opts)
+-- keymap("n", "z", ":bprevious<CR>", opts)
 
 -- Delete current buffer
 vim.cmd([[nnoremap <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>]])
