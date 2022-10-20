@@ -15,9 +15,9 @@ end
 local embedded_sql = vim.treesitter.parse_query(
     "python",
     [[
+        ; query
         (call
             (attribute
-                ; object: (identifier) @object
                 attribute: (identifier) @attribute (#eq? @attribute "execute"))
         (argument_list
             (string) @sql_string))
