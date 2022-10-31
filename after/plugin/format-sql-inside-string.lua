@@ -18,7 +18,8 @@ local run_formatter = function(sql_string_input, filetype)
     return j:sync()
 end
 
-local query_parsed_python = vim.treesitter.parse_query(
+local python_parser_loaded, query_parsed_python = pcall(
+    vim.treesitter.parse_query,
     "python",
     [[
         ; query
@@ -30,7 +31,12 @@ local query_parsed_python = vim.treesitter.parse_query(
     ]]
 )
 
-local query_parsed_javascript = vim.treesitter.parse_query(
+if not python_parser_loaded then
+    return
+end
+
+local javascript_parser_loaded, query_parsed_javascript = pcall(
+    vim.treesitter.parse_query,
     "javascript",
     [[
         ; query
@@ -47,6 +53,10 @@ local query_parsed_javascript = vim.treesitter.parse_query(
             (template_string) @sql_string))
     ]]
 )
+
+if not javascript_parser_loaded then
+    return
+end
 
 local get_root = function(bufnr, filetype)
     local parser = vim.treesitter.get_parser(bufnr, filetype, {})
@@ -111,7 +121,6 @@ local format_sql_inside_string = function(bufnr)
     local root = get_root(bufnr, filetype)
 
     local changes = get_changes(bufnr, root, query_parsed, filetype)
-
 
     for i, change in ipairs(changes) do
         vim.api.nvim_buf_set_text(
