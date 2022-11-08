@@ -169,8 +169,13 @@ return packer.startup(function(use)
         config = "require('config.lsp.null-ls')",
     })
     use({
-        "glepnir/lspsaga.nvim",
+        "jayp0521/mason-null-ls.nvim",
         after = "null-ls.nvim",
+        config = "require('config.lsp.mason-null-ls')",
+    })
+    use({
+        "glepnir/lspsaga.nvim",
+        after = "mason-null-ls.nvim",
         branch = "main",
         config = "require('config.lsp.lspsaga')",
     })
