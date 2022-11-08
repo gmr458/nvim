@@ -33,7 +33,6 @@ packer.init({
 })
 
 local normal = require("config.utils").filetypes_simple_use
-local lsp = require("config.lsp.filetypes")
 
 local build_vscode_react_javascript_snippets = "yarn install --frozen-lockfile && yarn compile"
 
@@ -146,7 +145,7 @@ return packer.startup(function(use)
     -- LSP
     use({
         "neovim/nvim-lspconfig",
-        ft = lsp,
+        cmd = "LspStart",
         config = "require('config.lsp.init')",
     })
     use({

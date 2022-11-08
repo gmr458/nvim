@@ -30,14 +30,7 @@ vim.diagnostic.config(config)
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = borderchars })
 vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = borderchars })
 
-local lspconfig_window = require("lspconfig.ui.windows")
-local old_defaults = lspconfig_window.default_opts
-
-function lspconfig_window.default_opts(opts)
-    local win_opts = old_defaults(opts)
-    win_opts.border = borderchars
-    return win_opts
-end
+require("lspconfig.ui.windows").default_options.border = "single"
 
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
@@ -89,20 +82,31 @@ local on_attach = function(client, bufnr)
     vim.keymap.set("n", "gr", vim.lsp.buf.references, bufopts)
     vim.keymap.set("n", "<space>f", vim.lsp.buf.format, bufopts)
 
-    if client.server_capabilities.document_highlight then
+    if client.server_capabilities.documentHighlightProvider then
+        vim.cmd([[
+            hi! LspReferenceRead cterm=bold ctermbg=red guibg=Grey35
+            hi! LspReferenceText cterm=bold ctermbg=red guibg=Grey35
+            hi! LspReferenceWrite cterm=bold ctermbg=red guibg=Grey35
+        ]])
+
         vim.api.nvim_create_augroup("lsp_document_highlight", {
             clear = false,
         })
+
+        vim.opt.updatetime = 1000
+
         vim.api.nvim_clear_autocmds({
             buffer = bufnr,
             group = "lsp_document_highlight",
         })
+
         vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
             group = "lsp_document_highlight",
             buffer = bufnr,
             callback = vim.lsp.buf.document_highlight,
         })
-        vim.api.nvim_create_autocmd("CursorMoved", {
+
+        vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
             group = "lsp_document_highlight",
             buffer = bufnr,
             callback = vim.lsp.buf.clear_references,

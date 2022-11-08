@@ -16,7 +16,7 @@ M.get_servers = function()
         "dockerls",
         "emmet_ls",
         "eslint",
-        "golangci_lint_ls",
+        -- "golangci_lint_ls",
         "gopls",
         "html",
         "intelephense",
