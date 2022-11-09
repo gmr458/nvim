@@ -5,17 +5,15 @@ if not catppuccin_loaded then
     return
 end
 
-vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
-
-local colors = require("catppuccin.palettes").get_palette()
-
 catppuccin.setup({
-    transparent_background = false,
-    term_colors = true,
-    compile = {
-        enabled = true,
-        path = vim.fn.stdpath("cache") .. "/catppuccin",
+    flavour = "mocha", -- latte, frappe, macchiato, mocha
+    background = {
+        light = "latte",
+        dark = "mocha",
     },
+    compile_path = vim.fn.stdpath("cache") .. "/catppuccin",
+    transparent_background = false,
+    term_colors = false,
     dim_inactive = {
         enabled = false,
         shade = "dark",
@@ -35,15 +33,99 @@ catppuccin.setup({
         types = {},
         operators = {},
     },
+    color_overrides = {},
+    custom_highlights = function(colors)
+        return {
+            NormalFloat = { bg = colors.base },
+
+            StatusLine = { bg = colors.base },
+
+            WinBar = { fg = colors.text },
+
+            NvimTreeRootFolder = { fg = colors.mantle },
+
+            -- Treesitter
+            ["@constant.builtin"] = { style = { "italic" } },
+            ["@function.builtin"] = { style = { "italic" } },
+            ["@keyword.operator"] = { style = { "italic" } },
+            ["@method.call"] = { link = "", style = { "italic" } },
+            ["@namespace"] = { style = {} },
+            ["@parameter"] = { style = {} },
+            ["@type.builtin"] = { style = { "italic" } },
+            ["@variable.builtin"] = { style = { "italic" } },
+
+            -- TreesitterContext
+            TreesitterContext = { bg = colors.surface0 },
+            TreesitterContextLineNumber = { bg = colors.surface0 },
+
+            -- Telescope
+            TelescopeBorder = { bg = colors.crust, fg = colors.crust },
+            TelescopeNormal = { bg = colors.crust },
+
+            -- Telescope Preview
+            TelescopePreviewBorder = { bg = colors.mantle, fg = colors.mantle },
+            TelescopePreviewNormal = { bg = colors.mantle },
+            TelescopePreviewTitle = { bg = colors.mantle, fg = colors.mantle },
+
+            -- Telescope Prompt
+            TelescopePromptBorder = { bg = colors.surface0, fg = colors.surface0 },
+            TelescopePromptNormal = { bg = colors.surface0 },
+            TelescopePromptTitle = { bg = colors.surface0, fg = colors.surface0 },
+
+            -- Telescope Selection
+            TelescopeSelection = { bg = colors.crust, fg = colors.green },
+            TelescopeMultiSelection = { bg = colors.crust },
+
+            -- ToggleTerm
+            ToggleTerm1NormalFloat = { bg = colors.crust },
+            ToggleTerm1FloatBorder = { bg = colors.crust, fg = colors.crust },
+
+            -- LSP Saga
+            LspFloatWinNormal = { bg = colors.base },
+            LspSagaFinderSelection = { fg = colors.blue },
+
+            -- Trouble
+            TroubleCount = { bg = colors.base },
+        }
+    end,
     integrations = {
-        treesitter = true,
+        aerial = false,
+        barbar = false,
+        beacon = false,
+        cmp = true,
+        dap = {
+            enabled = false,
+            enable_ui = false,
+        },
+        dashboard = false,
+        fern = false,
+        fidget = false,
+        gitgutter = false,
+        gitsigns = true,
+        harpoon = false,
+        hop = true,
+        indent_blankline = {
+            enabled = true,
+            colored_indent_levels = false,
+        },
+        leap = false,
+        lightspeed = false,
+        illuminate = false,
+        lsp_saga = true,
+        lsp_trouble = true,
+        markdown = false,
+        mason = true,
+        neogit = false,
+        neotest = false,
+        neotree = false,
+        mini = false,
         native_lsp = {
             enabled = true,
             virtual_text = {
-                errors = {},
-                hints = {},
-                warnings = {},
-                information = {},
+                errors = { "italic" },
+                hints = { "italic" },
+                warnings = { "italic" },
+                information = { "italic" },
             },
             underlines = {
                 errors = { "undercurl" },
@@ -52,112 +134,26 @@ catppuccin.setup({
                 information = { "undercurl" },
             },
         },
-        coc_nvim = false,
-        lsp_trouble = true,
-        cmp = true,
-        lsp_saga = true,
-        gitgutter = false,
-        gitsigns = true,
-        telescope = true,
-        nvimtree = {
+        navic = {
             enabled = true,
-            show_root = false,
-            transparent_panel = false,
+            custom_bg = "NONE",
         },
-        dap = {
-            enabled = false,
-            enable_ui = false,
-        },
-        neotree = {
-            enabled = false,
-            show_root = false,
-            transparent_panel = false,
-        },
-        which_key = false,
-        indent_blankline = {
-            enabled = true,
-            colored_indent_levels = false,
-        },
-        dashboard = true,
-        neogit = false,
-        vim_sneak = false,
-        fern = false,
-        barbar = false,
-        bufferline = false,
-        markdown = false,
-        lightspeed = false,
-        leap = false,
-        ts_rainbow = true,
-        hop = true,
+        noice = false,
         notify = false,
-        telekasten = false,
-        symbols_outline = false,
-        mini = false,
-        aerial = false,
-        vimwiki = false,
-        beacon = false,
-        navic = { enabled = true, custom_bg = colors.base },
+        nvimtree = true,
         overseer = false,
-    },
-    color_overrides = {},
-    highlight_overrides = {},
-    custom_highlights = {
-        NormalFloat = { bg = colors.base },
-
-        StatusLine = { bg = colors.base },
-
-        WinBar = { fg = colors.text },
-
-        NavicText = { fg = colors.text },
-
-        NvimTreeRootFolder = { fg = colors.mantle },
-
-        -- Treesitter
-        ["@namespace"] = { style = {} },
-        ["@parameter"] = { style = {} },
-        ["@type.builtin"] = { style = { "italic" } },
-        ["@keyword.operator"] = { style = { "italic" } },
-        ["@method.call"] = { style = { "italic" } },
-
-        -- TreesitterContext
-        TreesitterContext = { bg = colors.surface0 },
-        TreesitterContextLineNumber = { bg = colors.surface0 },
-
-        -- Telescope
-        TelescopeBorder = { bg = colors.crust, fg = colors.crust },
-        TelescopeNormal = { bg = colors.crust },
-
-        -- Telescope Preview
-        TelescopePreviewBorder = { bg = colors.mantle, fg = colors.mantle },
-        TelescopePreviewNormal = { bg = colors.mantle },
-        TelescopePreviewTitle = { bg = colors.mantle, fg = colors.mantle },
-
-        -- Telescope Prompt
-        TelescopePromptBorder = { bg = colors.surface0, fg = colors.surface0 },
-        TelescopePromptNormal = { bg = colors.surface0 },
-        TelescopePromptTitle = { bg = colors.surface0, fg = colors.surface0 },
-
-        -- Telescope Selection
-        TelescopeSelection = { bg = colors.crust, fg = colors.green },
-        TelescopeMultiSelection = { bg = colors.crust },
-
-        -- ToggleTerm
-        ToggleTerm1NormalFloat = { bg = colors.crust },
-        ToggleTerm1FloatBorder = { bg = colors.crust, fg = colors.crust },
-
-        -- LSP Saga
-        LspFloatWinNormal = { bg = colors.base },
-        LspSagaFinderSelection = { fg = colors.blue },
-
-        -- Trouble
-        TroubleCount = { bg = colors.base },
+        pounce = false,
+        semantic_tokens = false,
+        symbols_outline = false,
+        telekasten = false,
+        telescope = false,
+        treesitter = true,
+        treesitter_context = true,
+        ts_rainbow = false,
+        vim_sneak = false,
+        vimwiki = false,
+        which_key = false,
     },
 })
 
-local catppuccin_cache_path = vim.fn.stdpath("cache") .. "/catppuccin"
-
-if vim.fn.empty(vim.fn.glob(catppuccin_cache_path)) > 0 then
-    catppuccin.compile()
-end
-
-vim.cmd([[colorscheme catppuccin]])
+vim.cmd.colorscheme("catppuccin")
