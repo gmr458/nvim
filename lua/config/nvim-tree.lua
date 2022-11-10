@@ -1,6 +1,3 @@
-vim.g.loaded = 1
-vim.g.loaded_netrwPlugin = 1
-
 local nvim_tree_loaded, nvim_tree = pcall(require, "nvim-tree")
 
 if not nvim_tree_loaded then
@@ -11,6 +8,7 @@ end
 -- each of these are documented in `:help nvim-tree.OPTION_NAME`
 -- nested options are documented by accessing them with `.` (eg: `:help nvim-tree.view.mappings.list`).
 nvim_tree.setup({
+    disable_netrw = true,
     hijack_cursor = true,
     view = { hide_root_folder = false },
     renderer = {
