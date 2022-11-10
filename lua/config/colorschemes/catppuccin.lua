@@ -12,7 +12,7 @@ catppuccin.setup({
         dark = "mocha",
     },
     compile_path = vim.fn.stdpath("cache") .. "/catppuccin",
-    transparent_background = false,
+    transparent_background = true,
     term_colors = false,
     dim_inactive = {
         enabled = false,
@@ -36,9 +36,10 @@ catppuccin.setup({
     color_overrides = {},
     custom_highlights = function(colors)
         return {
-            NormalFloat = { bg = colors.base },
+            -- NormalFloat = { bg = colors.base },
+            NormalFloat = { bg = "NONE" },
 
-            StatusLine = { bg = colors.base },
+            StatusLine = { bg = "NONE" },
 
             WinBar = { fg = colors.text },
 
