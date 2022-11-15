@@ -209,6 +209,11 @@ return packer.startup(function(use)
 
     -- Other plugins
     use({
+        "karb94/neoscroll.nvim",
+        ft = normal,
+        config = "require('config.neoscroll')",
+    })
+    use({
         "feline-nvim/feline.nvim",
         after = "alpha-nvim",
         config = "require('config.feline')",
