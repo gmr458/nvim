@@ -209,6 +209,16 @@ return packer.startup(function(use)
 
     -- Other plugins
     use({
+        "petertriho/nvim-scrollbar",
+        ft = normal,
+        config = "require('config.scrollbar')",
+    })
+    use({
+        "kevinhwang91/nvim-hlslens",
+        ft = normal,
+        config = "require('config.hlslens')",
+    })
+    use({
         "karb94/neoscroll.nvim",
         ft = normal,
         config = "require('config.neoscroll')",

@@ -22,3 +22,5 @@ gitsigns.setup({
     },
     attach_to_untracked = false,
 })
+
+require("scrollbar.handlers.gitsigns").setup()
