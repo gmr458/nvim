@@ -1,4 +1,11 @@
-require("scrollbar").setup({
+local scrollbar_loaded, scrollbar = pcall(require, "scrollbar")
+
+if not scrollbar_loaded then
+    print("scrollbar not loaded")
+    return
+end
+
+scrollbar.setup({
     show = true,
     show_in_active_only = false,
     set_highlights = true,
@@ -12,65 +19,72 @@ require("scrollbar").setup({
         hide_if_all_visible = true, -- Hides handle if all lines are visible
     },
     marks = {
+        Cursor = {
+            text = "•",
+            priority = 0,
+            color = nil,
+            cterm = nil,
+            highlight = "Normal",
+        },
         Search = {
             text = { "-", "=" },
-            priority = 0,
+            priority = 1,
             color = nil,
             cterm = nil,
             highlight = "Search",
         },
         Error = {
             text = { "-", "=" },
-            priority = 1,
+            priority = 2,
             color = nil,
             cterm = nil,
             highlight = "DiagnosticVirtualTextError",
         },
         Warn = {
             text = { "-", "=" },
-            priority = 2,
+            priority = 3,
             color = nil,
             cterm = nil,
             highlight = "DiagnosticVirtualTextWarn",
         },
         Info = {
             text = { "-", "=" },
-            priority = 3,
+            priority = 4,
             color = nil,
             cterm = nil,
             highlight = "DiagnosticVirtualTextInfo",
         },
         Hint = {
             text = { "-", "=" },
-            priority = 4,
+            priority = 5,
             color = nil,
             cterm = nil,
             highlight = "DiagnosticVirtualTextHint",
         },
         Misc = {
             text = { "-", "=" },
-            priority = 5,
+            priority = 6,
             color = nil,
             cterm = nil,
             highlight = "Normal",
         },
         GitAdd = {
             text = "│",
-            priority = 5,
+            priority = 7,
             color = nil,
             cterm = nil,
             highlight = "GitSignsAdd",
         },
         GitChange = {
             text = "│",
-            priority = 5,
+            priority = 7,
             color = nil,
             cterm = nil,
             highlight = "GitSignsChange",
         },
         GitDelete = {
             text = "_",
-            priority = 5,
+            priority = 7,
             color = nil,
             cterm = nil,
             highlight = "GitSignsDelete",
@@ -83,6 +97,7 @@ require("scrollbar").setup({
         "prompt",
         "TelescopePrompt",
         "noice",
+        "NvimTree",
     },
     autocmd = {
         render = {
@@ -103,8 +118,10 @@ require("scrollbar").setup({
         },
     },
     handlers = {
+        cursor = false,
         diagnostic = true,
-        search = false, -- Requires hlslens to be loaded
-        gitsigns = false, -- Requires gitsigns.nvim
+        gitsigns = true, -- Requires gitsigns
+        handle = true,
+        search = true, -- Requires hlslens
     },
 })

@@ -210,7 +210,6 @@ return packer.startup(function(use)
     -- Other plugins
     use({
         "petertriho/nvim-scrollbar",
-        ft = normal,
         config = "require('config.scrollbar')",
     })
     use({
