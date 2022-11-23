@@ -209,17 +209,19 @@ return packer.startup(function(use)
 
     -- Other plugins
     use({
+        "lewis6991/gitsigns.nvim",
+        config = "require('config.gitsigns')",
+    })
+    use({
+        "kevinhwang91/nvim-hlslens",
+        config = "require('config.hlslens')",
+    })
+    use({
         "petertriho/nvim-scrollbar",
         config = "require('config.scrollbar')",
     })
     use({
-        "kevinhwang91/nvim-hlslens",
-        ft = normal,
-        config = "require('config.hlslens')",
-    })
-    use({
         "karb94/neoscroll.nvim",
-        ft = normal,
         config = "require('config.neoscroll')",
     })
     use({
@@ -251,11 +253,6 @@ return packer.startup(function(use)
         "b3nj5m1n/kommentary",
         event = "BufRead",
         config = "require('config.kommentary')",
-    })
-    use({
-        "lewis6991/gitsigns.nvim",
-        event = "BufRead",
-        config = "require('config.gitsigns')",
     })
     -- use({
     --     "akinsho/bufferline.nvim",
