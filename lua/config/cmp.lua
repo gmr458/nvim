@@ -45,10 +45,6 @@ cmp.setup({
     preselect = types.cmp.PreselectMode.None,
     mapping = cmp.mapping.preset.insert({
         ["<C-Space>"] = cmp.mapping.complete(),
-        ["<Esc>"] = cmp.mapping({
-            i = cmp.mapping.abort(),
-            c = cmp.mapping.close(),
-        }),
         ["<CR>"] = cmp.mapping.confirm({
             behavior = types.cmp.ConfirmBehavior.Replace,
             select = true,
