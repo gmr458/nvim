@@ -12,7 +12,7 @@ catppuccin.setup({
         dark = "mocha",
     },
     compile_path = vim.fn.stdpath("cache") .. "/catppuccin",
-    transparent_background = true,
+    transparent_background = false,
     term_colors = false,
     dim_inactive = {
         enabled = false,
