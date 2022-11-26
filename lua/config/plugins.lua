@@ -209,6 +209,10 @@ return packer.startup(function(use)
 
     -- Other plugins
     use({
+        "elkowar/yuck.vim",
+        ft = "yuck",
+    })
+    use({
         "lewis6991/gitsigns.nvim",
         config = "require('config.gitsigns')",
     })
