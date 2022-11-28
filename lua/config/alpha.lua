@@ -8,6 +8,7 @@ end
 local dashboard = require("alpha.themes.dashboard")
 
 dashboard.section.header.val = require("config.headers").Bloody
+dashboard.section.header.opts = { position = "center", hl = "DashboardHeader" }
 
 dashboard.section.buttons.val = {
     dashboard.button("tff", "  Find file", "<CMD>silent Telescope find_files hidden=true no_ignore=true<CR>"),

@@ -98,7 +98,7 @@ catppuccin.setup({
             enabled = false,
             enable_ui = false,
         },
-        dashboard = false,
+        dashboard = true,
         fern = false,
         fidget = false,
         gitgutter = false,
