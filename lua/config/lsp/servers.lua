@@ -2,7 +2,7 @@ local M = {}
 
 local utils = require("config.utils")
 
-M.get_servers = function()
+M.to_setup = function()
     if vim.loop.os_uname().sysname == "Windows_NT" or utils.running_wsl() or utils.running_android() then
         return {}
     end
@@ -36,5 +36,38 @@ M.get_servers = function()
         "yamlls",
     }
 end
+
+M.to_isntall = {
+    "jdtls",
+    "clangd",
+    "taplo",
+    "sqls",
+    "intelephense",
+    "pyright",
+    "gopls",
+    "bash-language-server",
+    "black",
+    "css-lsp",
+    "deno",
+    "djlint",
+    "dockerfile-language-server",
+    "emmet-ls",
+    "eslint-lsp",
+    "golangci-lint",
+    "html-lsp",
+    "json-lsp",
+    "kotlin-language-server",
+    "lua-language-server",
+    "prettier",
+    "pylint",
+    "rubocop",
+    "rust-analyzer",
+    "rustfmt",
+    "stylua",
+    "tailwindcss-language-server",
+    "typescript-language-server",
+    "vim-language-server",
+    "yaml-language-server",
+}
 
 return M

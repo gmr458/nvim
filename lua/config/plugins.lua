@@ -154,6 +154,7 @@ return packer.startup(function(use)
     use({
         "williamboman/mason.nvim",
         after = "nvim-lspconfig",
+        cmd = "MasonInstallAll",
         config = "require('config.lsp.mason')",
     })
     use({

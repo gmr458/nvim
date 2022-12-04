@@ -119,7 +119,7 @@ end
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-local servers = require("config.lsp.servers").get_servers()
+local servers = require("config.lsp.servers").to_setup()
 
 for _, server in pairs(servers) do
     local server_opts = {
