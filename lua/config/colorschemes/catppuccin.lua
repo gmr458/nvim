@@ -12,7 +12,7 @@ catppuccin.setup({
         dark = "mocha",
     },
     compile_path = vim.fn.stdpath("cache") .. "/catppuccin",
-    transparent_background = true,
+    transparent_background = false,
     term_colors = false,
     dim_inactive = {
         enabled = false,
@@ -66,12 +66,12 @@ catppuccin.setup({
             -- Telescope Preview
             TelescopePreviewBorder = { bg = colors.mantle, fg = colors.mantle },
             TelescopePreviewNormal = { bg = colors.mantle },
-            TelescopePreviewTitle = { bg = colors.mantle, fg = colors.mantle },
+            TelescopePreviewTitle = { bg = colors.mantle, fg = colors.text },
 
             -- Telescope Prompt
             TelescopePromptBorder = { bg = colors.surface0, fg = colors.surface0 },
             TelescopePromptNormal = { bg = colors.surface0 },
-            TelescopePromptTitle = { bg = colors.surface0, fg = colors.surface0 },
+            TelescopePromptTitle = { bg = colors.surface0, fg = colors.text },
 
             -- Telescope Selection
             TelescopeSelection = { bg = colors.crust, fg = colors.green },
@@ -87,6 +87,12 @@ catppuccin.setup({
 
             -- Trouble
             TroubleCount = { bg = colors.base },
+
+            -- LSP Virtual Text
+            DiagnosticVirtualTextError = { bg = "NONE" },
+            DiagnosticVirtualTextWarn = { bg = "NONE" },
+            DiagnosticVirtualTextInfo = { bg = "NONE" },
+            DiagnosticVirtualTextHint = { bg = "NONE" },
         }
     end,
     integrations = {

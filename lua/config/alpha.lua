@@ -7,7 +7,7 @@ end
 
 local dashboard = require("alpha.themes.dashboard")
 
-dashboard.section.header.val = require("config.headers").Bloody
+dashboard.section.header.val = require("config.headers").Default2
 dashboard.section.header.opts = { position = "center", hl = "DashboardHeader" }
 
 dashboard.section.buttons.val = {
