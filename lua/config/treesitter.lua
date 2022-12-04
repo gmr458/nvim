@@ -7,7 +7,7 @@ end
 
 configs.setup({
     -- A list of parser names, or "all"
-    ensure_installed = {},
+    ensure_installed = require("config.treesitter_parsers").parsers,
 
     -- Install parsers synchronously (only applied to `ensure_installed`)
     sync_install = false,
