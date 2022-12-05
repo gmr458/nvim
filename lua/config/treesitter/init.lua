@@ -7,7 +7,7 @@ end
 
 configs.setup({
     -- A list of parser names, or "all"
-    ensure_installed = require("config.treesitter_parsers").parsers,
+    ensure_installed = require("config.treesitter.parsers").to_install_automatically(),
 
     -- Install parsers synchronously (only applied to `ensure_installed`)
     sync_install = false,
@@ -51,6 +51,10 @@ configs.setup({
         enable = true,
     },
 })
+
+vim.api.nvim_create_user_command("TSInstallParserList", function()
+    vim.cmd("TSInstall " .. table.concat(require("config.treesitter.parsers").list, " "))
+end, {})
 
 local treesitter_context_loaded, context = pcall(require, "treesitter-context")
 

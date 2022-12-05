@@ -1,6 +1,8 @@
 local M = {}
 
-M.parsers = {
+local utils = require("config.utils")
+
+M.list = {
     -- "agda",
     -- "arduino",
     "astro",
@@ -143,5 +145,13 @@ M.parsers = {
     -- "yang",
     -- "zig",
 }
+
+M.to_install_automatically = function()
+    if vim.loop.os_uname().sysname == "Windows_NT" or utils.running_wsl() or utils.running_android() then
+        return {}
+    end
+
+    return M.list
+end
 
 return M
