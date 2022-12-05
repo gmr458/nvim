@@ -129,6 +129,11 @@ return packer.startup(function(use)
     --     "navarasu/onedark.nvim",
     --     -- config = "require('config.colorschemes.onedark')",
     -- })
+    -- use({
+    --     "rose-pine/neovim",
+    --     as = "rose-pine",
+    --     config = "require('config.colorschemes.rose-pine')",
+    -- })
 
     -- Telescope
     use({
