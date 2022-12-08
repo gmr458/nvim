@@ -9,27 +9,28 @@ M.palette = function()
         -- colors
         bg_0 = "#181818",
         bg_1 = "#252525",
-        bg_2 = "#3B3B3B",
+        bg_2 = "#3b3b3b",
         dim_0 = "#777777",
-        fg_0 = "#B9B9B9",
-        fg_1 = "#DEDEDE",
-        red = "#ED4A46",
-        green = "#70B433",
-        yellow = "#DBB32D",
-        blue = "#368AEB",
-        magenta = "#EB6EB7",
-        cyan = "#3FC5B7",
-        orange = "#E67F43",
-        violet = "#A580E2",
-        br_red = "#FF5E56",
-        br_green = "#83C746",
-        br_yellow = "#EFC541",
-        br_blue = "#4F9CFE",
-        br_magenta = "#FF81CA",
-        br_cyan = "#56D8C9",
-        br_orange = "#FA9153",
-        br_violet = "#B891F5",
-        black = "#000000",
+        fg_0 = "#b9b9b9",
+        fg_1 = "#dedede",
+
+        red = "#ed4a46",
+        green = "#70b433",
+        yellow = "#dbb32d",
+        blue = "#368aeb",
+        magenta = "#eb6eb7",
+        cyan = "#3fc5b7",
+        orange = "#e67f43",
+        violet = "#a580e2",
+
+        br_red = "#ff5e56",
+        br_green = "#83c746",
+        br_yellow = "#efc541",
+        br_blue = "#4f9cfe",
+        br_magenta = "#ff81ca",
+        br_cyan = "#56d8c9",
+        br_orange = "#fa9153",
+        br_violet = "#b891f5",
     }
 
     return palette
@@ -58,7 +59,7 @@ M.components = function()
                 name = "file_info",
                 opts = { file_readonly_icon = " " },
             },
-            hl = { style = "NONE" },
+            hl = { fg = "fg", style = "NONE" },
             left_sep = {
                 { str = "slant_right_thin", hl = { fg = "fg" } },
                 " ",
@@ -85,7 +86,7 @@ M.components = function()
         },
         {
             provider = "git_branch",
-            icon = " ",
+            icon = { str = " ", hl = { fg = "orange" } },
             hl = { fg = "fg", style = "NONE" },
             left_sep = " ",
             right_sep = {
@@ -118,6 +119,7 @@ M.components = function()
 
                 return ""
             end,
+            hl = { fg = "fg" },
         },
         {
             provider = "diagnostic_errors",

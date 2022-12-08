@@ -7,6 +7,7 @@ end
 
 local themes = {
     catppuccin = "catppuccin",
+    enfocado = "enfocado",
     kanagawa = "kanagawa",
 }
 
