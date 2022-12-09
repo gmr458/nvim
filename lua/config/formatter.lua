@@ -23,6 +23,14 @@ formatter.setup({
             end,
         },
         html = { prettier_config },
+        htmldjango = {
+            function()
+                return {
+                    exe = "djlint",
+                    args = { "--reformat", "--preserve-leading-space", "--preserve-blank-lines", "--indent", "2" },
+                }
+            end,
+        },
         javascript = { prettier_config },
         javascriptreact = { prettier_config },
         json = { prettier_config },
