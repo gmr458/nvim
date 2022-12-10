@@ -17,8 +17,14 @@ null_ls.setup({
         null_ls.builtins.formatting.rustfmt,
         null_ls.builtins.formatting.stylua,
         null_ls.builtins.formatting.taplo,
-        null_ls.builtins.diagnostics.djlint.with({ method = null_ls.methods.DIAGNOSTICS_ON_SAVE }),
-        null_ls.builtins.diagnostics.pylint.with({ method = null_ls.methods.DIAGNOSTICS_ON_SAVE }),
+        null_ls.builtins.diagnostics.djlint.with({
+            diagnostic_config = { underline = false, virtual_text = false, signs = false },
+            method = null_ls.methods.DIAGNOSTICS_ON_SAVE,
+        }),
+        null_ls.builtins.diagnostics.pylint.with({
+            diagnostic_config = { underline = false, virtual_text = false, signs = false },
+            method = null_ls.methods.DIAGNOSTICS_ON_SAVE,
+        }),
         null_ls.builtins.diagnostics.golangci_lint,
     },
 })
@@ -38,5 +44,3 @@ local null_ls_stop = function()
 
     null_ls_client.stop()
 end
-
-vim.api.nvim_create_user_command("NullLsStop", null_ls_stop, {})

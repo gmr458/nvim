@@ -118,8 +118,8 @@ scrollbar.setup({
         },
     },
     handlers = {
-        cursor = false,
-        diagnostic = true,
+        cursor = true,
+        diagnostic = false,
         gitsigns = true, -- Requires gitsigns
         handle = true,
         search = true, -- Requires hlslens
