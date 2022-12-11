@@ -1,8 +1,8 @@
 local M = {}
 
-local utils = require("config.utils")
-
 M.to_setup = function()
+    local utils = require("config.utils")
+
     if vim.loop.os_uname().sysname == "Windows_NT" or utils.running_wsl() or utils.running_android() then
         return {}
     end
@@ -37,7 +37,7 @@ M.to_setup = function()
     }
 end
 
-M.to_isntall = {
+M.to_install = {
     "jdtls",
     "clangd",
     "taplo",
