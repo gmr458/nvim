@@ -123,7 +123,6 @@ local servers = require("config.lsp.servers").to_setup()
 
 for _, server in pairs(servers) do
     local server_opts = {
-        autostart = false,
         on_attach = on_attach,
         capabilities = capabilities,
     }

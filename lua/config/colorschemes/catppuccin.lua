@@ -82,8 +82,7 @@ catppuccin.setup({
             ToggleTerm1FloatBorder = { bg = colors.crust, fg = colors.crust },
 
             -- LSP Saga
-            LspFloatWinNormal = { bg = colors.base },
-            LspSagaFinderSelection = { fg = colors.blue },
+            LspFloatWinNormal = { bg = "NONE" },
 
             -- Trouble
             TroubleCount = { bg = colors.base },

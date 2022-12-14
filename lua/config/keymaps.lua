@@ -90,6 +90,7 @@ vim.api.nvim_set_keymap("n", "gR", "<cmd>Trouble lsp_references<cr>", { silent =
 
 -- Hop
 vim.api.nvim_set_keymap("n", "<Space>s", "<cmd>HopChar2<cr>", { silent = true, noremap = true })
+vim.api.nvim_set_keymap("n", "F", "<cmd>HopPattern<cr>", { silent = true, noremap = true })
 
 -- Insert single quotes
 vim.api.nvim_set_keymap("n", "<leader>sq", "ciw'<C-r>\"'<Esc>", { silent = true, noremap = true })

@@ -159,29 +159,18 @@ return packer.startup(function(use)
     use({
         "williamboman/mason.nvim",
         after = "nvim-lspconfig",
-        cmd = "MasonInstallAll",
-        config = "require('config.lsp.mason')",
-    })
-    use({
-        "williamboman/mason-lspconfig.nvim",
-        after = "mason.nvim",
-        config = "require('config.lsp.mason-lspconfig')",
+        config = "require('config.lsp.mason.init')",
     })
     use({
         "jose-elias-alvarez/null-ls.nvim",
-        after = "mason-lspconfig.nvim",
-        config = "require('config.lsp.null-ls')",
-    })
-    use({
-        "jayp0521/mason-null-ls.nvim",
-        after = "null-ls.nvim",
-        config = "require('config.lsp.mason-null-ls')",
+        after = "mason.nvim",
+        config = "require('config.lsp.null-ls.init')",
     })
     use({
         "glepnir/lspsaga.nvim",
-        after = "mason-null-ls.nvim",
+        after = "null-ls.nvim",
         branch = "main",
-        config = "require('config.lsp.lspsaga')",
+        config = "require('config.lsp.lspsaga.init')",
     })
     use({
         "folke/trouble.nvim",
@@ -240,7 +229,7 @@ return packer.startup(function(use)
     use({
         "phaazon/hop.nvim",
         branch = "v1",
-        cmd = "HopChar2",
+        cmd = { "HopChar2", "HopPattern" },
         config = "require('config.hop')",
     })
     use({

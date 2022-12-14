@@ -98,6 +98,7 @@ scrollbar.setup({
         "TelescopePrompt",
         "noice",
         "NvimTree",
+        "lspsagafinder",
     },
     autocmd = {
         render = {

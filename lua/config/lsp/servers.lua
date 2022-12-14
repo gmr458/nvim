@@ -37,37 +37,4 @@ M.to_setup = function()
     }
 end
 
-M.to_install = {
-    "jdtls",
-    "clangd",
-    "taplo",
-    "sqls",
-    "intelephense",
-    "pyright",
-    "gopls",
-    "bash-language-server",
-    "black",
-    "css-lsp",
-    "deno",
-    "djlint",
-    "dockerfile-language-server",
-    "emmet-ls",
-    "eslint-lsp",
-    "golangci-lint",
-    "html-lsp",
-    "json-lsp",
-    "kotlin-language-server",
-    "lua-language-server",
-    "prettier",
-    "pylint",
-    "rubocop",
-    "rust-analyzer",
-    "rustfmt",
-    "stylua",
-    "tailwindcss-language-server",
-    "typescript-language-server",
-    "vim-language-server",
-    "yaml-language-server",
-}
-
 return M
