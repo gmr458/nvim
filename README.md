@@ -1,5 +1,10 @@
 # Neovim config
 
+![screenshot-01](./screenshots/01.png)
+![screenshot-02](./screenshots/02.png)
+![screenshot-03](./screenshots/03.png)
+![screenshot-04](./screenshots/04.png)
+
 ## Requirements
 
 1. Neovim >= v0.8.1
