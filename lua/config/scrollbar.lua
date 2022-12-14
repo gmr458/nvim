@@ -99,6 +99,7 @@ scrollbar.setup({
         "noice",
         "NvimTree",
         "lspsagafinder",
+        "alpha",
     },
     autocmd = {
         render = {
