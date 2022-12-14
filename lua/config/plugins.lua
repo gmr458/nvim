@@ -208,6 +208,10 @@ return packer.startup(function(use)
         ft = "yuck",
     })
     use({
+        "imsnif/kdl.vim",
+        ft = "kdl",
+    })
+    use({
         "lewis6991/gitsigns.nvim",
         config = "require('config.gitsigns')",
     })
