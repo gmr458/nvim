@@ -10,7 +10,9 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
         install_path,
     })
 
-    print("Installing packer and plugins. After the installation is finished close and open Neovim.")
+    print("Installing packer and plugins...")
+    print("Installing treesitter parsers from `ensure_installed` config...")
+    print("After the installation is finished close and open Neovim.")
 
     vim.cmd([[packadd packer.nvim]])
 end
