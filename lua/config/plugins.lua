@@ -150,7 +150,7 @@ return packer.startup(function(use)
     -- LSP
     use({
         "neovim/nvim-lspconfig",
-        cmd = "LspStart",
+        cmd = { "LspStart", "MasonInstallListPackages" },
         config = "require('config.lsp.init')",
     })
     use({
