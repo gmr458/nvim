@@ -204,6 +204,10 @@ return packer.startup(function(use)
 
     -- Other plugins
     use({
+        "ThePrimeagen/harpoon",
+        config = "require('config.harpoon')",
+    })
+    use({
         "elkowar/yuck.vim",
         ft = "yuck",
     })
