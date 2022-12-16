@@ -33,6 +33,7 @@ vim.opt.swapfile = false -- whether to use a swapfile for a buffer
 -- vim.opt.tabline = "default" -- custom format for the console tab pages line
 vim.opt.tabstop = 4 -- number of spaces that <Tab> in file uses
 vim.opt.termguicolors = true -- enables 24-bit RGB color in the TUI
+vim.opt.updatetime = 50
 -- vim.opt.verbose = 16 -- give informative messages -- for debug
 -- vim.opt.verbosefile = "default" -- file to write messages in -- for debug
 -- vim.opt.winbar = "%f"
