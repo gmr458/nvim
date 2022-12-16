@@ -16,6 +16,7 @@ return {
     "json-lsp",
     "kotlin-language-server",
     "lua-language-server",
+    "omnisharp",
     "prettier",
     "pylint",
     "pyright",

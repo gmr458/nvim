@@ -23,7 +23,7 @@ M.to_setup = function()
         "jdtls",
         "jsonls",
         "kotlin_language_server",
-        -- "omnisharp",
+        "omnisharp",
         "pyright",
         "rust_analyzer",
         -- "solargraph",
