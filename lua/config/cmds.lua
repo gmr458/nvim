@@ -2,11 +2,12 @@
 -- vim.cmd([[set iskeyword+=-]])
 -- vim.cmd([[set formatoptions-=cro]])
 
+-- For Alacritty terminal
 vim.cmd([[
     augroup RestoreCursorShapeOnExit
         autocmd!
-        "autocmd VimLeave * set guicursor=a:hor20
-        autocmd VimLeave * set guicursor=a:ver1
+        autocmd VimLeave * set guicursor=a:hor1
+        "autocmd VimLeave * set guicursor=a:ver
     augroup END
 ]])
 
