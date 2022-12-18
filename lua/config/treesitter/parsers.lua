@@ -103,7 +103,7 @@ M.list = {
     "python",
     -- "ql",
     -- "qmljs",
-    -- "query",
+    "query",
     -- "r",
     -- "racket",
     "rasi",
