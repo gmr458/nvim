@@ -33,3 +33,18 @@
     )
   )
 )
+
+(short_var_declaration
+  left: (expression_list) @_query (#eq? @_query "query")
+  right: (expression_list
+    (call_expression
+      function: (selector_expression
+        operand: (identifier) @_fmt (#eq? @_fmt "fmt")
+        field: (field_identifier) @_Sprintf (#eq? @_Sprintf "Sprintf")
+      )
+      arguments: (argument_list
+        (interpreted_string_literal) @sql
+      )
+    )
+  )
+)
