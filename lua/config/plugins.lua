@@ -34,12 +34,29 @@ packer.init({
 
 local normal = require("config.utils").filetypes_simple_use
 
-local build_vscode_react_javascript_snippets = "yarn install --frozen-lockfile && yarn compile"
+local build_snippets = {
+    "yarn",
+    "install",
+    "--frozen-lockfile",
+    "&&",
+    "yarn",
+    "compile",
+}
 
 if vim.loop.os_uname().sysname == "Windows_NT" then
-    -- Build vscode react javascript snippets for Windows
-    build_vscode_react_javascript_snippets =
-        "yarn install --frozen-lockfile && node_modules\\.bin\\tsc --noEmit false --module commonjs --outDir lib"
+    build_snippets = {
+        "yarn",
+        "install",
+        "--frozen-lockfile",
+        "&&",
+        "node_modules\\.bin\\tsc",
+        "--noEmit",
+        "false",
+        "--module",
+        "commonjs",
+        "--outDir",
+        "lib",
+    }
 end
 
 return packer.startup(function(use)
@@ -55,7 +72,6 @@ return packer.startup(function(use)
         run = function()
             require("nvim-treesitter.install").update({ with_sync = true })
         end,
-        event = "BufReadPost",
         config = "require('config.treesitter')",
     })
     use({
@@ -198,7 +214,7 @@ return packer.startup(function(use)
 
     use({
         "dsznajder/vscode-react-javascript-snippets",
-        run = build_vscode_react_javascript_snippets,
+        run = table.concat(build_snippets, " "),
     })
     use("rafamadriz/friendly-snippets")
 
@@ -229,10 +245,10 @@ return packer.startup(function(use)
         cmd = { "HopChar2", "HopPattern" },
         config = "require('config.hop')",
     })
-    -- use({
-    --     "NMAC427/guess-indent.nvim",
-    --     config = "require('config.guess-indent')",
-    -- })
+    use({
+        "NMAC427/guess-indent.nvim",
+        config = "require('config.guess-indent')",
+    })
     use("b0o/SchemaStore.nvim")
     use({
         "nvim-tree/nvim-tree.lua",
