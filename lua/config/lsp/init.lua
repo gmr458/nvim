@@ -79,7 +79,43 @@ local on_attach = function(client, bufnr)
     vim.keymap.set("n", "<space>D", vim.lsp.buf.type_definition, bufopts)
     vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, bufopts)
     -- vim.keymap.set("n", "<space>ca", vim.lsp.buf.code_action, bufopts)
-    vim.keymap.set("n", "gr", require("telescope.builtin").lsp_references, bufopts)
+    vim.keymap.set("n", "gr", function()
+        local action_layout = require("telescope.actions.layout")
+        require("telescope.builtin").lsp_references({
+            mappings = {
+                n = {
+                    ["<C-y>"] = action_layout.toggle_preview,
+                },
+                i = {
+                    ["<C-y>"] = action_layout.toggle_preview,
+                },
+            },
+            prompt_prefix = "   ",
+            selection_caret = "  ",
+            multi_icon = "",
+            sorting_strategy = "ascending",
+            layout_strategy = "horizontal",
+            layout_config = {
+                prompt_position = "top",
+                scroll_speed = 4,
+                height = 0.9,
+                width = 0.9,
+                preview_width = 0.7,
+            },
+            borderchars = {
+                "─",
+                "│",
+                "─",
+                "│",
+                "┌",
+                "┐",
+                "┘",
+                "└",
+            },
+            color_devicons = true,
+            set_env = { ["COLORTERM"] = "truecolor" },
+        })
+    end, bufopts)
     vim.keymap.set("n", "<space>f", vim.lsp.buf.format, bufopts)
 
     if client.server_capabilities.documentHighlightProvider then
