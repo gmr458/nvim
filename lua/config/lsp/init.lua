@@ -70,7 +70,7 @@ local on_attach = function(client, bufnr)
     vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufopts)
     vim.keymap.set("n", "J", vim.lsp.buf.hover, bufopts)
     vim.keymap.set("n", "gi", vim.lsp.buf.implementation, bufopts)
-    -- vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, bufopts)
+    vim.keymap.set("n", "K", vim.lsp.buf.signature_help, bufopts)
     vim.keymap.set("n", "<space>wa", vim.lsp.buf.add_workspace_folder, bufopts)
     vim.keymap.set("n", "<space>wr", vim.lsp.buf.remove_workspace_folder, bufopts)
     vim.keymap.set("n", "<space>wl", function()
@@ -78,45 +78,11 @@ local on_attach = function(client, bufnr)
     end, bufopts)
     vim.keymap.set("n", "<space>D", vim.lsp.buf.type_definition, bufopts)
     vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, bufopts)
-    -- vim.keymap.set("n", "<space>ca", vim.lsp.buf.code_action, bufopts)
-    vim.keymap.set("n", "gr", function()
-        local action_layout = require("telescope.actions.layout")
-        require("telescope.builtin").lsp_references({
-            mappings = {
-                n = {
-                    ["<C-y>"] = action_layout.toggle_preview,
-                },
-                i = {
-                    ["<C-y>"] = action_layout.toggle_preview,
-                },
-            },
-            prompt_prefix = "   ",
-            selection_caret = "  ",
-            multi_icon = "",
-            sorting_strategy = "ascending",
-            layout_strategy = "horizontal",
-            layout_config = {
-                prompt_position = "top",
-                scroll_speed = 4,
-                height = 0.9,
-                width = 0.9,
-                preview_width = 0.7,
-            },
-            borderchars = {
-                "─",
-                "│",
-                "─",
-                "│",
-                "┌",
-                "┐",
-                "┘",
-                "└",
-            },
-            color_devicons = true,
-            set_env = { ["COLORTERM"] = "truecolor" },
-        })
+    vim.keymap.set("n", "<space>ca", vim.lsp.buf.code_action, bufopts)
+    vim.keymap.set("n", "gr", vim.lsp.buf.references, bufopts)
+    vim.keymap.set("n", "<space>f", function()
+        vim.lsp.buf.format({ async = true })
     end, bufopts)
-    vim.keymap.set("n", "<space>f", vim.lsp.buf.format, bufopts)
 
     if client.server_capabilities.documentHighlightProvider then
         vim.cmd([[

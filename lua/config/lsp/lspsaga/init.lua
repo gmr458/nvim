@@ -81,8 +81,8 @@ lspsaga.init_lsp_saga({
     },
 })
 
-vim.keymap.set("n", "<space>ca", "<cmd>Lspsaga code_action<CR>", { silent = true })
-vim.keymap.set("v", "<space>ca", "<cmd><C-U>Lspsaga range_code_action<CR>", { silent = true })
+-- vim.keymap.set("n", "<space>ca", "<cmd>Lspsaga code_action<CR>", { silent = true })
+-- vim.keymap.set("v", "<space>ca", "<cmd><C-U>Lspsaga range_code_action<CR>", { silent = true })
 
 vim.keymap.set("n", "<space>pd", "<cmd>Lspsaga peek_definition<CR>", { silent = true })
 
