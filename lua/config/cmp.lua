@@ -73,22 +73,6 @@ cmp.setup({
             luasnip.lsp_expand(args.body)
         end,
     },
-    -- sorting = {
-    --     comparators = {
-    --         deprioritize_snippet,
-    --         prioritize_keyword,
-    --         -- cmp.config.compare.offset,
-    --         cmp.config.compare.exact,
-    --         -- cmp.config.compare.score,
-    --         -- cmp.config.compare.recently_used,
-    --         cmp.config.compare.kind,
-    --         cmp.config.compare.sort_text,
-    --         -- cmp.config.compare.length,
-    --         cmp.config.compare.order,
-    --         cmp.config.compare.locality,
-    --         -- cmp.config.compare.scopes,
-    --     },
-    -- },
     sources = cmp.config.sources({
         { name = "nvim_lua" },
         { name = "nvim_lsp" },

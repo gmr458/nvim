@@ -49,15 +49,13 @@ return packer.startup(function(use)
     -- Speed up loading Lua modules in Neovim to improve startup time
     use("lewis6991/impatient.nvim")
 
-    -- Easily speed up your neovim startup time! (natively implemented in Neovim 0.7.0)
-    use("nathom/filetype.nvim")
-
     -- Treesitter
     use({
         "nvim-treesitter/nvim-treesitter",
         run = function()
             require("nvim-treesitter.install").update({ with_sync = true })
         end,
+        event = "BufReadPost",
         config = "require('config.treesitter')",
     })
     use({
@@ -190,11 +188,13 @@ return packer.startup(function(use)
         after = "LuaSnip",
         config = "require('config.cmp')",
     })
-    use({ "saadparwaiz1/cmp_luasnip", after = "nvim-cmp" })
-    use({ "hrsh7th/cmp-nvim-lsp", after = "nvim-cmp" })
-    use({ "hrsh7th/cmp-buffer", after = "nvim-cmp" })
-    use({ "hrsh7th/cmp-path", after = "nvim-cmp" })
+    -- cmp sources
     use({ "hrsh7th/cmp-nvim-lua", after = "nvim-cmp" })
+    use({ "hrsh7th/cmp-nvim-lsp", after = "nvim-cmp" })
+    use({ "hrsh7th/cmp-nvim-lsp-signature-help", after = "nvim-cmp" })
+    use({ "saadparwaiz1/cmp_luasnip", after = "nvim-cmp" })
+    use({ "hrsh7th/cmp-path", after = "nvim-cmp" })
+    use({ "hrsh7th/cmp-buffer", after = "nvim-cmp" })
 
     use({
         "dsznajder/vscode-react-javascript-snippets",
@@ -204,31 +204,18 @@ return packer.startup(function(use)
 
     -- Other plugins
     use({
-        "ThePrimeagen/harpoon",
-        config = "require('config.harpoon')",
-    })
-    use({
-        "elkowar/yuck.vim",
-        ft = "yuck",
-    })
-    use({
-        "imsnif/kdl.vim",
-        ft = "kdl",
-    })
-    use({
         "lewis6991/gitsigns.nvim",
+        event = "BufReadPre",
         config = "require('config.gitsigns')",
     })
     use({
-        "kevinhwang91/nvim-hlslens",
-        config = "require('config.hlslens')",
-    })
-    use({
         "petertriho/nvim-scrollbar",
+        cmd = "ScrollbarShow",
         config = "require('config.scrollbar')",
     })
     use({
         "karb94/neoscroll.nvim",
+        keys = { "<C-u>", "<C-d>" },
         config = "require('config.neoscroll')",
     })
     use({
@@ -242,31 +229,28 @@ return packer.startup(function(use)
         cmd = { "HopChar2", "HopPattern" },
         config = "require('config.hop')",
     })
-    use({
-        "NMAC427/guess-indent.nvim",
-        config = "require('config.guess-indent')",
-    })
+    -- use({
+    --     "NMAC427/guess-indent.nvim",
+    --     config = "require('config.guess-indent')",
+    -- })
     use("b0o/SchemaStore.nvim")
     use({
-        "kyazdani42/nvim-tree.lua",
+        "nvim-tree/nvim-tree.lua",
         cmd = "NvimTreeFindFileToggle",
         config = "require('config.nvim-tree')",
     })
     use({
-        "kyazdani42/nvim-web-devicons",
+        "nvim-tree/nvim-web-devicons",
         after = "alpha-nvim",
+        config = function()
+            require("nvim-web-devicons").setup({ default = true })
+        end,
     })
     use({
         "b3nj5m1n/kommentary",
         event = "BufRead",
         config = "require('config.kommentary')",
     })
-    -- use({
-    --     "akinsho/bufferline.nvim",
-    --     tag = "v2.*",
-    --     ft = normal,
-    --     config = "require('config.bufferline')",
-    -- })
     use({
         "akinsho/toggleterm.nvim",
         tag = "*",
@@ -289,7 +273,7 @@ return packer.startup(function(use)
     })
     use({
         "mhartington/formatter.nvim",
-        ft = normal,
+        cmd = "Format",
         config = "require('config.formatter')",
     })
 
