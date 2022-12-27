@@ -21,25 +21,20 @@ if cmp == nil then
     return
 end
 
+local function border(hl_name)
+    return {
+        { "┌", hl_name },
+        { "─", hl_name },
+        { "┐", hl_name },
+        { "│", hl_name },
+        { "┘", hl_name },
+        { "─", hl_name },
+        { "└", hl_name },
+        { "│", hl_name },
+    }
+end
+
 local types = require("cmp.types")
-
-local function deprioritize_snippet(entry1, entry2)
-    if entry1:get_kind() == types.lsp.CompletionItemKind.Snippet then
-        return false
-    end
-    if entry2:get_kind() == types.lsp.CompletionItemKind.Snippet then
-        return true
-    end
-end
-
-local function prioritize_keyword(entry1, entry2)
-    if entry1:get_kind() ~= types.lsp.CompletionItemKind.Keyword then
-        return false
-    end
-    if entry2:get_kind() ~= types.lsp.CompletionItemKind.Keyword then
-        return true
-    end
-end
 
 cmp.setup({
     preselect = types.cmp.PreselectMode.None,
@@ -85,31 +80,10 @@ cmp.setup({
     confirmation = { default_behavior = types.cmp.ConfirmBehavior.Replace },
     window = {
         completion = {
-            border = {
-                "┌",
-                "─",
-                "┐",
-                "│",
-                "┘",
-                "─",
-                "└",
-                "│",
-            },
-            winhighlight = "Normal:CmpPmenu,FloatBorder:CmpPmenuBorder,CursorLine:PmenuSel,Search:None",
+            border = border("CmpMenuBorder"),
+            winhighlight = "Normal:CmpMenu,CursorLine:CmpMenuSel,Search:None",
         },
-        documentation = {
-            border = {
-                "┌",
-                "─",
-                "┐",
-                "│",
-                "┘",
-                "─",
-                "└",
-                "│",
-            },
-            winhighlight = "Normal:CmpPmenu,FloatBorder:CmpPmenuBorder,CursorLine:PmenuSel,Search:None",
-        },
+        documentation = { border = border("CmpDocBorder"), winhighlight = "Normal:CmpDoc" },
     },
 })
 

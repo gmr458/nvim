@@ -36,14 +36,20 @@ catppuccin.setup({
     color_overrides = {},
     custom_highlights = function(colors)
         return {
-            -- NormalFloat = { bg = colors.base },
-            NormalFloat = { bg = "NONE" },
+            NormalFloat = { bg = colors.mantle },
+            FloatBorder = { bg = colors.mantle, fg = colors.mantle },
 
             StatusLine = { bg = "NONE" },
 
             WinBar = { fg = colors.text },
 
             NvimTreeRootFolder = { fg = colors.mantle },
+
+            CmpMenu = { bg = colors.base },
+            CmpMenuBorder = { bg = colors.base, fg = colors.surface2 },
+            CmpMenuSel = { bg = colors.sky, fg = colors.base },
+            CmpDoc = { bg = colors.base },
+            CmpDocBorder = { bg = colors.base, fg = colors.surface2 },
 
             -- Treesitter
             ["@constant.builtin"] = { style = { "italic" } },
