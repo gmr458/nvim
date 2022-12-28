@@ -103,7 +103,7 @@ M.get_winbar = function()
     end
 
     if not utils.is_nil_or_empty_string(value) and utils.is_unsaved() then
-        local mod = "%#LspCodeLens#" .. "●" .. "%*"
+        local mod = "%#LspCodeLens#" .. "" .. "%*"
 
         if navic_added then
             value = value .. " " .. mod
