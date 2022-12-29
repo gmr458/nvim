@@ -135,5 +135,11 @@ for _, server in pairs(servers) do
         server_opts = vim.tbl_deep_extend("force", server_opts, server_custom_opts)
     end
 
+    if vim.loop.os_uname().sysname == "Windows_NT" and server_custom_opts.cmd == nil then
+        local default_server_config = require("lspconfig.server_configurations." .. server)
+        local cmd = default_server_config["default_config"]["cmd"][1] .. ".cmd"
+        server_opts.cmd = cmd
+    end
+
     lspconfig[server].setup(server_opts)
 end
