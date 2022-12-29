@@ -26,9 +26,11 @@ end
 
 packer.init({
     display = {
+        compact = true, -- If true, fold updates results by default
         open_fn = function()
             return require("packer.util").float({ border = "single" })
         end,
+        prompt_border = "single", -- Border style of prompt popups.
     },
 })
 
