@@ -17,6 +17,6 @@ if vim.fn.has("win32") == 1 then
     local bin_name = "lua-language-server.cmd"
     local cmd = { bin_name }
     config.cmd = cmd
-else
+end
 
 return config
