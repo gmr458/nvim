@@ -8,7 +8,7 @@ return {
         local web = require 'gmr.configs.formatter.web'
 
         require('formatter').setup {
-            logging = false,
+            logging = true,
             filetype = {
                 astro = { prettier },
                 cs = { require('formatter.filetypes.cs').csharpier },
