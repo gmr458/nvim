@@ -9,7 +9,8 @@ local config = {
         'tailwind.config.cjs',
         'tailwind.config.js',
         'tailwind.config.mjs',
-        'tailwind.config.ts'
+        'tailwind.config.ts',
+        'vite.config.ts'
     ),
 }
 
