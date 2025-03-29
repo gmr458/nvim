@@ -8,6 +8,7 @@ return {
                 'css',
                 'html',
                 'javascript',
+                'typescript',
                 'json',
                 'jsonc',
                 'lua',

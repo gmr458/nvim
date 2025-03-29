@@ -22,6 +22,7 @@ M.to_setup = {
     'jsonls',
     -- 'kotlin_language_server',
     'nim_langserver',
+    'nushell',
     'ocamllsp',
     'omnisharp',
     -- 'pylance',

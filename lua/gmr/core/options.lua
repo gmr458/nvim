@@ -90,6 +90,7 @@ opt.undolevels = 10000
 opt.updatetime = 200
 opt.virtualedit = 'block'
 -- opt.wildoptions = ''
+opt.winborder = 'single'
 opt.wrap = false
 
 vim.g.base46_cache = vim.fn.stdpath 'data' .. '/base46_cache/'
