@@ -25,6 +25,7 @@ M.to_setup = {
     'nushell',
     'ocamllsp',
     'omnisharp',
+    'postgres_lsp',
     -- 'pylance',
     -- 'pylyzer',
     -- 'phpactor',

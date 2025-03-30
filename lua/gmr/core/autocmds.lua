@@ -189,3 +189,10 @@ vim.api.nvim_create_autocmd('FileType', {
         vim.b.miniindentscope_disable = true
     end,
 })
+
+vim.api.nvim_create_autocmd('FileType', {
+    group = vim.api.nvim_create_augroup('gmr_nowrap', { clear = true }),
+    desc = 'No wrap in these filetypes',
+    pattern = { 'checkhealth' },
+    command = ':set nowrap',
+})

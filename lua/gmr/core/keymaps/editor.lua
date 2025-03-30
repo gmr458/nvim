@@ -68,40 +68,40 @@ vim.keymap.set(
 )
 
 -- insert and remove quotes
-vim.keymap.set(
-    'n',
-    '<leader>sq',
-    'ciw\'<C-r>"\'<esc>',
-    { silent = true, noremap = true, desc = 'Insert single quotes' }
-)
-vim.keymap.set(
-    'n',
-    '<leader>usq',
-    'di\'hPl2x',
-    { silent = true, noremap = true, desc = 'Remove single quotes' }
-)
-vim.keymap.set(
-    'n',
-    '<leader>dq',
-    'ciw"<C-r>""<esc>',
-    { silent = true, noremap = true, desc = 'Insert double quotes' }
-)
-vim.keymap.set(
-    'n',
-    '<leader>udq',
-    'di"hPl2x',
-    { silent = true, noremap = true, desc = 'Remove double quotes' }
-)
-vim.keymap.set('v', '<leader>sq', 'xi\'<esc>pA\'<esc>', {
-    silent = true,
-    noremap = true,
-    desc = 'Insert single quotes in visual mode',
-})
-vim.keymap.set('v', '<leader>dq', 'xi"<esc>pA"<esc>', {
-    silent = true,
-    noremap = true,
-    desc = 'Insert double quotes in visual mode',
-})
+-- vim.keymap.set(
+--     'n',
+--     '<leader>sq',
+--     'ciw\'<C-r>"\'<esc>',
+--     { silent = true, noremap = true, desc = 'Insert single quotes' }
+-- )
+-- vim.keymap.set(
+--     'n',
+--     '<leader>usq',
+--     'di\'hPl2x',
+--     { silent = true, noremap = true, desc = 'Remove single quotes' }
+-- )
+-- vim.keymap.set(
+--     'n',
+--     '<leader>dq',
+--     'ciw"<C-r>""<esc>',
+--     { silent = true, noremap = true, desc = 'Insert double quotes' }
+-- )
+-- vim.keymap.set(
+--     'n',
+--     '<leader>udq',
+--     'di"hPl2x',
+--     { silent = true, noremap = true, desc = 'Remove double quotes' }
+-- )
+-- vim.keymap.set('v', '<leader>sq', 'xi\'<esc>pA\'<esc>', {
+--     silent = true,
+--     noremap = true,
+--     desc = 'Insert single quotes in visual mode',
+-- })
+-- vim.keymap.set('v', '<leader>dq', 'xi"<esc>pA"<esc>', {
+--     silent = true,
+--     noremap = true,
+--     desc = 'Insert double quotes in visual mode',
+-- })
 
 -- simulate ci{ ci( ci' ci" with _ - and .
 vim.keymap.set(

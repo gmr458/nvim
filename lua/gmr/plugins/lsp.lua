@@ -12,8 +12,6 @@ return {
         local lspconfiguser = require 'gmr.configs.lsp'
         lspconfiguser.setup_diagnostic_config()
 
-        require('lspconfig.ui.windows').default_options.border = 'single'
-
         local servers = require('gmr.configs.lsp.servers').to_setup
         for _, server in pairs(servers) do
             local server_opts = {
@@ -38,5 +36,9 @@ return {
 
             lspconfig[server].setup(server_opts)
         end
+
+        vim.api.nvim_create_user_command('LspCheckhealth', function()
+            vim.cmd ':silent :vertical checkhealth vim.lsp'
+        end, {})
     end,
 }

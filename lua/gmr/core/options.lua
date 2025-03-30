@@ -56,7 +56,7 @@ opt.ignorecase = true
 opt.laststatus = 3
 -- opt.list = true
 -- opt.listchars:append {
---     eol = ' ',
+--     eol = '↲',
 --     tab = '│ ',
 --     trail = ' ',
 -- }

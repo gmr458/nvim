@@ -23,7 +23,6 @@ return {
                     },
                 },
                 menu = {
-                    border = 'single',
                     auto_show = false,
                     draw = {
                         columns = {
@@ -36,7 +35,6 @@ return {
                     },
                 },
                 documentation = {
-                    window = { border = 'single' },
                     auto_show = true,
                 },
             },

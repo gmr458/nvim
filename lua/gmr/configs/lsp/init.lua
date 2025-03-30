@@ -58,9 +58,7 @@ function M.on_attach(client, bufnr)
     end)
     keymap('<space>q', vim.diagnostic.setloclist)
     keymap('gd', vim.lsp.buf.definition)
-    keymap('J', function()
-        vim.lsp.buf.hover { border = 'single' }
-    end)
+    keymap('J', vim.lsp.buf.hover)
     keymap(
         'gi',
         ':SnacksPickerLspImplementations<cr>'
@@ -69,9 +67,7 @@ function M.on_attach(client, bufnr)
         --         require('fzf-lua').lsp_implementations(fzf_opts)
         --     end
     )
-    keymap('K', function()
-        vim.lsp.buf.signature_help { border = 'single' }
-    end)
+    keymap('K', vim.lsp.buf.signature_help)
     keymap('<space>wa', vim.lsp.buf.add_workspace_folder)
     keymap('<space>wr', vim.lsp.buf.remove_workspace_folder)
     keymap('<space>wl', function()
@@ -202,7 +198,7 @@ function M.setup_diagnostic_config()
             end,
         },
         signs = false,
-        float = { source = true, border = 'single' },
+        float = { source = true },
         update_in_insert = false,
         severity_sort = true,
     }
