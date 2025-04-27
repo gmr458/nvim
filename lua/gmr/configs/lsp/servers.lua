@@ -12,7 +12,7 @@ M.to_setup = {
     'dockerls',
     'elixirls',
     -- 'emmet_ls',
-    'emmet_language_server',
+    -- 'emmet_language_server',
     'eslint',
     'gleam',
     'gopls',

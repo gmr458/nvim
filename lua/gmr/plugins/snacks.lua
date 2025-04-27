@@ -119,6 +119,7 @@ return {
             notifier = { enabled = false },
             picker = {
                 prompt = ' ',
+                ui_select = false,
                 formatters = {
                     file = {
                         filename_first = true,
