@@ -98,6 +98,8 @@ local layout_fullscreen_vertical = {
 
 return {
     'folke/snacks.nvim',
+    priority = 1000,
+    lazy = false,
     cmd = {
         'SnacksPickerFiles',
         'SnacksPickerGitStatus',

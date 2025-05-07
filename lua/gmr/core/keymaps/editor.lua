@@ -243,3 +243,10 @@ vim.keymap.set('n', 'dd', function()
     end
     return 'dd'
 end, { expr = true, desc = 'Yank the line on `dd` only if it is non-empty' })
+
+vim.keymap.set(
+    'x',
+    '/',
+    '<Esc>/\\%V',
+    { desc = 'Search within visual selection' }
+)
