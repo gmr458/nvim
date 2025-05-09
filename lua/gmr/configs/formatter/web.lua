@@ -41,6 +41,8 @@ return function()
                 'format',
                 '--indent-width',
                 vim.bo.tabstop,
+                '--indent-style',
+                vim.o.expandtab and 'space' or 'tab',
                 '--stdin-file-path',
                 vim.fn.shellescape(vim.api.nvim_buf_get_name(0)),
             },
