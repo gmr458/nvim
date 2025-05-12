@@ -17,6 +17,14 @@ return {
                 ['<S-Tab>'] = { 'select_prev', 'fallback' },
             },
             completion = {
+                accept = {
+                    resolve_timeout_ms = 10000,
+                    auto_brackets = {
+                        semantic_token_resolution = {
+                            timeout_ms = 10000,
+                        },
+                    },
+                },
                 list = {
                     selection = {
                         auto_insert = true,
@@ -43,6 +51,11 @@ return {
             },
             sources = {
                 default = { 'lsp', 'path', 'buffer' },
+                providers = {
+                    lsp = {
+                        timeout_ms = 10000,
+                    },
+                },
             },
             cmdline = {
                 enabled = false,
