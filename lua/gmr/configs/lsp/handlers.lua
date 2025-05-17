@@ -6,11 +6,12 @@ local M = {}
 --- @param config? table
 function M.go_to_definition(err, result, context, config)
     local split_cmd = 'vsplit'
+    local running_linux = vim.uv.os_uname().sysname == 'Linux'
+    local desktop_session = os.getenv 'DESKTOP_SESSION'
+    local running_hyprland = desktop_session == 'hyprland'
+        or desktop_session == 'hyprland-uwsm'
 
-    if
-        vim.uv.os_uname().sysname == 'Linux'
-        and os.getenv 'DESKTOP_SESSION' == 'hyprland'
-    then
+    if running_linux and running_hyprland then
         local output_hyprctl = vim.fn.system 'hyprctl -j activewindow'
         --- @class HyprlandWindow
         --- @field size number[]
