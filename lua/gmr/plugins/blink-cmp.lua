@@ -20,9 +20,7 @@ return {
                 accept = {
                     resolve_timeout_ms = 10000,
                     auto_brackets = {
-                        semantic_token_resolution = {
-                            timeout_ms = 10000,
-                        },
+                        enabled = false,
                     },
                 },
                 list = {
@@ -44,6 +42,12 @@ return {
                 },
                 documentation = {
                     auto_show = true,
+                    auto_show_delay_ms = 0,
+                },
+            },
+            signature = {
+                trigger = {
+                    enabled = false,
                 },
             },
             appearance = {

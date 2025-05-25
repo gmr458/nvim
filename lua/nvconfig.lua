@@ -1,7 +1,7 @@
 local options = {
     base46 = {
-        --- @type 'aquarium' | 'ashes' | 'ayu_dark' | 'ayu_light' | 'bearded-arc' | 'blossom_light' | 'catppuccin' | 'chadracula-evondev' | 'chadracula' | 'chadtain' | 'chocolate' | 'dark_horizon' | 'decay' | 'doomchad' | 'everblush' | 'everforest' |'everforest_light' | 'falcon' | 'flex-light' | 'flexoki-light' | 'flexoki' | 'gatekeeper' | 'github_dark' | 'github_light' | 'gruvbox' | 'gruvbox_light' | 'gruvchad' | 'jabuti' | 'jellybeans' | 'kanagawa' | 'material-darker' | 'material-lighter' | 'melange' | 'mito-laser' | 'monekai' | 'monochrome' | 'mountain' | 'nano-light' | 'nightfox' | 'nightlamp' | 'nightowl' | 'nord' | 'oceanic-light' | 'oceanic-next' | 'one_light' | 'onedark' | 'onenord' | 'onenord_light' | 'oxocarbon' | 'palenight' | 'pastelDark' | 'pastelbeans' | 'penumbra_dark' | 'penumbra_light' | 'poimandres' | 'radium' | 'rosepine-dawn' | 'rosepine' | 'rxyhn' | 'solarized_dark' | 'solarized_osaka' | 'sweetpastel' | 'tokyodark'| 'tokyonight' | 'tomorrow_night' | 'tundra' | 'vscode_dark' | 'wombat' | 'yoru'
-        theme = 'radium',
+        --- @type 'aquarium' | 'ashes' | 'aylin' | 'ayu_dark' | 'ayu_light' | 'bearded-arc' | 'blossom_light' | 'carbonfox' | 'catppuccin' | 'chadracula' | 'chadracula-evondev' | 'chadtain' | 'chocolate' | 'darcula-dark' | 'dark_horizon' | 'decay' | 'default-dark' | 'default-light' | 'doomchad' | 'eldritch' | 'embark' | 'everblush' | 'everforest' | 'everforest_light' | 'falcon' | 'flex-light' | 'flexoki' | 'flexoki-light' | 'flouromachine' | 'gatekeeper' | 'github_dark' | 'github_light' | 'gruvbox' | 'gruvbox_light' | 'gruvchad' | 'hiberbee' | 'horizon' | 'jabuti' | 'jellybeans' | 'kanagawa' | 'kanagawa-dragon' | 'material-darker' | 'material-deep-ocean' | 'material-lighter' | 'melange' | 'mito-laser' | 'monekai' | 'monochrome' | 'mountain' | 'nano-light' | 'neofusion' | 'nightfox' | 'nightlamp' | 'nightowl' | 'nord' | 'obsidian-ember' | 'oceanic-light' | 'oceanic-next' | 'one_light' | 'onedark' | 'onenord' | 'onenord_light' | 'oxocarbon' | 'palenight' | 'pastelDark' | 'pastelbeans' | 'penumbra_dark' | 'penumbra_light' | 'poimandres' | 'radium' | 'rosepine' | 'rosepine-dawn' | 'rxyhn' | 'scaryforest' | 'seoul256_dark' | 'seoul256_light' | 'solarized_dark' | 'solarized_light' | 'solarized_osaka' | 'starlight' | 'sweetpastel' | 'tokyodark' | 'tokyonight' | 'tomorrow_night' | 'tundra' | 'vesper' | 'vscode_dark' | 'vscode_light' | 'wombat' | 'yoru' | 'zenburn'
+        theme = 'kanagawa-dragon',
         hl_add = {
             StatusLine = { bg = 'statusline_bg', fg = 'base07' },
             StatusLineMode = { bg = 'green', fg = 'darker_black' },
@@ -61,6 +61,7 @@ local options = {
                 bg = 'black',
                 fg = 'grey',
             },
+            BlinkCmpKind = { link = 'Comment' },
             TreesitterContext = {
                 bg = 'darker_black',
             },
