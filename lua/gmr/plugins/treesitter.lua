@@ -11,6 +11,9 @@ return {
             require('nvim-treesitter').install(parsers, { max_jobs = 1 })
         end, {})
 
+        table.insert(parsers, 'javascriptreact')
+        table.insert(parsers, 'typescriptreact')
+
         vim.api.nvim_create_autocmd('FileType', {
             pattern = parsers,
             callback = function()
