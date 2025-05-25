@@ -1,8 +1,6 @@
-local mason = require 'mason-registry'
-local jdtls_path = mason.get_package('jdtls'):get_install_path()
-local java_debug_path =
-    mason.get_package('java-debug-adapter'):get_install_path()
-local java_test_path = mason.get_package('java-test'):get_install_path()
+local jdtls_path = vim.fn.expand '$MASON/packages/jdtls'
+local java_debug_path = vim.fn.expand '$MASON/packages/java-debug-adapter'
+local java_test_path = vim.fn.expand '$MASON/packages/java-test'
 
 local equinox_launcher_path =
     vim.fn.glob(jdtls_path .. '/plugins/org.eclipse.equinox.launcher_*.jar')
@@ -19,9 +17,13 @@ local lombok_path = jdtls_path .. '/lombok.jar'
 
 local jdtls = require 'jdtls'
 
+local lspconfiguser = require 'gmr.configs.lsp'
+lspconfiguser.setup_diagnostic_config()
+
 local config = {
     cmd = {
-        vim.fn.expand '~/.sdkman/candidates/java/21.*-tem/bin/java', -- or '/path/to/java17_or_newer/bin/java'
+        -- vim.fn.expand '~/.sdkman/candidates/java/21.*-tem/bin/java', -- or '/path/to/java17_or_newer/bin/java'
+        'java', -- or '/path/to/java17_or_newer/bin/java'
 
         '-Declipse.application=org.eclipse.jdt.ls.core.id1',
         '-Dosgi.bundles.defaultStartLevel=4',
@@ -51,7 +53,7 @@ local config = {
 
     root_dir = vim.fs.root(0, { 'mvnw', 'gradlew' }),
 
-    on_attach = require('gmr.configs.lsp').on_attach,
+    on_attach = lspconfiguser.on_attach,
 
     -- Here you can configure eclipse.jdt.ls specific settings
     -- See https://github.com/eclipse/eclipse.jdt.ls/wiki/Running-the-JAVA-LS-server-from-the-command-line#initialize-request
@@ -65,26 +67,26 @@ local config = {
             maven = {
                 downloadSources = true,
             },
-            configuration = {
-                runtimes = {
-                    {
-                        name = 'JavaSE-1.8',
-                        path = vim.fn.expand '~/.sdkman/candidates/java/8.*-tem',
-                    },
-                    {
-                        name = 'JavaSE-11',
-                        path = vim.fn.expand '~/.sdkman/candidates/java/11.*-tem',
-                    },
-                    {
-                        name = 'JavaSE-17',
-                        path = vim.fn.expand '~/.sdkman/candidates/java/17.*-tem',
-                    },
-                    {
-                        name = 'JavaSE-21',
-                        path = vim.fn.expand '~/.sdkman/candidates/java/21.*-tem',
-                    },
-                },
-            },
+            -- configuration = {
+            --     runtimes = {
+            --         {
+            --             name = 'JavaSE-1.8',
+            --             path = vim.fn.expand '~/.sdkman/candidates/java/8.*-tem',
+            --         },
+            --         {
+            --             name = 'JavaSE-11',
+            --             path = vim.fn.expand '~/.sdkman/candidates/java/11.*-tem',
+            --         },
+            --         {
+            --             name = 'JavaSE-17',
+            --             path = vim.fn.expand '~/.sdkman/candidates/java/17.*-tem',
+            --         },
+            --         {
+            --             name = 'JavaSE-21',
+            --             path = vim.fn.expand '~/.sdkman/candidates/java/21.*-tem',
+            --         },
+            --     },
+            -- },
             references = {
                 includeDecompiledSources = true,
             },

@@ -1,4 +1,6 @@
 -- https://luals.github.io/wiki/settings/
+
+--- @class vim.lsp.Config
 local config = {
     settings = {
         Lua = {

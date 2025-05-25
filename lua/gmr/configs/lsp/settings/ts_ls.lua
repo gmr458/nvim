@@ -1,13 +1,9 @@
-local ok, util = pcall(require, 'lspconfig.util')
-if not ok then
-    vim.notify 'lspconfig.util could not be loaded'
-    return
-end
-
 -- https://github.com/typescript-language-server/typescript-language-server/blob/master/docs/configuration.md
+
+--- @class vim.lsp.Config
 local config = {
-    root_dir = util.root_pattern 'package.json',
-    single_file_support = false,
+    root_markers = { 'tsconfig.json', 'jsconfig.json', 'package.json' },
+    workspace_required = true,
     settings = {
         diagnostics = {
             ignoredCodes = { 80001 },

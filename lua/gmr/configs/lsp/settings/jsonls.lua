@@ -4,6 +4,7 @@ if not ok then
     return
 end
 
+--- @class vim.lsp.Config
 local config = {
     settings = {
         json = {

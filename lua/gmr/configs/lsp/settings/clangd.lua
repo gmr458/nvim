@@ -1,3 +1,4 @@
+--- @class vim.lsp.Config
 local config = {
     filetypes = {
         'c',

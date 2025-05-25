@@ -1,6 +1,6 @@
-local mason = require 'mason-registry'
-local path = mason.get_package('omnisharp'):get_install_path()
+local path = vim.fn.exepath 'omnisharp'
 
+--- @class vim.lsp.Config
 local config = {
     cmd = {
         'dotnet',

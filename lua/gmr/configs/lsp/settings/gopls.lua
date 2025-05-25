@@ -1,5 +1,7 @@
 -- https://github.com/golang/tools/blob/master/gopls/doc/settings.md
-local settings = {
+
+--- @class vim.lsp.Config
+local config = {
     settings = {
         gopls = {
             gofumpt = true,
@@ -18,4 +20,4 @@ local settings = {
     },
 }
 
-return settings
+return config
