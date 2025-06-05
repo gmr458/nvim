@@ -11,9 +11,10 @@ return {
             require('nvim-treesitter').install(parsers, { max_jobs = 1 })
         end, {})
 
+        table.insert(parsers, 'cs')
+        table.insert(parsers, 'hyprlang')
         table.insert(parsers, 'javascriptreact')
         table.insert(parsers, 'typescriptreact')
-        table.insert(parsers, 'hyprlang')
 
         vim.api.nvim_create_autocmd('FileType', {
             pattern = parsers,

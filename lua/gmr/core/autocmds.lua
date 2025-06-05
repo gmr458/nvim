@@ -36,7 +36,7 @@ vim.api.nvim_create_autocmd('TermOpen', {
         { clear = true }
     ),
     pattern = { '*' },
-    desc = '',
+    desc = 'Disable line numbers, relative numbers, and signcolumn in terminal buffers',
     callback = function()
         vim.opt_local.number = false
         vim.opt_local.relativenumber = false
@@ -132,7 +132,7 @@ vim.api.nvim_create_autocmd('FileType', {
         { clear = true }
     ),
     pattern = { 'markdown' },
-    desc = 'Config for Git Markdown ',
+    desc = 'Config for Git Markdown',
     callback = function()
         vim.opt_local.conceallevel = 0
     end,
@@ -195,4 +195,14 @@ vim.api.nvim_create_autocmd('FileType', {
     desc = 'No wrap in these filetypes',
     pattern = { 'checkhealth' },
     command = ':set nowrap',
+})
+
+vim.api.nvim_create_autocmd('FileType', {
+    group = vim.api.nvim_create_augroup(
+        'gmr_remove_char_from_iskeyword',
+        { clear = true }
+    ),
+    desc = 'Remove - fro iskeyword option',
+    pattern = { 'astro' },
+    command = 'setlocal iskeyword-=-',
 })
