@@ -135,3 +135,18 @@ config['init_options'] = {
 }
 
 jdtls.start_or_attach(config)
+
+vim.keymap.set('v', '<leader>l', function()
+    local esc = vim.api.nvim_replace_termcodes('<Esc>', true, true, true)
+    local keys = 'yoSystem.out.println("'
+        .. esc
+        .. 'pA:", '
+        .. esc
+        .. 'pA);'
+        .. esc
+    return vim.fn.feedkeys(keys, 'n')
+end, {
+    desc = 'System.out.println() for text selected in visual mode',
+    buffer = true,
+    noremap = true,
+})

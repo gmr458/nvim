@@ -98,7 +98,10 @@ return {
                 dotfiles = false,
                 git_clean = false,
                 no_buffer = false,
-                custom = { '^\\.git$', 'node_modules' },
+                custom = {
+                    '^\\.git$',
+                    -- 'node_modules',
+                },
                 exclude = {},
             },
         }

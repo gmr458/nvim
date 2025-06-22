@@ -36,6 +36,7 @@ function M.install_automatically()
         'json',
         'jsonc',
         'kdl',
+        'kotlin',
         'lua',
         'luadoc',
         'luap',
@@ -62,6 +63,7 @@ function M.install_automatically()
         'vue',
         'xml',
         'yaml',
+        'zig',
     }
 end
 
