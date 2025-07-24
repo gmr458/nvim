@@ -1,0 +1,3 @@
+plugin
+!*after/plugin
+.luarc.json
