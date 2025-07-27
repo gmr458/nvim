@@ -48,6 +48,35 @@ local function get_layout_fullscreen_vertical(width_preview)
     }
 end
 
+local function get_layout_preview_image(width_preview)
+    return {
+        layout = {
+            fullscreen = true,
+            layout = {
+                backdrop = false,
+                box = 'horizontal',
+                {
+                    box = 'vertical',
+                    {
+                        win = 'input',
+                        height = 1,
+                        border = 'solid',
+                    },
+                    {
+                        win = 'list',
+                        border = 'solid',
+                    },
+                },
+                {
+                    win = 'preview',
+                    width = width_preview,
+                    border = 'solid',
+                },
+            },
+        },
+    }
+end
+
 local layout_fullscreen_horizontal = {
     layout = {
         fullscreen = true,
@@ -115,7 +144,12 @@ return {
         require('snacks').setup {
             bigfile = { enabled = false },
             dashboard = { enabled = false },
-            image = { enabled = false },
+            image = {
+                enabled = true,
+                doc = {
+                    enabled = false,
+                },
+            },
             indent = { enabled = false },
             input = { enabled = false },
             notifier = { enabled = false },
@@ -200,6 +234,10 @@ return {
 
         vim.api.nvim_create_user_command('SnacksPickerFiles', function()
             Snacks.picker.files(layout_normal)
+        end, {})
+
+        vim.api.nvim_create_user_command('SnacksPickerImages', function()
+            Snacks.picker.files(get_layout_preview_image(0.5))
         end, {})
 
         vim.api.nvim_create_user_command('SnacksPickerGitBranches', function()
