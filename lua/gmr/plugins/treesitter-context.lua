@@ -4,6 +4,6 @@ return {
     config = function()
         require('treesitter-context').setup()
 
-        pcall(vim.treesitter.query.set, 'tsx', 'context', '')
+        -- pcall(vim.treesitter.query.set, 'tsx', 'context', '')
     end,
 }
