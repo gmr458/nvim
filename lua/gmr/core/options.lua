@@ -24,6 +24,10 @@ vim.g.loaded_perl_provider = 0
 vim.g.loaded_typecorr = 1
 vim.g.loaded_spellfile_plugin = 1
 
+-- for some reason vim (not neovim) loads a sql plugin for completion,
+-- this plugins maps <C-c>, this disabled that mapping
+vim.g.omni_sql_no_default_maps = 1
+
 local opt = vim.opt
 
 -- opt.background = 'dark'

@@ -95,6 +95,7 @@ return {
                 rust = require('formatter.filetypes.rust').rustfmt,
                 scss = { prettier },
                 svelte = { prettier },
+                sql = require('formatter.filetypes.sql').sql_formatter,
                 template = {
                     function()
                         return {
