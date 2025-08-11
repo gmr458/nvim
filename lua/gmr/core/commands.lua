@@ -11,3 +11,12 @@ vim.api.nvim_create_user_command('DeleteAllBuffers', function()
     local bufs = vim.api.nvim_list_bufs()
     vim.cmd('bdelete ' .. table.concat(bufs, ' '))
 end, {})
+
+vim.api.nvim_create_user_command('CopyRootName', function()
+    local root = vim.fn.fnamemodify(vim.fn.getcwd(), ':t')
+    if root == '' then
+        return
+    end
+    vim.fn.setreg('+', root)
+    vim.notify(root .. ' copied', vim.log.levels.INFO)
+end, {})
