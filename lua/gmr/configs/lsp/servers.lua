@@ -11,7 +11,7 @@ M.to_setup = {
     'denols',
     'dockerls',
     'elixirls',
-    -- 'eslint',
+    'eslint',
     'gopls',
     'html',
     'intelephense',
