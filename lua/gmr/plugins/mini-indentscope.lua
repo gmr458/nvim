@@ -1,5 +1,5 @@
 return {
-    'echasnovski/mini.indentscope',
+    'nvim-mini/mini.indentscope',
     version = false,
     event = 'BufReadPost',
     config = function()

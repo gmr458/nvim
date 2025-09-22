@@ -1,5 +1,5 @@
 return {
-    'echasnovski/mini.surround',
+    'nvim-mini/mini.surround',
     event = 'InsertEnter',
     version = false,
     config = function()
