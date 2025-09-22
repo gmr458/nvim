@@ -91,7 +91,7 @@ local layout_fullscreen_horizontal = {
             { win = 'list', border = 'solid' },
             {
                 win = 'preview',
-                height = 0.6,
+                height = 0.7,
                 border = 'vpad',
             },
         },
