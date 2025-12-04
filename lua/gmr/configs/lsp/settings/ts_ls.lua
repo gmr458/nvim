@@ -2,6 +2,16 @@
 
 --- @class vim.lsp.Config
 local config = {
+    init_options = {
+        hostInfo = 'neovim',
+        preferences = {
+            autoImportSpecifierExcludeRegexes = {
+                '@radix-ui',
+                'next/dist',
+                'next/router',
+            },
+        },
+    },
     root_markers = { 'tsconfig.json', 'jsconfig.json', 'package.json' },
     workspace_required = true,
     settings = {
