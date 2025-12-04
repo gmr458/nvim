@@ -113,7 +113,7 @@ return {
     },
     config = function()
         require('snacks').setup {
-            bigfile = { enabled = false },
+            bigfile = { enabled = true },
             dashboard = { enabled = false },
             image = {
                 enabled = true,
@@ -134,8 +134,8 @@ return {
                     },
                 },
                 previewers = {
-                    git = {
-                        native = true,
+                    diff = {
+                        style = 'terminal',
                     },
                 },
                 win = {
