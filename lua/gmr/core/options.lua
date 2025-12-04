@@ -28,6 +28,8 @@ vim.g.loaded_spellfile_plugin = 1
 -- this plugins maps <C-c>, this disabled that mapping
 vim.g.omni_sql_no_default_maps = 1
 
+vim.g.snacks_animate = false
+
 local opt = vim.opt
 
 -- opt.background = 'dark'
@@ -39,13 +41,13 @@ opt.conceallevel = 3
 opt.confirm = true
 opt.cursorline = true
 opt.expandtab = true
-opt.fillchars:append {
-    eob = ' ',
-    fold = ' ',
-    foldopen = '',
-    foldsep = ' ',
-    foldclose = '',
-}
+-- opt.fillchars:append {
+--     eob = ' ',
+--     fold = ' ',
+--     foldopen = '',
+--     foldsep = ' ',
+--     foldclose = '',
+-- }
 opt.foldcolumn = '0'
 opt.foldenable = true
 -- opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
@@ -58,7 +60,7 @@ opt.grepprg = 'rg --vimgrep'
 opt.ignorecase = true
 -- opt.inccommand = 'split'
 opt.laststatus = 3
--- opt.list = true
+opt.list = true
 -- opt.listchars:append {
 --     eol = '↲',
 --     tab = '│ ',
