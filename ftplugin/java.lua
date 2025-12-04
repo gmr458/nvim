@@ -140,7 +140,7 @@ vim.keymap.set('v', '<leader>l', function()
     local esc = vim.api.nvim_replace_termcodes('<Esc>', true, true, true)
     local keys = 'yoSystem.out.println("'
         .. esc
-        .. 'pA:", '
+        .. 'pA: " + '
         .. esc
         .. 'pA);'
         .. esc
