@@ -1,7 +1,7 @@
 local M = {}
 
 M.to_setup = {
-    'angularls',
+    -- 'angularls',
     'astro',
     'bashls',
     'biome',
@@ -33,6 +33,7 @@ M.to_setup = {
     'lua_ls',
     'tailwindcss',
     'taplo',
+    -- 'tsgo',
     'ts_ls',
     -- 'vtsls',
     'yamlls',
