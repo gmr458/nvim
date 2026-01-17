@@ -34,7 +34,6 @@ function M.install_automatically()
         'javascript',
         'jsdoc',
         'json',
-        'jsonc',
         'kdl',
         'kotlin',
         'lua',
