@@ -11,18 +11,27 @@ return {
             require('nvim-treesitter').install(parsers, { max_jobs = 1 })
         end, {})
 
-        table.insert(parsers, 'cs')
-        table.insert(parsers, 'hyprlang')
-        table.insert(parsers, 'javascriptreact')
-        table.insert(parsers, 'typescriptreact')
-
         vim.api.nvim_create_autocmd('FileType', {
-            pattern = parsers,
-            callback = function()
-                vim.treesitter.start()
-                vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
-                vim.bo.indentexpr =
-                    'v:lua.require\'nvim-treesitter\'.indentexpr()'
+            group = vim.api.nvim_create_augroup(
+                'gmr_start_treesitter',
+                { clear = true }
+            ),
+            callback = function(ev)
+                local lang = vim.treesitter.language.get_lang(ev.match)
+                if lang == nil then
+                    return
+                end
+                if vim.treesitter.query.get(lang, 'highlights') ~= nil then
+                    vim.treesitter.start(ev.buf, lang)
+                end
+                if vim.treesitter.query.get(lang, 'folds') ~= nil then
+                    vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+                    vim.wo.foldmethod = 'expr'
+                end
+                if vim.treesitter.query.get(lang, 'indents') ~= nil then
+                    vim.bo.indentexpr =
+                        'v:lua.require\'nvim-treesitter\'.indentexpr()'
+                end
             end,
         })
     end,
