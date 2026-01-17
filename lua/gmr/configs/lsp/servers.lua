@@ -4,7 +4,7 @@ M.to_setup = {
     -- 'angularls',
     'astro',
     'bashls',
-    'biome',
+    -- 'biome',
     'buf_ls',
     'clangd',
     'cssls',
