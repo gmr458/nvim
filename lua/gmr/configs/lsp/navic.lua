@@ -3,9 +3,7 @@ local M = {}
 --- @param client vim.lsp.Client
 --- @param bufnr integer
 function M.attach(client, bufnr)
-    local method = vim.lsp.protocol.Methods.textDocument_documentSymbol
-
-    if client:supports_method(method) then
+    if client:supports_method 'textDocument/documentSymbol' then
         local filetype = vim.bo.filetype
 
         if

@@ -7,11 +7,10 @@ local M = {}
 --- @param client vim.lsp.Client
 --- @param bufnr integer
 function M.on_attach(client, bufnr)
-    local methods = vim.lsp.protocol.Methods
     local req = client.request
 
     client.request = function(self, method, params, handler, bufnr_req)
-        if method == methods.textDocument_definition then
+        if method == 'textDocument/definition' then
             return req(
                 self,
                 method,
@@ -100,7 +99,7 @@ function M.on_attach(client, bufnr)
         --     end
     )
 
-    if client:supports_method(methods.textDocument_codeAction) then
+    if client:supports_method 'textDocument/codeAction' then
         keymap(
             '<space>ca',
             vim.lsp.buf.code_action
@@ -120,7 +119,7 @@ function M.on_attach(client, bufnr)
         end)
     end
 
-    -- if client:supports_method(methods.textDocument_completion) then
+    -- if client:supports_method 'textDocument/completion' then
     --     vim.lsp.completion.enable(
     --         true,
     --         client.id,
@@ -129,11 +128,11 @@ function M.on_attach(client, bufnr)
     --     )
     -- end
 
-    if client:supports_method(methods.textDocument_declaration) then
+    if client:supports_method 'textDocument/declaration' then
         keymap('gD', vim.lsp.buf.declaration)
     end
 
-    if client:supports_method(methods.textDocument_documentHighlight) then
+    if client:supports_method 'textDocument/documentHighlight' then
         local augroup = vim.api.nvim_create_augroup(
             'gmr_lsp_document_highlight',
             { clear = false }
@@ -154,7 +153,7 @@ function M.on_attach(client, bufnr)
         })
     end
 
-    if client:supports_method(methods.textDocument_formatting) then
+    if client:supports_method 'textDocument/formatting' then
         keymap('<space>fo', function()
             vim.lsp.buf.format {
                 async = true,
@@ -165,7 +164,7 @@ function M.on_attach(client, bufnr)
         end, { 'n', 'v' })
     end
 
-    if client:supports_method(methods.textDocument_inlayHint) then
+    if client:supports_method 'textDocument/inlayHint' then
         keymap('<leader>ih', function()
             vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
         end)

@@ -6,6 +6,44 @@ return {
             hijack_cursor = true,
             disable_netrw = true,
             view = { width = {} },
+            filesystem_watchers = {
+                ignore_dirs = function(path)
+                    local tail = vim.fn.fnamemodify(path, ':t')
+                    local ignore_list = {
+                        '.cache',
+                        '.env',
+                        '.git',
+                        '.gradle',
+                        '.idea',
+                        '.next',
+                        '.nuxt',
+                        '.nyc_output',
+                        '.output',
+                        '.parcel-cache',
+                        '.pytest_cache',
+                        '.sass-cache',
+                        '.turbo',
+                        '.venv',
+                        '.vscode',
+                        '__pycache__',
+                        'bin',
+                        'bower_components',
+                        'build',
+                        'coverage',
+                        'dist',
+                        'env',
+                        'node_modules',
+                        'obj',
+                        'out',
+                        'target',
+                        'temp',
+                        'tmp',
+                        'vendor',
+                        'venv',
+                    }
+                    return vim.tbl_contains(ignore_list, tail)
+                end,
+            },
             -- view = {
             --     cursorline = true,
             --     width = function()
@@ -34,8 +72,8 @@ return {
                 end,
                 indent_width = 3,
                 special_files = {},
-                highlight_git = false,
-                highlight_diagnostics = false,
+                highlight_git = 'none',
+                highlight_diagnostics = 'none',
                 highlight_opened_files = 'none',
                 highlight_modified = 'none',
                 indent_markers = {
@@ -62,7 +100,6 @@ return {
                     },
                     git_placement = 'after',
                     modified_placement = 'before',
-                    padding = ' ',
                     symlink_arrow = ' 󰁔 ',
                     show = {
                         file = true,
