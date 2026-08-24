@@ -11,6 +11,8 @@ return {
             require('nvim-treesitter').install(parsers, { max_jobs = 1 })
         end, {})
 
+        vim.treesitter.language.register('caddy', 'caddyfile')
+
         vim.api.nvim_create_autocmd('FileType', {
             group = vim.api.nvim_create_augroup(
                 'gmr_start_treesitter',
