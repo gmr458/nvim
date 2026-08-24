@@ -1,3 +1,12 @@
+vim.filetype.add {
+    filename = {
+        ['Caddyfile'] = 'caddyfile',
+    },
+    pattern = {
+        ['Caddyfile.*'] = 'caddyfile',
+    },
+}
+
 vim.g.editorconfig = false
 vim.g.loaded_gzip = 1
 vim.g.loaded_tarPlugin = 1
