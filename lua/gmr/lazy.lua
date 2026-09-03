@@ -33,12 +33,6 @@ add 'gmr.plugins.undotree'
 add 'gmr.plugins.web-devicons'
 add 'gmr.plugins.zen-mode'
 
--- if vim.fn.has 'win32' == 1 then
---     add 'gmr.plugins.telescope'
--- else
---     add 'gmr.plugins.fzf'
--- end
-
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 
 if not vim.uv.fs_stat(lazypath) then
