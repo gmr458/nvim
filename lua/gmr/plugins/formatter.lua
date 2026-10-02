@@ -89,6 +89,21 @@ return {
                         }
                     end,
                 },
+                odin = {
+                    function()
+                        return {
+                            exe = 'odinfmt',
+                            args = {
+                                '-path:'
+                                    .. vim.fn.shellescape(
+                                        vim.api.nvim_buf_get_name(0)
+                                    ),
+                                '-stdin',
+                            },
+                            stdin = true,
+                        }
+                    end,
+                },
                 php = require('formatter.filetypes.php').pint,
                 proto = require('formatter.filetypes.proto').buf_format,
                 python = require('formatter.filetypes.python').ruff,
