@@ -73,6 +73,7 @@ return {
                     end,
                 },
                 lua = require('formatter.filetypes.lua').stylua,
+                nix = require('formatter.filetypes.nix').nixfmt,
                 ocaml = {
                     function()
                         return {
