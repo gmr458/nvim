@@ -1,7 +1,7 @@
 local ok, schemastore = pcall(require, 'schemastore')
 if not ok then
     vim.notify 'schemastore could not be loaded'
-    return
+    return {}
 end
 
 --- @class vim.lsp.Config

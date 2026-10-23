@@ -35,7 +35,6 @@ M.to_setup = {
     'svelte',
     'lua_ls',
     'tailwindcss',
-    'taplo',
     'tsc',
     -- 'ts_ls',
     -- 'vtsls',

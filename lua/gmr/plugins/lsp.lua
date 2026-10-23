@@ -19,7 +19,7 @@ return {
 
                 local has_custom_opts, server_custom_opts =
                     pcall(require, 'gmr.configs.lsp.settings.' .. server)
-                if has_custom_opts then
+                if has_custom_opts and type(server_custom_opts) == 'table' then
                     server_opts = vim.tbl_deep_extend(
                         'force',
                         server_opts,
@@ -29,7 +29,10 @@ return {
 
                 local has_custom_commands, server_custom_commands =
                     pcall(require, 'gmr.configs.lsp.commands.' .. server)
-                if has_custom_commands then
+                if
+                    has_custom_commands
+                    and type(server_custom_commands) == 'table'
+                then
                     server_opts.commands = server_custom_commands
                 end
 

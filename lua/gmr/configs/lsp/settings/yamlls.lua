@@ -1,11 +1,26 @@
 local ok, schemastore = pcall(require, 'schemastore')
 if not ok then
     vim.notify 'schemastore could not be loaded'
-    return
+    return {}
 end
 
---- @class vim.lsp.Config
-local config = {
+local schemas = schemastore.yaml.schemas()
+
+local compose_schema =
+    'https://raw.githubusercontent.com/compose-spec/compose-go/master/schema/compose-spec.json'
+
+local compose_file_match = schemas[compose_schema]
+if type(compose_file_match) == 'string' then
+    compose_file_match = { compose_file_match }
+end
+
+schemas[compose_schema] = vim.list_extend(compose_file_match or {}, {
+    'stack.yaml',
+    'stack.yml',
+})
+
+--- @type vim.lsp.Config
+return {
     settings = {
         redhat = {
             telemetry = {
@@ -13,10 +28,13 @@ local config = {
             },
         },
         yaml = {
-            schemas = schemastore.json.schemas(),
+            schemaStore = {
+                enable = false,
+                url = '',
+            },
+            schemas = schemas,
             validate = { enable = true },
+            format = { enable = true },
         },
     },
 }
-
-return config
