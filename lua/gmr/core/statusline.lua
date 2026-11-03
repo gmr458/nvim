@@ -8,7 +8,7 @@ local function get_lsp_diagnostics_count(severity)
         return 0
     end
 
-    local count = vim.diagnostic.count(0, { serverity = severity })[severity]
+    local count = vim.diagnostic.count(0, { severity = severity })[severity]
     if count == nil then
         return 0
     end
@@ -303,7 +303,7 @@ StatusLine.active = function()
         }
     end
 
-    if redeable_filetypes[vim.bo.filetype] or vim.o.modifiable == false then
+    if redeable_filetypes[vim.bo.filetype] or vim.bo.modifiable == false then
         return table.concat {
             formatted_filetype 'StatusLineMode',
             '%=',

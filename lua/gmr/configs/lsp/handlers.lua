@@ -3,8 +3,7 @@ local M = {}
 --- @param err? lsp.ResponseError
 --- @param result any|lsp.Location[]|lsp.LocationLink[]
 --- @param context lsp.HandlerContext
---- @param config? table
-function M.go_to_definition(err, result, context, config)
+function M.go_to_definition(err, result, context)
     local split_cmd = 'vsplit'
     local running_linux = vim.uv.os_uname().sysname == 'Linux'
     local desktop_session = os.getenv 'DESKTOP_SESSION'
@@ -32,7 +31,7 @@ function M.go_to_definition(err, result, context, config)
     local first_visible_line = vim.fn.line 'w0'
     local last_visible_line = vim.fn.line 'w$'
 
-    local definition = result[1]
+    local definition = result[1] or result
 
     local buf = vim.api.nvim_get_current_buf()
     local filename = vim.api.nvim_buf_get_name(buf)

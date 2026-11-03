@@ -221,7 +221,7 @@ return {
         end, {})
 
         vim.api.nvim_create_user_command('SnacksPickerGitFiles', function()
-            Snacks.picker.git_diff(layout_fullscreen_vertical)
+            Snacks.picker.git_files(layout_fullscreen_vertical)
         end, {})
 
         vim.api.nvim_create_user_command('SnacksPickerGitLog', function()

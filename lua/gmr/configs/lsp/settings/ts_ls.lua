@@ -49,14 +49,12 @@ local config = {
         --- @param err? lsp.ResponseError
         --- @param result? lsp.Location[]|lsp.LocationLink[]
         --- @param context lsp.HandlerContext
-        --- @param config? table
-        ['workspace/executeCommand'] = function(err, result, context, config)
+        ['workspace/executeCommand'] = function(err, result, context)
             if context.params.command == '_typescript.goToSourceDefinition' then
                 require('gmr.configs.lsp.handlers').go_to_definition(
                     err,
                     result,
-                    context,
-                    config
+                    context
                 )
             end
         end,
