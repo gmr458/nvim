@@ -18,18 +18,6 @@ vim.api.nvim_create_autocmd('BufReadPost', {
     end,
 })
 
-vim.api.nvim_create_autocmd('VimLeave', {
-    group = vim.api.nvim_create_augroup(
-        'gmr_restore_cursor_shape_on_exit',
-        { clear = true }
-    ),
-    pattern = { '*' },
-    desc = 'Restores vertical shape cursor for Alacritty on exit',
-    callback = function()
-        vim.opt.guicursor = 'a:ver1'
-    end,
-})
-
 vim.api.nvim_create_autocmd('TermOpen', {
     group = vim.api.nvim_create_augroup(
         'gmr_clean_term_mode',
