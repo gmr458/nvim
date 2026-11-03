@@ -59,7 +59,7 @@ local function get_filename()
             file_icon,
             readonly,
             tagged,
-            filename
+            (filename:gsub('%%', '%%%%'))
         )
     end
 end
