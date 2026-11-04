@@ -102,7 +102,7 @@ vim.api.nvim_create_autocmd('BufWinEnter', {
         { clear = true }
     ),
     desc = 'Avoid comment on new line',
-    command = 'set formatoptions-=cro',
+    command = 'setlocal formatoptions-=cro',
 })
 
 vim.api.nvim_create_autocmd('VimResized', {

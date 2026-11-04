@@ -297,7 +297,6 @@ StatusLine.active = function()
         return table.concat {
             mode(),
             '%=',
-            '%=',
             file_percentage(),
             total_lines(),
         }
@@ -307,7 +306,6 @@ StatusLine.active = function()
         return table.concat {
             formatted_filetype 'StatusLineMode',
             '%=',
-            '%=',
             file_percentage(),
             total_lines(),
         }
@@ -316,7 +314,6 @@ StatusLine.active = function()
     local statusline = {
         mode(),
         full_git(),
-        '%=',
         '%=',
         '%S ',
         lsp_status(),
