@@ -49,7 +49,8 @@ local function get_filename()
         end
 
         local tagged = ''
-        if require('grapple').exists() then
+        local ok_grapple, grapple = pcall(require, 'grapple')
+        if ok_grapple and grapple.exists() then
             tagged = ' 󰓹'
         end
 

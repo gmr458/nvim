@@ -2,7 +2,7 @@ vim.keymap.set(
     'n',
     '<leader>m',
     '<cmd>Grapple toggle<cr>',
-    { desc = 'Tag the curent buffer with grapple.nvim' }
+    { desc = 'Tag the current buffer with grapple.nvim' }
 )
 
 vim.keymap.set(

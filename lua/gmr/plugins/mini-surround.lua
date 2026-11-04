@@ -1,6 +1,6 @@
 return {
     'nvim-mini/mini.surround',
-    event = 'InsertEnter',
+    event = { 'BufReadPost', 'BufNewFile' },
     version = false,
     config = function()
         require('mini.surround').setup {}

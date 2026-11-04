@@ -2,7 +2,7 @@ vim.keymap.set(
     'n',
     '<C-n>',
     ':NvimTreeFindFileToggle<cr>',
-    { silent = true, desc = 'Tooggle NvimTree' }
+    { silent = true, desc = 'Toggle NvimTree' }
 )
 
 vim.keymap.set(

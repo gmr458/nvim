@@ -285,7 +285,7 @@ StatusLine.inactive = function()
     }
 end
 
-local redeable_filetypes = {
+local readable_filetypes = {
     ['qf'] = true,
     ['help'] = true,
     ['tsplayground'] = true,
@@ -303,7 +303,7 @@ StatusLine.active = function()
         }
     end
 
-    if redeable_filetypes[vim.bo.filetype] or vim.bo.modifiable == false then
+    if readable_filetypes[vim.bo.filetype] or vim.bo.modifiable == false then
         return table.concat {
             formatted_filetype 'StatusLineMode',
             '%=',
@@ -338,9 +338,7 @@ vim.opt.statusline = '%!v:lua.StatusLine.active()'
 vim.api.nvim_create_autocmd({ 'WinEnter', 'BufEnter', 'FileType' }, {
     group = statusline_augroup,
     pattern = {
-        'NvimTree_1',
         'NvimTree',
-        'TelescopePrompt',
         'fzf',
         'lspinfo',
         'lazy',

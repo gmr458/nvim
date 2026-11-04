@@ -190,7 +190,7 @@ vim.api.nvim_create_autocmd('FileType', {
         'gmr_remove_char_from_iskeyword',
         { clear = true }
     ),
-    desc = 'Remove - fro iskeyword option',
+    desc = 'Remove - from iskeyword option',
     pattern = { 'astro' },
     command = 'setlocal iskeyword-=-',
 })
